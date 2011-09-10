@@ -1,0 +1,51 @@
+nav.site-navigation
+  background: image-url("metal_background.png")
+  padding: 15px 0px
+  border-bottom: 1px solid #eee
+  +text-shadow(none)
+  +clearfix
+  
+  .wrapper
+    width: 960px
+    margin: 0px auto
+    
+  li
+    float: left
+    margin-left: 3px
+    
+    a
+      display: block
+      text-decoration: none
+      color: #DBDBDB
+      padding: 7px 15px
+      line-height: 17px
+      font-weight: bold
+      display: block
+      
+      &:hover
+        text-decoration: underline
+      
+      &.current, &.donate
+        +background(linear-gradient(#D92E03, darken(#D92E03, 15%)))
+        +text-shadow(rgba(black, 0.5) 0 -1px 0)
+        
+        +border-radius(3px)
+        color: white
+        
+        .description
+          color: white
+          
+      &.current:hover
+        +background(linear-gradient(#F93200, darken(#F93200, 15%)))
+        text-decoration: none
+      
+      &.donate
+        +background(linear-gradient(#2A9B27, darken(#2A9B27, 15%)))
+        
+        &:hover
+          +background(linear-gradient(#2EAE2A, darken(#2EAE2A, 15%)))
+          text-decoration: none
+ul.right
+  float: right
+ul.left
+  float: left

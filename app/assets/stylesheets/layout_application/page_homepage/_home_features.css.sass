@@ -1,0 +1,120 @@
+section.home-features
+  +border-radius(5px)
+  +box-shadow(rgba(black, 0.5) 0px 1px 5px 1px)
+  background-color: white
+  
+  nav
+    +border-top-radius(5px)
+    +background-image(linear-gradient(#E9E9E9, #9F9F9F))
+    border-bottom: 1px solid #727272
+  
+    ul
+      width: 1000px
+      margin: 0px auto
+      +clearfix
+    
+      li
+        float: left
+        width: 24%
+      
+        a
+          display: block
+          padding: 20px 0px
+          color: #777
+          +text-shadow(white 0 1px 0)
+          text-align: center
+          cursor: pointer
+          border-left: 1px solid #AEAEAE
+          border-right: 1px solid #D8D8D8
+          text-decoration: none
+      
+          &.selected
+            +background-image(linear-gradient(lighten(#E9E9E9, 10%), lighten(#9F9F9F, 10%)))
+                
+          .title
+            display: block
+            font-weight: bold
+            font-size: 22px
+            line-height: 30px
+            padding-top: 50px
+            background: image-url("layout_application/page_homepage/64-zap@2x.png") no-repeat center top
+            color: #333
+            +opacity(0.5)
+            +transition-property(opacity)
+            +transition-duration(0.2s)
+        
+          .description
+            display: block
+            font-size: 14px
+            color: #333 
+            +opacity(0.5)
+            +transition-property(opacity)
+            +transition-duration(0.2s)
+          
+          &.selected, &:hover
+            .title, .description
+              +opacity(1.0)
+          
+        
+          &.batch .title
+            background-image: image-url("layout_application/page_homepage/162-receipt@2x.png")
+          
+          &.resume .title
+            background-image: image-url("layout_application/page_homepage/03-loopback@2x.png")
+          
+          &.rename .title
+            background-image: image-url("layout_application/page_homepage/155-bowtie@2x.png")
+          
+      li:first-child a
+        border-left: 1px solid #D8D8D8
+        +border-top-left-radius(5px)
+
+      li:last-child a
+        +border-top-right-radius(5px)
+
+  .features-container
+    padding: 30px
+    overflow: hidden
+    
+    .scroller
+      position: relative
+      +clearfix
+      
+      section.feature
+        width: 900px
+        color: #333
+        display: none
+        +clearfix
+  
+        .image
+          width: 35%
+          background-color: rgba(gray, 0.5)
+          height: 210px
+          float: left
+          +border-radius(3px)
+    
+        .text
+          float: left
+          width: 100% - 35% - 3%
+          margin-left: 3%
+          
+          h3
+            font-size: 30px
+            line-height: 40px
+            font-family: "Merriweather", Helvetica, Arial, Verdana, sans-serif
+            margin-top: 5px
+            margin-bottom: 10px
+            color: #333
+    
+          h4
+            font-size: 20px
+            line-height: 22px
+            margin-bottom: 20px
+    
+          p
+            margin-bottom: 10px
+            line-height: 18px
+            font-size: 14px
+      
+            em
+              font-style: italic

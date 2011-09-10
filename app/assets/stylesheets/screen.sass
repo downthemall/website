@@ -1,0 +1,26 @@
+@import "compass"
++global-reset
+
+@import "buttons"
+
+body
+  font-family: Helvetica, Arial, Verdana, sans-serif
+  background: #fffff7 url(../images/1783bytes.png)
+  color: #111
+  font-size: 16px
+  line-height: 22px
+  text-rendering: optimizeLegibility
+  
+  button:hover
+    cursor: pointer
+
+  button::-moz-focus-inner
+    border: 0
+  
+  .common
+    background: #111 url(../images/bg.jpg)
+    
+    @import "header"
+    @import "home_slideshow"
+  
+  @import "home_features_bar"

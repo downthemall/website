@@ -1,9 +1,9 @@
 doctype 5
-html
-  head
-    title DownThemAll!
-    = stylesheet_link_tag "application"
-    = javascript_include_tag "application"
-    = csrf_meta_tags
-  body
-    = yield
+html lang="en"
+  head= render "layouts/head"
+  body.layout-application
+    = render "layouts/navigation"
+    section.main-content= yield
+
+
+
