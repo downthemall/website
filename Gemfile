@@ -16,3 +16,9 @@ end
 group :test do
   gem 'turn', require: false
 end
+
+group :production do
+  # needed by heroku cedar stack
+  gem 'pg'
+end
+
