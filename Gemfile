@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0'
 gem 'jquery-rails'
 gem 'slim'
-gem 'sqlite3'
+gem 'sqlite3', :group => [:development, :test]
 gem 'css3buttons'
 
 group :assets do
