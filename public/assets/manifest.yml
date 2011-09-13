@@ -1,15 +1,22 @@
 --- 
+layout_application/29-heart@2x.png: layout_application/29-heart@2x-5d0691884ecd026318d1a601258d33c2.png
 layout_application/page_homepage/03-loopback@2x.png: layout_application/page_homepage/03-loopback@2x-ecded188f9e00bd0f4fb2543f5abd937.png
 layout_application/page_homepage/155-bowtie@2x.png: layout_application/page_homepage/155-bowtie@2x-72fee0a37c735b0f96e3017225eab587.png
 layout_application/page_homepage/162-receipt@2x.png: layout_application/page_homepage/162-receipt@2x-99f2b79d5abbb0ab1e11f5045c78a1f4.png
 layout_application/page_homepage/64-zap@2x.png: layout_application/page_homepage/64-zap@2x-a1e186edb7d9f2a8c410971d791783b0.png
-layout_application/page_homepage/logo_big.png: layout_application/page_homepage/logo_big-0da0b796e8b22a45283d798da3725226.png
+layout_application/page_homepage/curly_quotes.png: layout_application/page_homepage/curly_quotes-97b8040e2390887979e1a8af39435ad8.png
+layout_application/page_homepage/logo_big.png: layout_application/page_homepage/logo_big-d3b9e62136958ad479eee4c6b2375765.png
+layout_application/page_homepage/logos/download.png: layout_application/page_homepage/logos/download-437927e9242941fefc048dce96030413.png
+layout_application/page_homepage/logos/lifehacker.png: layout_application/page_homepage/logos/lifehacker-74317413c631f63e7d15d7e74b529a94.png
+layout_application/page_homepage/logos/mashable.png: layout_application/page_homepage/logos/mashable-c306828df08954ff3ea343fb9d032822.png
+layout_application/page_homepage/logos/tech-republic.png: layout_application/page_homepage/logos/tech-republic-e35a6bb51611c62e57bd3b4ab895b4b8.png
+layout_application/page_homepage/logos/wired.png: layout_application/page_homepage/logos/wired-b0f3bd3cf7e1eb1ca64c7964c109beb9.png
 layout_application/page_homepage/small_check.png: layout_application/page_homepage/small_check-72b1c12fe0460ee4e0f18ef3fe40cc18.png
 layout_application/page_homepage/underline.png: layout_application/page_homepage/underline-a3686a8acc0f0df9860052a16856c880.png
-metal_background.png: metal_background-f78e7a4d273af7cb93e8842d8a40b981.png
+metal_background.png: metal_background-37077161b0a44de55cea789b355a5fdc.png
 noise_background.png: noise_background-b4fad71417523aae137abb23b8ef0144.png
 css3buttons/icons.png: css3buttons/icons-032b88986e95b87750a33dcec0659ab8.png
 jquery-ui.min.js: jquery-ui-7e33882a28fc84ad0e0e47e46cbf901c.min.js
 jquery.min.js: jquery-8a50feed8d29566738ad005e19fe1c2d.min.js
-application.js: application-516009f87a0c4a521fc86803b14e6131.js
-application.css: application-e7c44b1303919774b5eaa729e45fdb1f.css
+application.js: application-7cf80ca0c9c4434bf2248d2891068bfe.js
+application.css: application-7f064a45c671143ae548b1650b8f8f88.css
