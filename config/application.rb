@@ -45,6 +45,6 @@ module Downthemall
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.generators.stylesheet_engine = :sass
+    config.generators.stylesheet_engine = :sass unless Rails.env.production?
   end
 end
