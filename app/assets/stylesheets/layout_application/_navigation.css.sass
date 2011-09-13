@@ -20,31 +20,20 @@ nav.site-navigation
       padding: 7px 15px
       line-height: 17px
       font-weight: bold
-      display: block
+      position: relative
       
       &:hover
         text-decoration: underline
       
       &.current, &.donate
-        +background(linear-gradient(#D92E03, darken(#D92E03, 15%)))
-        +text-shadow(rgba(black, 0.5) 0 -1px 0)
-        
-        +border-radius(3px)
-        color: white
-        
-        .description
-          color: white
+        +navigation_button(#D92E03)
           
-      &.current:hover
-        +background(linear-gradient(#F93200, darken(#F93200, 15%)))
-        text-decoration: none
-      
+      &:active
+        top: 1px
+              
       &.donate
-        +background(linear-gradient(#2A9B27, darken(#2A9B27, 15%)))
-        
-        &:hover
-          +background(linear-gradient(#2EAE2A, darken(#2EAE2A, 15%)))
-          text-decoration: none
+        +navigation_button(#00A8EB)
+
 ul.right
   float: right
 ul.left

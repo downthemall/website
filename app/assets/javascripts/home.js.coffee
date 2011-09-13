@@ -1,5 +1,6 @@
 $(document).ready ->
 
+  ## Home Features Tabs ##
   $feature_links = $("section.home-features nav a")
   $features = $("section.home-features section.feature")
 
@@ -13,3 +14,7 @@ $(document).ready ->
     $(this).addClass("selected")
 
   $feature_links.eq(0).click()
+
+  ## Home Reviews ##
+
+  $(".home-reviews li a").tipsy(className: "home-review", gravity: $.fn.tipsy.autoNS, fade: yes, opacity: 1)

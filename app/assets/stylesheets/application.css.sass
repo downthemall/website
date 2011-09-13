@@ -1,7 +1,9 @@
 @import "compass"
 @import "buttons"
+@import "tipsy"
 @import "css3buttons/without-reset"
-
+@import "layout_application/mixins"
+  
 +global-reset
 
 body
@@ -14,3 +16,24 @@ body
   text-rendering: optimizeLegibility
   
 @import "layout_application/index"
+
+.tipsy.home-review
+  .tipsy-inner
+    background: #efefef image-url("layout_application/page_homepage/curly_quotes.png") no-repeat 15px 15px
+    padding: 25px
+    padding-left: 40px
+    padding-top: 30px
+    font-size: 19px
+    line-height: 22px
+    font-family: "Lato", Helvetica, Arial, Verdana, sans-serif
+    color: #222
+    +text-shadow(none)
+    font-style: italic
+    text-align: left
+    max-width: 320px
+    position: relative
+    +box-shadow(rgba(black, 0.5) 0px 2px 5px 1px)
+      
+  .tipsy-arrow
+    border-color: transparent !important
+          

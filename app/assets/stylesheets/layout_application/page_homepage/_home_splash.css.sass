@@ -20,10 +20,18 @@ section.home-splash
       font-weight: 900
       margin-bottom: 20px
       color: #1C1C1C
-          
       span
-        padding-bottom: 35px
-        background: image-url("layout_application/page_homepage/underline.png") no-repeat center bottom
+        position: relative
+        
+        &:before
+          z-index: -1
+          content: " "
+          position: absolute
+          top: -10px
+          left: -10px
+          right: -10px
+          bottom: -10px
+          background: image-url("layout_application/page_homepage/undermark.png") no-repeat center center
     
     h2
       font-size: 19px
@@ -69,3 +77,6 @@ section.home-splash
         p
           background: image-url("layout_application/page_homepage/small_check.png") no-repeat 0px 3px
           padding-left: 18px
+          
+        strong
+          font-weight: bold
