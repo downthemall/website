@@ -1,0 +1,52 @@
+section.home-tweets
+  +border-radius(5px)
+  +box-shadow(rgba(black, 0.5) 0px 1px 5px 1px)
+  padding: 20px
+  background-color: white
+
+  p.read-more
+    text-align: right
+
+  ul.tweets
+
+    li
+      min-height: 50px
+      padding-left: 65px
+      margin-bottom: 15px
+      position: relative
+      padding-bottom: 10px
+      border-bottom: 1px solid #ddd
+
+      aside.image
+        position: absolute
+        top: 0px
+        left: 0px
+
+      article.tweet
+
+        .user
+          margin-bottom: 5px
+
+          .name
+            font-weight: bold
+            font-size: 15px
+            color: #555
+
+          .screen-name
+            padding-left: 4px
+            color: #555
+            &:before
+              content: "@"
+
+        .text
+          margin-bottom: 5px
+          font-family: "Lato", Helvetica, Arial, Verdana, sans-serif
+          color: #333
+          font-size: 16px
+          line-height: 20px
+
+          &:before
+            content: "\201C"
+          &:after
+            content: "\201D"
+

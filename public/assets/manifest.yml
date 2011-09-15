@@ -4,7 +4,7 @@ layout_application/page_homepage/03-loopback@2x.png: layout_application/page_hom
 layout_application/page_homepage/155-bowtie@2x.png: layout_application/page_homepage/155-bowtie@2x-72fee0a37c735b0f96e3017225eab587.png
 layout_application/page_homepage/162-receipt@2x.png: layout_application/page_homepage/162-receipt@2x-99f2b79d5abbb0ab1e11f5045c78a1f4.png
 layout_application/page_homepage/64-zap@2x.png: layout_application/page_homepage/64-zap@2x-a1e186edb7d9f2a8c410971d791783b0.png
-layout_application/page_homepage/curly_quotes.png: layout_application/page_homepage/curly_quotes-97b8040e2390887979e1a8af39435ad8.png
+layout_application/page_homepage/curly_quotes.png: layout_application/page_homepage/curly_quotes-a44d42387a86eedaf94cd91c93ca532e.png
 layout_application/page_homepage/logo_big.png: layout_application/page_homepage/logo_big-d3b9e62136958ad479eee4c6b2375765.png
 layout_application/page_homepage/logos/download.png: layout_application/page_homepage/logos/download-437927e9242941fefc048dce96030413.png
 layout_application/page_homepage/logos/lifehacker.png: layout_application/page_homepage/logos/lifehacker-74317413c631f63e7d15d7e74b529a94.png
@@ -19,5 +19,5 @@ noise_background.png: noise_background-b4fad71417523aae137abb23b8ef0144.png
 css3buttons/icons.png: css3buttons/icons-032b88986e95b87750a33dcec0659ab8.png
 jquery-ui.min.js: jquery-ui-7e33882a28fc84ad0e0e47e46cbf901c.min.js
 jquery.min.js: jquery-8a50feed8d29566738ad005e19fe1c2d.min.js
-application.js: application-7cf80ca0c9c4434bf2248d2891068bfe.js
-application.css: application-a1f8ab6ad67c0da94c34001eb946f426.css
+application.js: application-752cb6fa3a6f90ca8d07bd943e6909fa.js
+application.css: application-717d6569dd60981970745d3a4dc8beab.css

@@ -3,7 +3,16 @@
 @import "tipsy"
 @import "css3buttons/without-reset"
 @import "layout_application/mixins"
-  
+
+=micro-clearfix
+  &:after
+    visibility: hidden
+    display: block
+    font-size: 0
+    content: " "
+    clear: both
+    height: 0
+
 +global-reset
 
 body
@@ -11,29 +20,35 @@ body
   +text-shadow(rgba(white, 0.8) 0px 1px 0px)
   background: #fffff7 image-url("noise_background.png")
   color: #111
-  font-size: 13px
+  font-size: 14px
   line-height: 16px
   text-rendering: optimizeLegibility
-  
+
 @import "layout_application/index"
 
 .tipsy.home-review
+
   .tipsy-inner
-    background: #efefef image-url("layout_application/page_homepage/curly_quotes.png") no-repeat 15px 15px
-    padding: 25px
-    padding-left: 40px
-    padding-top: 30px
+    background: #efefef image-url("layout_application/page_homepage/curly_quotes.png") no-repeat 20px 20px
+    padding: 30px 40px
     font-size: 19px
     line-height: 22px
     font-family: "Lato", Helvetica, Arial, Verdana, sans-serif
-    color: #222
-    +text-shadow(none)
+    color: #333
+    +text-shadow(white 0px 1px 0px)
     font-style: italic
     text-align: left
     max-width: 320px
     position: relative
     +box-shadow(rgba(black, 0.5) 0px 2px 5px 1px)
-      
+
+    .source
+      margin-top: 10px
+      font-size: 17px
+      line-height: 17px
+      text-align: right
+      color: #666
+
   .tipsy-arrow
     border-color: transparent !important
-          
+

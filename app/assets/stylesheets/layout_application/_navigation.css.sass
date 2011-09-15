@@ -3,16 +3,16 @@ nav.site-navigation
   padding: 15px 0px
   border-bottom: 1px solid #eee
   +text-shadow(none)
-  +clearfix
-  
+  +micro-clearfix
+
   .wrapper
     width: 960px
     margin: 0px auto
-    
+
   li
     float: left
     margin-left: 3px
-    
+
     a
       display: block
       text-decoration: none
@@ -21,16 +21,16 @@ nav.site-navigation
       line-height: 17px
       font-weight: bold
       position: relative
-      
+
       &:hover
         text-decoration: underline
-      
+
       &.current, &.donate
         +navigation_button(#D92E03)
-          
+
       &:active
         top: 1px
-              
+
       &.donate
         +navigation_button(#00A8EB)
 

@@ -1,3 +1,22 @@
 @import "home_splash"
 @import "home_features"
 @import "home_reviews"
+
+.two-columns
+  +micro-clearfix
+
+  .column
+    float: left
+    width: 48%
+    margin-right: 4%
+    @import "home_tweets"
+
+    &:last-child
+      margin-right: 0%
+
+    h5.heading
+      margin-bottom: 25px
+      font-size: 28px
+      font-family: Lato, "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif
+      line-height: 28px
+      color: #333

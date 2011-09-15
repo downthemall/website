@@ -17,4 +17,13 @@ $(document).ready ->
 
   ## Home Reviews ##
 
-  $(".home-reviews li a").tipsy(className: "home-review", gravity: $.fn.tipsy.autoNS, fade: yes, opacity: 1)
+  $(".home-reviews li a").tipsy
+    className: "home-review"
+    gravity: $.fn.tipsy.autoNS
+    fade: yes
+    opacity: 1
+    html: yes
+    title: ->
+      quote = $("<div/>").addClass("quote").text $(this).data("quote")
+      source = $("<div/>").addClass("source").text $(this).text()
+      $("<div/>").append(quote).append(source).html()

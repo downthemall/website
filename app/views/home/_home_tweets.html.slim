@@ -1,0 +1,13 @@
+h5.heading What our users are saying...
+
+section.home-tweets
+  ul.tweets
+    - favorite_tweets.each do |tweet|
+      li
+        aside.image= image_tag tweet.user.profile_image_url
+        article.tweet
+          .user
+            span.name= tweet.user.name
+            span.screen-name= tweet.user.screen_name
+          .text= tweet.text
+  p.read-more= link_to "Read more on Twitter!", "#", :class => "big button"

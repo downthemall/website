@@ -1,0 +1,7 @@
+h5.heading Latest news & updates
+
+section.home-news
+  ul.news
+    - latest_news.each do |article|
+      li= article.title
+  p.read-more= link_to "Read more on Twitter!", "#", :class => "big button"

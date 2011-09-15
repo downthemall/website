@@ -5,6 +5,8 @@ gem 'jquery-rails'
 gem 'slim'
 gem 'sqlite3', :group => [:development, :test]
 gem 'css3buttons'
+gem 'twitter'
+gem 'feed-normalizer'
 
 group :assets do
   gem 'sass-rails', "~> 3.1.0"
