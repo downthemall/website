@@ -11,7 +11,7 @@ section.home-features
     ul
       width: 1000px
       margin: 0px auto
-      +micro-clearfix
+      +fix
 
       li
         float: left
@@ -33,13 +33,12 @@ section.home-features
 
           .title
             display: block
-            font-weight: bold
             font-size: 22px
             line-height: 30px
             padding-top: 50px
             background: image-url("layout_application/page_homepage/64-zap@2x.png") no-repeat center top
             color: #333
-            font-family: Lato, "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif
+            +sans-serif
             +opacity(0.5)
             +transition-property(opacity)
             +transition-duration(0.2s)
@@ -79,13 +78,13 @@ section.home-features
 
     .scroller
       position: relative
-      +micro-clearfix
+      +fix
 
       section.feature
         width: 900px
         color: #333
         display: none
-        +micro-clearfix
+        +fix
 
         .image
           width: 40%
@@ -103,16 +102,16 @@ section.home-features
           h3
             font-size: 30px
             line-height: 40px
-            font-family: "Merriweather", Helvetica, Arial, Verdana, sans-serif
             margin-top: 5px
             margin-bottom: 10px
-            color: #444
+            color: #333
+            +serif
 
           h4
             font-size: 20px
             line-height: 22px
             margin-bottom: 20px
-            font-family: Lato, "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif
+            +sans-serif
             color: #333
 
           p
@@ -126,4 +125,5 @@ section.home-features
 
             &.learn-more
               margin-top: 15px
+              margin-bottom: 0px
               text-align: right

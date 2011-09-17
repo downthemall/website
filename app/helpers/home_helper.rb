@@ -5,6 +5,6 @@ module HomeHelper
 
   def latest_news
     feed = FeedNormalizer::FeedNormalizer.parse open("http://www.downthemall.net/feed/rss/")
-    feed.entries
+    feed.entries[0..2]
   end
 end

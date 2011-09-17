@@ -3,5 +3,13 @@ h5.heading Latest news & updates
 section.home-news
   ul.news
     - latest_news.each do |article|
-      li= article.title
-  p.read-more= link_to "Read more on Twitter!", "#", :class => "big button"
+      li
+        article.news-item
+          header
+            h4= link_to article.title, article.url
+            .details
+              span.author Nils Maier
+              | , #{time_ago_in_words(article.last_updated)} ago
+          .content== HTML_Truncator.truncate(article.content, 40)
+
+  p.read-more= link_to "Older entries →", "#", :class => "big button"

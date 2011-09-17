@@ -7,6 +7,7 @@ gem 'sqlite3', :group => [:development, :test]
 gem 'css3buttons'
 gem 'twitter'
 gem 'feed-normalizer'
+gem 'html_truncator'
 
 group :assets do
   gem 'sass-rails', "~> 3.1.0"

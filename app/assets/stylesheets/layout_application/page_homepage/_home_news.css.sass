@@ -1,0 +1,42 @@
+section.home-news
+  +border-radius(5px)
+  +box-shadow(rgba(black, 0.5) 0px 1px 5px 1px)
+  padding: 20px
+  background-color: white
+
+  p.read-more
+    text-align: right
+
+  ul.news
+
+    article
+      margin-bottom: 15px
+      position: relative
+      padding-bottom: 10px
+      border-bottom: 1px solid #ddd
+
+      h4
+        +serif
+        font-size: 18px
+        line-height: 21px
+        margin-bottom: 3px
+        a
+          color: #222
+          text-decoration: none
+
+          &:hover
+            text-decoration: underline
+
+      .details
+        margin-bottom: 5px
+        font-size: 13px
+        color: #555
+
+        .author
+          font-weight: bold
+
+      .content
+        color: #444
+
+        a
+          color: #444
