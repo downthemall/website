@@ -1,23 +1,59 @@
 footer.main-footer
   background: image-url("metal_background.png")
-  padding: 15px 0px
-  color: #DBDBDB
+  color: #B3B3B3
   margin-top: 40px
-  +text-shadow(black 0px 1px 0px)
-  line-height: 17px
-  font-weight: bold
+  +text-shadow(black 0px 1px 1px)
+  +box-shadow(black 0px 1px 3px inset)
   border-top: 1px solid #111
-  +fix
 
   a
-    color: #DBDBDB
+    color: #B3B3B3
+    text-decoration: none
+
+    &:hover
+      color: #CDCDCD
 
   .wrapper
+    padding: 25px 0px
     width: 960px
     margin: 0px auto
+    position: relative
+    +fix
 
-    ul
-      width: 31%
-      margin-right: 3%
+    section
+      width: 22%
+      margin-right: 4%
       float: left
+      font-weight: bold
 
+      h6
+        +sans-serif
+        color: #707070
+        font-size: 24px
+        margin-bottom: 15px
+
+      li
+        margin-bottom: 5px
+
+  footer
+    width: 48%
+    position: absolute
+    top: 0px
+    bottom: 0px
+    right: 0px
+    font-size: 12px
+    text-align: right
+    background: image-url("layout_application/footer_arrow.png") no-repeat bottom right
+    padding: 25px 0px
+
+    .inner
+      position: absolute
+      bottom: 25px
+      right: 0px
+
+      p
+        margin-bottom: 10px
+
+      a
+        color: #CDCDCD
+        font-weight: bold

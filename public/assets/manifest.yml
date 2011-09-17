@@ -1,5 +1,6 @@
 --- 
 layout_application/29-heart@2x.png: layout_application/29-heart@2x-5d0691884ecd026318d1a601258d33c2.png
+layout_application/footer_arrow.png: layout_application/footer_arrow-0b2ff7c4fc9507f1ff415f815ea30195.png
 layout_application/page_homepage/03-loopback@2x.png: layout_application/page_homepage/03-loopback@2x-ecded188f9e00bd0f4fb2543f5abd937.png
 layout_application/page_homepage/155-bowtie@2x.png: layout_application/page_homepage/155-bowtie@2x-72fee0a37c735b0f96e3017225eab587.png
 layout_application/page_homepage/162-receipt@2x.png: layout_application/page_homepage/162-receipt@2x-99f2b79d5abbb0ab1e11f5045c78a1f4.png
@@ -20,4 +21,4 @@ css3buttons/icons.png: css3buttons/icons-032b88986e95b87750a33dcec0659ab8.png
 jquery-ui.min.js: jquery-ui-7e33882a28fc84ad0e0e47e46cbf901c.min.js
 jquery.min.js: jquery-8a50feed8d29566738ad005e19fe1c2d.min.js
 application.js: application-752cb6fa3a6f90ca8d07bd943e6909fa.js
-application.css: application-b5891bd6703648cf4a67898ad819ce03.css
+application.css: application-28b74275810115fc1b11371c7b6b88af.css

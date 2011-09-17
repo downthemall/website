@@ -2,7 +2,7 @@ nav.site-navigation
   background: image-url("metal_background.png")
   padding: 15px 0px
   border-bottom: 1px solid #eee
-  +text-shadow(none)
+  +text-shadow(black 0px 1px 1px)
   +fix
 
   .wrapper
@@ -24,6 +24,7 @@ nav.site-navigation
 
       &:hover
         text-decoration: underline
+        color: #E3E3E3
 
       &.current, &.donate
         +navigation_button(#D92E03)

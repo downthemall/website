@@ -1,12 +1,31 @@
 footer.main-footer
   .wrapper
-    ul
-      li= link_to "Home", "#"
-      li= link_to "Home", "#"
-      li= link_to "Home", "#"
-      li= link_to "Home", "#"
-    ul
-      li= link_to "Home", "#"
-      li= link_to "Home", "#"
-      li= link_to "Home", "#"
-      li= link_to "Home", "#"
+    section
+      h6 Got lost?
+      ul
+        li= link_to "Homepage", "#"
+        li= link_to "Getting Started", "#"
+        li= link_to "Knowledge Base", "#"
+        li= link_to "Latest News", "#"
+        li= link_to "Get Involved", "#"
+    section
+      h6 Share the love!
+      ul
+        li= link_to "Review us on Mozilla Add-ons", "#"
+        li= link_to "Follow us on Twitter", "#"
+        li= link_to "Like us on Facebook", "#"
+        li= link_to "Fork us on Github", "#"
+        li= link_to "Donate with Paypal", "#"
+    footer
+      .inner
+        p
+          ' The source code of this website is available
+          = link_to "on Github", "#"
+        p
+          ' Copyright © #{Time.now.year}
+          = link_to "Nils Maier", "#"
+          ' ,
+          =' link_to "Federico Parodi", "#"
+          ' and
+          = link_to "Stefano Verna", "#"
+
