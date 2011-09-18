@@ -1,9 +1,8 @@
 GIT
   remote: https://github.com/chriseppstein/compass.git
-  revision: 22e2458b77519e8eb8463170c1a1fe4bab105f3e
-  branch: rails31
+  revision: 88ee68de5d237adac016f3b9c84db413f9475842
   specs:
-    compass (0.12.0.alpha.0.22e2458)
+    compass (0.12.alpha.0.88ee68d)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
@@ -25,6 +24,7 @@ GEM
       rack-mount (~> 0.8.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.0.0)
+    active_reload (0.6.0)
     activemodel (3.1.0)
       activesupport (= 3.1.0)
       bcrypt-ruby (~> 3.0.0)
@@ -40,12 +40,29 @@ GEM
       activesupport (= 3.1.0)
     activesupport (3.1.0)
       multi_json (~> 1.0)
+    acts-as-taggable-on (2.1.1)
+      rails
+    acts_as_commentable (3.0.1)
     addressable (2.2.6)
+    ancestry (1.2.4)
+      activerecord (>= 2.2.2)
     ansi (1.3.0)
     arel (2.2.1)
+    babosa (0.3.5)
     bcrypt-ruby (3.0.0)
     builder (3.0.0)
-    chunky_png (1.2.1)
+    capybara (1.1.1)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (~> 2.0)
+      xpath (~> 0.1.4)
+    carrierwave (0.5.7)
+      activesupport (~> 3.0)
+    childprocess (0.2.2)
+      ffi (~> 1.0.6)
+    chunky_png (1.2.4)
     coffee-rails (3.1.0)
       coffee-script (>= 2.2.0)
       railties (~> 3.1.0.rc1)
@@ -55,9 +72,19 @@ GEM
     coffee-script-source (1.1.2)
     css3buttons (1.0.1)
       actionpack (>= 3.0.0)
+    database_cleaner (0.6.7)
+    devise (1.4.5)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.0.3)
+      warden (~> 1.0.3)
+    diff-lcs (1.1.3)
     erubis (2.7.0)
     execjs (1.2.4)
       multi_json (~> 1.0)
+    factory_girl (2.1.0)
+    factory_girl_rails (1.2.0)
+      factory_girl (~> 2.1.0)
+      railties (>= 3.0.0)
     faraday (0.7.4)
       addressable (~> 2.2.6)
       multipart-post (~> 1.1.0)
@@ -67,7 +94,11 @@ GEM
     feed-normalizer (1.5.2)
       hpricot (>= 0.6)
       simple-rss (>= 1.1)
+    ffi (1.0.9)
+    friendly_id (3.3.0.1)
+      babosa (~> 0.3.0)
     fssm (0.2.7)
+    growl (1.0.3)
     hashie (1.1.0)
     hike (1.2.1)
     hpricot (0.8.4)
@@ -77,15 +108,28 @@ GEM
     jquery-rails (1.0.14)
       railties (~> 3.0)
       thor (~> 0.14)
+    json_pure (1.6.1)
+    kaminari (0.12.4)
+      rails (>= 3.0.0)
+    launchy (2.0.5)
+      addressable (~> 2.2.6)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     mime-types (1.16)
+    mini_magick (3.3)
+      subexec (~> 0.1.0)
+    mocha (0.10.0)
+      metaclass (~> 0.0.1)
     multi_json (1.0.3)
     multi_xml (0.3.0)
     multipart-post (1.1.3)
     nokogiri (1.5.0)
+    orm_adapter (0.0.5)
+    paper_trail (2.3.3)
+      rails (~> 3)
     pg (0.11.0)
     polyglot (0.3.2)
     rack (1.3.2)
@@ -113,22 +157,51 @@ GEM
       rdoc (~> 3.4)
       thor (~> 0.14.6)
     rake (0.9.2)
+    rb-fsevent (0.4.3.1)
     rdoc (3.9.4)
+    rspec (2.6.0)
+      rspec-core (~> 2.6.0)
+      rspec-expectations (~> 2.6.0)
+      rspec-mocks (~> 2.6.0)
+    rspec-core (2.6.4)
+    rspec-expectations (2.6.0)
+      diff-lcs (~> 1.1.2)
+    rspec-instafail (0.1.8)
+    rspec-mocks (2.6.0)
+    rspec-rails (2.6.1)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
+      rspec (~> 2.6.0)
+    rubyzip (0.9.4)
     sass (3.1.7)
     sass-rails (3.1.0)
       actionpack (~> 3.1.0)
       railties (~> 3.1.0)
       sass (>= 3.1.4)
+    selenium-webdriver (2.6.0)
+      childprocess (>= 0.2.1)
+      ffi (>= 1.0.7)
+      json_pure
+      rubyzip
     simple-rss (1.2.3)
+    simple_form (1.5.1)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     simple_oauth (0.1.5)
     slim (1.0.2)
       temple (~> 0.3.3)
       tilt (~> 1.3.2)
+    spork (0.9.0.rc9)
     sprockets (2.0.0)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (!= 1.3.0, ~> 1.1)
     sqlite3 (1.3.4)
+    steak (2.0.0)
+      capybara (>= 1.0.0)
+      rspec-rails (>= 2.5.0)
+    subexec (0.1.0)
     temple (0.3.4)
     thor (0.14.6)
     tilt (1.3.3)
@@ -148,22 +221,47 @@ GEM
     uglifier (1.0.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    warden (1.0.5)
+      rack (>= 1.0)
+    xpath (0.1.4)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_reload
+  acts-as-taggable-on (~> 2.1.0)
+  acts_as_commentable
+  ancestry
+  capybara
+  carrierwave
   coffee-rails (~> 3.1.0)
   compass!
   css3buttons
+  database_cleaner
+  devise
+  factory_girl_rails
   feed-normalizer
+  friendly_id
+  growl
   html_truncator
   jquery-rails
+  kaminari
+  launchy
+  mini_magick
+  mocha
+  paper_trail
   pg
   rails (= 3.1.0)
+  rb-fsevent
+  rspec-instafail
   sass-rails (~> 3.1.0)
+  simple_form
   slim
+  spork (~> 0.9.0.rc)
   sqlite3
+  steak
   turn
   twitter
   uglifier
