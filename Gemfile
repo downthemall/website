@@ -11,7 +11,7 @@ gem 'html_truncator'
 
 group :assets do
   gem 'sass-rails', "~> 3.1.0"
-  gem 'compass', git: 'https://github.com/chriseppstein/compass.git',  branch: 'rails31'
+  gem 'compass', git: 'https://github.com/chriseppstein/compass.git',  branch: 'master'
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
