@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'friendly_id'
 gem 'paper_trail'
 gem 'mini_magick'
+gem 'mysql2'
 
 group :assets do
   gem 'sass-rails', "~> 3.1.0"
