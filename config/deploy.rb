@@ -29,5 +29,9 @@ namespace :db do
   end
 end
 
+deploy.task :restart, :roles => :app do
+  run "touch #{current_path}/tmp/restart.txt"
+end
+
 after "deploy:finalize_update", "db:symlink"
 before "deploy:assets:precompile", "bundle:install"
