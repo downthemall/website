@@ -21,7 +21,11 @@ gem 'mini_magick'
 
 group :assets do
   gem 'sass-rails', "~> 3.1.0"
+<<<<<<< HEAD
   gem 'compass', git: 'https://github.com/chriseppstein/compass.git'
+=======
+  gem 'compass', git: 'https://github.com/chriseppstein/compass.git',  branch: 'master'
+>>>>>>> 3e9ea6bde36d13dda7d21f2dd309b62d49690d0a
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end

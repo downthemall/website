@@ -1,6 +1,10 @@
 GIT
   remote: https://github.com/chriseppstein/compass.git
   revision: 88ee68de5d237adac016f3b9c84db413f9475842
+<<<<<<< HEAD
+=======
+  branch: master
+>>>>>>> 3e9ea6bde36d13dda7d21f2dd309b62d49690d0a
   specs:
     compass (0.12.alpha.0.88ee68d)
       chunky_png (~> 1.2)
@@ -51,6 +55,7 @@ GEM
     babosa (0.3.5)
     bcrypt-ruby (3.0.0)
     builder (3.0.0)
+<<<<<<< HEAD
     capybara (1.1.1)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -62,6 +67,8 @@ GEM
       activesupport (~> 3.0)
     childprocess (0.2.2)
       ffi (~> 1.0.6)
+=======
+>>>>>>> 3e9ea6bde36d13dda7d21f2dd309b62d49690d0a
     chunky_png (1.2.4)
     coffee-rails (3.1.0)
       coffee-script (>= 2.2.0)
