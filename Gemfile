@@ -3,7 +3,6 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0'
 gem 'jquery-rails'
 gem 'slim'
-gem 'sqlite3', :group => [:development, :test]
 gem 'css3buttons'
 gem 'twitter'
 gem 'feed-normalizer'
@@ -45,8 +44,4 @@ group :test do
   gem 'mocha'
 end
 
-group :production do
-  # needed by heroku cedar stack
-  gem 'pg'
-end
 
