@@ -18,8 +18,9 @@ gem 'friendly_id'
 gem 'paper_trail'
 gem 'mini_magick'
 gem 'mysql2'
-gem 'capistrano'
+gem 'capistrano', git: 'git://github.com/capistrano/capistrano.git'
 gem 'hoptoad_notifier'
+gem 'therubyracer'
 
 group :assets do
   gem 'sass-rails', "~> 3.1.0"
