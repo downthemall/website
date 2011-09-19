@@ -15,6 +15,11 @@ module Downthemall
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    # Enable caching in general
+    config.action_controller.perform_caching = true
+    # Use a memory store by default, as it does not introduce any dependencies
+    config.cache_store = :memory_store
+
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
 
