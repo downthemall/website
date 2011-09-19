@@ -31,6 +31,7 @@ end
 
 group :development do
   gem 'active_reload'
+  gem 'sqlite3'
 end
 
 group :test do
