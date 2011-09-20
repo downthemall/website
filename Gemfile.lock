@@ -274,6 +274,7 @@ DEPENDENCIES
   feed-normalizer
   friendly_id
   growl
+  hashie
   hoptoad_notifier
   html_truncator
   jquery-rails
