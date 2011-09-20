@@ -34,6 +34,10 @@ group :development do
   gem 'sqlite3'
 end
 
+group :production do
+  gem 'memcache-client'
+end
+
 group :test do
   gem 'turn', require: false
   gem 'steak'
