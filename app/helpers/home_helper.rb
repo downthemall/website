@@ -21,7 +21,7 @@ module HomeHelper
   def amo_stats
     Rails.cache.fetch("home/amostats", :expires_in => EXPIRES_IN) do 
       # Note: there is no real stats API yet (only stats per day as CSV/JSON)
-      amo = Nokogiri::HTML(open(AMO_LINK))
+      amo = Nokogiri::HTML(open(AMO_URL))
       amo = amo.css('#stats-table-container .bigvalue').map {|x| x.content.gsub(/\W/,'').to_i }
       Hashie::Mash.new({:downloads => amo[0], :users => amo[1]})
     end
