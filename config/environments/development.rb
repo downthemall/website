@@ -29,4 +29,7 @@ Downthemall::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # Pretty instead of compact output
+  Slim::Engine.set_default_options :pretty => true
 end
