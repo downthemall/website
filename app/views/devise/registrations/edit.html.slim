@@ -11,8 +11,8 @@ h2 Edit Profile
     = f.input :password_confirmation, :label => "Confirm", :required => false
   = field_set_tag "Confirm the changes with your current password" do
     = f.input :current_password, :label => "Current password", :required => true
-  .form-footer
-    span
-      = f.submit "Update informations"
-      or
-      = link_to "cancel your account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete
+  footer
+    = safe_primary_big_button_submit_tag "Save changes"
+    aside
+      = danger_remove_button_link_to "Delete account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete
+
