@@ -1,0 +1,16 @@
+h2 Sign in
+
+= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form"}) do |f|
+  = form_error_messages(resource)
+  = field_set_tag "Please, insert your credentials" do
+    = f.input :email
+    = f.input :password
+    - if devise_mapping.rememberable?
+      = f.input :remember_me, :as => :boolean
+  footer
+    = safe_primary_big_button_submit_tag "Sign in!"
+
+    aside= button_group do
+      = key_button_link_to "Forgot password?", new_password_url(resource_name)
+      = add_button_link_to "Sign up", new_registration_url(resource_name)
+

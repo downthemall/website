@@ -1,0 +1,14 @@
+h2 Reset password
+
+= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:class => "form", :method => :put}) do |f|
+  = form_error_messages(resource)
+  = f.hidden_field :reset_password_token
+  = field_set_tag "Please, insert your new password" do
+    = f.input :password
+    = f.input :password_confirmation, :label => "Confirm", :required => true
+  footer
+    = safe_primary_big_button_submit_tag "Change my password"
+
+    aside= button_group do
+      = add_button_link_to "Sign up", new_registration_url(resource_name)
+      = arrowdown_button_link_to "Sign in", new_session_url(resource_name)

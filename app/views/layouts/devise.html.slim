@@ -1,0 +1,10 @@
+doctype 5
+html lang="en"
+  head= render "layouts/head"
+  body.layout-devise
+    = render "layouts/navigation"
+    section.main-content= yield
+    = render "layouts/flash_messages"
+
+
+

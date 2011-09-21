@@ -1,0 +1,16 @@
+h2 Sign up
+
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form"}) do |f|
+  = form_error_messages(resource)
+  = field_set_tag "Introduce yourself" do
+    = f.input :first_name
+    = f.input :last_name
+  = field_set_tag "Your credentials" do
+    = f.input :email
+    = f.input :password
+  footer
+    = safe_primary_big_button_submit_tag "Sign up!"
+
+    aside= button_group do
+      = key_button_link_to "Forgot password?", new_password_url(resource_name)
+      = arrowdown_button_link_to "Sign in", new_session_url(resource_name)
