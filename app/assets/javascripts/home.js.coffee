@@ -17,7 +17,7 @@ $(document).ready ->
 
   ## Home Reviews ##
 
-  $(".home-reviews li").tipsy
+  $(".home-reviews li a").tipsy
     className: "home-review"
     gravity: $.fn.tipsy.autoNS
     fade: yes
