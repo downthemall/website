@@ -1,0 +1,10 @@
+- resource.build_translations
+= nice_form_for resource do |form|
+  = form_error_messages(form.object)
+  = form.input :sticky
+  = form.simple_fields_for :translations do |subform|
+    = subform.input :locale, :as => :hidden
+    = subform.input :title
+    = subform.input :excerpt
+    = subform.input :content
+  = form.button :submit

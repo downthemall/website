@@ -1,0 +1,4 @@
+section.sticky-articles
+  ul
+    - @sticky_articles.each do |article|
+      li[id=dom_id(article) class=dom_class(article)]

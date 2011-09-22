@@ -6,4 +6,12 @@ feature 'Knowledge Base Home', %q{
   I want to be able to navigate throught the KB documentation
 } do
 
+  scenario 'Sticky Articles' do
+    @article = FactoryGirl.create(:sticky_article)
+    visit articles_path
+    within "section.sticky-articles" do
+      page.should have_css dom_id_for(@article)
+    end
+  end
+
 end

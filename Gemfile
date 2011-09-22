@@ -23,6 +23,8 @@ gem 'mysql2'
 gem 'capistrano', git: 'git://github.com/capistrano/capistrano.git'
 gem 'hoptoad_notifier'
 gem 'therubyracer'
+gem 'inherited_resources'
+gem 'responders'
 
 group :assets do
   gem 'sass-rails', "~> 3.1.0"
@@ -46,7 +48,7 @@ group :test do
   gem 'capybara'
   gem 'spork', '~> 0.9.0.rc'
   gem 'steak'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', :require => false
   gem 'launchy'
   gem 'database_cleaner'
   gem 'rspec-instafail'
