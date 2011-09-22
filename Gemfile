@@ -23,6 +23,7 @@ gem 'mysql2'
 gem 'capistrano', git: 'git://github.com/capistrano/capistrano.git'
 gem 'hoptoad_notifier'
 gem 'therubyracer'
+gem 'dalli'
 
 group :assets do
   gem 'sass-rails', "~> 3.1.0"
@@ -34,10 +35,6 @@ end
 group :development do
   gem 'active_reload'
   gem 'sqlite3'
-end
-
-group :production do
-  gem 'memcache-client'
 end
 
 group :test do
