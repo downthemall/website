@@ -59,7 +59,6 @@ GEM
       activerecord (>= 2.2.2)
     ansi (1.3.0)
     arel (2.2.1)
-    babosa (0.3.5)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     capybara (1.1.1)
@@ -106,8 +105,7 @@ GEM
       hpricot (>= 0.6)
       simple-rss (>= 1.1)
     ffi (1.0.9)
-    friendly_id (3.3.0.1)
-      babosa (~> 0.3.0)
+    friendly_id (4.0.0.beta12)
     fssm (0.2.7)
     growl (1.0.3)
     hashie (1.1.0)
@@ -272,7 +270,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   feed-normalizer
-  friendly_id
+  friendly_id (= 4.0.0.beta12)
   growl
   hashie
   hoptoad_notifier
