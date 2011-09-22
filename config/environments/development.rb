@@ -7,7 +7,7 @@ Downthemall::Application.configure do
     :race_condition_ttl => 2.minutes
   }
   if defined?(PhusionPassenger)
-    PhusionPassenger.on_event(:start_worker_process) do |forked|
+    PhusionPassenger.on_event(:starting_worker_process) do |forked|
       Rails.cache.reset if forked
     end
   end
