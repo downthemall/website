@@ -20,6 +20,7 @@ feature 'Knowledge Base Editing', %q{
     page.should have_notice "Article was successfully created."
     @article = Article.first
     @article.should_not be_nil
+    @asticle.should be_sticky
     @article_translation = @article.translation_for(:en)
     @article_translation.should_not be_nil
     @article_translation.title.should == "My Title"
