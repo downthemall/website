@@ -1,4 +1,18 @@
 en:
+  meta:
+    language_name:
+      en: 'English'
+      de: 'German'
+      it: 'Italian'
+      fr: 'French'
+      es: 'Spanish'
+      nl: 'Dutch'
+      el: 'Greek'
+      pt: 'Portoguese'
+      ar: 'Arabic'
+      ru: 'Russian'
+      zh: 'Chinese'
+      ja: 'Japanese'
   activerecord:
     errors:
       models:
@@ -9,3 +23,4 @@ en:
     attributes:
       article:
         sticky: "Sticky Article?"
+

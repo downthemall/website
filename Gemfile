@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 gem 'jquery-rails'
-gem 'slim'
+gem 'slim', git: 'https://github.com/stonean/slim.git'
 gem 'css3buttons'
 gem 'hashie'
 gem 'twitter'

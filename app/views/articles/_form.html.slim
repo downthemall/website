@@ -2,10 +2,27 @@
 = nice_form_for resource do |form|
   = form_error_messages(form.object)
   = form.input :sticky
-  = form.simple_fields_for :translations do |subform|
-    section class="locale-#{subform.object.locale}"
-      = subform.input :locale, :as => :hidden
-      = subform.input :title
-      = subform.input :excerpt
-      = subform.input :content
+  = label_tag "Please, choose a language:"
+  ul.language-tabs
+    - resource.translations.map(&:locale).each do |locale|
+      li data-behaviour="tab" data-tab-scope="locale-selection"
+        = link_to I18n.name_for_locale(locale), "##{dom_id_locale(locale)}", :class => "flag-16-#{locale}"
+  ul.language-tab-contents
+    = form.simple_fields_for :translations do |subform|
+      - locale = subform.object.locale
+      li id=dom_id_locale(locale)
+        fieldset
+
+          legend Edit page content
+
+          .note
+            ' You are editing the
+            strong class="flag-16-#{locale}"=' "#{I18n.name_for_locale(locale).downcase} translation"
+            ' for this KB article.
+
+          = subform.input :locale, :as => :hidden
+          = subform.input :title
+          = subform.input :excerpt, :input_html => {:"data-behaviour" => "autoresize"}
+          = subform.input :content, :input_html => {:"data-behaviour" => "autoresize"}
+
   = form.button :submit

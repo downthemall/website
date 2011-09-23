@@ -9,7 +9,7 @@ class Article < ActiveRecord::Base
   accepts_nested_attributes_for :translations, :allow_destroy => true, :reject_if => lambda { |p| p[:content].blank? && p[:title].blank? && p[:excerpt].blank? }
 
   def build_translations
-    [:en, :it, :de].each do |locale|
+    ArticleTranslation.enabled_locales.each do |locale|
       if translation_for(locale).nil?
         translations.build(:locale => locale.to_s)
       end

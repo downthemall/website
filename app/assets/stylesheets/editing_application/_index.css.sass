@@ -1,0 +1,74 @@
+body.layout-editing
+
+  section.main-content
+    width: 500px
+    margin: 40px auto
+
+    h2
+      +serif
+      font-size: 30px
+      margin-bottom: 20px
+
+    form
+      +border-radius(5px)
+      +box-shadow(rgba(black, 0.5) 0px 1px 5px 1px)
+      padding: 20px
+      background-color: white
+
+      @import "articles/create"
+
+      legend
+        +sans-serif
+        font-size: 20px
+        color: #787878
+        padding-bottom: 15px
+
+      fieldset
+        margin-bottom: 20px
+
+      .note
+        margin-bottom: 15px
+        background-color: #FFF9D8
+        border: 1px solid darken(#FFF9D8, 20%)
+        padding: 15px
+
+        strong
+          font-weight: bold
+
+      .input
+        margin-bottom: 15px
+
+        label
+          display: block
+          margin-bottom: 5px
+
+        input
+          display: block
+          font-size: 20px
+          font-weight: bold
+          color: #333
+          padding: 5px
+          width: 100%
+
+        textarea
+          display: block
+          width: 100%
+          padding: 10px
+          +monospaced
+
+      .input.boolean
+        label, input
+          display: inline
+          padding-right: 5px
+          width: auto
+
+      footer
+        position: relative
+
+        aside
+          position: absolute
+          bottom: 0
+          right: 0
+
+          .button
+            font-size: 12px
