@@ -1,8 +1,16 @@
 Downthemall::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
-  # Use memcached
-  config.cache_store = :mem_cache_store, 'localhost', { :namespace => 'dtasite'}
+  # Use memcached via dalli
+  config.cache_store = :dalli_store, '127.0.0.1', {
+    :namespace => 'dtasite',
+    :race_condition_ttl => 2.minutes
+  }
+  if defined?(PhusionPassenger)
+    PhusionPassenger.on_event(:starting_worker_process) do |forked|
+      Rails.cache.reset if forked
+    end
+  end
 
   # Code is not reloaded between requests
   config.cache_classes = true

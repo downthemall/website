@@ -82,6 +82,7 @@ GEM
     coffee-script-source (1.1.2)
     css3buttons (1.0.1)
       actionpack (>= 3.0.0)
+    dalli (1.1.2)
     database_cleaner (0.6.7)
     devise (1.4.5)
       bcrypt-ruby (~> 3.0)
@@ -135,7 +136,6 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    memcache-client (1.8.5)
     metaclass (0.0.1)
     mime-types (1.16)
     mini_magick (3.3)
@@ -271,6 +271,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.0)
   compass!
   css3buttons
+  dalli
   database_cleaner
   devise
   factory_girl_rails
@@ -284,7 +285,6 @@ DEPENDENCIES
   jquery-rails
   kaminari
   launchy
-  memcache-client
   mini_magick
   mocha
   mysql2
