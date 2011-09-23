@@ -1,2 +1,4 @@
-.flash-message.notice= notice
-.flash-message.alert= alert
+- if notice.present?
+  .flash-message.notice= notice
+- if alert.present?
+  .flash-message.alert= alert

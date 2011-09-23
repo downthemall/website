@@ -1,0 +1,56 @@
+.jGrowl
+  :padding 10px
+  :z-index 9999
+  :position absolute
+  +text-shadow(black 0px -1px 0px)
+  :color white
+  &.top-left
+    :left 0px
+    :top 0px
+  &.top-right
+    :right 0px
+    :top 0px
+  &.bottom-left
+    :left 0px
+    :bottom 0px
+  &.bottom-right
+    :right 0px
+    :bottom 0px
+  &.center
+    :top 0px
+    :width 50%
+    :left 25%
+.center
+  .jGrowl-notification, .jGrowl-closer
+    :margin-left auto
+    :margin-right auto
+.jGrowl
+  .jGrowl-notification, .jGrowl-closer
+    :background-color rgba(0,0,0,0.75)
+    :width 270px
+    :padding 15px
+    :margin-top 5px
+    :margin-bottom 5px
+    :text-align left
+    :display none
+    :-moz-border-radius 5px
+    :-webkit-border-radius 5px
+  .jGrowl-notification
+    :min-height 40px
+    .jGrowl-header
+      :font-weight bold
+      :color #aaa
+      :margin-bottom 10px
+    .jGrowl-close
+      :z-index 99
+      :float right
+      :font-weight bold
+      :font-size 1em
+      :cursor pointer
+  .jGrowl-closer
+    :padding-top 4px
+    :padding-bottom 4px
+    :cursor pointer
+    :font-size .9em
+    :font-weight bold
+    :text-align center
