@@ -6,7 +6,7 @@ class Article < ActiveRecord::Base
 
   validate :at_least_a_translation
 
-  accepts_nested_attributes_for :translations, :allow_destroy => true, :reject_if => :all_blank
+  accepts_nested_attributes_for :translations, :allow_destroy => true, :reject_if => lambda { |p| p[:content].blank? && p[:title].blank? && p[:excerpt].blank? }
 
   def build_translations
     [:en, :it, :de].each do |locale|
@@ -16,8 +16,13 @@ class Article < ActiveRecord::Base
     end
   end
 
-  def translation_for(locale)
-    translations.with_locale(locale).first
+  def translation_for(locale, *args)
+    options = args.extract_options!
+    if options[:include_new_records]
+      translations.detect { |translation| translation.locale.to_s == locale.to_s }
+    else
+      translations.with_locale(locale).first
+    end
   end
 
   private

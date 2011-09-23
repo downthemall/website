@@ -7,8 +7,11 @@ feature 'Knowledge Base Home', %q{
 } do
 
   scenario 'Sticky Articles' do
+    # Given
     @article = FactoryGirl.create(:sticky_article)
+    # When
     visit articles_path
+    # Then
     within "section.sticky-articles" do
       page.should have_css dom_id_for(@article)
     end

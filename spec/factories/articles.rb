@@ -16,7 +16,7 @@ FactoryGirl.define do
 
   factory :article_translation do
     locale            "en"
-    sequence(:title)  { |n| "Article #{i}" }
+    sequence(:title)  { |n| "Article #{n}" }
     content           "That's some content"
   end
 

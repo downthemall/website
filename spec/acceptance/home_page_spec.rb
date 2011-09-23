@@ -7,7 +7,9 @@ feature 'Home page', %q{
 } do
 
   scenario 'Sections Navigation' do
+    # When
     visit "/"
+    # Then
     within "nav.site-navigation" do
       ["Home", "Getting Started", "Latest News", "Knowledge Base", "Get Involved", "Donate!"].each do |section|
         page.should have_xpath XPath::HTML.link(section)

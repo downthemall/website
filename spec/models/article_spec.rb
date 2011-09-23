@@ -8,5 +8,23 @@ describe Article do
     @article.errors[:base].should include I18n.t("activerecord.errors.models.article.no_translations")
   end
 
-  it ".translation_for"
+  describe ".translation_for" do
+    subject {
+      article = FactoryGirl.create(:article)
+      article.translations.build(:locale => :de)
+      article
+    }
+    context "with no options" do
+      it "should not find new records" do
+        subject.translation_for(:en).should_not be_nil
+        subject.translation_for(:de).should be_nil
+      end
+    end
+    context "with :include_new_records => true" do
+      it "should find new records" do
+        subject.translation_for(:en, :include_new_records => true).should_not be_nil
+        subject.translation_for(:de, :include_new_records => true).should_not be_nil
+      end
+    end
+  end
 end
