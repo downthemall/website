@@ -10,7 +10,7 @@ feature 'Knowledge Base Editing', %q{
     # When
     visit new_article_path
     fill :check_box, "Sticky Article?", true
-    within "section.locale-en" do
+    within "#locale-en" do
       fill :text, "Title", "My Title"
       fill :text, "Content", "My Content"
     end
