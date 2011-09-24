@@ -4,7 +4,7 @@ class Article < ActiveRecord::Base
 
   scope :sticky, where(:sticky => true)
 
-  validate :at_least_a_translation
+  validate :at_least_en_translation
 
   accepts_nested_attributes_for :translations, :allow_destroy => true, :reject_if => lambda { |p| p[:content].blank? && p[:title].blank? && p[:excerpt].blank? }
 
@@ -14,7 +14,7 @@ class Article < ActiveRecord::Base
 
   def build_translations
     ArticleTranslation.enabled_locales.each do |locale|
-      if translation_for(locale).nil?
+      if translation_for(locale, :include_new_records => true).nil?
         translations.build(:locale => locale.to_s)
       end
     end
@@ -31,9 +31,9 @@ class Article < ActiveRecord::Base
 
   private
 
-  def at_least_a_translation
-    if translations.size.zero?
-      errors.add :base, I18n.t("activerecord.errors.models.article.no_translations")
+  def at_least_en_translation
+    if translation_for(:en, :include_new_records => true).nil?
+      errors.add :base, I18n.t("activerecord.errors.models.article.no_en_translation")
     end
   end
 

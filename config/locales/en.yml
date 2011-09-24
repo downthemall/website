@@ -17,7 +17,7 @@ en:
     errors:
       models:
         article:
-          no_translations: "The article doesn't have any translation"
+          no_en_translation: "The article doesn't have an english translation. This is required."
     models:
       article: "Article"
     attributes:
