@@ -1,6 +1,7 @@
 - resource.build_translations
 = nice_form_for resource do |form|
   = form_error_messages(form.object)
+  = form.input :parent_id, :as => :select, :collection => Article.all, :label_method => :title, :value_method => :id, :input_html => {:"data-behaviour" => "multiselect", "data-placeholder" => "Choose an article..."}
   = form.input :sticky
   = label_tag "Please, choose a language:"
   ul.language-tabs

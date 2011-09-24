@@ -22,5 +22,6 @@ en:
       article: "Article"
     attributes:
       article:
-        sticky: "Sticky Article?"
+        sticky: "Make this article sticky"
+        parent_id: "Parent article"
 
