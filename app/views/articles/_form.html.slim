@@ -25,5 +25,9 @@
           = subform.input :title
           = subform.input :excerpt, :input_html => {:"data-behaviour" => "autoresize"}
           = subform.input :content, :input_html => {:"data-behaviour" => "autoresize"}
+  footer
+    = form.button :submit
 
-  = form.button :submit
+    - unless resource.new_record?
+      aside
+        = remove_danger_button_link_to "Delete this article", article_path(resource), :method => :delete, :confirm => "Are you sure?"

@@ -2,3 +2,7 @@ section.sticky-articles
   ul
     - @sticky_articles.each do |article|
       li[id=dom_id(article) class=dom_class(article)]
+
+ul.articles-navigation
+  - Article.roots.each do |article|
+    li= render "menu_item", :resource => article

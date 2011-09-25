@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  has_ancestry :orphan_strategy => :restrict, :cache_depth => true
+  has_ancestry :cache_depth => true
   has_many :translations, :class_name => "ArticleTranslation", :dependent => :destroy, :inverse_of => :article
 
   scope :sticky, where(:sticky => true)

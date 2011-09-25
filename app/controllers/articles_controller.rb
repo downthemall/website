@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   inherit_resources
-  actions :index, :create, :new
+  actions :all, :except => :show
   respond_to :html
 
   layout :layout_by_action
@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
   private
 
   def layout_by_action
-    if %(create new).include? action_name
+    if %(create new edit update destroy).include? action_name
       "editing"
     else
       "application"

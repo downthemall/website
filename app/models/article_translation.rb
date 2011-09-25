@@ -1,6 +1,7 @@
 class ArticleTranslation < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, :use => :scoped, :scope => :locale
+  has_paper_trail
 
   belongs_to :article, :inverse_of => :translations
 

@@ -1,23 +1,22 @@
-ul.language-tabs
-  margin-bottom: 15px
-  margin-top: 10px
-  +clearfix
+form
+  ul.language-tabs
+    margin-bottom: 15px
+    margin-top: 10px
+    +clearfix
 
-  li
-    float: left
-    width: 25%
-    height: 20px
-    line-height: 20px
+    li
+      float: left
+      width: 25%
+      height: 20px
+      line-height: 20px
 
-    a
-      text-decoration: none
-      color: #444
+      a
+        text-decoration: none
+        color: #444
 
-      &.hover
+        &.hover
+          color: #111
+
+      &.selected-tab a
         color: #111
-
-    &.selected-tab a
-      color: #111
-      font-weight: bold
-
-ul.language-tab-contents
+        font-weight: bold
