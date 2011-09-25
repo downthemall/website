@@ -17,4 +17,22 @@ feature 'Knowledge Base Home', %q{
     end
   end
 
+  scenario 'KB Tree' do
+    #Given
+    @article = FactoryGirl.create(:article)
+    @subarticles = FactoryGirl.create_list(:article, 3, :parent => @article)
+    # When
+    visit articles_path
+    # Then
+    within "ul.articles-navigation" do
+      page.should have_css dom_id_for(@article)
+      within dom_id_for(@article) do
+        @subarticles.each do |subarticle|
+          page.should have_css dom_id_for(subarticle)
+        end
+      end
+    end
+  end
+
+
 end

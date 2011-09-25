@@ -1,4 +1,5 @@
-= link_to resource.title, edit_article_path(resource)
-ul
-  - resource.children.each do |article|
-    li= render "menu_item", :resource => article
+li id=dom_id(resource)
+  = link_to resource.title, edit_article_path(resource)
+  ul
+    - resource.children.each do |article|
+      = render "menu_item", :resource => article

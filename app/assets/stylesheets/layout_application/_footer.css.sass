@@ -2,7 +2,7 @@ footer.main-footer
   background: image-url("metal_background.png")
   color: #B3B3B3
   margin-top: 40px
-  +text-shadow(black 0px 1px 1px)
+  +text-shadow(black 0px -1px 0px)
   +box-shadow(black 0px 1px 3px inset)
   border-top: 1px solid #111
 
@@ -21,9 +21,10 @@ footer.main-footer
     +fix
 
     section
-      width: 22%
+      width: 25%
       margin-right: 4%
       float: left
+      font-size: 13px
       font-weight: bold
 
       h6
@@ -35,8 +36,13 @@ footer.main-footer
       li
         margin-bottom: 5px
 
+        @each $icon in firefox twitter facebook github paypal
+          &.#{$icon}
+            background: image-url("layout_application/icons/16/#{$icon}.png") no-repeat center left
+            padding-left: 22px
+
   footer
-    width: 48%
+    width: 42%
     position: absolute
     top: 0px
     bottom: 0px

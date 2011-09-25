@@ -5,4 +5,4 @@ section.sticky-articles
 
 ul.articles-navigation
   - Article.roots.each do |article|
-    li= render "menu_item", :resource => article
+    = render "menu_item", :resource => article
