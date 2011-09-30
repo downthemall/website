@@ -1,8 +1,6 @@
 section.home-tweets
-  +border-radius(5px)
-  +box-shadow(rgba(black, 0.5) 0px 1px 5px 1px)
+  +white-box
   padding: 20px
-  background-color: white
 
   p.read-more
     text-align: right
@@ -32,17 +30,17 @@ section.home-tweets
           .name
             font-weight: bold
             font-size: 15px
-            color: #555
+            +medium-black
 
           .screen-name
             padding-left: 4px
-            color: #555
+            +medium-black
             &:before
               content: "@"
 
         .text
           margin-bottom: 5px
-          color: #222
+          +strong-black
           font-size: 16px
           line-height: 20px
           +sans-serif

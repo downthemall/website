@@ -1,21 +1,24 @@
 - resource.build_translations
 = nice_form_for resource do |form|
   = form_error_messages(form.object)
-  = form.input :parent_id, :as => :select, :collection => Article.all, :label_method => :title, :value_method => :id, :input_html => {:"data-behaviour" => "multiselect", "data-placeholder" => "Choose an article..."}
-  = form.input :sticky
-  = label_tag "Please, choose a language:"
-  ul.language-tabs
-    - resource.translations.map(&:locale).each do |locale|
-      li data-behaviour="tab" data-tab-scope="locale-selection"
-        = link_to I18n.name_for_locale(locale), "##{dom_id_locale(locale)}", :class => "flag-16-#{locale}"
-  ul.language-tab-contents
-    = form.simple_fields_for :translations do |subform|
-      - locale = subform.object.locale
-      li id=dom_id_locale(locale)
-        fieldset
+  fieldset
+    legend Article properties
+    = form.input :parent_id, :as => :select, :collection => Article.all, :label_method => :title, :value_method => :id, :input_html => {:"data-behaviour" => "multiselect", "data-placeholder" => "Choose an article..."}
+    = form.input :sticky
+  fieldset
+    legend Article content
 
-          legend Edit page content
+    = label_tag "Please, choose a language:"
 
+    ul.language-tabs
+      - resource.translations.map(&:locale).each do |locale|
+        li data-behaviour="tab" data-tab-scope="locale-selection"
+          = link_to I18n.name_for_locale(locale), "##{dom_id_locale(locale)}", :class => "flag-16-#{locale}"
+
+    ul.language-tab-contents
+      = form.simple_fields_for :translations do |subform|
+        - locale = subform.object.locale
+        li id=dom_id_locale(locale)
           .note
             ' You are editing the
             strong class="flag-16-#{locale}"=' "#{I18n.name_for_locale(locale).downcase} translation"

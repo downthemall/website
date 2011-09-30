@@ -3,6 +3,8 @@ class Article < ActiveRecord::Base
   has_many :translations, :class_name => "ArticleTranslation", :dependent => :destroy, :inverse_of => :article
 
   scope :sticky, where(:sticky => true)
+  scope :popular, order(:views_count => :desc)
+  scope :top_five, limit(5)
 
   validate :at_least_en_translation
 

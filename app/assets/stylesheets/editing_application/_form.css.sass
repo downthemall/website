@@ -1,13 +1,11 @@
 form
-  +border-radius(5px)
-  +box-shadow(rgba(black, 0.5) 0px 1px 5px 1px)
+  +white-box
   padding: 20px
-  background-color: white
 
   legend
     +sans-serif
     font-size: 20px
-    color: #787878
+    +light-black
     padding-bottom: 15px
 
   fieldset
@@ -27,6 +25,7 @@ form
 
     strong
       font-weight: bold
+      +strong-black
 
   .input
     margin-bottom: 15px
@@ -46,7 +45,7 @@ form
         display: block
         font-size: 20px
         font-weight: bold
-        color: #333
+        +strong-black
         padding: 5px
         width: 100%
 
@@ -56,6 +55,7 @@ form
         padding: 10px
         height: 40px
         font-size: 14px
+        +strong-black
         +monospaced
 
     &.boolean

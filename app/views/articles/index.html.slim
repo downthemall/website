@@ -1,8 +1,18 @@
-section.sticky-articles
-  ul
-    - @sticky_articles.each do |article|
-      li[id=dom_id(article) class=dom_class(article)]
+section.articles
 
-ul.articles-navigation
-  - Article.roots.each do |article|
-    = render "menu_item", :resource => article
+  aside= render "sidebar"
+
+  section.main-content
+    section.recomended-articles.sticky-articles
+      h2 Recomended Articles
+      ul
+        - Article.sticky.each do |article|
+          li[id=dom_id(article) class=dom_class(article)]= link_to article.title, edit_article_path(article)
+
+    section.recomended-articles.popular-articles
+      h2 Popular Articles
+      ul
+        - Article.popular.top_five.each do |article|
+          li[id=dom_id(article) class=dom_class(article)]= link_to article.title, edit_article_path(article)
+
+

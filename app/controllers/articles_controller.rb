@@ -5,11 +5,6 @@ class ArticlesController < ApplicationController
 
   layout :layout_by_action
 
-  def index
-    @sticky_articles = Article.sticky
-    index!
-  end
-
   private
 
   def layout_by_action

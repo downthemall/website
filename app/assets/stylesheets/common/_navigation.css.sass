@@ -16,7 +16,7 @@ nav.site-navigation
     a, span
       display: block
       text-decoration: none
-      color: #DBDBDB
+      +medium-white
       padding: 7px 15px
       line-height: 17px
       font-weight: bold
@@ -25,16 +25,16 @@ nav.site-navigation
     a
       &:hover
         text-decoration: underline
-        color: #E3E3E3
+        +strong-white
 
       &.current, &.donate
-        +navigation_button(#D92E03)
+        +navigation-button(#D92E03)
 
       &:active
         top: 1px
 
       &.donate
-        +navigation_button(#00A8EB)
+        +navigation-button(#00A8EB)
 
 ul.right
   float: right
