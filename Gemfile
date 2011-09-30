@@ -26,6 +26,7 @@ gem 'therubyracer'
 gem 'inherited_resources'
 gem 'responders'
 gem 'dalli'
+gem 'RedCloth'
 
 group :assets do
   gem 'sass-rails', "~> 3.1.0"

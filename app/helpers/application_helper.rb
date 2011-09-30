@@ -24,4 +24,8 @@ module ApplicationHelper
     simple_form_for(object, *(args << options.merge(:builder => NiceFormBuilder)), &block)
   end
 
+  def textile(text)
+    RedCloth.new(text).to_html
+  end
+
 end

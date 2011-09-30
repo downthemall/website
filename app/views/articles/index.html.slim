@@ -1,18 +1,15 @@
-section.articles
+= articles_main_content do
 
-  aside= render "sidebar"
+  section.recomended-articles.sticky-articles
+    h2 Recomended Articles
+    ul
+      - Article.sticky.each do |article|
+        li[id=dom_id(article) class=dom_class(article)]= link_to article.title, article_path(article)
 
-  section.main-content
-    section.recomended-articles.sticky-articles
-      h2 Recomended Articles
-      ul
-        - Article.sticky.each do |article|
-          li[id=dom_id(article) class=dom_class(article)]= link_to article.title, article_path(article)
-
-    section.recomended-articles.popular-articles
-      h2 Popular Articles
-      ul
-        - Article.popular.top_five.each do |article|
-          li[id=dom_id(article) class=dom_class(article)]= link_to article.title, article_path(article)
+  section.recomended-articles.popular-articles
+    h2 Popular Articles
+    ul
+      - Article.popular.top_five.each do |article|
+        li[id=dom_id(article) class=dom_class(article)]= link_to article.title, article_path(article)
 
 

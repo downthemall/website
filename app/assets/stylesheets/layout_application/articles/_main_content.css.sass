@@ -8,7 +8,7 @@ section.main-content
 
     h2
       +metal-gradient
-      padding: 10px 15px
+      padding: 10px 20px
       +medium-black
       +sans-serif
       font-size: 22px
@@ -33,3 +33,49 @@ section.main-content
         &:hover
           text-decoration: underline
           +highlight-color
+
+  section.single-article
+    +white-box
+    margin-bottom: 20px
+
+    h2
+      +metal-gradient
+      padding: 10px 20px
+      +medium-black
+      +sans-serif
+      font-size: 22px
+
+    article
+      padding: 20px
+      border-top: 1px solid white
+      font-size: 13px
+      line-height: 20px
+
+      a
+        +highlight-color
+        text-decoration: underline
+
+      em
+        font-style: italic
+
+      strong
+        font-weight: bold
+
+      p, ul, ol
+        margin-bottom: 22px
+
+        &:last-child
+          margin-bottom: 0
+
+      ul li
+        list-style-type: disc
+
+      ol li
+        list-style-type: decimal
+
+      ul, ol
+        padding-left: 24px
+
+        li
+          margin-bottom: 8px
+          line-height: 18px

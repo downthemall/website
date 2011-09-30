@@ -29,6 +29,7 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.8)
     actionmailer (3.1.0)
       actionpack (= 3.1.0)
       mail (~> 2.3.0)
@@ -269,6 +270,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   active_reload
   acts-as-taggable-on (~> 2.1.0)
   acts_as_commentable
