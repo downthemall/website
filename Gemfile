@@ -52,6 +52,7 @@ group :test do
   gem 'rb-fsevent'
   gem 'growl'
   gem 'mocha'
+  gem 'rspec-rails-mocha', '~> 0.3.1', :require => false
 end
 
 
