@@ -2,4 +2,4 @@
   section.single-article
     h1= @article_translation.title
     article
-      == textile @article_translation.content
+      == textile(replace_shortcodes(@article, @article_translation.content))

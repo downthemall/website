@@ -1,0 +1,8 @@
+= minor_form_for [resource.article, resource], :remote => true, :html => { :multipart => true } do |form|
+  = form_error_messages(resource)
+  = form.input :article_id, :as => :hidden
+  = form.input :image
+  = form.input :shortcode
+  = form.button :submit
+  - unless resource.new_record?
+    = remove_danger_button_link_to "Delete this image", [resource.article, resource], :method => :delete, :remote => true, :confirm => "Are you sure?"

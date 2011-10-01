@@ -7,3 +7,4 @@ tmp/
 config/database.yml
 public/assets/
 db/schema.rb
+public/uploads/

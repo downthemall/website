@@ -1,6 +1,7 @@
 class Article < ActiveRecord::Base
   has_ancestry :cache_depth => true
   has_many :translations, :class_name => "ArticleTranslation", :dependent => :destroy, :inverse_of => :article
+  has_many :images, :class_name => "ArticleImage", :dependent => :destroy, :inverse_of => :article
 
   scope :sticky, where(:sticky => true)
   scope :popular, order(:views_count => :desc)

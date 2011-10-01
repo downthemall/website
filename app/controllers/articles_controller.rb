@@ -14,14 +14,14 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    redirect_to article_translation_path(@article, @article.translation_for(:en))
+    redirect_to [@article, @article.translation_for(:en)]
   end
 
   private
 
   def layout_by_action
     if %(create new edit update destroy).include? action_name
-      "editing"
+      "twoside_editing"
     else
       "application"
     end

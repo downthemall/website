@@ -1,0 +1,8 @@
+$placeholder = $("section.article-images .form-placeholder");
+$placeholder.slideUp(function() {
+  $placeholder
+  .empty()
+  .append("<%= escape_partial("form", :resource => resource) %>")
+  .slideDown();
+});
+

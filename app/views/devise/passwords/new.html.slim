@@ -1,12 +1,13 @@
 h2 Request new password
 
-= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:class => "form", :method => :post}) do |f|
-  = form_error_messages(resource)
-  = field_set_tag "Please, insert your email" do
-    = f.input :email
-  footer
-    = safe_primary_big_button_submit_tag "Send me instructions!"
+section.main-content
+  = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:class => "form", :method => :post}) do |f|
+    = form_error_messages(resource)
+    = field_set_tag "Please, insert your email" do
+      = f.input :email
+    footer
+      = safe_primary_big_button_submit_tag "Send me instructions!"
 
-    aside= button_group do
-      = add_button_link_to "Signup", new_registration_url(resource_name)
-      = arrowdown_button_link_to "Login", new_session_url(resource_name)
+      aside= button_group do
+        = add_button_link_to "Signup", new_registration_url(resource_name)
+        = arrowdown_button_link_to "Login", new_session_url(resource_name)

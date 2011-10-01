@@ -1,0 +1,8 @@
+$("section.article-images .form-placeholder").empty();
+$preview = $("<%= escape_partial("preview", :resource => resource) %>");
+if ($("#<%= dom_id(resource) %>").length) {
+  $("#<%= dom_id(resource) %>").replaceWith($preview);
+} else {
+  $("section.article-images ul").append($preview);
+}
+

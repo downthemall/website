@@ -1,36 +1,62 @@
 - resource.build_translations
-= nice_form_for resource do |form|
-  = form_error_messages(form.object)
-  fieldset
-    legend Article properties
-    = form.input :parent_id, :as => :select, :collection => Article.all, :label_method => :title, :value_method => :id, :input_html => {:"data-behaviour" => "multiselect", "data-placeholder" => "Choose an article..."}
-    = form.input :sticky
-  fieldset
-    legend Article content
 
-    = label_tag "Please, choose a language:"
+section.main-content data-behaviour="sliding-limiter"
+  section.main-column
+    = main_form_for resource do |form|
+      = form_error_messages(form.object)
 
-    ul.language-tabs
-      - resource.translations.map(&:locale).each do |locale|
-        li data-behaviour="tab" data-tab-scope="locale-selection"
-          = link_to I18n.name_for_locale(locale), "##{dom_id_locale(locale)}", :class => "flag-16-#{locale}"
+      fieldset
+        legend Article properties
 
-    ul.language-tab-contents
-      = form.simple_fields_for :translations do |subform|
-        - locale = subform.object.locale
-        li id=dom_id_locale(locale)
-          .note
-            ' You are editing the
-            strong class="flag-16-#{locale}"=' "#{I18n.name_for_locale(locale).downcase} translation"
-            ' for this KB article.
+        = form.input :parent_id, :as => :select, :collection => Article.all, :label_method => :title, :value_method => :id, :input_html => {:"data-behaviour" => "multiselect", "data-placeholder" => "Choose an article..."}
+        = form.input :sticky
 
-          = subform.input :locale, :as => :hidden
-          = subform.input :title
-          = subform.input :excerpt, :input_html => {:"data-behaviour" => "autoresize"}
-          = subform.input :content, :input_html => {:"data-behaviour" => "autoresize"}
-  footer
-    = form.button :submit
+      fieldset
+        legend Article content
 
-    - unless resource.new_record?
-      aside
-        = remove_danger_button_link_to "Delete this article", article_path(resource), :method => :delete, :confirm => "Are you sure?"
+        = label_tag "Please, choose a language:"
+
+        ul.language-tabs
+          - resource.translations.map(&:locale).each do |locale|
+            li data-behaviour="tab" data-tab-scope="locale-selection"
+              = link_to I18n.name_for_locale(locale), "##{dom_id_locale(locale)}", :class => "flag-16-#{locale}"
+
+        ul.language-tab-contents
+          = form.simple_fields_for :translations do |subform|
+            - locale = subform.object.locale
+            li id=dom_id_locale(locale)
+              .note
+                ' You are editing the
+                strong class="flag-16-#{locale}"=' "#{I18n.name_for_locale(locale).downcase} translation"
+                ' for this KB article.
+
+              = subform.input :locale, :as => :hidden
+              = subform.input :title
+              = subform.input :excerpt, :input_html => {:"data-behaviour" => "autoresize"}
+              = subform.input :content, :input_html => {:"data-behaviour" => "autoresize"}
+
+      footer
+        = form.button :submit
+
+        - unless resource.new_record?
+          aside
+            = remove_danger_button_link_to "Delete this article", resource, :method => :delete, :confirm => "Are you sure?"
+
+  aside.sidebar data-behaviour="sliding"
+    section.association.article-images
+      h4 Images
+
+      - if resource.new_record?
+        .note You will be able to add images once you save the article.
+      - else
+        ul
+          - resource.images.each do |image|
+            = render "article_images/preview", :resource => image
+
+        .form-placeholder
+
+        = add_button_link_to "Add image", [:new, resource, :article_image], :remote => true
+
+
+
+

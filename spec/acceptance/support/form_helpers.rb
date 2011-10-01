@@ -13,7 +13,7 @@ module FormHelpers
       else
         uncheck label
       end
-    elsif type == :upload
+    elsif type == :file
       attach_file label, value
     else
       raise RuntimeError, "#{type} type is not known"

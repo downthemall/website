@@ -1,0 +1,8 @@
+doctype 5
+html lang="en"
+  head= render "layouts/head"
+  body.layout-editing.layout-twoside-editing
+    = render "layouts/navigation"
+    section.sheet= yield
+    = render "layouts/flash_messages"
+

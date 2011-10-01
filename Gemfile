@@ -27,6 +27,7 @@ gem 'inherited_resources'
 gem 'responders'
 gem 'dalli'
 gem 'RedCloth'
+gem "remotipart", "~> 1.0"
 
 group :assets do
   gem 'sass-rails', "~> 3.1.0"

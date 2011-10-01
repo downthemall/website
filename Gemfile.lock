@@ -194,6 +194,7 @@ GEM
     rake (0.9.2)
     rb-fsevent (0.4.3.1)
     rdoc (3.9.4)
+    remotipart (1.0)
     responders (0.6.4)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
@@ -302,6 +303,7 @@ DEPENDENCIES
   paper_trail
   rails (= 3.1.0)
   rb-fsevent
+  remotipart (~> 1.0)
   responders
   rspec-instafail
   rspec-rails-mocha (~> 0.3.1)

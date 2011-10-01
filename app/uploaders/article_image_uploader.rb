@@ -8,7 +8,7 @@ class ArticleImageUploader < CarrierWave::Uploader::Base
   process :resize_to_fit => [800, 600]
 
   version :thumb do
-    process :resize_to_fit => [48, 48]
+    process :resize_to_fill => [115, 70]
   end
 
   version :medium do
