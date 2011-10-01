@@ -1,4 +1,4 @@
-h2 Sign in
+h2 Log in
 
 = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form"}) do |f|
   = form_error_messages(resource)
@@ -8,7 +8,7 @@ h2 Sign in
     - if devise_mapping.rememberable?
       = f.input :remember_me, :as => :boolean
   footer
-    = safe_primary_big_button_submit_tag "Sign in!"
+    = safe_primary_big_button_submit_tag "Log in"
 
     aside= button_group do
       = key_button_link_to "Forgot password?", new_password_url(resource_name)
