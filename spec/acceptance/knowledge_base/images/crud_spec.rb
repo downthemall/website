@@ -22,7 +22,8 @@ feature 'Knowledge Base Image Editing', %q{
     end
 
     # Then
-    page.should have_css "section.article-images ul li"
+    page.should have_notice "Article image was successfully created."
+
     @article.reload
 
     @article.images.should have(1).image
@@ -49,11 +50,31 @@ feature 'Knowledge Base Image Editing', %q{
     end
 
     # Then
-    page.should have_css dom_id_for(@image)
+    page.should have_notice "Article image was successfully updated."
 
     @image.reload
     @image.shortcode.should == "newcode"
   end
 
+  scenario 'Image destroy', :js => true do
+    # Given
+    @article = FactoryGirl.create(:article_with_image)
+    @image = @article.images.first
+
+    # When
+    visit edit_article_path(@article)
+
+    find(dom_id_for(@image)).find("a").click
+
+    within "form.article_image" do
+      accept_js_alert do
+        click_on "Delete this image"
+      end
+    end
+
+    # Then
+    page.should have_notice "Article image was successfully destroyed."
+    @image.should_not exist_in_database
+  end
 
 end

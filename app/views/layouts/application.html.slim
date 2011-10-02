@@ -1,10 +1,10 @@
 doctype 5
 html lang="en"
-  head= render "layouts/head"
+  head= render "common/head"
   body.layout-application
-    = render "layouts/navigation"
+    = render "common/navigation"
     section.sheet= yield
-    = render "layouts/footer"
-    = render "layouts/flash_messages"
+    = render "common/footer"
+    = render "common/flash_messages"
 
 
