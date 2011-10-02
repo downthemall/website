@@ -1,4 +1,4 @@
-module DOMHelpers
+module DialogHelpers
 
   # If you do something that triggers an alert, do it inside an accept_js_alert block
   def accept_js_alert
@@ -17,6 +17,7 @@ module DOMHelpers
   end
 
   # If you do something that triggers a confirm, do it inside an accept_js_confirm or reject_js_confirm block
+
   def reject_js_confirm
     page.evaluate_script 'window.original_confirm_function = window.confirm;'
     page.evaluate_script 'window.confirm = function(msg) { return false; }'
@@ -26,7 +27,7 @@ module DOMHelpers
 
 end
 
-RSpec.configuration.include DOMHelpers, :type => :acceptance
+RSpec.configuration.include DialogHelpers, :type => :acceptance
 
 
 

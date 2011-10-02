@@ -67,7 +67,7 @@ feature 'Knowledge Base Image Editing', %q{
     find(dom_id_for(@image)).find("a").click
 
     within "form.article_image" do
-      accept_js_alert do
+      accept_js_confirm do
         click_on "Delete this image"
       end
     end
