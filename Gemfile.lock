@@ -60,9 +60,6 @@ GEM
       activesupport (= 3.1.0)
     activesupport (3.1.0)
       multi_json (~> 1.0)
-    acts-as-taggable-on (2.1.1)
-      rails
-    acts_as_commentable (3.0.1)
     addressable (2.2.6)
     ancestry (1.2.4)
       activerecord (>= 2.2.2)
@@ -273,8 +270,6 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   active_reload
-  acts-as-taggable-on (~> 2.1.0)
-  acts_as_commentable
   ancestry
   capistrano!
   capybara

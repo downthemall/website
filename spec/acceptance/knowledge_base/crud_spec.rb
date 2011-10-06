@@ -32,7 +32,7 @@ feature 'Knowledge Base Editing', %q{
     @article = FactoryGirl.create(:article)
 
     # When
-    visit edit_article_path(@article)
+    visit article_path(@article)
     fill :check_box, "Make this article sticky", true
     within "#locale-en" do
       fill :text, "Title", "Edited Title"
