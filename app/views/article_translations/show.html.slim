@@ -3,3 +3,14 @@
     h1= @article_translation.title
     article
       == textile(replace_shortcodes(@article, @article_translation.content))
+
+section.article-comments
+
+  ul
+    - @article.comments.each do |comment|
+      = render "comments/comment", :resource => comment
+
+  = link_to "Add a new comment", new_article_comment_path(@article), :remote => true
+
+  .form-placeholder
+

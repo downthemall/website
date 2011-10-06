@@ -29,4 +29,10 @@ FactoryGirl.define do
     image      File.open(File.join(Rails.root, 'spec/acceptance/files/image.png'))
   end
 
+  factory :comment do
+    author_name "Author"
+    author_email "author@email.com"
+    content "What's up?"
+  end
+
 end

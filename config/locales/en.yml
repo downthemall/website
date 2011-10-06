@@ -16,6 +16,8 @@ en:
   activerecord:
     errors:
       models:
+        comment:
+          no_name_or_author_infos: "To comment you must provide your name and email, or be logged in."
         article:
           no_en_translation: "The article doesn't have an english translation. This is required."
     models:
@@ -24,4 +26,19 @@ en:
       article:
         sticky: "Make this article sticky"
         parent_id: "Parent article"
-
+  simple_form:
+    labels:
+      comment:
+        author_name: "Your name"
+        author_email: "Your email"
+        content: "Your comment"
+    placeholders:
+      user:
+        author_name: 'Your name'
+        author_email: 'your@email.com'
+        content: "Your comment"
+  helpers:
+    submit:
+      comment:
+        create: "Submit comment"
+        update: "Update comment"

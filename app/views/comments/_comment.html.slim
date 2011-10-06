@@ -1,0 +1,7 @@
+li class=dom_class(resource) id=dom_id(resource)
+  p= resource.author_name
+  p= resource.author_email
+  p= resource.content
+  = link_to "Delete", [resource.article, resource], :method => :delete, :remote => true, :confirm => "Are you sure?"
+  = link_to "Edit", [:edit, resource.article, resource], :remote => true
+

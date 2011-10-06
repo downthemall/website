@@ -1,0 +1,9 @@
+$("<%= form_placeholder %>").empty();
+$comment = $("<%= escape_partial(resource_partial, :resource => resource) %>");
+if ($("#<%= dom_id(resource) %>").length) {
+  $("#<%= dom_id(resource) %>").replaceWith($comment);
+} else {
+  $("<%= resource_container %>").append($comment);
+}
+
+

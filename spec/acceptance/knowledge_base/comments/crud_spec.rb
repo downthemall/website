@@ -12,26 +12,26 @@ feature 'Knowledge Base Comments', %q{
 
     # When
     visit article_path(@article)
-    click_on "Add a new Comment"
-    fill :text, "Name", "Stefano Verna"
-    fill :text, "Email", "stefano.verna@welaika.com"
+    click_on "Add a new comment"
+    fill :text, "Your name", "Stefano Verna"
+    fill :text, "Your email", "stefano.verna@welaika.com"
     fill :text, "Your comment", "That's my comment"
     fill_captcha_correctly
-    click_on "Submit Comment"
+    click_on "Submit comment"
 
     # Then
     page.should have_notice "Comment was successfully created."
 
     @comment = @article.comments.first
     @comment.should_not be_nil
-    @comment.name.should == "Stefano Verna"
-    @comment.email.should == "stefano.verna@welaika.com"
+    @comment.author_name.should == "Stefano Verna"
+    @comment.author_email.should == "stefano.verna@welaika.com"
     @comment.content.should == "That's my comment"
 
     page.should have_css dom_id_for(@comment)
   end
 
-  scenario 'Comment editing' do
+  scenario 'Comment editing', :js => true do
     # Given
     @article = FactoryGirl.create(:article)
     @comment = FactoryGirl.create(:comment, :article => @article)
@@ -40,20 +40,20 @@ feature 'Knowledge Base Comments', %q{
     visit article_path(@article)
     within dom_id_for(@comment) do
       click_on "Edit"
-      fill :text, "Name", "Stefano Verna"
-      fill :text, "Email", "stefano.verna@welaika.com"
-      fill :text, "Your comment", "That's my comment"
-      fill_captcha_correctly
-      click_on "Submit Comment"
     end
 
-    # Then
-    @comment.reload
+    fill :text, "Your name", "Stefano Verna"
+    fill :text, "Your email", "stefano.verna@welaika.com"
+    fill :text, "Your comment", "That's my comment"
+    fill_captcha_correctly
+    click_on "Update comment"
 
+    # Then
     page.should have_notice "Comment was successfully updated."
 
-    @comment.name.should == "Stefano Verna"
-    @comment.email.should == "stefano.verna@welaika.com"
+    @comment.reload
+    @comment.author_name.should == "Stefano Verna"
+    @comment.author_email.should == "stefano.verna@welaika.com"
     @comment.content.should == "That's my comment"
 
     within dom_id_for(@comment) do
@@ -63,7 +63,7 @@ feature 'Knowledge Base Comments', %q{
     end
   end
 
-  scenario 'Comment removal' do
+  scenario 'Comment removal', :js => true do
     # Given
     @article = FactoryGirl.create(:article)
     @comment = FactoryGirl.create(:comment, :article => @article)
