@@ -3,6 +3,7 @@ Downthemall::Application.routes.draw do
   resources :articles do
     resources :article_translations, :path => :translations, :only => :show
     resources :article_images, :path => :images, :except => [:index ,:show]
+    resources :comments
   end
   root :to => "home#index"
 end
