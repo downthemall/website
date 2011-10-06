@@ -42,4 +42,9 @@ module ApplicationHelper
     escape_javascript(render(partial, locals))
   end
 
+  def gravatar(email, options = {})
+    gravatar_params = options.delete_if { |key, value| value.nil? }
+    gravatar_params = "?#{gravatar_params.map { |key, value| "#{key}=#{URI.escape(value.is_a?(String) ? value : value.to_s, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))}"}.join('&amp;')}"
+    "http://gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}.jpg#{gravatar_params}"
+  end
 end

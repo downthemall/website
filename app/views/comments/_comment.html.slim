@@ -1,7 +1,18 @@
 li class=dom_class(resource) id=dom_id(resource)
-  p= resource.author_name
-  p= resource.author_email
-  p= resource.content
-  = link_to "Delete", [resource.article, resource], :method => :delete, :remote => true, :confirm => "Are you sure?"
-  = link_to "Edit", [:edit, resource.article, resource], :remote => true
+  aside
+    - if resource.author_email.present?
+      = image_tag gravatar(resource.author_email, :size => 64)
+    - else
+      = image_tag gravatar(resource.user.email, :size => 64)
+
+  header
+    p
+      strong=' resource.author_name
+      ' said #{time_ago_in_words(resource.created_at)} ago:
+
+  .content= resource.content
+
+  footer
+    = link_to "Delete", [resource.article, resource], :method => :delete, :remote => true, :confirm => "Are you sure?"
+    = link_to "Edit", [:edit, resource.article, resource], :remote => true
 
