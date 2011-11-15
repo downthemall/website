@@ -1,8 +1,11 @@
 = main_form_for [resource.article, resource], :remote => true do |form|
   = form_error_messages(resource)
   = form.input :article_id, :as => :hidden
-  = form.input :author_name
-  = form.input :author_email
+  - if user_signed_in?
+    = form.input :user_id, :as => :hidden
+  - else
+    = form.input :author_name
+    = form.input :author_email
   = form.input :content
   = form.button :submit
 

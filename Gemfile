@@ -26,7 +26,7 @@ gem 'responders'
 gem 'dalli'
 gem 'RedCloth'
 gem "remotipart", "~> 1.0"
-gem "recaptcha", :require => "recaptcha/rails"
+gem "cancan"
 
 group :assets do
   gem 'sass-rails', "~> 3.1.0"

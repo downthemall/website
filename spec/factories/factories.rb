@@ -30,9 +30,21 @@ FactoryGirl.define do
   end
 
   factory :comment do
+    content "What's up?"
+  end
+
+  factory :anonymous_comment, :parent => :comment do
     author_name "Author"
     author_email "author@email.com"
-    content "What's up?"
+  end
+
+  factory :user do
+    sequence(:email)  { |n| "email_#{n}@gmail.com" }
+    password "test123"
+  end
+
+  factory :admin, :parent => :user do
+    admin true
   end
 
 end

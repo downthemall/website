@@ -29,11 +29,6 @@ Spork.prefork do
     Capybara::Selenium::Driver.new(app, :browser => :chrome)
   end
 
-  Capybara.default_driver = :rack_test
-  Capybara.javascript_driver = :selenium
-  Capybara.default_selector = :css
-  Capybara.ignore_hidden_elements = true
-
 end
 
 Spork.each_run do
@@ -41,6 +36,11 @@ Spork.each_run do
   require Rails.root.join("config/routes.rb")
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
   I18n.reload!
+
+  Capybara.default_driver = :rack_test
+  Capybara.javascript_driver = :selenium
+  Capybara.default_selector = :css
+  Capybara.ignore_hidden_elements = true
 end
 
 
