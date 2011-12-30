@@ -1,8 +1,18 @@
 = articles_main_content do
   section.single-article
-    h1= @article_translation.title
+    h1= link_to_if can?(:edit, @article), @article_translation.title, edit_article_path(@article)
     article
       == textile(replace_shortcodes(@article, @article_translation.content))
+
+      footer
+        ul
+          li
+            strong=' "Latest article update:"
+            = time_ago_in_words(@article.updated_at) + " ago"
+          li
+            strong=' "Current version:"
+            =' @article_translation.versions.length
+            = link_to_if  @article_translation.versions.any?, "(see changes history)", [@article, @article_translation, :versions]
 
   section.article-comments
     h3 Comments to this article

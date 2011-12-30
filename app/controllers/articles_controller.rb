@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
   respond_to :html
   layout :layout_by_action
 
+  load_and_authorize_resource :article
+
   def create
     create! { edit_article_path(@article) }
   end

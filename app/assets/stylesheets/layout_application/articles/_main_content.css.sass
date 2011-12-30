@@ -45,6 +45,10 @@ section.main-content
       +sans-serif
       font-size: 22px
 
+      a
+        +medium-black
+        text-decoration: none
+
     article
       padding: 20px
       border-top: 1px solid white
@@ -127,3 +131,49 @@ section.main-content
         padding: 4px
         max-width: 100%
         box-sizing: border-box
+
+      ul.versions
+        padding-left: 0
+
+        li
+          list-style-type: none
+          margin-bottom: 5px
+          border-bottom: 1px solid #E5E5E5
+          padding-bottom: 5px
+          +fix
+
+          a
+            font-weight: bold
+            text-decoration: none
+            float: left
+            display: block
+            +medium-black
+
+            &:hover
+              text-decoration: underline
+              +strong-black
+
+          span.info
+            width: 100px
+            text-align: right
+            float: right
+            +light-black
+            display: block
+            font-size: 12px
+
+      footer
+        margin-top: 15px
+        border-top: 2px solid #E5E5E5
+        padding-top: 15px
+        +light-black
+
+        a
+          +light-black
+
+        ul
+          padding-left: 0
+
+        li
+          list-style-type: none
+          margin-bottom: 0
+

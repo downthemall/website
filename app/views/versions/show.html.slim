@@ -1,0 +1,16 @@
+= articles_main_content do
+  section.single-article
+    - @article_translation = @version.reify
+    h1= link_to_if can?(:edit, @article), @article_translation.title, edit_article_path(@article)
+    article
+      == textile(replace_shortcodes(@article, @article_translation.content))
+      footer
+        ul
+          li
+            strong=' "Version #{@version.index}"
+            ' created at #{l(@version.created_at, :format => :long)}
+            - if @version.whodunnit.present?
+              ' by
+              = User.find(@version.whodunnit).full_name
+
+
