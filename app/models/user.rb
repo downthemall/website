@@ -10,4 +10,9 @@ class User < ActiveRecord::Base
     admin == true
   end
 
+  def full_name
+    full_name = [first_name, last_name].join(" ")
+    full_name.present? ? full_name : "Anonymous"
+  end
+
 end

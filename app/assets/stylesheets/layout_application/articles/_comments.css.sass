@@ -11,41 +11,68 @@ section.article-comments
   ul
     margin-bottom: 20px
 
-    li.comment
-      +white-box
-      padding: 15px
-      margin-bottom: 10px
-      font-size: 13px
-      position: relative
-      padding-left: 64px + 15px + 15px
-      min-height: 64px
+  .comment
+    +white-box
+    padding: 15px
+    margin-bottom: 10px
+    font-size: 13px
+    position: relative
+    padding-left: 64px + 15px + 15px
+    min-height: 64px
 
-      aside
-        position: absolute
-        top: 15px
-        left: 15px
-        width: 64px
-        height: 64px
+    aside
+      position: absolute
+      top: 15px
+      left: 15px
+      width: 64px
+      height: 64px
+      +border-radius(3px)
+
+      img
+        display: block
         +border-radius(3px)
 
-        img
+    header
+      margin-bottom: 4px
+
+      strong
+        font-weight: bold
+
+      .form_errors
+        margin-bottom: 10px
+        background-color: #F9D9D8
+        border: 1px solid darken(#F9D9D8, 20%)
+        padding: 10px
+
+        li
+          margin-left: 15px
+          list-style-type: square
+
+    footer
+      margin-top: 4px
+
+    .input
+      margin-bottom: 5px
+
+      label
+        display: block
+        font-weight: bold
+        font-size: 13px
+
+      span.error
+        display: block
+        margin-top: 3px
+        +error-red
+
+      &.string, &.text, &.boolean, &.password
+
+        input, textarea
           display: block
-          +border-radius(3px)
+          width: 100%
+          font-size: 15px
+          padding: 3px
 
-      header
-        margin-bottom: 4px
+  a.new-comment
+    margin-bottom: 20px
 
-        strong
-          font-weight: bold
 
-      footer
-        margin-top: 4px
-
-        a
-          padding-right: 10px
-          color: #777
-
-          &:hover
-            color: #555
-
-  .form-placeholder

@@ -1,11 +1,20 @@
 = main_form_for [resource.article, resource], :remote => true do |form|
-  = form_error_messages(resource)
-  = form.input :article_id, :as => :hidden
-  - if user_signed_in?
-    = form.input :user_id, :as => :hidden
-  - else
-    = form.input :author_name
-    = form.input :author_email
-  = form.input :content
-  = form.button :submit
+  aside
+    = form.input :article_id, :as => :hidden
+    - if user_signed_in?
+      = form.input :user_id, :as => :hidden
+      = image_tag gravatar(current_user.email, :size => 64)
+
+  header
+    = form_error_messages(resource)
+
+    - unless user_signed_in?
+      = form.input :author_name
+      = form.input :author_email
+
+  .content
+    = form.input :content
+
+  footer
+    = form.button :submit
 

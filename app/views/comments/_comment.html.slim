@@ -7,13 +7,15 @@ li class=dom_class(resource) id=dom_id(resource)
 
   header
     p
-      strong=' resource.author_name
+      strong=' resource.author_name.present? ?  resource.author_name : resource.user.full_name
       ' said #{time_ago_in_words(resource.created_at)} ago:
 
   .content= resource.content
 
   - if can?(:edit, resource) || can?(:destroy, resource)
     footer
-      = link_to "Edit", [:edit, resource.article, resource], :remote => true if can? :edit, resource
-      = link_to "Delete", [resource.article, resource], :method => :delete, :remote => true, :confirm => "Are you sure?" if can? :destroy, resource
+      - if can? :edit, resource
+        = button_link_to "Edit", [:edit, resource.article, resource], :remote => true
+      - if can? :destroy, resource
+        = danger_button_link_to "Delete", [resource.article, resource], :method => :delete, :remote => true, :confirm => "Are you sure?"
 
