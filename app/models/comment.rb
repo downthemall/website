@@ -13,7 +13,7 @@ class Comment < ActiveRecord::Base
   private
 
   def presence_of_user_or_author
-    if author_name.blank? and author_email.blank? and user.blank?
+    if !(author_name.present? && author_email.present?) && !user.present?
       errors.add :base, I18n.t("activerecord.errors.models.comment.no_name_or_author_infos")
     end
   end
