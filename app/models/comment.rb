@@ -7,6 +7,9 @@ class Comment < ActiveRecord::Base
 
   validate :presence_of_user_or_author
 
+  acts_as_textcaptcha
+  attr_accessible :article_id, :author_name, :author_email, :content, :user_id
+
   private
 
   def presence_of_user_or_author

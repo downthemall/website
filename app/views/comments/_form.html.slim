@@ -14,6 +14,9 @@
 
   .content
     = form.input :content
+    - if form.object.spam_question
+      = textcaptcha_fields(form) do
+        = form.input :spam_answer, :label => form.object.spam_question
 
   footer
     = form.button :submit

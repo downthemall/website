@@ -10,6 +10,13 @@ GIT
       net-ssh-gateway (>= 1.1.0)
 
 GIT
+  remote: git://github.com/stefanoverna/acts_as_textcaptcha.git
+  revision: 721437af061c2cd3e3dca4dd199c00f57a455910
+  specs:
+    acts_as_textcaptcha (3.0.4)
+      bcrypt-ruby
+
+GIT
   remote: https://github.com/chriseppstein/compass.git
   revision: 4171c0eef73b0817c971bfceb3cc92bb0bf4df49
   specs:
@@ -264,6 +271,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   active_reload
+  acts_as_textcaptcha!
   ancestry
   cancan
   capistrano!
