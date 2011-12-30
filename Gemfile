@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 gem 'jquery-rails'
-gem 'slim', git: 'https://github.com/stonean/slim.git'
+gem 'slim'
 gem 'css3buttons'
 gem 'hashie'
 gem 'twitter'
@@ -14,7 +14,7 @@ gem 'kaminari'
 gem 'ancestry'
 gem 'carrierwave'
 gem 'simple_form'
-gem 'friendly_id', '4.0.0.beta12'
+gem 'friendly_id'
 gem 'paper_trail'
 gem 'mini_magick'
 gem 'mysql2'
@@ -25,7 +25,7 @@ gem 'inherited_resources'
 gem 'responders'
 gem 'dalli'
 gem 'RedCloth'
-gem "remotipart", "~> 1.0"
+gem "remotipart"
 gem "cancan"
 
 group :assets do

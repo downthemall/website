@@ -16,6 +16,7 @@ module ArticlesHelper
   end
 
   def replace_shortcodes(article, text)
+    return text unless text.is_a? String
     text.gsub /!image:([^!]*)!/ do
       article_image = article.images.find_by_shortcode($1)
       if article_image.present?
@@ -27,6 +28,7 @@ module ArticlesHelper
   end
 
   def textile(text)
+    return text unless text.is_a? String
     RedCloth.new(text).to_html
   end
 
