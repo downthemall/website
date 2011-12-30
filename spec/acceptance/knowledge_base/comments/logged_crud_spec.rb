@@ -16,6 +16,7 @@ feature 'Knowledge Base Comments', %q{
     visit article_path(@article)
     click_on "Add a new comment"
     fill :text, "Your comment", "That's my comment"
+    fill_captcha
     click_on "Submit comment"
 
     # Then
@@ -27,8 +28,12 @@ feature 'Knowledge Base Comments', %q{
     @comment.content.should == "That's my comment"
 
     page.should have_css dom_id_for(@comment)
-  end
 
+    within dom_id_for(@comment) do
+      page.should have_xpath XPath::HTML.link "Edit"
+      page.should have_xpath XPath::HTML.link "Delete"
+    end
+  end
 
   scenario 'Comment editing', :js => true do
     # Given

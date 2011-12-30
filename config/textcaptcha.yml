@@ -3,32 +3,33 @@ development: &common_settings
   bcrypt_salt: $2a$10$bwGHOhZSiCxfGKSpKx6ih.
   bcrypt_cost: 10
   questions:
-      - question: 'Is ice hot or cold?'
-        answers: 'cold'
-      - question: 'what color is an orange?'
-        answers: 'orange'
-      - question: 'what is two plus 3?'
-        answers: '5,five'
-      - question: 'what is 5 times two?'
-        answers: '10,ten'
-      - question: 'How many colors in the list, green, brown, foot and blue?'
-        answers: '3,three'
-      - question: 'what is Georges name?'
-        answers: 'george'
-      - question: '11 minus 1?'
-        answers: '10,ten'
-      - question: 'is boiling water hot or cold?'
-        answers: 'hot'
-      - question: 'what color is my blue shirt today?'
-        answers: 'blue'
-      - question: 'what is 16 plus 4?'
-        answers: '20,twenty'
+    - question: 'Is ice hot or cold?'
+      answers: 'cold'
+    - question: 'what color is an orange?'
+      answers: 'orange'
+    - question: 'what is two plus 3?'
+      answers: '5,five'
+    - question: 'what is 5 times two?'
+      answers: '10,ten'
+    - question: 'How many colors in the list, green, brown, foot and blue?'
+      answers: '3,three'
+    - question: 'what is Georges name?'
+      answers: 'george'
+    - question: '11 minus 1?'
+      answers: '10,ten'
+    - question: 'is boiling water hot or cold?'
+      answers: 'hot'
+    - question: 'what color is my blue shirt today?'
+      answers: 'blue'
+    - question: 'what is 16 plus 4?'
+      answers: '20,twenty'
 
 test:
-  <<: *common_settings
-  api_key: a4sp0awxc48cksoswok8wc048ehwn6q7
   bcrypt_salt: $2a$10$bwGHOhZSiCxfGKSpKx6ih.
   bcrypt_cost: 1
+  questions:
+    - question: 'Type in the word "captcha", thanks!'
+      answers: 'captcha'
 
 production:
   <<: *common_settings

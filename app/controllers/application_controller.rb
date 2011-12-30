@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   private
 
   def generate_session_token
-    session[:session_token] ||= ActiveSupport::SecureRandom.base64(100)
+    session[:session_token] ||= SecureRandom.base64(100)
   end
 
 end

@@ -1,5 +1,9 @@
 module FormHelpers
 
+  def fill_captcha
+    fill :text, 'Type in the word "captcha", thanks!', 'captcha'
+  end
+
   def fill(type, label, value)
     if type == :select
       select value, :from => label

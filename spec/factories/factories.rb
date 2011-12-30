@@ -31,6 +31,7 @@ FactoryGirl.define do
 
   factory :comment do
     content "What's up?"
+    skip_textcaptcha true
   end
 
   factory :anonymous_comment, :parent => :comment do
