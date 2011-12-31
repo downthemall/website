@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0'
 gem 'jquery-rails'
 gem 'slim'
-gem 'css3buttons'
+gem 'css3buttons', git: "git://github.com/WikiPaddle/css3buttons_rails_helpers.git"
 gem 'hashie'
 gem 'twitter'
 gem 'feed-normalizer'

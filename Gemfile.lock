@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/WikiPaddle/css3buttons_rails_helpers.git
+  revision: 7bf6f938a2e164d1a2de49060cb23d31c35abd4a
+  specs:
+    css3buttons (1.0.1)
+      actionpack (>= 3.0.0)
+
+GIT
   remote: git://github.com/capistrano/capistrano.git
   revision: a66ea8d26b5ac45e7310677889ba94ca3dbe45e3
   specs:
@@ -87,8 +94,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
-    css3buttons (1.0.1)
-      actionpack (>= 3.0.0)
     dalli (1.1.4)
     database_cleaner (0.7.0)
     devise (1.5.3)
@@ -282,7 +287,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.1.0)
   compass!
-  css3buttons
+  css3buttons!
   dalli
   database_cleaner
   devise
