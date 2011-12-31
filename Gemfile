@@ -18,7 +18,6 @@ gem 'friendly_id'
 gem 'paper_trail'
 gem 'mini_magick'
 gem 'mysql2'
-gem 'capistrano', git: 'git://github.com/capistrano/capistrano.git'
 gem 'hoptoad_notifier'
 gem 'therubyracer'
 gem 'inherited_resources'
@@ -39,6 +38,9 @@ end
 group :development do
   gem 'active_reload'
   gem 'sqlite3'
+  gem 'rvm'
+  gem 'capistrano', git: 'git://github.com/capistrano/capistrano.git'
+  gem 'capistrano_colors'
 end
 
 group :test do
