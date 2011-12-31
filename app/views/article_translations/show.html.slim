@@ -12,7 +12,9 @@
           li
             strong=' "Current version:"
             =' @article_translation.versions.length
-            = link_to_if  @article_translation.versions.any?, "(see changes history)", [@article, @article_translation, :versions]
+            | (
+            = link_to_if  @article_translation.versions.any?, "Change history", [@article, @article_translation, :versions]
+            | )
 
   section.article-comments
     h3 Comments to this article

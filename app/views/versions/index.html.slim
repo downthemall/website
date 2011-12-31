@@ -1,12 +1,13 @@
 = articles_main_content do
   section.single-article
-    h1 Changes history for "#{@article_translation.title}"
+    h1 Change history for "#{@article_translation.title}"
     article
       ul.versions
-        - @versions.each do |version|
-          li
-            = link_to "Version #{version.index + 1}", [@article, @article_translation, version]
-            span.info= l(version.created_at, format: :short)
-            - if version.whodunnit.present?
-              span.info= User.find(version.whodunnit).full_name
+        - @versions.each_with_index do |version, index|
+          - if version.reify.present?
+            li
+              = link_to "Version #{version.index}", [@article, @article_translation, version]
+              span.info= l(version.created_at, format: :short)
+              - if version.whodunnit.present?
+                span.info= User.find(version.whodunnit).full_name
 
