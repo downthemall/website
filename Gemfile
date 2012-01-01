@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0'
 gem 'jquery-rails'
 gem 'slim'
-gem 'css3buttons', git: "git://github.com/WikiPaddle/css3buttons_rails_helpers.git"
+gem 'css3buttons', git: 'git://github.com/WikiPaddle/css3buttons_rails_helpers.git'
 gem 'hashie'
 gem 'twitter'
 gem 'feed-normalizer'
@@ -24,14 +24,16 @@ gem 'inherited_resources'
 gem 'responders'
 gem 'dalli'
 gem 'RedCloth'
-gem "remotipart"
-gem "cancan"
-gem 'acts_as_textcaptcha', git: "git://github.com/stefanoverna/acts_as_textcaptcha.git"
+gem 'remotipart'
+gem 'cancan'
+gem 'acts_as_textcaptcha', git: 'git://github.com/stefanoverna/acts_as_textcaptcha.git'
+#gem 'money'
+#gem 'activemerchant'
 
 group :assets do
-  gem 'sass-rails', "~> 3.1.0"
+  gem 'sass-rails', '~> 3.1.0'
   gem 'compass', git: 'https://github.com/chriseppstein/compass.git'
-  gem 'coffee-rails', "~> 3.1.0"
+  gem 'coffee-rails', '~> 3.1.0'
   gem 'uglifier'
 end
 

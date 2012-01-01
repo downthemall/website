@@ -1,0 +1,27 @@
+section.donation-intro
+  h1 Why should I give something?
+  p DownThemAll! is completely free to use, share and modify.
+  p If you find it useful as a home user or in your business, please consider contributing some money back to the project.
+  p Help us paying server costs, bills and the developers who make it happen.
+
+section.donation
+
+  h2 Choose the amount you'd like to donate
+
+  p Use the slider to select the amount. Thank you so much for your generosity.
+
+  = image_tag "layout_application/donate/slider.png"
+
+  .letter
+    ' My name is
+    =' text_field_tag 'name', "", :placeholder => "Your Name"
+    ' and I'd like to contribute with $10 (a cold beer).
+
+    .action= link_to "Send my donation via PayPal", "#"
+
+  ul.paypal-infos
+    li Upon submission, you will be redirected to the PayPal website to login/register and confirm your donation;
+    li PayPal takes a 3.4% commision on all donations;
+    li If you prefer to send money in a currency not listed, alternative currency options are available once landed over the Paypal website;
+
+
