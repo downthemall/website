@@ -1,3 +1,5 @@
+#= require tipsy
+
 $(document).ready ->
 
   ## Home Features Tabs ##

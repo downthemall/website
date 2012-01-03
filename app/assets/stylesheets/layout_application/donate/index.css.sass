@@ -22,7 +22,98 @@ section.donation
 
   img
     display: block
-    margin: 30px auto
+    margin: 30px auto 20px
+
+  .slider-container
+    margin: 30px auto 20px
+
+    ul.gifts, ul.amounts
+      +fix
+
+      li
+        width: floor(610px * 0.166666)
+        float: left
+        background: image-url("layout_application/donate/tick.png") no-repeat bottom center
+        padding-bottom: 12px
+
+        &:last-child
+          float: right
+
+        span
+          +opacity(0.25)
+          +transition-property(opacity)
+          +transition-duration(0.5s)
+          +transition-timing-function(ease-in-out)
+
+        &.active span
+          +opacity(1)
+
+        @each $gift in coffee, book, gift, burger, cinema, beer
+          .#{$gift}
+            display: block
+            background: image-url('layout_application/donate/gifts/#{$gift}.png') no-repeat bottom center
+            height: 58px
+
+    ul.amounts li
+      background-position: top center
+      padding-top: 12px
+      +sans-serif
+      font-size: 25px
+      text-align: center
+
+    .slider-outer
+      display: block
+      background: #303030 image-url("layout_application/donate/slider_bg.png") repeat-x center center
+      +box-shadow(rgba(black, 0.2) 0px 2px 2px inset)
+      border-bottom: 1px solid white
+      padding: 13px floor(610px * 0.1666666 * 0.5) - 1px
+      +border-radius(3px)
+
+      .slider
+        display: block
+        position: relative
+        height: 10px
+
+        &, & *
+          -moz-user-select: -moz-none
+          -khtml-user-select: none
+          -webkit-user-select: none
+          user-select: none
+
+        .ui-slider-range
+          height: 10px
+          border-top: 1px solid lighten($blue-donation, 10%)
+          border-bottom: 1px solid darken($blue-donation, 40%)
+          +background(linear-gradient($blue-donation, darken($blue-donation, 20%)))
+          +border-radius(3px)
+          +box-shadow(rgba(black, 0.3) 0px 0px)
+          position: absolute
+          z-index: 1
+
+        .ui-slider-handle
+          height: 26px - 2px
+          width: 26px
+          position: absolute
+          margin-left: -13px
+          top: (10px - 26px) * 0.5
+          z-index: 2
+          border-top: 1px solid lighten($grey-handle, 10%)
+          border-bottom: 1px solid darken($grey-handle, 60%)
+          +background(linear-gradient($grey-handle, darken($grey-handle, 20%)))
+          +border-radius(3px)
+          +box-shadow(rgba(black, 0.8) 0px 1px 2px)
+
+          &:focus
+            +box-shadow($focus-color 0 0 7px)
+            outline: none
+
+  p.currency
+    margin-bottom: 30px
+    text-align: right
+
+    .ui-switch
+      margin-left: 5px
+      background: #303030 image-url("layout_application/donate/slider_bg.png") repeat-x center center
 
   h2
     +serif
@@ -37,17 +128,24 @@ section.donation
     font-size: 30px
     line-height: 45px
 
-    input
+    input[type="text"]
       font-size: 25px
+      width: 350px
+      margin-left: 10px
+
+    #donation_amount
+      display: none
 
     .action
+      display: block
       margin-top: 20px
 
-      a
+      input
         text-decoration: none
         display: block
-        +install-button(#00A8EB)
-        padding: 10px 18px 11px
+        width: 100%
+        +install-button($blue-donation)
+        padding: 10px 0px 11px
         font-weight: bold
         font-size: 25px
         line-height: 29px

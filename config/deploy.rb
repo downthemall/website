@@ -26,6 +26,7 @@ after "deploy", "deploy:cleanup"
 namespace :db do
   task :symlink, :except => { :no_release => true } do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/config/paypal.yml #{release_path}/config/paypal.yml"
   end
 end
 

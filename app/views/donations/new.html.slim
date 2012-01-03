@@ -10,18 +10,40 @@ section.donation
 
   p Use the slider to select the amount. Thank you so much for your generosity.
 
-  = image_tag "layout_application/donate/slider.png"
+  .slider-container
+    ul.gifts
+      - @donation_amounts.each do |amount|
+        li
+          span class=amount.icon
+    span.slider-outer
+      span.slider data-amounts=@donation_amounts.to_json
+    ul.amounts
+      - @donation_amounts.each do |amount|
+        li
+          span[data-amount=amount.amount]= "$#{amount.amount}"
+
+  p.currency
+    ' I'd like to donate in
+    = select "donation", "currency", %w(USD EUR), {}, "data-behaviour" => "switch"
 
   .letter
-    ' My name is
-    =' text_field_tag 'name', "", :placeholder => "Your Name"
-    ' and I'd like to contribute with $5 (a cold beer).
+    = form_for @donation do |form|
+      ' My name is
+      =' form.text_field :donor_name, :placeholder => "Anonymous"
+      ' and I'd like to contribute with
+      span.amount
+      = form.text_field :amount
+      ' ,
+      span.description
+      | !
 
-    .action= link_to "Send my donation via PayPal ♥", "#"
+      span.action
+        = form.submit "Send my donation via PayPal ♥"
 
   ul.paypal-infos
     li Upon submission, you will be redirected to the PayPal website to login/register and confirm your donation;
     li PayPal takes a 3.4% commision on all donations;
     li If you prefer to send money in a currency not listed, alternative currency options are available once landed over the Paypal website;
+
 
 

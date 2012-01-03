@@ -7,6 +7,11 @@ Downthemall::Application.routes.draw do
     resources :article_images, :path => :images, :except => [:index ,:show]
     resources :comments
   end
-  match "/donate" => "home#donate"
+  resources :donations, :except => [:index, :destroy] do
+    member do
+      get :cancel, :success
+      post :notify
+    end
+  end
   root :to => "home#index"
 end

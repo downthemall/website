@@ -1,5 +1,5 @@
 $ ->
-  $("[data-behaviour=autoresize]").each ->
+  $("textarea[data-behaviour=autoresize]").each ->
     $textarea = $(this)
     mimics = [ "paddingTop", "paddingRight", "paddingBottom", "paddingLeft", "fontSize", "lineHeight", "fontFamily", "width", "fontWeight", "border-top-width", "border-right-width", "border-bottom-width", "border-left-width", "borderTopStyle", "borderTopColor", "borderRightStyle", "borderRightColor", "borderBottomStyle", "borderBottomColor", "borderLeftStyle", "borderLeftColor", "boxSizing", "-moz-box-sizing", "-webkit-box-sizing" ]
     $twin = $("<div/>")

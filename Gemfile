@@ -27,8 +27,8 @@ gem 'RedCloth'
 gem 'remotipart'
 gem 'cancan'
 gem 'acts_as_textcaptcha', git: 'git://github.com/stefanoverna/acts_as_textcaptcha.git'
-#gem 'money'
-#gem 'activemerchant'
+gem 'money'
+gem 'activemerchant'
 
 group :assets do
   gem 'sass-rails', '~> 3.1.0'

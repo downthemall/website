@@ -1,0 +1,8 @@
+development:
+  account: "vendo_1321197264_biz@gmail.com"
+  test: true
+
+test:
+  account: "vendo_1321197264_biz@gmail.com"
+  test: true
+
