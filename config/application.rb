@@ -38,6 +38,8 @@ module Downthemall
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| %Q(<span class="field-with-errors">#{html_tag}</span>).html_safe }
+
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 

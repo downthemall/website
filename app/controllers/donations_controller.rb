@@ -21,7 +21,7 @@ class DonationsController < ApplicationController
       DonationAmount.new(:burger, 10, "a crispy bacon burger"),
       DonationAmount.new(:cinema, 15, "a ticket for the next Pixar movie"),
       DonationAmount.new(:book,   20, "some new novel book to read"),
-      DonationAmount.new(:gift,   20, "fantastic, thanks for the gift")
+      DonationAmount.new(:gift,   20, "a special gift")
     ]
   end
 

@@ -7,6 +7,7 @@ $ ->
     $slider = $(this)
     $gifts = $("ul.gifts li")
     $currency = $("#donation_currency")
+    $amount_field = $("#donation_amount")
     $amounts = $("ul.amounts li")
     $amount_label = $(".letter span.amount")
     $amount_description = $(".letter span.description")
@@ -24,6 +25,7 @@ $ ->
       $amounts.removeClass("active").eq(value).addClass("active")
       $amount_label.text(currency_symbols[$currency.val()] + amount_donation.amount)
       $amount_description.text(amount_donation.description)
+      $amount_field.val(amount_donation.amount)
 
     $slider.slider
       value: 2
