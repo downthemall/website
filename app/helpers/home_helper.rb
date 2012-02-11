@@ -6,7 +6,7 @@ module HomeHelper
   EXPIRES_IN = 2.hours
 
   def favorite_tweets
-    Rails.cache.fetch("home/twitter", :expires_in => EXPIRES_IN) do 
+    Rails.cache.fetch("home/twitter", :expires_in => EXPIRES_IN) do
       Twitter::Client.new.favorites(TWITTER_ACCOUNT)[0..3]
     end
   end
@@ -19,11 +19,13 @@ module HomeHelper
   end
 
   def amo_stats
-    Rails.cache.fetch("home/amostats", :expires_in => EXPIRES_IN) do 
+    Rails.cache.fetch("home/amostats", :expires_in => EXPIRES_IN) do
       # Note: there is no real stats API yet (only stats per day as CSV/JSON)
       amo = Nokogiri::HTML(open(AMO_URL))
       amo = amo.css('#stats-table-container .bigvalue').map {|x| x.content.gsub(/\W/,'').to_i }
-      Hashie::Mash.new({:downloads => amo[0], :users => amo[1]})
+      Hashie::Mash.new(downloads: amo[0], users: amo[1])
     end
+  rescue
+    Hashie::Mash.new(downloads: 0, users: 0)
   end
 end

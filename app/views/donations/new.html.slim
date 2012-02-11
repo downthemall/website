@@ -22,12 +22,12 @@ section.donation
         li
           span[data-amount=amount.amount]= "$#{amount.amount}"
 
-  p.currency
-    ' I'd like to donate in
-    = select "donation", "currency", %w(USD EUR), {}, "data-behaviour" => "switch"
+  = form_for @donation, remote: true do |form|
+    p.currency
+      ' I'd like to donate in
+      = select "donation", "currency", %w(USD EUR), {}, "data-behaviour" => "switch"
 
-  .letter
-    = form_for @donation do |form|
+    .letter
       ' My name is
       =' form.text_field :donor_name, :placeholder => "Anonymous"
       ' and I'd like to contribute with

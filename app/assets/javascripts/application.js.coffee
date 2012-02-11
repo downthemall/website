@@ -7,4 +7,5 @@
 #= require flash_messages
 #= require home
 #= require donations
+#= require twitter
 

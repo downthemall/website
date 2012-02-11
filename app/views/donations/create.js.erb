@@ -1,0 +1,2 @@
+$("#new_donation :submit").attr("disabled", true).attr("value", "Wow, thanks!! :) Please wait..");
+$("<%= j render "form", donation: @donation %>").hide().appendTo("body").submit();

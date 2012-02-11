@@ -1,5 +1,4 @@
-== 'growl_notice("%s");' % notice
-== 'growl_alert("%s");' % alert
+= render 'flash_messages'
 
 - if resource.valid?
   = render "update_form", :resource => resource

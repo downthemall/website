@@ -1,6 +1,8 @@
 #= require ui
 
 $ ->
+  $("section.thank-you form :checkbox").change ->
+    $(this).parents('form').submit()
 
   $("section.donation .slider").each ->
 

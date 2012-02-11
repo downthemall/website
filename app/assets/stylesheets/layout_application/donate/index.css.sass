@@ -161,3 +161,82 @@ section.donation
     li
       list-style-type: square
       margin-bottom: 3px
+
+.thank-you
+  background: image-url("layout_application/donate/heart.png")
+  +border-radius(4px)
+  color: white
+  height: 500px
+  +text-shadow(#233650 0 -1px 0)
+  +box-shadow(white 0px 1px 0)
+  text-align: center
+
+  h1
+    +serif
+    padding-top: 100px
+    font-size: 35px
+    line-height: 35px
+    margin-bottom: 20px
+    padding-left: 440px
+    width: 430px
+
+  p, form
+    font-size: 23px
+    line-height: 30px
+    padding-left: 440px
+    width: 440px
+    margin-bottom: 20px
+
+  form
+    color: rgba(white, 0.7)
+    margin-top: 40px
+    font-size: 15px
+    line-height: 15px
+
+  .social-button
+    display: inline-block
+    border: 1px solid #2E699F
+    color: white
+    font-size: 15px
+    font-weight: bold
+    padding: 5px 15px
+    +border-radius(4px)
+    text-decoration: none
+    +text-shadow(rgba(black, 0.3) 0 -1px 0)
+    position: relative
+    padding-left: 20px + 32px
+    margin-left: 10px
+
+    &:first-child
+      margin-left: 0
+
+    &::before
+      content: ""
+      position: absolute
+      left: 15px - 5px
+      top: 0
+      bottom: 0
+      width: 32px
+
+  .twitter-button
+    @extend .social-button
+    +background(linear-gradient(#45BBFC, #2686C4))
+    +box-shadow(#64C9FD 0px 1px 0px inset, rgba(black, 0.4) 0 1px 3px)
+
+    &::before
+      background: image-url("layout_application/donate/twitter.png") no-repeat center center
+
+    &:hover
+      +background(linear-gradient(lighten(#45BBFC, 5%), lighten(#2686C4, 5%)))
+
+  .facebook-button
+    @extend .social-button
+    +background(linear-gradient(#5D77AD, #344B7D))
+    +box-shadow(#7A90BE 0px 1px 0px inset, rgba(black, 0.4) 0 1px 3px)
+    border-color: #374C73
+
+    &::before
+      background: image-url("layout_application/donate/facebook.png") no-repeat center center
+
+    &:hover
+      +background(linear-gradient(lighten(#5D77AD, 5%), lighten(#344B7D, 5%)))

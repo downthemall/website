@@ -1,0 +1,16 @@
+section.thank-you
+  h1 Thank you so much!
+
+  p You just donated #{@donation.formatted_amount}. It's people like you that keeps the open-source movement alive and kicking.
+  p Share your good deed with the world!
+
+  p
+    = link_to "Share with Twitter", @donation.twitter_share_link, class: "twitter-button"
+    = link_to "Share with Facebook", @donation.facebook_share_link, class: "facebook-button"
+
+  p.donors-board
+    = form_for @donation, remote: true, html: {class: "auto-submit"} do |f|
+      =' f.check_box :public
+      = f.label :public, "I'd like to show up in the donors board!"
+
+
