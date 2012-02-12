@@ -1,0 +1,20 @@
+section.main-content
+  section.main-column
+    = main_form_for resource do |form|
+      = form_error_messages(form.object)
+
+      fieldset
+        legend Article properties
+
+        = form.input :title
+        = form.input :content, :input_html => {:"data-behaviour" => "autoresize"}
+        = form.input :posted_at
+        = form.input :public
+
+      footer
+        = form.button :submit
+
+        - unless resource.new_record?
+          aside
+            = remove_danger_button_link_to "Delete this article", resource, :method => :delete, :confirm => "Are you sure?"
+

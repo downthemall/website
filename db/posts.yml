@@ -1,0 +1,915 @@
+--- 
+- :title: DownThemAll! 2.0.13 released
+  :posted_at: 2012-02-10T00:00:00+00:00
+  :content: |-
+    DownThemAll! 2.0.13 was just released. It is a maintenance release that only addresses bug fixes and compatibility issues.
+    
+    This version hopefully fixes some issues with the Evernote add-on, and contains updated translations.
+    
+     "Release notes and download":http://www.downthemall.net/main/install-it/downthemall-2-0-13/
+  :public: true
+- :title: DownThemAll! 2.0.12
+  :posted_at: 2012-01-27T00:00:00+00:00
+  :content: |-
+    DownThemAll! 2.0.12 was just released. It is a maintenance release that only addresses bug fixes and compatibility issues.
+    
+    This version fixes some issues with post-replay and revamps the Metalink parser to be compatible with future Firefox versions.
+    
+     "Release notes and download":http://www.downthemall.net/main/install-it/downthemall-2-0-12/
+  :public: true
+- :title: DownThemAll! 2.0.11 released
+  :posted_at: 2012-01-14T00:00:00+00:00
+  :content: |-
+    DownThemAll! 2.0.11 was just released, which is a maintenance and bugfix release.
+    Version 2.0.11 fixes an issue with download error recovery and restores functioning post-replay along with some minor issue fixes.
+    
+     "Release notes and download":http://www.downthemall.net/main/install-it/downthemall-2-0-11/
+  :public: true
+- :title: DownThemAll! 2.0.10 released
+  :posted_at: 2011-12-31T00:00:00+00:00
+  :content: |-
+    Version 2.0.10 fixes issues with Filesonic premium downloads via the Save-As window and broken FTP resuming.
+    
+     "Installation and release notes":http://www.downthemall.net/main/install-it/downthemall-2-0-10/
+  :public: true
+- :title: DownThemAll! 2.0.8 released
+  :posted_at: 2011-10-10T00:00:00+00:00
+  :content: |-
+    Version 2.0.8 fixes compatibility with Firefox 8.
+    
+     "Installation and release notes":http://www.downthemall.net/main/install-it/downthemall-2-0-8/
+  :public: true
+- :title: DownThemAll! 2.0.13 released
+  :posted_at: 2012-02-10T00:00:00+00:00
+  :content: |-
+    DownThemAll! 2.0.13 was just released. It is a maintenance release that only addresses bug fixes and compatibility issues.
+    
+    This version hopefully fixes some issues with the Evernote add-on, and contains updated translations.
+    
+     "Release notes and download":http://www.downthemall.net/main/install-it/downthemall-2-0-13/
+  :public: true
+- :title: DownThemAll! 2.0.12
+  :posted_at: 2012-01-27T00:00:00+00:00
+  :content: |-
+    DownThemAll! 2.0.12 was just released. It is a maintenance release that only addresses bug fixes and compatibility issues.
+    
+    This version fixes some issues with post-replay and revamps the Metalink parser to be compatible with future Firefox versions.
+    
+     "Release notes and download":http://www.downthemall.net/main/install-it/downthemall-2-0-12/
+  :public: true
+- :title: DownThemAll! 2.0.11 released
+  :posted_at: 2012-01-14T00:00:00+00:00
+  :content: |-
+    DownThemAll! 2.0.11 was just released, which is a maintenance and bugfix release.
+    Version 2.0.11 fixes an issue with download error recovery and restores functioning post-replay along with some minor issue fixes.
+    
+     "Release notes and download":http://www.downthemall.net/main/install-it/downthemall-2-0-11/
+  :public: true
+- :title: DownThemAll! 2.0.10 released
+  :posted_at: 2011-12-31T00:00:00+00:00
+  :content: |-
+    Version 2.0.10 fixes issues with Filesonic premium downloads via the Save-As window and broken FTP resuming.
+    
+     "Installation and release notes":http://www.downthemall.net/main/install-it/downthemall-2-0-10/
+  :public: true
+- :title: DownThemAll! 2.0.8 released
+  :posted_at: 2011-10-10T00:00:00+00:00
+  :content: |-
+    Version 2.0.8 fixes compatibility with Firefox 8.
+    
+     "Installation and release notes":http://www.downthemall.net/main/install-it/downthemall-2-0-8/
+  :public: true
+- :title: DownThemAll! 2.0.7 released
+  :posted_at: 2011-06-12T00:00:00+00:00
+  :content: |-
+    Version 2.0.6 fixes some potential and verified minor memory leaks and is now officially marked compatible with Firefox 6 (Aurora, almost Beta).
+    
+     "Installation and release notes":http://www.downthemall.net/main/install-it/downthemall-2-0-7/
+  :public: true
+- :title: DownThemAll! 2.0.6 released
+  :posted_at: 2011-05-26T00:00:00+00:00
+  :content: |-
+    Version 2.0.6 fixes some issues with the previous releases and is now officially marked compatible with Firefox 5 (Beta).
+    
+     "Installation and release notes":http://www.downthemall.net/main/install-it/downthemall-2-0-6/
+  :public: true
+- :title: DownThemAll! 2.0.5
+  :posted_at: 2011-05-21T00:00:00+00:00
+  :content: "DownThemAll! fixes another critical bug that was introduced in 2.0.3:\n\n\
+    * Fix: Already started downloads won\xE2\x80\x99t load after a browser restart during the download (downloads that were queued but not started were not affected)\n\n\
+    We are terrible sorry this slipped our Q/A and would like to thank the users who filed bug reports and provided diagnostic logs.\n\n \"Installation and full release notes\":http://www.downthemall.net/main/install-it/downthemall-2-0-5/"
+  :public: true
+- :title: DownThemAll! 2.0.4
+  :posted_at: 2011-05-20T00:00:00+00:00
+  :content: "An embarrassing and to most users rather critical bug slipped into DownThemAll! 2.0.3\n\
+    The bug: When you don\xE2\x80\x99t modify the download queue, then no new downloads will be started after the first 50 ones.\n\n\
+    DownThemAll! 2.0.4 was released to address this bug.\n\n \"Download and Full release notes\":http://www.downthemall.net/main/install-it/downthemall-2-0-4/"
+  :public: true
+- :title: Background File Write 0.4alpha
+  :posted_at: 2011-05-16T00:00:00+00:00
+  :content: "Basically this extension aims to off-load all file writing to a background \xE2\x80\x9Cthread\xE2\x80\x9D, so that the Firefox user interface stays more snappy, and to avoid certain undesired stuff.\n\n\
+    For more information about the tech-reasoning and source code, please consult the \"github page\":https://github.com/nmaier/downthemall-asyncwrite .\n\n\
+    The extensions is experimental and only works with DownThemAll! trunk and Firefox 4/5 (32bit) on Windows right now.\n\
+    Version 0.4alpha fixes some issues, including a very minor memory leak, and also switches from Win32 API use to NSPR, so that Mac/Linux versions are now within the reach.\n\n\
+    # Install \"Firefox 4\":http://getfirefox.com/ . This is recommended, anyway. :D\n\
+    # Install the \"DownThemAll! Nightly trunk\":https://code.downthemall.net/nightly/ \n\
+    # Install the \"extension\":https://code.downthemall.net/asyncwrite/dta_asyncwrite-latest.xpi \n\
+    #  \"Tell me about your experiences\":https://github.com/nmaier/downthemall-asyncwrite/issues \n\n\
+    (Existing users should be offered an automatic update)\n\n\
+    PS:\n\
+    The release is now signed by me (Nils Maier)\n\
+    Interested developers please note (shameless plug): Not signed using signtool, but \"xpisign.py\":https://github.com/nmaier/xpisign.py/"
+  :public: true
+- :title: DownThemAll! 2.0.3 released
+  :posted_at: 2011-05-08T00:00:00+00:00
+  :content: |-
+    DownThemAll! 2.0.3 was released. It is a maintenance release that fixes some bugs, in particular adds a work around for filesonic premium downloads, and adds new localizations.
+    
+    This add-on version is currently available from our home page, but will become available from addons.mozilla.org shortly.
+    
+     "Release notes and download":/main/install-it/downthemall-2-0-3/
+  :public: true
+- :title: Background File Write Extension
+  :posted_at: 2011-04-12T00:00:00+00:00
+  :content: "I\xE2\x80\x99d like to announce a prototype/experimental extension to DownThemAll! which I call dTa! Background File Write ^1^ .\n\
+    Basically this extension aims to off-load all file writing to a background \xE2\x80\x9Cthread\xE2\x80\x9D, so that the Firefox user interface stays more snappy, and to avoid certain undesired stuff.\n\n\
+    For more information about the tech-reasoning and source code, please consult the \"github page\":https://github.com/nmaier/downthemall-asyncwrite .\n\n\
+    The extensions is experimental and only works with DownThemAll! trunk and Firefox 4 (32bit) on Windows right now.\n\n\
+    # Install \"Firefox 4\":http://getfirefox.com/ . This is recommended, anyway. :D\n\
+    # Install the \"DownThemAll! Nightly trunk\":https://code.downthemall.net/nightly/ \n\
+    # Install the \"extension\":https://code.downthemall.net/asyncwrite/dta_asyncwrite-0.3alpha.xpi \n\
+    #  \"Tell me about your experiences\":https://github.com/nmaier/downthemall-asyncwrite/issues \n\n\
+    Cheers\n\
+    Nils\n\n ^1^ Yeah, call me the Leonard da Quirm of extension naming :p"
+  :public: true
+- :title: DownThemAll! 2.0.2 released
+  :posted_at: 2011-03-11T00:00:00+00:00
+  :content: |-
+    DownThemAll! 2.0.2 was released. It is a maintenance release that fixes some bugs and adds new localizations.
+    
+    This add-on version is currently available from our home page, but will become available from addons.mozilla.org shortly.
+    
+     "Release notes and download":http://www.downthemall.net/main/install-it/downthemall-2-0-2/
+  :public: true
+- :title: "We\xE2\x80\x99re About.com Reader\xE2\x80\x99s Choice Awards finalist again"
+  :posted_at: 2011-02-12T00:00:00+00:00
+  :content: "!http://about.downthemall.net/img/2011-readers-choice-large.jpg! \n\
+    As we were last year as well, we\xE2\x80\x99re a finalist in the 2011 About.com Reader\xE2\x80\x99s Choice Awards in the category Best Overall (Non-Security) Add-on.\n\n\
+    Thanks for your nominations. Having been nominated by our users is a great thing in itself. Thanks for your trust and support!\n\n\
+    As always the competition is hard, and as last year, personally I voted for Adblock Plus.\n\n\
+    Go to the \"Best Overall Add-On (Non-Security) voting\":http://browsers.about.com/od/allaboutwebbrowsers/ss/2011-readers-choice-awards-web-browsers-voting_5.htm \n\
+    or visit the \"Awards page\":http://browsers.about.com/od/allaboutwebbrowsers/ss/2011-readers-choice-awards-web-browsers-voting.htm ."
+  :public: true
+- :title: DownThemAll! 2.0.1 released
+  :posted_at: 2011-02-07T00:00:00+00:00
+  :content: "We\xE2\x80\x99re proud to announce that DownThemAll! 2.0.1 was released.\n\
+    It is a maintenance release.\n\n\
+    It is currently available from our website and on addons.mozilla.org.\n \"Release notes and download\":http://www.downthemall.net/main/install-it/downthemall-2-0-1/"
+  :public: true
+- :title: DownThemAll! on GitHub
+  :posted_at: 2011-02-07T00:00:00+00:00
+  :content: "I just created an official GitHub repository.\n\
+    It\xE2\x80\x99s just a mirror to our Subversion repository, but you\xE2\x80\x99re still welcome to fork it and post pull requests ;)\n\n\
+    GitHub: \"https://github.com/nmaier/DownThemAll\":https://github.com/nmaier/DownThemAll"
+  :public: true
+- :title: DownThemAll! 2.0 released
+  :posted_at: 2011-01-11T00:00:00+00:00
+  :content: "After more than two years of development, we\xE2\x80\x99re proud to release DownThemAll! 2.0.\n\n\
+    DownThemAll! 2.0 includes a lot of new features, refinements and bug fixes, most notably support for Firefox 4, speed limits, mirror management and better platform/OS integration.\n\n * \"Get DownThemAll! 2.0\":/main/install-it/downthemall-2-0/ * \n\n\
+    This release is digitally signed (by _Nils Maier_ ). If you have any problems due to this, please refer to the \"Adblock Plus signing related installation troubles page\":http://adblockplus.org/en/known-issues#signing .\n\n\
+    Please report any issues you find back to our \"bug tracker\":https://bugs.downthemall.net/ .\n\n\
+    \xE2\x80\x93 The DownThemAll! team"
+  :public: true
+- :title: DownThemAll! 2.0 Beta 5 released
+  :posted_at: 2010-11-07T00:00:00+00:00
+  :content: "We are proud to release the fifth preview of the upcoming next major version of DownThemAll!.\n\n\
+    More than 1 year of development passed since the last major version. This was mostly due to time constraints, as DownThemAll! is still developed by a small team of three as a hobbyist project.\n\n\
+    Lots of new features and refinements went into the preview releases, such as speed limits, mirror management, fine-grained connection control, text-link recognition and many more. As of now the 2.0 series can be considered feature-complete. Beta 5 may still contain bugs, but should be ready for daily use in general.\n\n\
+    Beta 5 is the first preview release to include translations other than English. Some of the translations are still worked on, so some mistakes might be still present.\n\
+    Furthermore Beta 5 fixes some bugs introduced recently into Firefox 4 (4.0b8pre nightlies).\n\n *\xE2\x86\x92 \"Download and release notes\":http://www.downthemall.net/main/install-it/downthemall-2-0-beta-5/ * \n\n\
+    This release is digitally signed (by _Nils Maier_ ). If you have any problems due to this, please refer to the \"Adblock Plus signing related installation troubles page\":http://adblockplus.org/en/known-issues#signing .\n\n\
+    If you have some crazy, awesome language skills, please consider helping out with translating DownThemAll! to other languages: * \"More information\":/latest/downthemall-2-0-translation-started/ * .\n\n\
+    Please report any issues you find back to our \"bug tracker\":https://bugs.downthemall.net/ .\n\n\
+    Thanks for testing!"
+  :public: true
+- :title: DownThemAll! 2.0 translation started
+  :posted_at: 2010-10-17T00:00:00+00:00
+  :content: "I uploaded DownThemAll! 2.0 Beta to Babelzilla a few hours ago, so that our awesome voluntary translators from all around the world can start their appreciated work.\n\
+    Babelzilla is an open translation platform for all kinds of mozilla extensions where people a collaboratively translate almost a thousand extensions to almost a hundred different languages.\n\n\
+    If your language wasn\xE2\x80\x99t available in the past, or you\xE2\x80\x99d like to help out existing translation teams, then please don\xE2\x80\x99t hesitate and head over to babelzilla!\n\n\
+    *  \"Babelzilla\":http://babelzilla.org/ \n\
+    *  \"DownThemAll! forum topic\":http://www.babelzilla.org/forum/index.php?showtopic=1691 \n\
+    *  \"Translator Quick Start Guide\":http://babelwiki.babelzilla.org/index.php?title=Quick_Starting_Guide_for_the_extension_translator \n\
+    *  \"Babelzilla Wiki\":http://babelwiki.babelzilla.org/ \n\n\
+    Thanks to all existing and feature translators for your awesome work, not only from us developers but from thousands of DownThemAll! users relying on your translations, as well!"
+  :public: true
+- :title: DownThemAll! Beta 4 released
+  :posted_at: 2010-10-13T00:00:00+00:00
+  :content: "We are proud to release the forth preview of the upcoming next major version of DownThemAll!.\n\n\
+    More than 1 year of development passed since the last major version. This was mostly due to time constraints, as DownThemAll! is still developed by a small team of three as a hobbyist project.\n\n\
+    Lots of new features and refinements went into the preview releases, such as speed limits, mirror management, fine-grained connection control, text-link recognition and many more. As of now the 2.0 series can be considered feature-complete. Beta 4 may still contain bugs, but should be ready for daily use in general. However, right now only English translations are shipped.\n\n *\xE2\x86\x92 \"Download and release notes\":http://www.downthemall.net/main/install-it/downthemall-2-0-beta-4/ * \n\n\
+    Beta 4 is furthermore the first release to be digitally signed (by _Nils Maier_ ). If you have any problems due to this, please refer to the \"Adblock Plus signing related installation troubles page\":http://adblockplus.org/en/known-issues#signing .\n\n\
+    We\xE2\x80\x99re currently focused on putting new website infrastructure in place and getting 2.0 ready to be translated.\n\n\
+    A heads up to fellow developers and Nightly Builds users: I just created a 2.0.x branch, while the \xE2\x80\x9Ctrunk\xE2\x80\x9D will continue as \xE2\x80\x9C2.1alpha\xE2\x80\x9D. If you\xE2\x80\x99d like to follow 2.0.x, you should grab the \"2.0.x Nightly\":https://code.downthemall.net/nightly/ instead of the trunk one.\n\n\
+    Please report any issues you find back to our \"bug tracker\":https://bugs.downthemall.net/ .\n\n\
+    Thanks for testing!\n\n *Update* (2010/10/14): The initially released version had the wrong extension id, leading to Firefox thinking this was another extension hence resulting in having both an old dTa! and the new beta4 installed simultaneously. I just released a corrected beta4 (same location).\n\n\
+    If you installed beta4 yesterday or today, please uninstall that version and reinstall the new release."
+  :public: true
+- :title: DownThemAll! and Firefox 4 betas
+  :posted_at: 2010-08-24T00:00:00+00:00
+  :content: "First of all we don\xE2\x80\x99t plan to support Firefox 4 in the DownThemAll! 1.1 release series.\n\
+    But DownThemAll! 2.0 will be Firefox 4 compatible!\n\n\
+    The 2.0 Beta releases we did so far already declared support for some older Firefox betas. We won\xE2\x80\x99t however release a new beta version with every Firefox beta. Furthermore the DownThemAll! 2.0 Betas won\xE2\x80\x99t be upgraded to newer Betas (you have to manually install a new beta, or wait for the official 2.0 release).\n\n\
+    If you\xE2\x80\x99d like to use DownThemAll! with current Firefox 4 Betas, then please install our:\n \"Nightly Builds\":http://bugs.code.downthemall.net/trac/wiki/NightlyBuilds !\n\
+    Those have the advantage that they are updated once every night, so you\xE2\x80\x99ll always get the most recent stuff with automatic updates. This can, on the other hand, be a downside as well, as those builds can contain more bugs, however they were pretty stable recently. ;) Of course, Firefox 3.6 users are welcomed to try the Nightly Builds as well.\n\n\
+    For a list of changes between DownThemAll! 1.1 and 2.0-dev see e.g. the \"dTa 2.0b3 changelog\":http://bugs.code.downthemall.net/trac/wiki/ChangeLog/2.0b3 ."
+  :public: true
+- :title: DownThemAll! 2.0 beta 3
+  :posted_at: 2010-08-01T00:00:00+00:00
+  :content: "We are proud to release the third preview of the upcoming next major version of DownThemAll!.\n\n\
+    More than 1 year of development passed since the last major version. This was mostly due to time constraints, as DownThemAll! is still developed by a small team of three as a hobbyist project.\n\n\
+    Lots of new features and refinements went into the preview releases, such as speed limits, mirror management, fine-grained connection control, text-link recognition and many more. As of now the 2.0 series can be considered feature-complete. Beta 3 may still contain bugs, but should be ready for daily use in general. However, right now only English translations are shipped.\n\n *\xE2\x86\x92 \"Download and release notes\":http://www.downthemall.net/main/install-it/downthemall-2-0-beta-3/ * \n\n\
+    Please report any issues you find back to our \"bug tracker\":http://bugs.code.downthemall.net/trac .\n\n\
+    Thanks for testing!"
+  :public: true
+- :title: DownThemAll! 2.0 beta 2
+  :posted_at: 2010-07-18T00:00:00+00:00
+  :content: "We are proud to release the second preview of the upcoming next major version of DownThemAll!.\n\n\
+    More than 1 year of development passed since the last major version. This was mostly due to time constraints, as DownThemAll! is still developed by a small team of three as a hobbyist project.\n\n\
+    Lots of new features and refinements went into the preview releases, such as speed limits, mirror management, fine-grained connection control, text-link recognition and many more.\n\
+    This new preview release fixes bugs discovered by our users, refines part of the new user interface bits and furthermore adds preliminary Firefox 4.0 Beta support.\n\n *\xE2\x86\x92 \"Download and release notes\":http://www.downthemall.net/main/install-it/downthemall-2-0-beta-2/ * \n\n\
+    As this is preview software, some features might be still missing or incomplete. Bugs have to be expected.\n\
+    Please report any issues you find back to our \"bug tracker\":http://bugs.code.downthemall.net/trac .\n\n\
+    Thanks for testing!"
+  :public: true
+- :title: No Safari 5 support
+  :posted_at: 2010-06-09T00:00:00+00:00
+  :content: "We won\xE2\x80\x99t add Safari 5 extensions support to DownThemAll!, for the very same technical reasons \"we won\xE2\x80\x99t add suppport for Chrome\":/latest/no-google-chrome-support/ .\n\
+    I concur with \"Giorgio\xE2\x80\x99s assessment\":http://hackademix.net/2010/06/08/before-you-ask-no-noscript-on-safari/ that the Safari 5 extension system is even more limited than the Chrome extension system.\n\n\
+    [Update]\n\
+    Also see some technical explanations of the fundamental differences between mozilla extensions and Safari/Chrome extensions.\n\n\
+    *  \"Robert Kaiser\":http://home.kairo.at/blog/2010-06/the_real_difference_is_the_platform (Seamonkey)\n\
+    *  \"Davide Ficano\":http://dafizilla.wordpress.com/2010/06/10/a-survey-on-safari-5-chrome-and-firefox-extensions-api/ (extension developer)\n\n\
+    \xE2\x80\x93 Nils"
+  :public: true
+- :title: DownThemAll! 1.1.10 released
+  :posted_at: 2010-05-28T00:00:00+00:00
+  :content: |-
+    We released DownThemAll! Version 1.1.10, which is a maintenance and bugfix release.
+    
+    There was an annoying bug causing the drop down lists (directory, mask, filters) not to be saved correctly in some situations.
+    Other than this we updated the shipped locales.
+    
+    You can get it on "addons.mozilla.org":https://addons.mozilla.org/firefox/201/ . You may also want to check out our "release notes":http://www.downthemall.net/main/install-it/downthemall-1-1-10/ .
+  :public: true
+- :title: DownThemAll! 2.0 beta 1
+  :posted_at: 2010-04-05T00:00:00+00:00
+  :content: "We are proud to release the first preview of the upcoming next major version of DownThemAll!.\n\n\
+    More than 1 year of development passed since the last major version. This was mostly due to time constraints, as DownThemAll! is still developed by a small team of three as a hobbyist project.\n\n\
+    Lots of new features and refinements went into this preview release, such as speed limits, mirror management, fine-grained connection control, text-link recognition and many more.\n\n *\xE2\x86\x92 \"Download and release notes\":http://www.downthemall.net/main/install-it/downthemall-2-0-beta-1/ * \n\n\
+    As this is preview software, some features might be still missing or incomplete. Bugs have to be expected.\n\
+    Please report any issues you find back to our \"bug tracker\":http://bugs.code.downthemall.net/trac .\n\n\
+    Thanks for testing!"
+  :public: true
+- :title: DownThemAll! 1.1.9 released
+  :posted_at: 2010-03-26T00:00:00+00:00
+  :content: "We released DownThemAll! Version 1.1.9, which is a maintenance and bugfix release.\n\n\
+    We fixes some rare situation where the preallocator did not kick in (resuming a not fully allocated file), which caused even worse Firefox hangs than without preallocator.\n\
+    We also fixed some issues with using DownThemAll! in combination with a dark theme (some dark themes might still not work in some parts; we either fix issues ourselves or notify the theme authors as issues become known).\n\
+    Then there were a few reports that Firefox might not correctly start up after installation, which seems to be caused by the initial notice window we shown after fresh installations or major upgrades. We disabled this for now, to see how that goes.\n\
+    Version 2.0 will not have any such window anymore; instead we\xE2\x80\x99re in the process to create a first run page detailing some basic usage.\n\
+    Windows 7 users observing high memory usage should also have a look at the release notes; We detail the situation there and link the hotfix Microsoft issued.\n\n\
+    You can get it on \"addons.mozilla.org\":https://addons.mozilla.org/firefox/201/ . You may also want to check out our \"release notes\":http://www.downthemall.net/main/install-it/downthemall-1-1-9/ ."
+  :public: true
+- :title: "About.com Reader\xE2\x80\x99s Choice Awards"
+  :posted_at: 2010-02-03T00:00:00+00:00
+  :content: "\" !http://code.downthemall.net/img/rca.png! \":http://browsers.about.com/od/allaboutwebbrowsers/ss/2010-readers-choice-awards-web-browsers-voting_4.htm \n\
+    DownThemAll! got nominated in the About.com Reader\xE2\x80\x99s Choice Awards in the category *Best Overall Add-On (Non-Security)* .\n\n\
+    Now it\xE2\x80\x99s up to you to \"vote for DownThemAll!\":http://browsers.about.com/od/allaboutwebbrowsers/ss/2010-readers-choice-awards-web-browsers-voting_4.htm ;)\n\n\
+    The competition is very strong, which makes it even more remarkable that we got nominated, and we certainly cannot beat Adblock Plus (which got my vote; don\xE2\x80\x99t vote for yourself). But being in the top 5 already is a great sign of your, the DownThemAll! users, support and trust.\n\
+    Thank you very much for that!\n\n\
+    For those wondering: The next major release is still in the works, and makes pretty good progress. Expect a first official Beta version in the next few weeks. Or try the development version already using a \"nightly build\":http://bugs.code.downthemall.net/trac/wiki/NightlyBuilds ."
+  :public: true
+- :title: First DownThemAll! release in 2010.
+  :posted_at: 2010-01-11T00:00:00+00:00
+  :content: "We\xE2\x80\x99re proud to release DownThemAll! 1.1.8, which is a bugfix release.\n\n\
+    We corrected some issues with the integration into Firefox Privacy Controls (Clear private data and such), and furthermore fixed a bug with resuming downloads after being redirected from HTTP to FTP.\n\
+    Some other minor changes went in as well.\n\n\
+    You can get it on \"addons.mozilla.org\":https://addons.mozilla.org/firefox/201/ . You may also want to check out our \"release notes\":http://www.downthemall.net/main/install-it/downthemall-1-1-8/ ."
+  :public: true
+- :title: Video tutorial in Spanish
+  :posted_at: 2010-01-09T00:00:00+00:00
+  :content: "One of our users dropped us a mail saying that he made a DownThemAll! video tutorial for people who speak Spanish.\n\
+    Unfortunately I don\xE2\x80\x99t speak Spanish myself, so I do not really understand what he says, but the video looks good.\n\
+    Enjoy ;)\n\
+    Many thanks to meneameland\n\n\
+    Check out his \"blog\":http://meneameland.com/podcast/noepisodio-05-downthemall/ for downloads of this video in other formats.\n\n\
+    Of course, there are many other videos in all kinds of languages on \"YouTube\":http://www.youtube.com/results?search_query=downthemall ."
+  :public: true
+- :title: Happy 2010!
+  :posted_at: 2010-01-02T00:00:00+00:00
+  :content: "The DownThemAll! Team hopes you\xE2\x80\x99re spending happy holidays, and wishes you and your families an amazing 2010!"
+  :public: true
+- :title: No Google Chrome support
+  :posted_at: 2009-12-10T00:00:00+00:00
+  :content: "As more and more people are asking us for a DownThemAll! version for Google Chrome:\n\n\
+    We won\xE2\x80\x99t support Google Chrome (and Chromium for that matter) in the near future, if ever.\n\n\
+    There are multiple reasons not to support Google Chrome (at the moment):\n\n\
+    * While support for _some_ types of extensions was added to Chrome just recently, the extension system in Chrome simply doesn\xE2\x80\x99t cut it. It is only very limited in what you can do. *Right now there is no way to port dTa over without losing the majority of functionality* .\n\
+    * Even if there were the technical means to port dTa! to Google Chrome, we still wouldn\xE2\x80\x99t have the time and resources to support it.Right now we\xE2\x80\x99re in the middle of university studies or only recently completed our degrees and hence need to \xE2\x80\x9Csettle\xE2\x80\x9D for a real-life work. Some of us are now family men.\n\n\
+    As you clearly noticed the number of dTa! releases was always low with only a major release once a year. Due to these time constraints we don\xE2\x80\x99t think we can handle supporting yet another application.\n\n\n\
+    * We are not yet sure about the privacy in Chrome. Chrome itself is closed source (not to confuse with the Chromium basis, which is open source) and it can only be guessed what happens \xE2\x80\x9Cbehind the scenes\xE2\x80\x9D. Google Chrome is known to transmit data back to the google servers. This kept us away from using Google Chrome, although we watched the progress made so far.\n\
+    * Lastly, we are still Mozilla supporters.\n\
+    While this surely won\xE2\x80\x99t keep us away from a Chrome port, it surely does not provide us with a lot of motivation to code for Google Chrome.\n\
+    Not only is Firefox the superior browser in our opinion, the Mozilla Foundation and Co. and the great people in the Mozilla community \xE2\x80\x93 developers, translators, designers, users and all the other folks \xE2\x80\x93 and the truly \xE2\x80\x9Copen\xE2\x80\x9D mindset keep us in the Mozilla base. ;)\n\n\
+    Thanks for your interest in a dTa! version for Google Chrome, but we have to pass at this time.\n\
+    Nils\n\n\
+    Update 2009/12/11:\n\
+    Here is Giorgio Maones take on the Chrome extension system, with some explanation why there are no NoScript or decent ad-blockers for Google Chrome yet:\n\n\
+    http://hackademix.net/2009/12/10/why-chrome-has-no-noscript/"
+  :public: true
+- :title: Five years later.
+  :posted_at: 2009-11-12T00:00:00+00:00
+  :content: "Five years of Firefox. 5. It seems like yesterday when we released DownThemAll! for the first time.\n\n\
+    A long time has gone, and dTa has grown up along with Firefox, in the common purpose to improve the web experience of Internet users. Firefox\xE2\x80\x99s got more than 25% of the browsers\xE2\x80\x99 market starting from zero, and most of all it has made the web better, safer and faster.\n\n\
+    We as add-on developers, you as users, promoters, translators and donors have been part of this miracle, and we all have had our role in making this world a little better.\n\n\
+    We want to thank Mozilla for having built such a great piece of software, and DownThemAll! users for their support and their more-than-30-million downloads.\n\n\
+    Well done, mates. We\xE2\x80\x99re a great team.\n\n \" !http://sfx-images.mozilla.org/mozilla/mozilla180x60.png! \":http://www.mozilla.org/contribute?from=sfx&uid=0&t=546"
+  :public: true
+- :title: DownThemAll! 1.1.7 with Seamonkey 2 support
+  :posted_at: 2009-10-27T00:00:00+00:00
+  :content: "DownThemAll! 1.1.7 is now available.\n\
+    This version is the first to officially support \"Seamonkey 2\":http://weblogs.mozillazine.org/seamonkey/archives/2009/10/seamonkey_20_th.html . We\xE2\x80\x99d like to thank the Seamonkey developers for their hard work and congratulate them for the release.\n\n\
+    Other than this we updated locales and added es-GL and tr-TR.\n\n\
+    You can find \"details here\":http://www.downthemall.net/main/install-it/downthemall-1-1-7/ , and \"download it here\":https://addons.mozilla.org/firefox/addon/201 ."
+  :public: true
+- :title: DownThemAll! 1.1.6 bugfix release
+  :posted_at: 2009-09-17T00:00:00+00:00
+  :content: |-
+    DownThemAll! 1.1.6 is now available.
+    The new preallocator code introduced in the last release contains a bug where temporary files will be recreated if an previously completed download is gone but still in the list when the manager is reopened. Only large files were recreated.
+    Version 1.1.6 fixes this.
+    
+    We are sorry for any inconveniences this might have caused.
+    
+    You can find details "here":http://www.downthemall.net/main/install-it/downthemall-1-1-6/ , and download it "here":https://addons.mozilla.org/firefox/addon/201 .
+  :public: true
+- :title: DownThemAll! 1.1.5
+  :posted_at: 2009-09-16T00:00:00+00:00
+  :content: |-
+    DownThemAll! 1.1.5 is now available.
+    The most notable change is the use of a new pre-allocator, that will not block the user interface that much anymore while allocating large downloads on the disk, making the application more responsive.
+    
+    Also some other issues where fixed.
+    You can find details "here":http://www.downthemall.net/main/install-it/downthemall-1-1-5/ , and download it "here":https://addons.mozilla.org/firefox/addon/201 .
+  :public: true
+- :title: DownThemAll! 1.1.4
+  :posted_at: 2009-06-30T00:00:00+00:00
+  :content: |-
+    DownThemAll! 1.1.4 is now available.
+    
+    We fixed some compatibility glitches with Firefox 3.5 and updated some languages.
+    
+    You can find details "here":http://www.downthemall.net/main/install-it/downthemall-114/ , and download it "here":https://addons.mozilla.org/firefox/addon/201 .
+  :public: true
+- :title: DownThemAll! 1.1.3
+  :posted_at: 2009-05-08T00:00:00+00:00
+  :content: "DownThemAll! 1.1.3 is now available. We\xE2\x80\x99ve fixed a bug about speed graphs and we\xE2\x80\x99ve added Welsh localization.\n\n\
+    You can find details \"here\":http://www.downthemall.net/main/install-it/downthemall-113/ , and download it \"here\":https://addons.mozilla.org/firefox/addon/201 ."
+  :public: true
+- :title: Can I trust NoScript any longer?
+  :posted_at: 2009-05-02T00:00:00+00:00
+  :content: "Giorgio Maone, the author of NoScript, recently released an update that actively and intensionally crippled Adblock Plus.\n\
+    The piece of code responsible was reportedly obfuscated to make it hard to find and analyze.\n\
+    Read the \"post of Wladmir Palant\":http://adblockplus.org/blog/attention-noscript-users , the author of Adblock Plus, and what \"Giorgio has to say\":http://forums.informaction.com/viewtopic.php?f=7&t=877 .\n\n\
+    Giorgio later reverted these changes (under pressure it seems), but started to forcefully add a filter subscription to white-list his domains, without asking for user consent, of course.\n\
+    The latest release at least lets the user \xE2\x80\x9Copt-out\xE2\x80\x9D.\n\n\
+    Frankly, I find both, first the intensional crippling of Adblock Plus, and then adding some filter subscription without consent, disturbing and unacceptable.\n\n\
+    I\xE2\x80\x99d expect Giorgio to stop defending his previous actions and instead admitting his wrong-doing and issuing a public apology to the users.\n\n\
+    Nils\n\n *Update, 2nd of May:* \n\n\
+    From the NoScript FAQ\n\n\
+    bq. Version 1.9.2.6 (released May the 1st 2009) automatically and permanently removes the filter on startup, no questions asked. This decision has been taken as a sign of good will and apologizes, after the lack of a prompt asking beforehand prior version 1.9.2.5 caused complaints and controversy in the Mozilla community.\n\n\n\n\
+    So the filter subscription is gone again, and there is kind of an apology.\n\
+    However it still feels, after reading this, that Giorgio didn\xE2\x80\x99t get the point, exactly.\n\
+    Why didn\xE2\x80\x99t he address the initial \xE2\x80\x9Cpatching\xE2\x80\x9D of Adblock Plus code?\n\
+    Is it just because of the complaints and \xE2\x80\x9Ccontroversy\xE2\x80\x9D that he reverted the changes again, or does he now see how he betrayed user trust?\n\n\
+    I don\xE2\x80\x99t have any problem with NoScript adding a filter subscription, as long as it is in a transparent manner and the user can properly opt-out, far better even has to opt-in.\n\
+    A lot of other users seem to agree. If there was some choice along the lines of \xE2\x80\x9CWant to support NoScript by allowing to displayed Noscript website ads in Adblock Plus\xE2\x80\x9D (Yes/No), a lot of users would have chosen yes.\n\n *Update2, 2nd of May:* \n\
+    Seems Giorgio indeed got the point. See this \"forum post\":http://forums.informaction.com/viewtopic.php?f=7&t=877&start=150#p3471 .\n\
+    Still makes me wonder how it can happen that a \xE2\x80\x9Csecurity\xE2\x80\x9D software developer implements and releases code that easily can be classified as \xE2\x80\x9Cmalware\xE2\x80\x9D\xE2\x80\xA6"
+  :public: true
+- :title: AntiContainer with easy installation of third party plugins
+  :posted_at: 2009-04-19T00:00:00+00:00
+  :content: "AntiContainer is an extension and framework to DownThemAll! which allows the user to download resources that are normally hidden behind container pages.\n\n\
+    For example it is possible to download images directly from those one-click image hosters, provided an appropriate plugin exists.\n\n\
+    Version 0.6., which I just released, includes an easy way for plugin authors to share their plugins and users to install those plugins, either from file or directly from the web.\n\n\
+    Check out the \"AntiContainer page\":http://bugs.code.downthemall.net/trac/wiki/AntiContainer for the download and more information.\n \"(more\xE2\x80\xA6)\":http://www.downthemall.net/latest/anticontainer-with-easy-installation-of-third-party-plugins/#more-246"
+  :public: true
+- :title: "Emergency: italian earthquake"
+  :posted_at: 2009-04-09T00:00:00+00:00
+  :content: "!/images/spot/redcross.png! On April 6th a major earthquake hit central Italy, killing 279 people so far and leaving 29000 homeless. Some towns were completely destroyed. We ask you to help Italian Red Cross to support people in need. You can donate via PayPal from \"this page\":http://www.cri.it/donazioni/index.php?modo=form&version=e&paypal=on on Italian Red Cross website: select \xE2\x80\x9CSisma Abruzzo \xE2\x80\x93 Aprile 2009\xE2\x80\xB3 as donation cause.\n\n\
+    Thank you for being generous. \"Donate now.\":http://www.cri.it/donazioni/index.php?modo=form&version=e&paypal=on"
+  :public: true
+- :title: Download even more with AntiContainer
+  :posted_at: 2009-04-07T00:00:00+00:00
+  :content: "AntiContainer is an extension and framework to DownThemAll! which allows the user to download resources that are normally hidden behind container pages.\n\n\
+    For instance almost all so called \xE2\x80\x9Cone-click\xE2\x80\x9D image hosters, such as imagevenue, use such container pages. AntiContainer enables DownThemAll! to download the actual images there instead of just the page.\n\n\
+    Hence it is now possible to use DownThemAll! to mass-download from image hosters and other services.\n\
+    Currently there are 38 plugins, including one for blogger.com images and others for the most common image hosters.\n\n *For the download and more information about usage and writing plugins yourself see the \"AntiContainer page\":http://bugs.code.downthemall.net/trac/wiki/AntiContainer .* \n\n\
+    The current version is still a test release. So please test a lot and give feedback if anything doesn\xE2\x80\x99t work or is missing."
+  :public: true
+- :title: DownThemAll! 1.1.2
+  :posted_at: 2009-03-24T00:00:00+00:00
+  :content: |-
+    A new release of dTa! has been made available today to fix a compatibility issue with other extensions.
+    
+    You can learn more "here":http://www.downthemall.net/main/install-it/downthemall-112/ , and get it from "Mozilla Add-ons":https://addons.mozilla.org/en-US/firefox/addon/201 or from our "local mirror":http://www.downthemall.net/main/install-it/dta-112-local-mirror/ .
+  :public: true
+- :title: DownThemAll! 1.1.1
+  :posted_at: 2009-03-17T00:00:00+00:00
+  :content: |-
+    Yes, DownThemAll! 1.1.1 is now available. This release comes with new languages and a few bug fixes.
+    
+    Read our "Release Notes":http://www.downthemall.net/main/install-it/downthemall-111/ for more information.
+    Downloads are available from "addons.mozilla.org":https://addons.mozilla.org/firefox/addon/201 or our "local mirror":http://www.downthemall.net/main/install-it/dta-111-local-mirror/ .
+  :public: true
+- :title: DownThemAll! 1.1
+  :posted_at: 2008-12-31T00:00:00+00:00
+  :content: "We\xE2\x80\x99re proud to release DownThemAll! 1.1.\n\
+    A lot of new features have been added and a lot of new major and minor fixes were made.\n\n\
+    Read our \"Release Notes\":/main/install-it/downthemall-11/ for more information.\n\
+    Downloads are available from \"addons.mozilla.org\":https://addons.mozilla.org/firefox/addon/201 or our \"local mirror\":/main/install-it/dta-11-local-mirror/ .\n\n\
+    The team wishes all of our contributors, translators and users a Happy New Year 2009."
+  :public: true
+- :title: DownThemAll! 1.1 Beta2 released incl. first translations.
+  :posted_at: 2008-12-27T00:00:00+00:00
+  :content: "We\xE2\x80\x99d like to ask the community to test drive the second and likely last Beta release of the next DownThemAll! version.\n\
+    Please consider participating to help us deliver a rock stable final release version end of this year.\n\n\
+    # Make sure your application is supported.\n\
+    dTa 1.1 is compatible with mozilla 1.9.1 based applications, in particular Firefox 3 or later, Shredder (Thunderbird 3), Flock 2, Songbird 1.\n\
+    #  \"Download and install 1.1 Beta2\":http://code.downthemall.net/releases/downthemall-1.1b2.xpi .\n\
+    # Test as much as possible and \"report any bugs\":http://bugs.code.downthemall.net .\n\n\
+    Please see the \"preliminary change log\":http://bugs.code.downthemall.net/trac/wiki/ChangeLog/1.1 for detailed information what changed.\n\n\
+    This release already includes translations for:\n\n\
+    * bg-BG\n\
+    * de-DE\n\
+    * el-GR\n\
+    * en-US\n\
+    * es-ES\n\
+    * fr-FR\n\
+    * mk-MK\n\
+    * nl-NL\n\
+    * pl-PL\n\
+    * sk-SK\n\
+    * vi-VN\n\
+    * zh-CN\n\n\
+    You may also help translating dTa to other languages. Just head over to \"Babelzilla\":http://www.babelzilla.org/ where the translators community translates numerous extensions, not just dTa, discusses and organizes.\n\n\
+    The final release is expected for the end of this year.\n\n\
+    Thanks in advance for your participation."
+  :public: true
+- :title: DownThemAll! 1.1 Beta 1
+  :posted_at: 2008-12-18T00:00:00+00:00
+  :content: "We\xE2\x80\x99d like to ask the community to test drive the first Beta release of the next DownThemAll! version.\n\
+    Please consider participating to help us deliver a rock stable final release version end of this year.\n\n\
+    # Make sure your application is supported.\n\
+    dTa 1.1 is compatible with mozilla 1.9.1 based applications, in particular Firefox 3 or later, Shredder (Thunderbird 3), Flock 2, Songbird 1.\n\
+    #  \"Download and install 1.1 Beta1\":http://code.downthemall.net/releases/downthemall-1.1b1.xpi .\n\
+    # Test as much as possible and \"report any bugs\":http://bugs.code.downthemall.net .\n\n\
+    Beta 1 is en-US only. Please see the \"preliminary change log\":http://bugs.code.downthemall.net/trac/wiki/ChangeLog/1.1 for detailed information what changed.\n\n\
+    There will be a Beta 2 shortly afterwards addressing any issues remaining in this Beta and adding translations.\n\
+    You may also help translating dTa to other languages. Just head over to \"Babelzilla\":http://www.babelzilla.org/ where the translators community translates numerous extensions, not just dTa, discusses and organizes.\n\n\
+    The final release is expected for the end of this year.\n\n\
+    Thanks in advance for your participation."
+  :public: true
+- :title: DownThemAll! 1.0.4 released.
+  :posted_at: 2008-12-09T00:00:00+00:00
+  :content: |-
+    The DownThemAll! team just released version 1.0.4, which is a bugfix version only.
+    
+    Grab your copy over at "addons.mozilla.org":https://addons.mozilla.org/firefox/201/ or use our "local mirror":http://www.downthemall.net/main/install-it/dta-10-local-mirror/ .
+    
+     "Release notes":http://www.downthemall.net/main/install-it/downthemall-104/ are available, too.
+    
+    Other than this stay tuned for the firstBetaof dTa! 1.1, which will be released in the next few days.
+  :public: true
+- :title: "Source code and bugs\xE2\x80\x99 database back on-line"
+  :posted_at: 2008-07-23T00:00:00+00:00
+  :content: "We\xE2\x80\x99ve moved our svn repository and bugs\xE2\x80\x99 database to a new server, and, as many of you have noticed, this has taken a while.\n\n\
+    We\xE2\x80\x99re happy to inform you that source code and bugs\xE2\x80\x99 DB are now available."
+  :public: true
+- :title: DownThemAll! 1.0.3
+  :posted_at: 2008-06-09T00:00:00+00:00
+  :content: |-
+    DownThemAll! 1.0.3, released last Saturday, fixes a blocker bug introduced in 1.0.2.
+    
+    Details are available "here":http://www.downthemall.net/main/install-it/downthemall-102/ .
+  :public: true
+- :title: DownThemAll! 1.0.2
+  :posted_at: 2008-06-06T00:00:00+00:00
+  :content: |-
+    DownThemAll! 1.0.2 is now available to the public. This version contains several bug fixes and four new languages: Bulgarian, Galician, Serbian (Cyrillic) and Ukrainian.
+    
+    Check "release notes":http://www.downthemall.net/main/install-it/downthemall-102/ out to learn more.
+  :public: true
+- :title: DownThemAll! 1.0.1 available now
+  :posted_at: 2008-04-15T00:00:00+00:00
+  :content: |-
+    Ladies and gentlemen,
+    the dTa Team just release version 1.0.1, the first bug correction release for the 1.0 series.
+    
+    We corrected several bugs and regression that unfortunately went into 1.0.
+    Thanks for all the reports we received and that helped us improve dTa.
+    
+    Read the "Release Notes":/main/install-it/downthemall-101/ .
+  :public: true
+- :title: DownThemAll! 1.0, now available.
+  :posted_at: 2008-02-29T00:00:00+00:00
+  :content: "Ladies and gentlemen,\n\
+    the dTa Team is proud to introduce you to *DownThemAll! 1.0* . This is the best DownThemAll! version ever.\n\n\
+    It\xE2\x80\x99s *faster* , due to an improved chunks management and a better queue book-keeping. It\xE2\x80\x99s *more stable* , thanks to his new download core and to a smarter error handling. It offers *new interesting features* , like support of \"metalink\":http://metalinker.org/ , checksums and \"LinkFingerprints\":http://bugs.code.downthemall.net/trac/wiki/LinkFingerprints .\n\n *We want to thank every single user* : your support, your suggestions, your contributions, your donations and your patience made this possible.\n\n\
+    It\xE2\x80\x99s been a long waiting, but we are sure you will enjoy this milestone. In the meanwhile, we\xE2\x80\x99re already working on next version, which \"you can check out here\":http://bugs.code.downthemall.net/trac/wiki/NightlyBuilds .\n\n \"More information here\":http://www.downthemall.net/main/install-it/downthemall-10/ ."
+  :public: true
+- :title: "1,278,074 people can\xE2\x80\x99t be wrong."
+  :posted_at: 2008-02-22T00:00:00+00:00
+  :content: "Dear friends,\n\
+    we\xE2\x80\x99re happy to inform you that *DownThemAll! 1.0 release* is very very close to be published.\n\n\
+    In the meanwhile, we\xE2\x80\x99ve known from Mozilla that *almost 1,300,000 people were using DTA last week* . That\xE2\x80\x99s a huge result, and we want to thank you for your choice and your support.\n\n\
+    Stay tuned, DTA 1.0 is coming."
+  :public: true
+- :title: Security Statement
+  :posted_at: 2008-02-14T00:00:00+00:00
+  :content: "Google flagged our site as a potential cause of malware infection last week.\n\
+    After a complete check up of the site structure, we\xE2\x80\x99ve found that an attacker had exploited a WordPress vulnerability to inoculate unauthorized code into our theme. This code contained links to a site which tried to install malicious code on visitor\xE2\x80\x99s computer.\n\
+    As far as we know this malware operates on an old vulnerability of *Windows 98* , *Windows Millennium Edition* and *Windows 2000* . Furthermore it is believed that Firefox users weren\xE2\x80\x99t at risk at all. A patch was released in 2005. You can read details \"here\":http://www.trendmicro.com/vinfo/secadvisories/default6.asp?VName=(MS05-024)+Vulnerability+in+Web+View+Could+Allow+Remote+Code+Execution+(894320) .\n\n\
+    This site has been secured, and you can visit it with confidence.\n\n\
+    Even though nobody is known to be infected by this software, we apologize with our users and visitors for any trouble we might have caused."
+  :public: true
+- :title: Happy Holidays!
+  :posted_at: 2007-12-24T00:00:00+00:00
+  :content: Best wishes to our users, friends and their families.
+  :public: true
+- :title: DownThemAll! 1.0 Beta 2
+  :posted_at: 2007-08-29T00:00:00+00:00
+  :content: |-
+    So, did you enjoy your summer? Your tan is amazing? Great.
+    
+    Now you can celebrate your return to your beloved computer testing dTa! 1.0 Beta 2.
+    You can find "here":http://www.downthemall.net/main/install-it/downthemall-10-beta/ all info.
+  :public: true
+- :title: DownThemAll! 1.0 Beta
+  :posted_at: 2007-07-09T00:00:00+00:00
+  :content: "Ladies and Gentlemen,\n\n\
+    we\xE2\x80\x99re proud to announce that DownThemAll! 1.0 Beta 1 is eventually available for Firefox, Thunderbird, Seamonkey, Flock and Netscape.\n\n\
+    Remember: it\xE2\x80\x99s beta software, and even if it seems to be pretty stable, it could have a few bugs, so use it for testing purposes only.\n\n \"Become a beta-tester\":http://www.downthemall.net/main/install-it/downthemall-10-beta/ ."
+  :public: true
+- :title: DownThemAll! 0.9.9.10
+  :posted_at: 2007-05-22T00:00:00+00:00
+  :content: "Slovenian friends, we\xE2\x80\x99re so sorry for the troubles caused by dTa 0.9.9.9. Now your local version works as it should.\n\n\
+    Fixed bugs:\n\n\
+    *  \"#156\":http://bugs.code.downthemall.net/trac/ticket/156 , troubles with Slovenian version\n\
+    *  \"#163\":http://bugs.code.downthemall.net/trac/ticket/163 , PayPal button doesn\xE2\x80\x99t work"
+  :public: true
+- :title: DownThemAll! 0.9.9.9
+  :posted_at: 2007-05-18T00:00:00+00:00
+  :content: "dTa 0.9.9.9 is available for download.\n\
+    New in this version:\n\n\
+    Bugs fixed:\n\n\
+    *  \"#122\":http://bugs.code.downthemall.net/trac/ticket/122 \xE2\x80\x93 Downloads won\xE2\x80\x99t start \xE2\x80\x93 DTA 0.9.9.8\n\
+    *  \"#124\":http://bugs.code.downthemall.net/trac/ticket/124 \xE2\x80\x93 Chrome error when viewing properties of active download in DTA\n\n\
+    New localizations:\n\n\
+    * Slovenian (sl-SL)"
+  :public: true
+- :title: DownThemAll! 0.9.9.8
+  :posted_at: 2007-04-30T00:00:00+00:00
+  :content: "Did you miss us? Here we are with a new version!\n\n\
+    A few bug fixes and five new languages are available in this version!\n\n\
+    Bugs fixed:\n\n\
+    * Preference window appearence\n\
+    * SaveAs\n\
+    * AddURL\n\
+    * Sanitizer/CPD integration\n\n\
+    New localizations:\n\n\
+    * Finnish (fi-FI)\n\
+    * Malay (ms-MY)\n\
+    * Romanian (ro-RO)\n\
+    * Thai (th-TH)\n\
+    * Turkish (tr-TR)\n\n\
+    \xE2\x80\xA6 and a rewritten version of Macedonian!\n\n\
+    If you\xE2\x80\x99re questioning about 1.0 release, yes, we\xE2\x80\x99re still working on it, and as soon as ready we will offer you a great piece of software :)\n\n\
+    Stay tuned (and spread the word)."
+  :public: true
+- :title: New repository and bug tracker
+  :posted_at: 2007-02-12T00:00:00+00:00
+  :content: "You can now read our source code at the new address \"http://code.downthemall.net\":http://code.downthemall.net \n\n\
+    If you want to inform us about a new bug, you can go to \"http://bugs.code.downthemall.net\":http://bugs.code.downthemall.net .\n\
+    Be sure to check the \"old bugs database\":http://bugs.code.downthemall.net first, which remains available for reading (don\xE2\x80\x99t post new bugs there).\n\n\
+    We want to thank \"MozDev\":http://www.mozdev.org for hosting us for such a long time."
+  :public: true
+- :title: dTa Team gets bigger.
+  :posted_at: ""
+  :content: "First of all: we\xE2\x80\x99re still alive :) So, if you\xE2\x80\x99ve been worried about dTa, don\xE2\x80\x99t fear.\n\n\
+    We are happy to announce that a new developer has joined the dTa Team. *Nils Maier* \xE2\x80\x93 who was already an active external contributor \xE2\x80\x93 is now part of the \xE2\x80\x9Cofficial\xE2\x80\x9D team.\n\n\
+    Great stuff is coming\xE2\x80\xA6 \"stay tuned\":http://www.downthemall.net/feed/atom/ :)"
+  :public: true
+- :title: You wanted it, you got it.
+  :posted_at: 2006-10-09T00:00:00+00:00
+  :content: "From the very next release \xE2\x80\x93 and on CVS already \xE2\x80\x93 DTA will be able to filter and start downloads of just the selected part of the page, increasing usability and filtering speed. But there is even more. If you will right-click on any image contained on a webpage, a gorgeous, brand new \xE2\x80\x9CDownload image with dTa on\xE2\x80\xA6\xE2\x80\x9D/\xE2\x80\x9DStart image with DtaOneClick!\xE2\x80\x9D option will be shown :)\n\
+    Stay tuned!"
+  :public: true
+- :title: DownThemAll! 0.9.9.7
+  :posted_at: 2006-10-06T00:00:00+00:00
+  :content: "A lot of bug fixes and a pair of good improvements are available in this version.\n\n\
+    We\xE2\x80\x99re finally offering a *batch download* function: just click on Add URL in the dTa! Manager and write something like http://www.mysite.com/filename[01-09 step:2].jpg. dTa will download all the files from filename01.jpg to filename09.jpg, increasing the final number by two per step!\n\n\
+    Oh, we haven\xE2\x80\x99t mentioned that dTa is now fully compatible with Firefox 2.0 ;)\n\n\
+    Improvements:\n\n\
+    * Batch download;\n\
+    * \xE2\x80\x9CRemove completed tasks\xE2\x80\x9D option in context menu\n\n\
+    Bug fixes:\n\n\
+    * #15315: Resume function restarts task if multipart is disabled;\n\
+    * #15285: UnknownContentType changed in FX2.0 so that dTa opens are hidden;\n\
+    * #15216: Optimized regular expressions;\n\
+    * #15272: \xE2\x80\x9CResume\xE2\x80\x9D&\xE2\x80\x9CPause\xE2\x80\x9D buttons inactive yet functional;\n\
+    * #15223, #15076, #15141, #15200, #14889: Various directory creation issues;\n\
+    * #15051: Wrong naming with underscores in file extension;\n\
+    * #15105: Wrong naming when downloading PDFs from Google;\n\
+    * #15295: Make \xE2\x80\x9CClose Source Tab\xE2\x80\x9D consistent to FX2.0 and really close for 1.5;"
+  :public: true
+- :title: Donate in English
+  :posted_at: 2006-09-27T00:00:00+00:00
+  :content: |-
+    Many users have written us about a problem in the donation mask: occasionally it has popped up in Italian. Now the problem should be fixed, and you will all be able to understand how to make a donation.
+    
+    Be generous ;)
+  :public: true
+- :title: DownThemAll! 0.9.9.6.5
+  :posted_at: 2006-09-16T00:00:00+00:00
+  :content: "Here you are a few new languages and little bug fixes\n\n\
+    * bugfix: \xE2\x80\x9Ctab.frames has no properties\xE2\x80\x9D message error;\n\
+    * bugfix: missing default value in renaming mask\xE2\x80\x99s persistence broke dTaOneClick under certain conditions;\n\
+    * minor bugfixes.\n\
+    * Added cs-CZ locale;\n\
+    * Added uk-UA locale;\n\
+    * Added hr-HR locale."
+  :public: true
+- :title: Sorry for the downtime
+  :posted_at: 2006-08-24T00:00:00+00:00
+  :content: We apologize the downtime we had for some hours. This was due to the moving into another physical location. Now everything should work fine.
+  :public: true
+- :title: DownThemAll! 0.9.9.6.3
+  :posted_at: 2006-08-02T00:00:00+00:00
+  :content: "A little but important bug \xE2\x80\x93 which was causing serious troubles to the dTa Manager \xE2\x80\x93 has been fixed.\n\n\
+    The update is *strongly encouraged* .\n\n\
+    * bugfix #14786: loading history.xml will fail in many cases;\n\
+    * bugfix #14785: refinements in formatBytes()."
+  :public: true
+- :title: DownThemAll! 0.9.9.6.2
+  :posted_at: 2006-07-30T00:00:00+00:00
+  :content: "No more troubles with Firefox 1.5.0.5: you can download massively again! :)\n\
+    Bugs in decoding non-western charsets were also fixed.\n\n\
+    The update is *strongly encouraged* .\n\n\
+    * bugfix #14751: dTaOneClick doesn\xE2\x80\x99t work on Firefox 1.5.0.5;\n\
+    * bugfix #14654, #14658: troubles decoding non-western charsets."
+  :public: true
+- :title: Troubles with Firefox 1.5.0.5
+  :posted_at: 2006-07-28T00:00:00+00:00
+  :content: "We\xE2\x80\x99re aware that dTaOneClick is having troubles since the release of Firefox 1.5.0.5 . We\xE2\x80\x99re already working to publish a fix during the week-end.\n\n\
+    We\xE2\x80\x99re sorry for the inconvenience."
+  :public: true
+- :title: DownThemAll! 0.9.9.6.1
+  :posted_at: 2006-07-15T00:00:00+00:00
+  :content: "This version fixes some \xE2\x80\x93 hopefully all :) \xE2\x80\x93 the problems related to unicode characters. A big thanks goes to Nils for that. We\xE2\x80\x99ve also renewed some of the code and fixed minor annoying things. Complete changelog is below, as usual.\n\n\
+    We\xE2\x80\x99re very close to the long waited 1.0 version, so please remember to let us know any bug you may encounter \"posting it into our Bugzilla account\":http://www.downthemall.net/index.php?page_id=5 .\n\n\
+    * bugfix #14146, #14634, #13175: problems visualizing and saving unicode characters;\n\
+    * bugfix #14473: dTa! doesn\xE2\x80\x99t remember last used target directory in the \xE2\x80\x98Add URL\xE2\x80\x99 window;\n\
+    * bugfix #14534: remove trailing \xE2\x80\x98-\xE2\x80\x99 from subdirs and curl;\n\
+    * bugfix: problems under privacy preference dialog;\n\
+    * bugfix: problems with moving files in queue;\n\
+    * enhacement: added cancel button on the \xE2\x80\x98modify renaming mask\xE2\x80\x99 dialog;"
+  :public: true
+- :title: "An help for the world\xE2\x80\xA6"
+  :posted_at: 2006-07-11T00:00:00+00:00
+  :content: "\xE2\x80\xA6 from the Champions of the World :)\n\n\
+    Soccer apart, these are great days also because we\xE2\x80\x99re starting releasing our \"help documents\":http://www.downthemall.net/index.php?page_id=12 . :P\n\
+    There you will find the basis to start using dTa! in seconds.\n\
+    More languages are coming soon.\n\
+    If you still have questions, write us, we are preparing a technical FAQ page to help you some more."
+  :public: true
+- :title: DownThemAll! 0.9.9.6
+  :posted_at: 2006-07-09T00:00:00+00:00
+  :content: "It has been quite a while since the last update, but finally dTa! 0.9.9.6 is available for download!\n\
+    This release fixes tons of annoying bugs and also come with some great new features, such as settable temporary directory, a brand new help section and an advanced \xE2\x80\x9Cprealloc\xE2\x80\x9D option that drastically reduces disk fragmentation for your downloads!\n\n\
+    The update is *strongly encouraged* .\n\n\
+    * bugfix #14393, #14579: downloading problems with gzipped files;\n\
+    * bugfix #14338: dTa! doesn\xE2\x80\x99t close source tab if it contains frames;\n\
+    * bugfix #14473: dTa! doesn\xE2\x80\x99t remember last used target directory in the \xE2\x80\x9CAdd URL\xE2\x80\x9D window;\n\
+    * bugfix #14399: right-click menu icons aren\xE2\x80\x99t greyed when no download is selected;\n\
+    * bugfix #14437: \xE2\x80\x98Renaming conflict!\xE2\x80\x99 prompt is too wide when you have long download URLs;\n\
+    * bugfix #14522: current d/l speed indicators are not displayed for files from some servers;\n\
+    * bugfix #14541: resume support should not depend on Accept-Ranges;\n\
+    * minor bugfix: #14525;\n\n\
+    * ehnancement: added a Beginners Guide to dTa! section;\n\
+    * ehnancement #14492: missing insufficient space warning;\n\
+    * ehnancement #14538: allow users to configure temporary download location;\n\
+    * ehnancement #14428: allow users to prealloc files (less disk fragmentation!);\n\
+    * ehnancement: MineField compatibility;\n\n\
+    * 5 new locales added: ar-SA, gl-ES, sq-AL, da-DK, zh-TW;"
+  :public: true
+- :title: DownThemAll! 0.9.9.5.1
+  :posted_at: 2006-06-14T00:00:00+00:00
+  :content: "First of all, a wrong version of dTa! 0.9.9.5 was published two times in the last few days, due to our and Mozilla Addon\xE2\x80\x99s fault. If you downloaded it, please, \"install the correct package now available\":https://addons.mozilla.org/firefox/201/ .\n\n\
+    dTa! 0.9.9.5.1 fixes a critical bug which made the downloads not start, under certain conditions. It also solves a trouble which caused the failure of complete downloads on Linux and fixes \xE2\x80\x9CServer error\xE2\x80\x9D problems with downloads bigger than 4GB.\n\
+    The update is *strongly encouraged* .\n\n\
+    * bugfix: stabilized speed indicator\n\
+    * bugfix: #14335 (dTa doesn\xE2\x80\x99t start downloads under certain conditions)\n\
+    * bugfix: #14223 (Linux \xE2\x80\x93 Most downloads fail from Google Groups)\n\
+    * bugfix: #14343 (DownThemAll cancels large download after it completes)\n\
+    * bugfix: improved handling of content-disposition header messages"
+  :public: true
+- :title: DownThemAll! 0.9.9.4
+  :posted_at: 2006-06-05T00:00:00+00:00
+  :content: "dTa 0.9.9.4 offers \xE2\x80\x93 finally \xE2\x80\x93 the Japanese locale, a pair of enhancement and an important bugfix regarding the filters\xE2\x80\x99 panel\xE2\x80\xA6 All these come in a reduced size. Enjoy.\n\n\
+    * enhancement: #13974 (history of ongoing/inqueue downloads is now stored in the Firefox, to avoid its deletion on upgrade)\n\
+    * enhancement: #14208 (automatic conversion of path separators in renaming mask)\n\
+    * enhancement: reduced packet\xE2\x80\x99s size\n\n\
+    * bugfix: #14203 (characters changed in \xE2\x80\x99_\xE2\x80\x99)\n\
+    * bugfix: #13838 (0.9.9.3 filters pref-pane will enter infinite loop)\n\n\
+    * locale: Japanese (ja-JP) added"
+  :public: true
+- :title: DownThemAll! 0.9.9.3
+  :posted_at: 2006-05-24T00:00:00+00:00
+  :content: |-
+    dTa! 0.9.9.3 fixes an annoying bug, which was corrupting filenames when downloading from a script page. Hungarian and Macedonian languages are now available.
+    
+    Upgrade is strongly suggested.
+    
+    * locale: Hungarian (hu-HU) added
+    * locale: Macedonian (mk-MK) added
+    
+    * bugfix: #14180 (script extension added to content-disposition filenames)
+  :public: true
+- :title: DownThemAll! 0.9.9.2
+  :posted_at: 2006-05-20T00:00:00+00:00
+  :content: dTa! 0.9.9.2 fixes a little problem in the installation package.
+  :public: true
+- :title: DownThemAll! 0.9.9.1
+  :posted_at: 2006-05-19T00:00:00+00:00
+  :content: "dTa 0.9.9.1, available for Firefox, Thunderbird and Flock, offers you new languages, sound alerts, and a few bug fixes.\n\n *Installation tip* : if you are getting a \xE2\x80\x9CWarning: unresponsive script\xE2\x80\x9D alert during installation, just click on \xE2\x80\x9CContinue\xE2\x80\x9D to complete the process.\n\n\
+    * feature: Mozilla Thunderbird compatibility\n\
+    * feature: BonEcho compatibility\n\
+    * feature: sound alerts when downloads are complete/erroneous\n\n\
+    * locale: Bulgarian (bg-BG) added\n\
+    * locale: Chinese Simplified (zh-CN) added\n\
+    * locale: Hebrew (he-IL) added\n\
+    * locale: Slovak (sv-SE) added\n\
+    * locale: Welsh (cy-GB) added\n\n\
+    * bugfix: filters\xE2\x80\x99 creation/deletion\n\
+    * minor fixes\n\n\
+    In these days the dTa team is at 50%, due to an unexpected surgery for Stefano. We\xE2\x80\x99ll have him back home in a few days, in the meanwhile our thoughts and prayers are with him."
+  :public: true
+- :title: Benchmarks available!
+  :posted_at: 2006-05-10T00:00:00+00:00
+  :content: "We\xE2\x80\x99re happy to share with you our satisfaction. According to our tests, the latest versions of DownThemAll! are 23% faster than version 0.9.8.7, even on big files.\n\n \"Check out the graphs\":http://www.downthemall.net/?page_id=49 !"
+  :public: true
+- :title: DownThemAll! 0.9.9.0
+  :posted_at: 2006-05-09T00:00:00+00:00
+  :content: "dTa! comes with new languages, some bugfixes, a new renaming tag, and a simpler way to select files.\n\n\
+    Changelog:\n\n\
+    * feature: added *refer* renaming tag, which adds the capability of renaming files using the referrer page of the download\n\
+    * feature: links in \xE2\x80\x9CSelect links\xE2\x80\x9D window can now be checked with a middle mouse click anywhere on the row\n\
+    * change: all the Date and Time renaming tags now reports the moment when downloads are inserted into the list\n\n\
+    * locale: German (de-DE) added\n\
+    * locale: Korean (ko-KR) added\n\
+    * locale: Russian (ru-RU) added\n\
+    * locale: Slovak (sk-SK) added\n\
+    * locale: Portuguese brazilian (pt-BR) added\n\
+    * locale: Greek (el-GR) added\n\n\
+    * bugfix: downloads with a single chunk if paused and resumed get final error\n\
+    * bugfix: *curl* renaming tag doesn\xE2\x80\x99t work at all\n\
+    * bugfix: renaming problems with attachments on some vBulletin boards\n\
+    * bugfix: renaming problems with Yahoo Mail attachments\n\
+    * bugfix: preference panel cannot be closed on Macs\n\
+    * bugfix: dTaOneClick doesn\xE2\x80\x99t rememember to queue files\n\
+    * bugfix: fixed problems with non-latin characters"
+  :public: true
+- :title: DownThemAll! 0.9.8.9
+  :posted_at: 2006-05-05T00:00:00+00:00
+  :content: "dTa 0.9.8.9 fixes some little bugs reported on Bugzilla and adds new locales to the XPI. We\xE2\x80\x99ve also added a useful feature in \xE2\x80\x9CGet info\xE2\x80\x9D window that we hope will save you some precious time. Changelog:\n\n\
+    * feature: Ability to modify settings of multiple downloads at the same time from \xE2\x80\x9CGet info\xE2\x80\x9D window\n\
+    * feature: Spanish (es-ES) locale added\n\
+    * feature: French (fr-FR) locale added\n\
+    * feature: Dutch (nl-NL) locale added\n\
+    * feature: Polish (pl-PL) locale added\n\
+    * bugfix: Link in About should open Privacy notice\n\
+    * bugfix: Speed on status bar doesn\xE2\x80\x99t refresh\n\
+    * bugfix: Delete filters and restore default filters didn\xE2\x80\x99t work\n\
+    * bugfix: minVersion in install.rdf should be 1.5\n\
+    * bugfix: preferences panel didn\xE2\x80\x99t close on Mac\n\
+    * bugfix: *m* renaming tag should start from 1, not 0"
+  :public: true
+- :title: Released DownThemAll! 0.9.8.8!
+  :posted_at: 2006-05-03T00:00:00+00:00
+  :content: "DownThemAll! has finally came out with a new, explosive version! Main good news are:\n\n\
+    * Greatly improved downloading performances, expecially on big files;\n\
+    * Optimized memory management;\n\
+    * Better files\xE2\x80\x99 handling (completely rewritten \xE2\x80\x9CGet Info\xE2\x80\x9D window);\n\
+    * New preferences panel;\n\
+    * Simpler renaming system;\n\
+    * \xE2\x80\x9CTurbo-dTa\xE2\x80\x9D renamed in most self-explanatory \xE2\x80\x9CdTaOneClick\xE2\x80\x9D\n\
+    * Flock compatibility;\n\
+    * Italian localization;\n\n\
+    It\xE2\x80\x99s been a long journey, but we\xE2\x80\x99re about to reach our 1.0 release at last. This 0.9.8.8 is a good taste of what you can imagine in the very next future of DownThemAll. We hope you like it."
+  :public: true
+- :title: Released DownThemAll!  0.9.8.7!
+  :posted_at: 2006-01-18T00:00:00+00:00
+  :content: "What\xE2\x80\x99s new in this version?\n\n\
+    * Great improvements in page scanning and in dTa \xE2\x80\x9CSelect Links\xE2\x80\x9D window\n\
+    * GUI restyling\n\
+    * Solved problems with \xE2\x80\x9Cover 100%\xE2\x80\x9D downloads and safer use of multipart downloading\n\
+    * Improved alerting system\n\
+    * New Privacy panel in preferences\n\
+    * \xE2\x80\x98Add URL\xE2\x80\x99 button added to the dTa Manager\n\
+    * Drag&drop URLs on dTa Manager and on dTa buttons in the toolbar.\n\
+    * Fixed regression with FTP links\n\
+    * Minor fixes and improvements\n\n\
+    dTa doesn\xE2\x80\x99t support Firefox 1.07 and previous anymore. We suggest to upgrade to Firefox 1.5. Anyway, we\xE2\x80\x99ll make available again dTa 0.9.4 \xE2\x80\x93 the classic one :) \xE2\x80\x93 for Firefox 1.0.7 and previous."
+  :public: true
+- :title: Released DownThemAll!  0.9.8.5!
+  :posted_at: 2006-01-04T00:00:00+00:00
+  :content: "Changes:\n\n\
+    * Merging of large multipart-downloaded files no longer hangs Firefox (bugs #12468, #12659, #12345)\n\
+    * Fixed \xE2\x80\x9CSyntaxError: missing\n\
+    before statement\xE2\x80\x9D when right-click on page (bug #12610)\n\n\
+    * Header sniffing procedure completely rewritten (bug #11630)\n\
+    * HTTPS links are now correctly found on web pages (bug #12533)\n\
+    * Fixed saving problems of the additional filter (bug #12537)\n\
+    * Fixed conflicts in FF \xE2\x80\x9CSave with\xE2\x80\xA6\xE2\x80\x9D dialog with Flashgot installed (bug #12465)\n\
+    * Destination dir gets now saved also if user presses the Cancel button under DTA \xE2\x80\x9CSelect links\xE2\x80\x9D window (bug #12400)\n\
+    * Fixed unneeded discarding of DTA old preferences with new upgrades (bug #12471)\n\
+    * *curl* and *subdirs* tags\n\
+    * only if present inside the dir renaming mask\n\
+    * now recreate directory structure of files (request #12474)\n\
+    * Added Referer-header to HEAD request (bug #11630)\n\
+    * Fixed naming problems on vBulletin and similar PHP delivered files (bug #12425)\n\
+    * Recursive search of link on framed pages\n\
+    * Internal messages dumped on JS Console are now disabled by default (to enable them, extensions.dta.directory.visibledump=true) (request #12579)\n\
+    * If DTA \xE2\x80\x9CDownload manager\xE2\x80\x9D window is already opened, pressing the relative toolbar button provocates focus\n\
+    * Solved some timeout problems (bug #12609)\n\
+    * Minor improvements in renaming routines (ex. maximum length of file name)\n\
+    * Better error management in GZIP decompression\n\
+    * Added deflate decompression\n\
+    * The last item on the download list can now be seen (bug #12406)\n\
+    * Added managing of DTA items in Tools menu (bug #11056)\n\
+    * Fixed minor timeout bug\n\
+    * Download Info panel has been improved\n\
+    * Changed quickkeys (bug #12499)\n\
+    * Improved Content-Disposition recognition (bug #12425, #12551)\n\
+    * Improved saving preferences routines\n\
+    * Fixed problems with links under About window (bug #12578)"
+  :public: true
+- :title: Released DownThemAll!  0.9.8.4!
+  :posted_at: 2005-12-12T00:00:00+00:00
+  :content: |-
+    Changes:
+    
+    * Fixed crashes caused to nglayout;
+    * Fixed sub-directory creation;
+    * Fixed non-persistent directory preference;
+    * Minor bug fixes;
+    
+    We remind you to post all the problems you may find with this 1.0 Preview Release at Bugzilla, specifying the url where you encountered the problem, your FF version and any other useful information.
+  :public: true
+- :title: Released DownThemAll! 0.9.8.3!
+  :posted_at: 2005-12-10T00:00:00+00:00
+  :content: |-
+    Changes:
+    
+    * better server error management
+    * bug fixed in renaming
+    * solved problem in context menu
+  :public: true
+- :title: Released DownThemAll 0.9.8.2!
+  :posted_at: 2005-12-08T00:00:00+00:00
+  :content: "This version fixes installation problems due to \xE2\x80\x9Cnglayout.debug.disable_xul_cache\xE2\x80\x9D preference set to true. It also removes some of the bugs you reported us in the last 3 days:\n\n\
+    * Resolved \xE2\x80\x9Cwindow.arguments\xE2\x80\x9D error on Dta \xE2\x80\x9CSelect Links\xE2\x80\x9D window;\n\
+    * Fixed recognition of links on framed pages;\n\
+    * Fixed recognition of links on HTML Transitional pages;"
+  :public: true
+- :title: Released DownThemAll 0.9.8.1!
+  :posted_at: 2005-12-05T00:00:00+00:00
+  :content: "Changes:\n\n\
+    * Better recognition of description tags \xE2\x80\x9Calt\xE2\x80\x9D and \xE2\x80\x9Ctitle\xE2\x80\x9D;\n\
+    * Solved problems with some pages;"
+  :public: true
+- :title: Released DownThemAll 0.9.8!
+  :posted_at: 2005-12-04T00:00:00+00:00
+  :content: "Here you are the 1.0 Release Candidate version (aka 0.9.8)! This version fixes some of the problems reported on the last 72 hours on Bugzilla and Addons Mozilla:\n\n\
+    * Resolved installation problems on FF 1.0.7;\n\
+    * Restored old shortcuts;\n\
+    * Resolved bugs with image downloading;\n\
+    * Changed some default preferences;\n\
+    * Resolved Content-Length problems with some pages that use Partial-Content method;\n\
+    * Fixed *curl* renaming tag;\n\n\
+    Features added:\n\n\
+    * Now filesizes are expressed in KB, MB or GB depending on dimension;\n\
+    * You can always close the \xE2\x80\x9CDta! Manager\xE2\x80\x9D window using ESC."
+  :public: true

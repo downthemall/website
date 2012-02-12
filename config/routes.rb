@@ -13,5 +13,6 @@ Downthemall::Application.routes.draw do
       post :notify
     end
   end
+  resources :posts, path: "blog"
   root :to => "home#index"
 end
