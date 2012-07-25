@@ -260,7 +260,7 @@
     There was an annoying bug causing the drop down lists (directory, mask, filters) not to be saved correctly in some situations.
     Other than this we updated the shipped locales.
     
-    You can get it on "addons.mozilla.org":https://addons.mozilla.org/firefox/201/ . You may also want to check out our "release notes":http://www.downthemall.net/main/install-it/downthemall-1-1-10/ .
+    You can get it on "addons.mozilla.org":https://addons.mozilla.org/firefox/addon/201/ . You may also want to check out our "release notes":http://www.downthemall.net/main/install-it/downthemall-1-1-10/ .
   :public: true
 - :title: DownThemAll! 2.0 beta 1
   :posted_at: 2010-04-05T00:00:00+00:00
@@ -279,7 +279,7 @@
     Then there were a few reports that Firefox might not correctly start up after installation, which seems to be caused by the initial notice window we shown after fresh installations or major upgrades. We disabled this for now, to see how that goes.\n\
     Version 2.0 will not have any such window anymore; instead we\xE2\x80\x99re in the process to create a first run page detailing some basic usage.\n\
     Windows 7 users observing high memory usage should also have a look at the release notes; We detail the situation there and link the hotfix Microsoft issued.\n\n\
-    You can get it on \"addons.mozilla.org\":https://addons.mozilla.org/firefox/201/ . You may also want to check out our \"release notes\":http://www.downthemall.net/main/install-it/downthemall-1-1-9/ ."
+    You can get it on \"addons.mozilla.org\":https://addons.mozilla.org/firefox/addon/201/ . You may also want to check out our \"release notes\":http://www.downthemall.net/main/install-it/downthemall-1-1-9/ ."
   :public: true
 - :title: "About.com Reader\xE2\x80\x99s Choice Awards"
   :posted_at: 2010-02-03T00:00:00+00:00
@@ -295,7 +295,7 @@
   :content: "We\xE2\x80\x99re proud to release DownThemAll! 1.1.8, which is a bugfix release.\n\n\
     We corrected some issues with the integration into Firefox Privacy Controls (Clear private data and such), and furthermore fixed a bug with resuming downloads after being redirected from HTTP to FTP.\n\
     Some other minor changes went in as well.\n\n\
-    You can get it on \"addons.mozilla.org\":https://addons.mozilla.org/firefox/201/ . You may also want to check out our \"release notes\":http://www.downthemall.net/main/install-it/downthemall-1-1-8/ ."
+    You can get it on \"addons.mozilla.org\":https://addons.mozilla.org/firefox/addon/201/ . You may also want to check out our \"release notes\":http://www.downthemall.net/main/install-it/downthemall-1-1-8/ ."
   :public: true
 - :title: Video tutorial in Spanish
   :posted_at: 2010-01-09T00:00:00+00:00
@@ -486,7 +486,7 @@
   :content: |-
     The DownThemAll! team just released version 1.0.4, which is a bugfix version only.
     
-    Grab your copy over at "addons.mozilla.org":https://addons.mozilla.org/firefox/201/ or use our "local mirror":http://www.downthemall.net/main/install-it/dta-10-local-mirror/ .
+    Grab your copy over at "addons.mozilla.org":https://addons.mozilla.org/firefox/addon/201/ or use our "local mirror":http://www.downthemall.net/main/install-it/dta-10-local-mirror/ .
     
      "Release notes":http://www.downthemall.net/main/install-it/downthemall-104/ are available, too.
     
@@ -716,7 +716,7 @@
   :public: true
 - :title: DownThemAll! 0.9.9.5.1
   :posted_at: 2006-06-14T00:00:00+00:00
-  :content: "First of all, a wrong version of dTa! 0.9.9.5 was published two times in the last few days, due to our and Mozilla Addon\xE2\x80\x99s fault. If you downloaded it, please, \"install the correct package now available\":https://addons.mozilla.org/firefox/201/ .\n\n\
+  :content: "First of all, a wrong version of dTa! 0.9.9.5 was published two times in the last few days, due to our and Mozilla Addon\xE2\x80\x99s fault. If you downloaded it, please, \"install the correct package now available\":https://addons.mozilla.org/firefox/addon/201/ .\n\n\
     dTa! 0.9.9.5.1 fixes a critical bug which made the downloads not start, under certain conditions. It also solves a trouble which caused the failure of complete downloads on Linux and fixes \xE2\x80\x9CServer error\xE2\x80\x9D problems with downloads bigger than 4GB.\n\
     The update is *strongly encouraged* .\n\n\
     * bugfix: stabilized speed indicator\n\
