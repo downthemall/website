@@ -1,11 +1,11 @@
 class DonationsController < Controller
 
   get :new, map: '/donate' do
-    @donation = Donation.new
+    @donation = Donation.new(amount: 10)
     render 'donations/new'
   end
 
-  post :create, map: '/donate' do
+  post :create do
     @donation = Donation.new(params[:donation])
     @donation.status = Donation::STATUS_PENDING
     if @donation.save
@@ -15,18 +15,18 @@ class DonationsController < Controller
     end
   end
 
-  post :paypal_notify, map: '/notify' do
+  post :paypal_notify do
     PaypalNotification.new(request.body.read).process!
     "Processed."
   end
 
-  post :complete, map: '/complete', with: :id do
+  post :complete, with: :id do
     @donation = Donation.find(params[:id])
     flash.now[:notice] = I18n.t('donations.completed')
     render 'donations/complete'
   end
 
-  get :cancel, map: '/cancel', with: :id do
+  get :cancel, with: :id do
     Donation.find(params[:id]).cancel!
     flash[:alert] = I18n.t('donations.canceled')
     redirect url(:donations, :new)

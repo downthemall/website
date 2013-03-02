@@ -13,7 +13,7 @@
       - DonationAmount.all.each do |amount|
         - id = "amount-#{amount.amount}"
         li
-          =' form.radio_button :amount, value: amount.amount, id: id
+          =' form.radio_button :amount, value: amount.amount, checked: @donation.amount == amount.amount, id: id
           a.gift href="#" data-behaviour='ToggleRadio' data-toggle-radio-dom="##{id}"
             .icon
             span.title=' amount.description

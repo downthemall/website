@@ -25,7 +25,7 @@ class Downthemall < Padrino::Application
     include Helpers
   end
 
-  configure :development do
+  configure :development, :test do
     set :paypal_account, "vendo_1321197264_biz@gmail.com"
     set :paypal_url, "https://www.sandbox.paypal.com/cgi-bin/webscr"
     ActiveMerchant::Billing::Base.mode = :test

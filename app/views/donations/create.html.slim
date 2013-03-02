@@ -12,5 +12,4 @@
   = hidden_field_tag :return, value: uri(url(:donations, :complete, id: @donation.id))
   = hidden_field_tag :cancel_return, value: uri(url(:donations, :cancel, id: @donation.id))
   = hidden_field_tag :bn, value: "PP-BuyNowBF"
-
-  = submit_tag "Proceed donating!"
+  = submit_tag "Proceed"
