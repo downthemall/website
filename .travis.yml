@@ -1,0 +1,15 @@
+language: ruby
+
+rvm:
+  - "1.9.2"
+  - "1.9.3"
+
+env:
+  - "PADRINO_ENV=test"
+
+before_script:
+  - "cp .travis_db_credentials.rb config/db_credentials.rb"
+  - "psql -c 'create database downthemall_test;' -U postgres"
+  - "bundle exec padrino rake ar:migrate"
+
+script: "bundle exec rake spec"
