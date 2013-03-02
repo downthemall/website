@@ -1,6 +1,0 @@
-li id=dom_id(resource) class="level-#{resource.depth}"
-  = link_to resource.title, article_path(resource)
-  - if resource.depth + 1 <= to_depth
-    ul
-      - resource.children.each do |article|
-        = render "articles/menu_item", :resource => article, :to_depth => to_depth

@@ -1,8 +1,0 @@
-@each $locale in en de it fr es nl el pt ar ru zh ja
-  @each $size in 16 24 32 48 64
-    .flag-#{$size}-#{$locale}
-      padding-left: #{$size + 5}px
-      background-image: image-url('flags/#{$size}/#{$locale}.png')
-      background-repeat: no-repeat
-      background-position: center left
-
