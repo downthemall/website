@@ -1,0 +1,16 @@
+= form_tag Downthemall.settings.paypal_url, method: :post, data: { behaviour: 'AutoSubmit' } do
+  = hidden_field_tag :custom, value: @donation.id
+  = hidden_field_tag :business, value: Downthemall.settings.paypal_account
+  = hidden_field_tag :item_name, value: "Downthemall Donation"
+  = hidden_field_tag :amount, value: @donation.amount
+  = hidden_field_tag :currency_code, value: @donation.currency
+  = hidden_field_tag :cmd, value: "_xclick"
+  = hidden_field_tag :no_note, value: "1"
+  = hidden_field_tag :no_shipping, value: "1"
+  = hidden_field_tag :charset, value: "utf-8"
+  = hidden_field_tag :notify_url, value: uri(url(:donations, :paypal_notify))
+  = hidden_field_tag :return, value: uri(url(:donations, :complete, id: @donation.id))
+  = hidden_field_tag :cancel_return, value: uri(url(:donations, :cancel, id: @donation.id))
+  = hidden_field_tag :bn, value: "PP-BuyNowBF"
+
+  = submit_tag "Proceed donating!"

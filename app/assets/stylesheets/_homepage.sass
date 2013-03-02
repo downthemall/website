@@ -1,0 +1,79 @@
+#homepage
+  @extend .wrapper
+
+  .hero
+    padding: 40px 0
+    border-bottom: 1px solid #ccc
+    text-align: center
+
+    h3
+      font-weight: 300
+      font-size: 50px
+      line-height: 50px
+      margin-bottom: 20px
+
+    h2
+      font-size: 20px
+      line-height: 25px
+
+    .call-to-action
+      width: 60%
+      margin: 20px auto 0
+      +clearfix
+
+      .left
+        float: left
+        width: 50%
+        text-align: right
+
+        a
+          +button
+          font-size: 19px
+          padding: 12px 19px
+
+        .version
+          margin-top: 5px
+          font-size: 12px
+
+      .stats
+        float: left
+        width: 50%
+        text-align: left
+
+        p
+          margin-left: 15px
+          margin-bottom: 3px
+
+  .features
+    .feature
+      padding: 40px 0
+      border-bottom: 1px solid #ccc
+      position: relative
+
+      .text
+
+        h3
+          font-size: 25px
+          line-height: 25px
+          margin-bottom: 10px
+
+        h4
+          font-size: 20px
+          line-height: 20px
+
+        .details
+          margin-top: 15px
+          p
+            margin-bottom: 10px
+
+          .learn-more
+            a
+              +button
+
+      &:nth-child(2n+1)
+        padding-right: 300px
+
+      &:nth-child(2n)
+        padding-left: 300px
+
+

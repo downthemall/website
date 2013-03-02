@@ -1,0 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,400italic,700)
+
+@import lib/bourbon/bourbon
+@import lib/neat/neat
+@import reset
+@import colors
+@import button
+@import icons
+@import typeset
+
+$max-width: em(1000)
+
+body
+  font-family: 'Titillium Web'
+  font-size: 15px
+  line-height: 1.2
+  color: $black
+
+.wrapper
+  +outer-container
+  padding: 0 20px
+
+@import flash_messages
+@import hero
+@import site_header
+@import site_footer
+@import homepage
+@import donations

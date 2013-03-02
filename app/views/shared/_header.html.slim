@@ -1,0 +1,32 @@
+#site-header
+  .wrapper
+    nav.left
+      h1= link_to "Downthemall", url(:index)
+
+      ul.sections
+        li= link_to "Features", url(:features)
+        li= link_to "Latest News", "#"
+        li= link_to "Knowledge Base", "#"
+        li= link_to "Get Involved", "#"
+
+    nav.right
+
+      ul.authentication
+        li.switch-locale
+          = link_to class: 'current-locale' do
+            ' English
+            span.icon-caret
+          ul
+            li= link_to "Italiano", switch_to_lang(:it)
+            li= link_to "Deutsch", switch_to_lang(:de)
+
+        - if current_user
+          li= link_to "Sign out", url(:sessions, :sign_out)
+        - else
+          li= link_to "Sign in", url(:sessions, :sign_in)
+          li= link_to "Sign up", url(:users, :sign_up)
+
+      ul.main-links
+        li= link_to "Download", "#"
+        li= link_to "Donate", url(:donations, :new), class: "donate"
+

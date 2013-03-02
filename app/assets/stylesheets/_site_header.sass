@@ -1,0 +1,95 @@
+$header-height: 60px
+
+=fixed-height($height)
+  line-height: $header-height * $height
+  height: $header-height * $height
+
+#site-header
+  background-color: $gray
+  padding: 15px 0
+  margin-bottom: 40px
+
+  li, a
+    display: inline-block
+
+  a
+    color: darken(white, 10%)
+    text-decoration: none
+
+    &:hover
+      color: white
+
+  nav
+    +span-columns(6)
+
+  nav.right
+    text-align: right
+
+  h1
+    margin-bottom: 5px
+    font-size: 2em
+    font-weight: 800
+    text-transform: uppercase
+    +fixed-height(0.6)
+    background-color: darken($gray, 10%)
+    display: inline-block
+    padding: 0 15px
+
+  .sections
+    +fixed-height(0.4)
+
+    li
+      margin-right: 15px
+
+  .authentication
+    margin-bottom: 5px
+    text-align: right
+    font-size: 0.9em
+    +fixed-height(0.4)
+
+    li
+      margin-left: 15px
+
+    .switch-locale
+      position: relative
+
+      ul
+        display: none
+        top: $header-height * 0.4
+        width: 100px
+        position: absolute
+        right: 0
+        background-color: rgba(black, 0.9)
+        text-align: left
+        +box-shadow(rgba(black, 0.3) 0 2px 4px)
+        padding: 6px 0
+
+        li
+          display: block
+
+          a
+            display: block
+            padding: 3px
+
+            &:hover
+              background-color: black
+
+      &:hover ul
+        display: block
+
+  .main-links
+    text-align: right
+
+    li
+      margin-left: 10px
+
+      a
+        @extend .button
+        background-color: darken($gray, 10%)
+        +fixed-height(0.6)
+        padding: 0 20px
+
+        &:hover
+          background-color: darken($gray, 20%)
+
+

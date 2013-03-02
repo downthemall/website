@@ -1,0 +1,5 @@
+- %w(notice alert).map(&:to_sym).each do |type|
+  - if flash[type]
+    div class=type
+      .wrapper
+        p= flash[type]

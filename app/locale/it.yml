@@ -1,0 +1,14 @@
+it:
+  donations:
+    completed: 'Donazione effettuata correttamente!'
+    canceled: 'Donazione annullata'
+  authentication:
+    already_signed_in: 'Sei già loggato!'
+    must_be_signed_in: 'Devi essere loggato!'
+    sign_up:
+      notice: 'Registrazione completata correttamente!'
+    sign_in:
+      notice: 'Login effettuato correttamente!'
+      alert: 'Username o password non validi. Perfavore, riprova!'
+    sign_out:
+      notice: 'Logout effettuato correttamente!'

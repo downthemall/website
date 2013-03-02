@@ -1,0 +1,14 @@
+en:
+  donations:
+    completed: 'Donation completed correctly!'
+    canceled: 'Donation aborted'
+  authentication:
+    already_signed_in: 'You are already signed in!'
+    must_be_signed_in: 'You must be signed in!'
+    sign_up:
+      notice: 'Signed up correctly!'
+    sign_in:
+      notice: 'Signed in correctly!'
+      alert: 'Invalid username or password'
+    sign_out:
+      notice: 'Signed out correctly!'
