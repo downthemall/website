@@ -41,11 +41,12 @@ class MockController
   def perform_request(&block)
     variables_before = instance_variables
     instance_exec(&block)
+  rescue Redirect
+  ensure
     variables_after = instance_variables
     (variables_after - variables_before).each do |name|
       @assigns[name.to_s.sub(/@/,'').to_sym] = instance_variable_get(name)
     end
-  rescue Redirect
   end
 
   include Downthemall::Helpers

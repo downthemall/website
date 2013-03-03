@@ -13,4 +13,8 @@ Padrino.set_load_paths Padrino.root("app/presenters")
 
 Slim::Engine.set_default_options disable_escape: true
 
+# Padrino.after_load do
+#   I18n.reload! if Padrino.env == :development
+# end
+
 Padrino.load!

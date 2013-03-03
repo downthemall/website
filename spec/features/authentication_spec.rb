@@ -14,13 +14,7 @@ feature 'Authentication' do
   end
 
   scenario 'Login/Logout' do
-    user = Authentication.create_user('foo@bar.org', 'password').save
-    visit '/en/sign_in'
-
-    fill_in 'email', with: 'foo@bar.org'
-    fill_in 'password', with: 'password'
-    click_button "Sign in"
-
+    sign_in_as(current_user)
     page.should have_text 'Signed in correctly!'
 
     visit '/en/sign_out'

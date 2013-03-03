@@ -1,13 +1,18 @@
 require 'authentication'
-require 'amo_helpers'
+require 'presenter'
+require 'authorization_helpers'
 require 'auto_locale'
+require 'will_paginate'
+require 'will_paginate/active_record'
 
 class Downthemall < Padrino::Application
   use ActiveRecord::ConnectionAdapters::ConnectionManagement
+
   register Padrino::Rendering
   register Padrino::Mailer
   register Padrino::Helpers
   register Padrino::AutoLocale
+  register WillPaginate::Sinatra
 
   register Padrino::Sprockets
   sprockets minify: (Padrino.env == :production)
@@ -18,7 +23,8 @@ class Downthemall < Padrino::Application
 
   module Helpers
     include Authentication::Helpers
-    include AmoHelpers
+    include Presenter::Helpers
+    include AuthorizationHelpers
   end
 
   helpers do

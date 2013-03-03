@@ -2,6 +2,8 @@ en:
   donations:
     completed: 'Donation completed correctly!'
     canceled: 'Donation aborted'
+  authorization:
+    admin_required: 'Only administrators can access this page'
   authentication:
     already_signed_in: 'You are already signed in!'
     must_be_signed_in: 'You must be signed in!'

@@ -10,6 +10,7 @@ autoload_paths = ActiveSupport::Dependencies.autoload_paths
 end
 
 require 'config/database'
+require 'fabrication'
 
 rails_root = File.expand_path('../../', __FILE__)
 Dir[File.join(rails_root, "spec/support/models/**/*.rb")].each {|f| require f}
