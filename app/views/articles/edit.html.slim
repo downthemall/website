@@ -1,0 +1,3 @@
+.wrapper
+  h1 Edit Article
+  = partial "articles/form", locals: { article: @article, url: url(:articles, :update, id: @article) }

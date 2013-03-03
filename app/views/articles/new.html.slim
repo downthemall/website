@@ -1,15 +1,3 @@
 .wrapper
   h1 Create a new Article
-
-  = form_for @article, url(:articles, :create) do |f|
-    p.input
-      = f.label :title
-      = f.text_field :title
-    p.input
-      = f.label :content
-      = f.text_area :content
-    p.input
-      = f.label :posted_at
-      = f.text_field :posted_at
-
-    = f.submit "Create Article"
+  = partial "articles/form", locals: { article: @article, url: url(:articles, :create) }

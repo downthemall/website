@@ -1,6 +1,6 @@
 admin = Authentication.create_user('stefano.verna@gmail.com', 'changeme')
 admin.admin = true
-admin.save
+admin.save!
 
 articles = JSON.parse File.read(Padrino.root('db/articles.json'))
 articles.each do |article|

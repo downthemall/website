@@ -1,6 +1,4 @@
 class Donation < ActiveRecord::Base
-  validates_presence_of :amount
-
   STATUS_PENDING = :pending
   STATUS_FAILED = :failed
   STATUS_DONE = :done

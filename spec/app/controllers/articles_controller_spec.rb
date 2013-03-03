@@ -7,47 +7,38 @@ describe ArticlesController do
   describe 'GET /new' do
     let(:action!) { get :new }
     it_requires 'admin users'
-
     context "when admin" do
       before { controller.stub(:current_user).and_return(user) }
-
       it "assigns a new article" do
         Article.should_receive(:new).and_return('article')
         action!
         assigns[:article].should == 'article'
       end
-
       it "renders" do
         controller.stub(:current_user).and_return(user)
         action!
         rendered_view.should == 'articles/new'
       end
-
     end
   end
 
   describe 'POST /create' do
     let(:action!) { post :create, article: 'foo' }
     let(:article) { stub('Article').as_null_object }
-
     it_requires 'admin users'
-
     context "when admin" do
       before {
         controller.stub(:current_user).and_return(user)
         Article.stub(:new).with('foo').and_return(article)
       }
-
       it "assigns an article with the specified params" do
         action!
         assigns[:article].should == article
       end
-
       it "assigns current user as author" do
         article.should_receive(:author=).with(user)
         action!
       end
-
       context "when model gets saved" do
         before { article.stub(:save).and_return(true) }
         it "redirects to the article" do
@@ -55,7 +46,6 @@ describe ArticlesController do
           redirect_url.should == controller.url(:articles, :show, id: article)
         end
       end
-
       context "when model does not get saved" do
         before { article.stub(:save).and_return(false) }
         it "renders" do
@@ -63,7 +53,80 @@ describe ArticlesController do
           rendered_view.should == 'articles/new'
         end
       end
+    end
+  end
 
+  describe 'POST /update' do
+    let(:action!) { post :update, id: 'foo', article: 'data' }
+    let(:article) { stub('Article').as_null_object }
+    it_requires 'admin users'
+    context "when admin" do
+      before {
+        controller.stub(:current_user).and_return(user)
+        Article.stub(:find).with('foo').and_return(article)
+      }
+      it "assigns an article with the specified params" do
+        action!
+        assigns[:article].should == article
+      end
+      it "updates attributes" do
+        article.should_receive(:attributes=).with('data')
+        action!
+      end
+      context "when model gets saved" do
+        before { article.stub(:save).and_return(true) }
+        it "redirects to the article" do
+          action!
+          redirect_url.should == controller.url(:articles, :show, id: article)
+        end
+      end
+      context "when model does not get saved" do
+        before { article.stub(:save).and_return(false) }
+        it "renders" do
+          action!
+          rendered_view.should == 'articles/edit'
+        end
+      end
+    end
+  end
+
+  describe 'GET /edit' do
+    let(:action!) { get :edit, id: 'foo' }
+    let(:article) { stub('Article').as_null_object }
+    it_requires 'admin users'
+    context "when admin" do
+      before {
+        controller.stub(:current_user).and_return(user)
+        Article.stub(:find).with('foo').and_return(article)
+      }
+      it "assigns an article with the specified params" do
+        action!
+        assigns[:article].should == article
+      end
+      it "renders" do
+        action!
+        rendered_view.should == 'articles/edit'
+      end
+    end
+  end
+
+  describe 'GET /delete' do
+    let(:action!) { get :destroy, id: 'foo' }
+    let(:article) { stub('Article').as_null_object }
+    it_requires 'admin users'
+    context "when admin" do
+      before {
+        controller.stub(:current_user).and_return(user)
+        Article.stub(:find).with('foo').and_return(article)
+      }
+      it "destroys the article" do
+        article.should_receive(:destroy)
+        action!
+      end
+      it "redirects to index" do
+        action!
+        redirect_url.should == controller.url(:articles, :index)
+      end
     end
   end
 

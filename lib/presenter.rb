@@ -3,7 +3,9 @@ class Presenter < SimpleDelegator
 
   module Helpers
     def present(obj, klass = nil)
-      if obj.is_a? Array
+      if obj.is_a? Presenter
+        obj
+      elsif obj.is_a? Array
         obj.map { |o| present(o, klass) }
       else
         klass ||= "#{obj.class}Presenter".constantize

@@ -1,0 +1,14 @@
+= form_for article, url do |f|
+  = f.error_messages
+
+  p.input
+    = f.label :title
+    = f.text_field :title
+  p.input
+    = f.label :content
+    = f.text_area :content
+  p.input
+    = f.label :posted_at
+    = f.text_field :posted_at
+
+  = f.submit "Save"
