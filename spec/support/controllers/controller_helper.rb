@@ -49,7 +49,11 @@ class MockController
     end
   end
 
+  def authorize!(resource)
+  end
+
   include Downthemall::Helpers
+  include StraightAuth::Helpers
 end
 
 module ControllerHelper

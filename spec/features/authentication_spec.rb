@@ -14,7 +14,8 @@ feature 'Authentication' do
   end
 
   scenario 'Login/Logout' do
-    sign_in_as(current_user)
+    user = Fabricate(:user)
+    sign_in_as(user)
     page.should have_text 'Signed in correctly!'
 
     visit '/en/sign_out'

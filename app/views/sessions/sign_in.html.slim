@@ -2,11 +2,11 @@
   h1 Sign in
 
   = form_tag url(:sessions, :sign_in) do
-    p
+    .input
       = label_tag :email
       = email_field_tag :email
-    p
+    .input
       = label_tag :password
       = password_field_tag :password
-    p
+    .input
       = submit_tag "Sign in"

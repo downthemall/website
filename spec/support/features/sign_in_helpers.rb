@@ -6,15 +6,6 @@ module SignInHelpers
     click_button "Sign in"
     page.should have_text 'Signed in correctly!'
   end
-
-  def current_user(attrs = {})
-    @current_user ||= Authentication.create_user('foo@bar.org', 'password').tap do |user|
-      attrs.each do |k,v|
-        user.send("#{k}=", v)
-      end
-      user.save
-    end
-  end
 end
 
 RSpec.configuration.include SignInHelpers

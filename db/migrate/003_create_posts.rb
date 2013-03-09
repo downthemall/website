@@ -1,6 +1,6 @@
-class CreateArticles < ActiveRecord::Migration
+class CreatePosts < ActiveRecord::Migration
   def self.up
-    create_table :articles do |t|
+    create_table :posts do |t|
       t.string :title
       t.text :content
       t.integer :user_id
@@ -10,6 +10,6 @@ class CreateArticles < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :articles
+    drop_table :posts
   end
 end

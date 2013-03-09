@@ -1,9 +1,8 @@
-require 'authentication'
 require 'presenter'
-require 'authorization_helpers'
 require 'auto_locale'
 require 'will_paginate'
 require 'will_paginate/active_record'
+require 'rack-flash'
 
 class Downthemall < Padrino::Application
   use ActiveRecord::ConnectionAdapters::ConnectionManagement
@@ -13,6 +12,9 @@ class Downthemall < Padrino::Application
   register Padrino::Helpers
   register Padrino::AutoLocale
   register WillPaginate::Sinatra
+  register StraightAuth
+
+  use Rack::Flash, sweep: true
 
   register Padrino::Sprockets
   sprockets minify: (Padrino.env == :production)
@@ -22,25 +24,46 @@ class Downthemall < Padrino::Application
   enable :sessions
 
   module Helpers
-    include Authentication::Helpers
     include Presenter::Helpers
-    include AuthorizationHelpers
   end
 
   helpers do
     include Helpers
+    include Pundit
   end
 
   configure :development, :test do
     set :paypal_account, "vendo_1321197264_biz@gmail.com"
     set :paypal_url, "https://www.sandbox.paypal.com/cgi-bin/webscr"
     ActiveMerchant::Billing::Base.mode = :test
+
+    error do
+      exception = env['sinatra.error']
+      exception.message + "<br/>"*2 + exception.backtrace.join("<br/>")
+    end
   end
 
   configure :production do
     set :paypal_account, "donors@downthemall.net"
     set :paypal_url, "https://www.paypal.com/cgi-bin/webscr"
   end
+
+  error StraightAuth::AuthenticatedUserRequired do
+    flash[:alert] = I18n.t('authentication.must_be_signed_in')
+    redirect url(:index)
+  end
+
+  error StraightAuth::UnauthenticatedUserRequired do
+    flash[:alert] = I18n.t('authentication.already_signed_in')
+    redirect url(:index)
+  end
+
+  error Pundit::NotAuthorizedError do
+    flash[:alert] = I18n.t('authorization.forbidden')
+    redirect url(:index)
+  end
+
+  set :show_exceptions, false
 
   ##
   # Caching support
@@ -62,7 +85,6 @@ class Downthemall < Padrino::Application
   #
   # set :raise_errors, true       # Raise exceptions (will stop application) (default for test)
   # set :dump_errors, true        # Exception backtraces are written to STDERR (default for production/development)
-  # set :show_exceptions, true    # Shows a stack trace in browser (default for development)
   # set :logging, true            # Logging in STDOUT for development and file for production (default only for development)
   # set :public_folder, "foo/bar" # Location for static assets (default root/public)
   # set :reload, false            # Reload application files (default in development)

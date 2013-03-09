@@ -4,11 +4,11 @@
   - form_for @user, url(:users, :sign_up) do |f|
     = f.error_messages
 
-    p
+    .input
       = f.label :email
       = f.email_field :email
-    p
+    .input
       = f.label :password
       = f.password_field :password
-    p
+    .input
       = f.submit "Sign up"

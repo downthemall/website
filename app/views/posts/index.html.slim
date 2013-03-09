@@ -1,0 +1,9 @@
+.wrapper
+  - @posts.each do |post|
+    = partial "posts/post", object: post
+
+  = will_paginate(@posts)
+
+  - if authorized? Post.new, :new
+    = link_to "Add Post", url(:posts, :new)
+

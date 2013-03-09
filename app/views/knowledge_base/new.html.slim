@@ -1,0 +1,4 @@
+.wrapper
+  h1 Add a new Knowledge Base Post
+  = partial "knowledge_base/form", locals: { revision: @revision, url: url(:knowledge_base, :create), edit_category: true }
+

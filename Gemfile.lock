@@ -1,13 +1,6 @@
 GIT
-  remote: git://github.com/nightsailer/padrino-sprockets.git
-  revision: c15b4a7877a412f8d4ffff6201b93b0227617b66
-  specs:
-    padrino-sprockets (0.0.1)
-      sprockets
-
-GIT
   remote: git://github.com/padrino/padrino-framework.git
-  revision: f1f2859c85ee7dd29904c3e166f7b9f5a99dfdc4
+  revision: c7fc7fb6aff7b6e5bf3e404fc1b782eeea63281c
   specs:
     padrino (0.10.7)
       padrino-admin (= 0.10.7)
@@ -37,6 +30,21 @@ GIT
     padrino-mailer (0.10.7)
       mail (~> 2.5.3)
       padrino-core (= 0.10.7)
+
+GIT
+  remote: git://github.com/stefanoverna/pundit.git
+  revision: de80bc466ba25d88a005d8c24f21d23f22c00552
+  branch: master
+  specs:
+    pundit (0.2.0)
+
+GIT
+  remote: git://github.com/stefanoverna/straight_auth.git
+  revision: ee90ca2f4c3eae35986fc2896c0dc231e6d96327
+  branch: master
+  specs:
+    straight_auth (0.0.1)
+      bcrypt-ruby
 
 GEM
   remote: https://rubygems.org/
@@ -74,18 +82,18 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 1.0.0)
-    childprocess (0.3.8)
+    childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.5.0)
+    coffee-script-source (1.6.1)
     crack (0.3.2)
     database_cleaner (0.9.1)
     diff-lcs (1.2.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    fabrication (2.6.1)
+    fabrication (2.6.2)
     ffi (1.4.0)
     hike (1.2.1)
     http_router (0.10.2)
@@ -105,10 +113,14 @@ GEM
       i18n (~> 0.6.0)
     multi_json (1.6.1)
     nokogiri (1.5.6)
+    padrino-sprockets (0.0.2)
+      sprockets
     pg (0.14.1)
     polyglot (0.3.3)
     rack (1.5.2)
-    rack-protection (1.3.2)
+    rack-flash3 (1.0.3)
+      rack
+    rack-protection (1.4.0)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -123,13 +135,13 @@ GEM
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.13.0)
     rubyzip (0.9.9)
-    sass (3.2.6)
-    selenium-webdriver (2.30.0)
+    sass (3.2.7)
+    selenium-webdriver (2.31.0)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
-    sinatra (1.3.4)
+    sinatra (1.3.5)
       rack (~> 1.4)
       rack-protection (~> 1.3)
       tilt (~> 1.3, >= 1.3.3)
@@ -143,16 +155,16 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     temple (0.5.5)
     thor (0.16.0)
-    tilt (1.3.3)
-    timecop (0.5.9.2)
+    tilt (1.3.4)
+    timecop (0.6.0)
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.35)
+    tzinfo (0.3.36)
     url_mount (0.2.1)
       rack
     vcr (2.4.0)
-    webmock (1.10.1)
+    webmock (1.11.0)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
     websocket (1.0.7)
@@ -164,25 +176,29 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activemerchant
-  activerecord
+  activemerchant (~> 1.31.1)
+  activerecord (~> 3.2.12)
   bcrypt-ruby
   capybara
-  coffee-script
+  coffee-script (~> 2.2.0)
   database_cleaner
   fabrication
-  i18n
-  jsmin
+  i18n (~> 0.6.4)
+  jsmin (~> 1.0.1)
   launchy
-  padrino!
-  padrino-sprockets!
+  padrino (~> 0.10.7)
+  padrino-helpers!
+  padrino-sprockets
   pg
+  pundit!
+  rack-flash3
   rake
-  redcarpet
+  redcarpet (~> 2.2.2)
   rspec
-  sass
-  slim
-  sprockets
+  sass (~> 3.2.7)
+  slim (~> 1.3.6)
+  sprockets (~> 2.9.0)
+  straight_auth!
   timecop
   vcr
   webmock

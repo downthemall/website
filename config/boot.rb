@@ -10,6 +10,7 @@ Bundler.require(:default, PADRINO_ENV)
 Padrino.set_load_paths Padrino.root("app/services")
 Padrino.set_load_paths Padrino.root("app/helpers")
 Padrino.set_load_paths Padrino.root("app/presenters")
+Padrino.set_load_paths Padrino.root("app/policies")
 
 Slim::Engine.set_default_options disable_escape: true
 

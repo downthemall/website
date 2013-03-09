@@ -1,9 +1,20 @@
 en:
+  knowledge_base:
+    approved: 'Version approved successfully'
+    destroyed: 'Version destroyed successfully'
+    created: 'Version created successfully'
+    updated: 'Version updated successfully'
+
+  categories:
+    getting-started: 'Getting Started'
+    tutorials: 'Tutorials'
+    contribute: 'Contribute'
+    release-notes: 'Release Notes'
   donations:
     completed: 'Donation completed correctly!'
     canceled: 'Donation aborted'
   authorization:
-    admin_required: 'Only administrators can access this page'
+    forbidden: 'Access forbidden!'
   authentication:
     already_signed_in: 'You are already signed in!'
     must_be_signed_in: 'You must be signed in!'

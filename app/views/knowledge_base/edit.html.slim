@@ -1,0 +1,3 @@
+.wrapper
+  h1 Edit Knowledge Base Post
+  = partial "knowledge_base/form", locals: { revision: @revision, url: url(:knowledge_base, :update, id: @revision), edit_category: false }

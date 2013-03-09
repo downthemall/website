@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }, if: :new_record?
   validates :password, presence: true, if: :new_record?
 
-  attr_accessor :password
+  include StraightAuth::Model
+  before_save :encrypt_password
 
   def find_by_email(email)
     where(email: email).first
@@ -14,5 +15,4 @@ class User < ActiveRecord::Base
   def admin?
     !! self.admin
   end
-
 end

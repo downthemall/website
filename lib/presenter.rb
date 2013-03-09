@@ -14,6 +14,10 @@ class Presenter < SimpleDelegator
     end
   end
 
+  def model_name
+    object.class.name
+  end
+
   def initialize(obj, context)
     super(obj)
     @context = context

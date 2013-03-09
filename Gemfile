@@ -1,21 +1,25 @@
 source 'https://rubygems.org'
 
-gem 'i18n'
-gem 'padrino', git: 'git://github.com/padrino/padrino-framework.git'
-gem 'rake'
-gem 'sass'
-gem 'slim'
 gem 'pg'
+gem 'rake'
+gem 'i18n', '~> 0.6.4'
+gem 'padrino-helpers', github: 'padrino/padrino-framework' # waiting for 0.10.8
+gem 'padrino', '~> 0.10.7'
+gem 'rack-flash3'
+gem 'sass', '~> 3.2.7'
+gem 'slim', '~> 1.3.6'
 gem 'bcrypt-ruby'
-gem 'activemerchant'
-gem 'coffee-script'
-# https://github.com/nightsailer/padrino-sprockets/pull/2
-gem 'padrino-sprockets', require: ["sprockets","padrino/sprockets"], github: 'nightsailer/padrino-sprockets'
-gem 'sprockets'
-gem 'jsmin'
-gem 'activerecord', require: "active_record"
-gem 'redcarpet'
+gem 'coffee-script', '~> 2.2.0'
+# # https://github.com/nightsailer/padrino-sprockets/pull/2
+gem 'sprockets', '~> 2.9.0'
+gem 'padrino-sprockets', require: "padrino/sprockets"
+gem 'jsmin', '~> 1.0.1'
+gem 'activerecord', '~> 3.2.12', require: "active_record"
+gem 'activemerchant', "~> 1.31.1"
+gem 'redcarpet', '~> 2.2.2'
 gem 'will_paginate', '~> 3.0', require: false
+gem 'pundit', github: 'stefanoverna/pundit', branch:'master'
+gem 'straight_auth', github: 'stefanoverna/straight_auth', branch: 'master'
 
 group :test do
   gem 'rspec'

@@ -19,24 +19,26 @@ describe SessionsController do
     let(:action!) { post :sign_in, email: 'email', password: 'password' }
     it_requires 'non-logged users'
 
-    it "saves to session and redirects with notice" do
-      controller.stub(:current_user).and_return(nil)
-      user = double('User', id: 'foo')
-      Authentication.stub(:authenticate!).with('email', 'password').and_return(user)
-      action!
-      session[:user_id].should == 'foo'
-      flash[:notice].should_not be_blank
-      redirect_url.should == controller.url(:index)
+    context "if authentication passes" do
+      it "redirects with notice" do
+        controller.stub(:current_user).and_return(nil)
+        user = double('User', id: 'foo')
+        controller.stub(:authenticate).with('email', 'password').and_return(user)
+        action!
+        flash[:notice].should_not be_blank
+        redirect_url.should == controller.url(:index)
+      end
     end
 
-    it "renders the sign in form again" do
-      controller.stub(:current_user).and_return(nil)
-      user = double('User', id: 'foo')
-      Authentication.stub(:authenticate!).with('email', 'password')
-        .and_raise(Authentication::Fail)
-      action!
-      flash.now[:alert].should_not be_blank
-      rendered_view.should == 'sessions/sign_in'
+    context "else" do
+      it "renders the sign in form again" do
+        controller.stub(:current_user).and_return(nil)
+        user = double('User', id: 'foo')
+        controller.stub(:authenticate!).with('email', 'password').and_return(false)
+        action!
+        flash.now[:alert].should_not be_blank
+        rendered_view.should == 'sessions/sign_in'
+      end
     end
   end
 

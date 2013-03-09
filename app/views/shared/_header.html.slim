@@ -5,8 +5,8 @@
 
       ul.sections
         li= link_to "Features", url(:features)
-        li= link_to "Latest News", url(:articles, :index)
-        li= link_to "Knowledge Base", "#"
+        li= link_to "Latest News", url(:posts, :index)
+        li= link_to "Knowledge Base", url(:knowledge_base, :index)
         li= link_to "Get Involved", "#"
 
     nav.right

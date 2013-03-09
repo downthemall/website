@@ -1,29 +1,13 @@
 shared_examples_for 'non-logged users' do
   it "requires non-logged users" do
-    controller.stub(:current_user).and_return('user')
+    controller.should_receive(:require_non_signed_in_user!)
     action!
-    flash[:alert].should_not be_blank
-    redirect_url.should == controller.url(:index)
   end
 end
 
 shared_examples_for 'logged users' do
   it "requires logged-in users" do
-    controller.stub(:current_user).and_return(nil)
+    controller.should_receive(:require_signed_in_user!)
     action!
-    flash[:alert].should_not be_blank
-    redirect_url.should == controller.url(:index)
   end
 end
-
-shared_examples_for 'admin users' do
-  it_requires 'logged users'
-  it "requires admin users" do
-    user = stub('User', admin?: false)
-    controller.stub(:current_user).and_return(user)
-    action!
-    flash[:alert].should_not be_blank
-    redirect_url.should == controller.url(:index)
-  end
-end
-

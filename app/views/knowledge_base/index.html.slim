@@ -1,0 +1,22 @@
+.wrapper.typeset
+  h3 Knowledge base
+
+  ul
+    - Category.all.each do |cat|
+      li
+        = cat.name
+        ul
+          - Article.public(I18n.locale).in_category(cat).each do |post|
+            - post = present(post)
+            li
+              = post.link_to
+
+  - if authorized?(Revision.new, :new)
+    = link_to "Add new Article", url(:knowledge_base, :new)
+
+  - if authorized?(Revision.new, :approve)
+    h3 Pending posts
+    ul
+      - Revision.pending.each do |version|
+        - version = present(version)
+        li= version.link_to

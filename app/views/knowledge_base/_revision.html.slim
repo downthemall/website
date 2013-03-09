@@ -1,0 +1,17 @@
+- revision = present(revision)
+
+h3= revision.link_to
+
+= revision.content
+= revision.actions
+
+p 
+  ' By
+  = revision.author
+
+- if authorized? revision, :approve
+  h3 Post revisions
+
+  ul
+  - revision.article.revisions.each do |revision|
+    li= present(revision).revision_line

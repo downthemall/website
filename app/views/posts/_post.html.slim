@@ -1,0 +1,8 @@
+- post = present(post)
+
+post.post
+  header
+    h3= post.title_link
+    .posted_at= post.posted_at
+  .content.typeset= post.content
+  = post.actions

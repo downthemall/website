@@ -1,13 +1,13 @@
-admin = Authentication.create_user('stefano.verna@gmail.com', 'changeme')
+admin = User.new(email: 'stefano.verna@gmail.com', password: 'changeme')
 admin.admin = true
 admin.save!
 
-articles = JSON.parse File.read(Padrino.root('db/articles.json'))
-articles.each do |article|
-  Article.create!(
-    title: article['title'],
-    content: article['md_body'],
-    posted_at: article['date'],
+posts = JSON.parse File.read(Padrino.root('db/posts.json'))
+posts.each do |post|
+  Post.create!(
+    title: post['title'],
+    content: post['md_body'],
+    posted_at: post['date'],
     author: admin
   )
 end

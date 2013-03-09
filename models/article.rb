@@ -1,7 +1,20 @@
 class Article < ActiveRecord::Base
-  belongs_to :author, class_name: "User"
-  validates :title, :posted_at, :content, :author, presence: true
+  validates :category, presence: true
+  has_many :revisions, dependent: :destroy
 
-  scope :published, -> { where("posted_at < ?", Time.now) }
-  default_scope order("posted_at DESC")
+  scope :public, ->(locale) { joins(:revisions).merge(Revision.approved).merge(Revision.with_locale(locale)).uniq }
+  scope :in_category, ->(cat) { where(category: cat.code) }
+
+  def latest_revision(locale)
+    revisions.with_locale(locale).first
+  end
+
+  def public_revision(locale)
+    revisions.approved.with_locale(locale).first
+  end
+
+  def pending_revisions(locale)
+    revisions.with_locale(locale).pending
+  end
+
 end

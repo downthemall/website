@@ -1,0 +1,15 @@
+= form_for revision, url do |f|
+  = f.error_messages
+
+  - if edit_category
+    p.input
+      = f.label :category
+      = f.select :category, collection: Category.all, fields: [:name, :code]
+  p.input
+    = f.label :title
+    = f.text_field :title
+  p.input
+    = f.label :content
+    = f.text_area :content
+
+  = f.submit "Save"

@@ -1,21 +1,33 @@
-require 'spec_helper'
+require 'model_spec_helper'
 
 describe Article do
 
-  it "requires title" do
-    Fabricate.build(:article, title: '').should have_errors_on :title
+  it "requires a category" do
+    Fabricate.build(:article, category: '').should have_errors_on :category
   end
 
-  it "requires a post date" do
-    Fabricate.build(:article, posted_at: '').should have_errors_on :posted_at
+  describe "#latest_revision and #public_revision" do
+    it "returns the latest revision available for a locale" do
+      a = Fabricate(:article)
+      recent_revision = Fabricate(:revision, approved: false, locale: :it, created_at: 2.days.ago, article: a)
+      old_revision    = Fabricate(:revision, approved: true, locale: :it, created_at: 3.days.ago, article: a)
+
+      a.latest_revision(:it).should == recent_revision
+      a.public_revision(:it).should == old_revision
+    end
   end
 
-  it "requires an author" do
-    Fabricate.build(:article, author: nil).should have_errors_on :author
-  end
+  describe "#public" do
+    it "returns only articles with at least an approved revision" do
+      article = Fabricate(:article)
+      Fabricate(:revision, approved: true, locale: :it, article: article)
+      Fabricate(:revision, approved: true, locale: :it, created_at: 3.days.ago, article: article)
+      Fabricate(:revision, approved: false, locale: :en, article: article)
 
-  it "requires a content" do
-    Fabricate.build(:article, content: '').should have_errors_on :content
+      Article.public(:it).should == [ article ]
+      Article.public(:fr).should be_empty
+      Article.public(:en).should be_empty
+    end
   end
 
 end
