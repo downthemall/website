@@ -1,6 +1,6 @@
-#= require jquery
-#= require jquery-ujs
-#= require base_plugin
+#= require ./vendor/jquery
+#= require_tree ./vendor
+#= require plugin
 #= require_tree ./plugins
 
 $ ->

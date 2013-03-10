@@ -10,6 +10,6 @@
     = f.text_field :title
   p.input
     = f.label :content
-    = f.text_area :content
+    = f.text_area :content, data: { behaviour: 'MarkdownEditor' }
 
   = f.submit "Save"
