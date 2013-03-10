@@ -20,6 +20,7 @@ gem 'redcarpet', '~> 2.2.2'
 gem 'will_paginate', '~> 3.0', require: false
 gem 'pundit', github: 'stefanoverna/pundit', branch:'master'
 gem 'straight_auth', github: 'stefanoverna/straight_auth', branch: 'master'
+gem "paperclip", "~> 3.0"
 
 group :development do
   gem 'letter_opener'

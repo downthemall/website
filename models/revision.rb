@@ -48,13 +48,19 @@ class Revision < ActiveRecord::Base
   end
 
   def build_updated(user, params)
-    Revision.new(
-      locale: self.locale,
-      author: user,
-      title: params[:title],
-      content: params[:content],
-      article: self.article
-    )
+    if author == user && !approved
+      self.title = params[:title]
+      self.content = params[:content]
+      self
+    else
+      Revision.new(
+        locale: self.locale,
+        author: user,
+        title: params[:title],
+        content: params[:content],
+        article: self.article
+      )
+    end
   end
 
   def destroy!

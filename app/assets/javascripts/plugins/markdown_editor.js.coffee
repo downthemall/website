@@ -1,6 +1,7 @@
 EpicEditorAdapter = (editor) ->
   getValue: ->
-    editor.getFiles().textarea.content
+    # it looks like contenteditable uses 160 as a whitespace in Chrome
+    editor.getFiles().textarea.content.replace(/\u00A0/g, " ")
   setValue: (val) ->
     editor.importFile('textarea', val)
 
@@ -35,17 +36,11 @@ class @MarkdownEditor extends Plugin
 
     editor = new EpicEditorAdapter(@editor)
     opts =
-      uploadUrl: '/en/image-attachments/create'
-      # onReceivedFile: (file) ->
-      # onUploadedFile: (json) ->
-      # customUploadHandler: (file) ->
+      uploadUrl: '/en/image-assets/upload'
 
     inlineattach = new inlineAttach(opts, editor)
 
     $(@editor.getElement('editor')).find("body").bind
-
-      paste: (e) ->
-        inlineattach.onPaste e.originalEvent
 
       drop: (e) =>
         e.stopPropagation()
