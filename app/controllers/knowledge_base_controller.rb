@@ -60,7 +60,6 @@ class KnowledgeBaseController < Controller
     flash[:notice] = I18n.t('knowledge_base.approved')
     redirect url(:knowledge_base, :show, id: @revision)
   end
-
 end
 
 Downthemall.controller :knowledge_base do

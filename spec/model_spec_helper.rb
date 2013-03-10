@@ -1,9 +1,12 @@
 require 'unit_spec_helper'
 require 'active_record'
 require 'ostruct'
+
+# ActiveRecord gems
 require 'straight_auth'
 require 'paperclip'
 
+# Stubbing padrino
 Padrino = OpenStruct.new(logger: nil, env: :test) unless defined?(Padrino)
 
 autoload_paths = ActiveSupport::Dependencies.autoload_paths
