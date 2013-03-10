@@ -5,7 +5,7 @@ describe KnowledgeBaseController do
   let(:revision) { stub('Revision').as_null_object }
 
   before do
-    ModerationMailDeliver.as_null_object
+    AdminMailer.as_null_object
     controller.stub(:current_user).and_return(user)
   end
 
@@ -63,7 +63,7 @@ describe KnowledgeBaseController do
         redirect_url.should == controller.url(:knowledge_base, :show, id: revision)
       end
       it "sends a mail to notify admins" do
-        ModerationMailDeliver.should_receive(:to_moderate!).with(revision)
+        AdminMailer.should_receive(:to_moderate!).with(revision)
         action!
       end
     end
@@ -100,7 +100,7 @@ describe KnowledgeBaseController do
         redirect_url.should == controller.url(:knowledge_base, :show, id: new_revision)
       end
       it "sends a mail to notify admins" do
-        ModerationMailDeliver.should_receive(:to_moderate!).with(new_revision)
+        AdminMailer.should_receive(:to_moderate!).with(new_revision)
         action!
       end
     end
