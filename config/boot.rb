@@ -15,10 +15,5 @@ Padrino.set_load_paths Padrino.root("app/policies")
 
 Slim::Engine.set_default_options disable_escape: true
 
-# Padrino.after_load do
-#   I18n.reload! if Padrino.env == :development
-# end
-
-require_relative "./padrino_ext"
-
+require_relative "./initializers/padrino_ext"
 Padrino.load!

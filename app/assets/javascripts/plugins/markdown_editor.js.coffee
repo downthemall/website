@@ -1,7 +1,6 @@
 EpicEditorAdapter = (editor) ->
   getValue: ->
-    # it looks like contenteditable uses 160 as a whitespace in Chrome
-    editor.getFiles().textarea.content.replace(/\u00A0/g, " ")
+    editor.exportFile('textarea', 'text')
   setValue: (val) ->
     editor.importFile('textarea', val)
 
@@ -14,23 +13,28 @@ class @MarkdownEditor extends Plugin
     @editor = new EpicEditor
       container: @$preview.get(0)
       basePath: '/assets'
+      clientSideStorage: false
       theme:
         base: '/markdown_base.css'
         preview: '/markdown_preview.css',
         editor: '/markdown_editor.css'
 
-    @editor.load => @updateHeight()
+    @editor.load()
     @$dom.hide()
     @editor.importFile('textarea', @$dom.val())
+
     @editor.on 'update', (file) =>
-      @$dom.val(file.content)
+      @$dom.val @editor.exportFile('textarea', 'text')
       @updateHeight()
 
     @editor.on 'fullscreenenter', =>
+      @fullscreen = true
       $(@editor.getElement('editor')).find("body").addClass('fullscreen')
       $(@editor.getElement('previewer')).find("body").addClass('fullscreen')
 
     @editor.on 'fullscreenexit', =>
+      @fullscreen = false
+      @updateHeight()
       $(@editor.getElement('editor')).find("body").removeClass('fullscreen')
       $(@editor.getElement('previewer')).find("body").removeClass('fullscreen')
 
@@ -59,7 +63,10 @@ class @MarkdownEditor extends Plugin
         e.preventDefault()
         @$preview.removeClass('dragging')
 
+    @updateHeight()
+
   updateHeight: ->
-    editorHeight = $(@editor.getElement('editor')).height()
-    @$preview.height(editorHeight)
-    @editor.reflow()
+    unless @fullscreen
+      editorHeight = $(@editor.getElement('editor')).height()
+      @$preview.height(editorHeight)
+      @editor.reflow()
