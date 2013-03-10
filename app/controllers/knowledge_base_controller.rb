@@ -37,7 +37,7 @@ class KnowledgeBaseController < Controller
     authorize! @old_revision
     @revision = @old_revision.build_updated(current_user, params[:revision])
     if @revision.save
-      AdminMailer.to_moderate!(@revision) if @revision != @old_revision
+      AdminMailer.to_moderate!(@revision) # if @revision != @old_revision
       flash[:notice] = I18n.t('knowledge_base.updated')
       redirect url(:knowledge_base, :show, id: @revision)
     else

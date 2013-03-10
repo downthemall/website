@@ -2,6 +2,7 @@ require 'unit_spec_helper'
 require 'active_record'
 require 'ostruct'
 require 'straight_auth'
+require 'paperclip'
 
 Padrino = OpenStruct.new(logger: nil, env: :test) unless defined?(Padrino)
 
