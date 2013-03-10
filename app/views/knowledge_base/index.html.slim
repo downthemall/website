@@ -6,7 +6,7 @@
       li
         = cat.name
         ul
-          - Article.public(I18n.locale).in_category(cat).each do |post|
+          - Article.with_public_revisions(I18n.locale).in_category(cat).each do |post|
             - post = present(post)
             li
               = post.link_to

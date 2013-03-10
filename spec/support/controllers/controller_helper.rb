@@ -63,7 +63,9 @@ module ControllerHelper
 
   def make_request(method, name, params = {})
     controller.params = params
-    controller.perform_request(&subject.class.route_handler(method, name))
+    handler = subject.class.route_handler(method, name)
+    handler.should_not be_nil
+    controller.perform_request(&handler)
   end
 
   def session

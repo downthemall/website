@@ -21,6 +21,11 @@ gem 'will_paginate', '~> 3.0', require: false
 gem 'pundit', github: 'stefanoverna/pundit', branch:'master'
 gem 'straight_auth', github: 'stefanoverna/straight_auth', branch: 'master'
 
+group :development do
+  gem 'letter_opener'
+  gem 'launchy'
+end
+
 group :test do
   gem 'rspec'
   gem 'capybara'

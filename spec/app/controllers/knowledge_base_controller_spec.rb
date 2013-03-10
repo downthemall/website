@@ -5,6 +5,7 @@ describe KnowledgeBaseController do
   let(:revision) { stub('Revision').as_null_object }
 
   before do
+    ModerationMailDeliver.as_null_object
     controller.stub(:current_user).and_return(user)
   end
 
@@ -61,6 +62,10 @@ describe KnowledgeBaseController do
         flash[:notice].should_not be_blank
         redirect_url.should == controller.url(:knowledge_base, :show, id: revision)
       end
+      it "sends a mail to notify admins" do
+        ModerationMailDeliver.should_receive(:to_moderate!).with(revision)
+        action!
+      end
     end
     context "when revision is invalid" do
       before { revision.stub(:save).and_return(false) }
@@ -93,6 +98,10 @@ describe KnowledgeBaseController do
         action!
         flash[:notice].should_not be_blank
         redirect_url.should == controller.url(:knowledge_base, :show, id: new_revision)
+      end
+      it "sends a mail to notify admins" do
+        ModerationMailDeliver.should_receive(:to_moderate!).with(new_revision)
+        action!
       end
     end
     context "when new revision is invalid" do

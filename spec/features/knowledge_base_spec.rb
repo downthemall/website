@@ -8,6 +8,8 @@ feature 'Knowledge Base' do
   end
 
   scenario 'Adding a new article' do
+    Fabricate(:admin, email: 'admin@email.com')
+
     sign_in_as(Fabricate(:user))
     visit '/en/knowledge-base'
     click_link 'Add new Article'
@@ -24,6 +26,9 @@ feature 'Knowledge Base' do
     revision = article.revisions.first
     revision.locale.should == :en
     revision.title.should == 'Title'
+
+    mail = Mail::TestMailer.deliveries.pop
+    mail.to.should include 'admin@email.com'
   end
 
   scenario 'Moderation' do

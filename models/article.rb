@@ -2,7 +2,7 @@ class Article < ActiveRecord::Base
   validates :category, presence: true
   has_many :revisions, dependent: :destroy
 
-  scope :public, ->(locale) { joins(:revisions).merge(Revision.approved).merge(Revision.with_locale(locale)).uniq }
+  scope :with_public_revisions, ->(locale) { joins(:revisions).merge(Revision.approved).merge(Revision.with_locale(locale)).uniq }
   scope :in_category, ->(cat) { where(category: cat.code) }
 
   def latest_revision(locale)

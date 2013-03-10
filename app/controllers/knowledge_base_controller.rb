@@ -18,6 +18,7 @@ class KnowledgeBaseController < Controller
     @revision = Revision.build(I18n.locale, current_user, params[:revision])
     authorize! @revision
     if @revision.save
+      ModerationMailDeliver.to_moderate!(@revision)
       flash[:notice] = I18n.t('knowledge_base.created')
       redirect url(:knowledge_base, :show, id: @revision)
     else
@@ -36,6 +37,7 @@ class KnowledgeBaseController < Controller
     authorize! @revision
     @revision = @revision.build_updated(current_user, params[:revision])
     if @revision.save
+      ModerationMailDeliver.to_moderate!(@revision)
       flash[:notice] = I18n.t('knowledge_base.updated')
       redirect url(:knowledge_base, :show, id: @revision)
     else

@@ -3,6 +3,8 @@ require 'auto_locale'
 require 'will_paginate'
 require 'will_paginate/active_record'
 require 'rack-flash'
+require 'mail'
+require 'letter_opener'
 
 class Downthemall < Padrino::Application
   use ActiveRecord::ConnectionAdapters::ConnectionManagement
@@ -33,17 +35,30 @@ class Downthemall < Padrino::Application
   end
 
   configure :development, :test do
+    set :host, "http://downthemall.dev"
     set :paypal_account, "vendo_1321197264_biz@gmail.com"
     set :paypal_url, "https://www.sandbox.paypal.com/cgi-bin/webscr"
     ActiveMerchant::Billing::Base.mode = :test
+  end
+
+  configure :development do
+    set :delivery_method, LetterOpener::DeliveryMethod
+    Mail.defaults do
+      delivery_method LetterOpener::DeliveryMethod, location: File.expand_path('../tmp/letter_opener', __FILE__)
+    end
 
     error do
       exception = env['sinatra.error']
-      exception.message + "<br/>"*2 + exception.backtrace.join("<br/>")
+      CGI::escapeHTML(exception.message) + "<br/>"*2 + exception.backtrace.join("<br/>")
     end
   end
 
+  configure :test do
+    set :delivery_method, :test
+  end
+
   configure :production do
+    set :host, "http://www.downthemall.net"
     set :paypal_account, "donors@downthemall.net"
     set :paypal_url, "https://www.paypal.com/cgi-bin/webscr"
   end
@@ -64,57 +79,15 @@ class Downthemall < Padrino::Application
   end
 
   set :show_exceptions, false
+end
 
-  ##
-  # Caching support
-  #
-  # register Padrino::Cache
-  # enable :caching
-  #
-  # You can customize caching store engines:
-  #
-  #   set :cache, Padrino::Cache::Store::Memcache.new(::Memcached.new('127.0.0.1:11211', exception_retry_limit: 1))
-  #   set :cache, Padrino::Cache::Store::Memcache.new(::Dalli::Client.new('127.0.0.1:11211', exception_retry_limit: 1))
-  #   set :cache, Padrino::Cache::Store::Redis.new(::Redis.new(host: '127.0.0.1', port: 6379, db: 0))
-  #   set :cache, Padrino::Cache::Store::Memory.new(50)
-  #   set :cache, Padrino::Cache::Store::File.new(Padrino.root('tmp', app_name.to_s, 'cache')) # default choice
-  #
-
-  ##
-  # Application configuration options
-  #
-  # set :raise_errors, true       # Raise exceptions (will stop application) (default for test)
-  # set :dump_errors, true        # Exception backtraces are written to STDERR (default for production/development)
-  # set :logging, true            # Logging in STDOUT for development and file for production (default only for development)
-  # set :public_folder, "foo/bar" # Location for static assets (default root/public)
-  # set :reload, false            # Reload application files (default in development)
-  # set :default_builder, "foo"   # Set a custom form builder (default 'StandardFormBuilder')
-  # set :locale_path, "bar"       # Set path for I18n translations (default your_app/locales)
-  # disable :sessions             # Disabled sessions by default (enable if needed)
-  # disable :flash                # Disables sinatra-flash (enabled by default if Sinatra::Flash is defined)
-  # layout  :my_layout            # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)
-  #
-
-  ##
-  # You can configure for a specified environment like:
-  #
-  #   configure :development do
-  #     set :foo, :bar
-  #     disable :asset_stamp # no asset timestamping for dev
-  #   end
-  #
-
-  ##
-  # You can manage errors like:
-  #
-  #   error 404 do
-  #     render 'errors/404'
-  #   end
-  #
-  #   error 505 do
-  #     render 'errors/505'
-  #   end
-  #
+Mail::Message.class_eval do
+  include Padrino::Helpers::OutputHelpers
+  include Padrino::Helpers::TagHelpers
+  include Padrino::Helpers::AssetTagHelpers
+  def url(*args)
+    File.join(Downthemall.settings.host, Downthemall.url(*args))
+  end
 end
 
 module Padrino

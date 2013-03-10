@@ -33,7 +33,7 @@ GIT
 
 GIT
   remote: git://github.com/stefanoverna/pundit.git
-  revision: de80bc466ba25d88a005d8c24f21d23f22c00552
+  revision: 0256b4ef84e53f23aedd8407e1b3a6b3fce3cb38
   branch: master
   specs:
     pundit (0.2.0)
@@ -104,6 +104,8 @@ GEM
     json (1.7.7)
     launchy (2.2.0)
       addressable (~> 2.3)
+    letter_opener (1.1.0)
+      launchy (~> 2.2.0)
     mail (2.5.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -186,6 +188,7 @@ DEPENDENCIES
   i18n (~> 0.6.4)
   jsmin (~> 1.0.1)
   launchy
+  letter_opener
   padrino (~> 0.10.7)
   padrino-helpers!
   padrino-sprockets

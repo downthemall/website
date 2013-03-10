@@ -17,16 +17,16 @@ describe Article do
     end
   end
 
-  describe "#public" do
+  describe "#with_public_revisions" do
     it "returns only articles with at least an approved revision" do
       article = Fabricate(:article)
       Fabricate(:revision, approved: true, locale: :it, article: article)
       Fabricate(:revision, approved: true, locale: :it, created_at: 3.days.ago, article: article)
       Fabricate(:revision, approved: false, locale: :en, article: article)
 
-      Article.public(:it).should == [ article ]
-      Article.public(:fr).should be_empty
-      Article.public(:en).should be_empty
+      Article.with_public_revisions(:it).should == [ article ]
+      Article.with_public_revisions(:fr).should be_empty
+      Article.with_public_revisions(:en).should be_empty
     end
   end
 
