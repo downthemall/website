@@ -166,7 +166,7 @@ GEM
     url_mount (0.2.1)
       rack
     vcr (2.4.0)
-    webmock (1.11.0)
+    webmock (1.10.0)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
     websocket (1.0.7)
@@ -204,5 +204,5 @@ DEPENDENCIES
   straight_auth!
   timecop
   vcr
-  webmock
+  webmock (= 1.10)
   will_paginate (~> 3.0)

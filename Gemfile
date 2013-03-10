@@ -33,6 +33,6 @@ group :test do
   gem 'launchy'
   gem 'timecop'
   gem 'vcr'
-  gem 'webmock', require: false
+  gem 'webmock', '1.10', require: false
   gem 'fabrication'
 end

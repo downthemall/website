@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'model_spec_helper'
 
 describe Donation do
   it "requires a numeric amount > 1" do
