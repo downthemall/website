@@ -3,9 +3,7 @@ source 'https://rubygems.org'
 gem 'pg'
 gem 'rake'
 gem 'i18n', '~> 0.6.4'
-gem 'padrino-helpers', github: 'padrino/padrino-framework' # waiting for 0.10.8
-gem 'padrino', '~> 0.10.7'
-gem 'rack-flash3'
+gem 'padrino', github: 'padrino/padrino-framework' # waiting for 0.10.8
 gem 'sass', '~> 3.2.7'
 gem 'slim', '~> 1.3.6'
 gem 'bcrypt-ruby'
@@ -17,10 +15,11 @@ gem 'jsmin', '~> 1.0.1'
 gem 'activerecord', '~> 3.2.12', require: "active_record"
 gem 'activemerchant', "~> 1.31.1"
 gem 'redcarpet', '~> 2.2.2'
-gem 'will_paginate', '~> 3.0', require: false
+gem 'will_paginate', '~> 3.0'
 gem 'pundit', github: 'stefanoverna/pundit', branch:'master'
 gem 'straight_auth', github: 'stefanoverna/straight_auth', branch: 'master'
 gem "paperclip", "~> 3.0"
+gem 'rack-protection', require: 'rack/protection'
 
 group :development do
   gem 'letter_opener'
@@ -34,6 +33,6 @@ group :test do
   gem 'launchy'
   gem 'timecop'
   gem 'vcr'
-  gem 'webmock', '1.10', require: false
+  gem 'webmock', '~> 1.9.3', require: false
   gem 'fabrication'
 end

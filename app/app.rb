@@ -1,12 +1,10 @@
 require 'presenter'
 require 'auto_locale'
-require 'will_paginate'
 require 'will_paginate/active_record'
-require 'rack-flash'
-require 'letter_opener'
 
 class Downthemall < Padrino::Application
   use ActiveRecord::ConnectionAdapters::ConnectionManagement
+  use Rack::Protection
 
   register Padrino::Rendering
   register Padrino::Mailer
@@ -14,10 +12,8 @@ class Downthemall < Padrino::Application
   register Padrino::AutoLocale
   register WillPaginate::Sinatra
   register StraightAuth
-
-  use Rack::Flash, sweep: true
-
   register Padrino::Sprockets
+
   sprockets minify: (Padrino.env == :production)
 
   set :locales, [:en, :it, :de]

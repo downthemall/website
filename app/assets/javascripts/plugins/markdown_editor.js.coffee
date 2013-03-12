@@ -1,15 +1,13 @@
-EpicEditorAdapter = (editor) ->
-  getValue: ->
-    editor.exportFile('textarea', 'text')
-  setValue: (val) ->
-    editor.importFile('textarea', val)
-
-EpicEditorAdapter:: = new inlineAttach.Editor()
-
 class @MarkdownEditor extends Plugin
   load: ->
     @$preview = $("<div/>").addClass('markdown-editor').insertAfter(@$dom)
+    @loadEditor()
+    @updateTextarea()
+    @prettifyFullscreen()
+    @inlineAttach()
+    @updateHeight()
 
+  loadEditor: ->
     @editor = new EpicEditor
       container: @$preview.get(0)
       basePath: '/assets'
@@ -18,8 +16,12 @@ class @MarkdownEditor extends Plugin
         base: '/markdown_base.css'
         preview: '/markdown_preview.css',
         editor: '/markdown_editor.css'
-
     @editor.load()
+
+    @$markdownEditor = $(@editor.getElement('editor')).find("body")
+    @$markdownPreview = $(@editor.getElement('previewer')).find("body")
+
+  updateTextarea: ->
     @$dom.hide()
     @editor.importFile('textarea', @$dom.val())
 
@@ -27,46 +29,47 @@ class @MarkdownEditor extends Plugin
       @$dom.val @editor.exportFile('textarea', 'text')
       @updateHeight()
 
+  prettifyFullscreen: ->
     @editor.on 'fullscreenenter', =>
       @fullscreen = true
-      $(@editor.getElement('editor')).find("body").addClass('fullscreen')
-      $(@editor.getElement('previewer')).find("body").addClass('fullscreen')
+      @$markdownEditor.addClass('fullscreen')
+      @$markdownPreview.addClass('fullscreen')
 
     @editor.on 'fullscreenexit', =>
       @fullscreen = false
+      @$markdownEditor.removeClass('fullscreen')
+      @$markdownPreview.removeClass('fullscreen')
       @updateHeight()
-      $(@editor.getElement('editor')).find("body").removeClass('fullscreen')
-      $(@editor.getElement('previewer')).find("body").removeClass('fullscreen')
+
+  inlineAttach: ->
+    EpicEditorAdapter = (editor) ->
+      getValue: -> editor.exportFile('textarea', 'text')
+      setValue: (val) -> editor.importFile('textarea', val)
+    EpicEditorAdapter:: = new inlineAttach.Editor()
 
     editor = new EpicEditorAdapter(@editor)
-    opts =
-      uploadUrl: '/en/image-assets/upload'
-
+    opts = { uploadUrl: '/en/image-assets/upload' }
     inlineattach = new inlineAttach(opts, editor)
 
-    $(@editor.getElement('editor')).find("body").bind
-
+    @$markdownEditor.bind
       drop: (e) =>
         e.stopPropagation()
         e.preventDefault()
         @$preview.removeClass('dragging')
         console.log e.originalEvent
         inlineattach.onDrop e.originalEvent
-
       dragenter: (e) =>
         e.stopPropagation()
         e.preventDefault()
         @$preview.addClass('dragging')
-
       dragleave: (e) =>
         e.stopPropagation()
         e.preventDefault()
         @$preview.removeClass('dragging')
 
-    @updateHeight()
-
   updateHeight: ->
     unless @fullscreen
-      editorHeight = $(@editor.getElement('editor')).height()
+      editorHeight = @$markdownEditor.parent().height()
       @$preview.height(editorHeight)
       @editor.reflow()
+

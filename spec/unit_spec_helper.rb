@@ -8,7 +8,6 @@ Dir[File.join("spec/support/unit/**/*.rb")].each {|f| require f}
 
 require 'vcr'
 require 'timecop'
-require 'webmock'
 require 'pundit'
 require 'pundit/rspec'
 
