@@ -10,16 +10,16 @@ feature 'Authentication' do
 
     click_button "Sign up"
 
-    page.should have_text 'Signed up correctly!'
+    expect(page).to have_text 'Signed up correctly!'
   end
 
   scenario 'Login/Logout' do
     user = Fabricate(:user)
     sign_in_as(user)
-    page.should have_text 'Signed in correctly!'
+    expect(page).to have_text 'Signed in correctly!'
 
     visit '/en/sign_out'
-    page.should have_text 'Signed out correctly!'
+    expect(page).to have_text 'Signed out correctly!'
   end
 
 end

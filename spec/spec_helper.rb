@@ -15,10 +15,6 @@ require 'capybara/dsl'
 
 Dir[Padrino.root("spec/support/**/*.rb")].each {|f| require f}
 
-RSpec.configure do |c|
-  c.alias_it_should_behave_like_to :it_requires, 'requires:'
-end
-
 def app
   Padrino.application
 end

@@ -15,7 +15,7 @@ describe PostsController do
     end
     it "assigns a new post" do
       action!
-      assigns[:post].should == 'post'
+      expect(assigns[:post]).to eq('post')
     end
   end
 
@@ -32,7 +32,7 @@ describe PostsController do
     end
     it "assigns an post with the specified params" do
       action!
-      assigns[:post].should == post
+      expect(assigns[:post]).to eq(post)
     end
     it "assigns current user as author" do
       post.should_receive(:author=).with(user)
@@ -42,14 +42,14 @@ describe PostsController do
       before { post.stub(:save).and_return(true) }
       it "redirects to the post" do
         action!
-        redirect_url.should == controller.url(:posts, :show, id: post)
+        expect(redirect_url).to eq(controller.url(:posts, :show, id: post))
       end
     end
     context "when model does not get saved" do
       before { post.stub(:save).and_return(false) }
       it "renders" do
         action!
-        rendered_view.should == 'posts/new'
+        expect(rendered_view).to eq('posts/new')
       end
     end
   end
@@ -66,7 +66,7 @@ describe PostsController do
     end
     it "assigns an post with the specified params" do
       action!
-      assigns[:post].should == post
+      expect(assigns[:post]).to eq(post)
     end
     it "updates attributes" do
       post.should_receive(:attributes=).with('data')
@@ -76,14 +76,14 @@ describe PostsController do
       before { post.stub(:save).and_return(true) }
       it "redirects to the post" do
         action!
-        redirect_url.should == controller.url(:posts, :show, id: post)
+        expect(redirect_url).to eq(controller.url(:posts, :show, id: post))
       end
     end
     context "when model does not get saved" do
       before { post.stub(:save).and_return(false) }
       it "renders" do
         action!
-        rendered_view.should == 'posts/edit'
+        expect(rendered_view).to eq('posts/edit')
       end
     end
   end
@@ -100,7 +100,7 @@ describe PostsController do
     end
     it "assigns an post with the specified params" do
       action!
-      assigns[:post].should == post
+      expect(assigns[:post]).to eq(post)
     end
   end
 
@@ -120,7 +120,7 @@ describe PostsController do
     end
     it "redirects to index" do
       action!
-      redirect_url.should == controller.url(:posts, :index)
+      expect(redirect_url).to eq(controller.url(:posts, :index))
     end
   end
 

@@ -4,7 +4,7 @@ feature 'Knowledge Base' do
   scenario 'Listing articles' do
     Fabricate(:revision, locale: :en, title: 'Foobar', approved: true)
     visit '/en/knowledge-base'
-    page.should have_content 'Foobar'
+    expect(page).to have_content 'Foobar'
   end
 
   scenario 'Adding a new article' do
@@ -18,17 +18,17 @@ feature 'Knowledge Base' do
     fill_in 'revision_content', with: 'Content'
     click_button 'Save'
 
-    page.should have_content I18n.t('knowledge_base.created')
+    expect(page).to have_content I18n.t('knowledge_base.created')
 
     article = Article.first
-    article.should have(1).revision
+    expect(article).to have(1).revision
 
     revision = article.revisions.first
-    revision.locale.should == :en
-    revision.title.should == 'Title'
+    expect(revision.locale).to eq(:en)
+    expect(revision.title).to eq('Title')
 
     mail = Mail::TestMailer.deliveries.pop
-    mail.to.should include 'admin@email.com'
+    expect(mail.to).to include 'admin@email.com'
   end
 
   scenario 'Moderation' do
@@ -44,12 +44,12 @@ feature 'Knowledge Base' do
     click_link "Approve"
 
     d.reload
-    d.status.should == Revision::STATUS_PUBLIC
+    expect(d.status).to eq(Revision::STATUS_PUBLIC)
 
     visit "/it/knowledge-base/#{c.id}"
     click_link "Delete"
 
-    Revision.exists?(c.id).should be_false
+    expect(Revision.exists?(c.id)).to be_false
   end
 
   scenario 'Editing' do
@@ -63,8 +63,8 @@ feature 'Knowledge Base' do
     fill_in 'revision_content', with: 'Contenuto'
     click_button 'Save'
 
-    a.article.should have(2).revisions
-    a.article.latest_revision(:it).title.should == 'Titolo'
+    expect(a.article).to have(2).revisions
+    expect(a.article.latest_revision(:it).title).to eq('Titolo')
   end
 end
 

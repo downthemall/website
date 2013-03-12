@@ -6,9 +6,9 @@ feature 'Donations' do
     click_button "Send my donation via PayPal"
 
     donation = Donation.first
-    donation.amount.should == 10
-    donation.currency.should == Donation::CURRENCY_USD
+    expect(donation.amount).to eq(10)
+    expect(donation.currency).to eq(Donation::CURRENCY_USD)
 
-    page.should have_button "Proceed"
+    expect(page).to have_button "Proceed"
   end
 end

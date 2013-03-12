@@ -8,7 +8,7 @@ describe UsersController do
 
     it "renders" do
       action!
-      rendered_view.should == 'users/sign_up'
+      expect(rendered_view).to eq('users/sign_up')
     end
   end
 
@@ -20,9 +20,9 @@ describe UsersController do
       user = double('User', save: true, id: 'foo')
       User.stub(:new).with(email: 'email', password: 'password').and_return(user)
       action!
-      flash[:notice].should_not be_blank
-      session[:user_id].should == 'foo'
-      redirect_url.should == controller.url(:index)
+      expect(flash[:notice]).not_to be_blank
+      expect(session[:user_id]).to eq('foo')
+      expect(redirect_url).to eq(controller.url(:index))
     end
 
     it "if user is valid, it saves session, and redirects with notice" do
@@ -30,7 +30,7 @@ describe UsersController do
       user = double('User', save: false)
       User.stub(:new).with(email: 'email', password: 'password').and_return(user)
       action!
-      rendered_view.should == 'users/sign_up'
+      expect(rendered_view).to eq('users/sign_up')
     end
   end
 

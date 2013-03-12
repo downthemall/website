@@ -8,11 +8,11 @@ describe DonationsController do
     it "assigns a new donation" do
       Donation.stub(:new).and_return(donation)
       action!
-      assigns[:donation].should == donation
+      expect(assigns[:donation]).to eq(donation)
     end
     it "renders" do
       action!
-      rendered_view.should == 'donations/new'
+      expect(rendered_view).to eq('donations/new')
     end
   end
 
@@ -21,7 +21,7 @@ describe DonationsController do
     before { Donation.stub(:new).with('foo').and_return(donation) }
     it "creates and assigns a new donation" do
       action!
-      assigns[:donation].should == donation
+      expect(assigns[:donation]).to eq(donation)
     end
     it "sets the donation as pending" do
       donation.should_receive(:status=).with(Donation::STATUS_PENDING)
@@ -31,14 +31,14 @@ describe DonationsController do
       it "renders" do
         donation.stub(:save).and_return(true)
         action!
-        rendered_view.should == 'donations/create'
+        expect(rendered_view).to eq('donations/create')
       end
     end
     context "else" do
       it "renders" do
         donation.stub(:save).and_return(false)
         action!
-        rendered_view.should == 'donations/new'
+        expect(rendered_view).to eq('donations/new')
       end
     end
   end
@@ -59,15 +59,15 @@ describe DonationsController do
     before { Donation.stub(:find).with('foo').and_return(donation) }
     it "assigns the donation" do
       action!
-      assigns[:donation].should == donation
+      expect(assigns[:donation]).to eq(donation)
     end
     it "adds a notice" do
       action!
-      flash.now[:notice].should_not be_blank
+      expect(flash.now[:notice]).not_to be_blank
     end
     it "renders" do
       action!
-      rendered_view.should == 'donations/complete'
+      expect(rendered_view).to eq('donations/complete')
     end
   end
 
@@ -80,11 +80,11 @@ describe DonationsController do
     end
     it "adds an alert" do
       action!
-      flash[:alert].should_not be_blank
+      expect(flash[:alert]).not_to be_blank
     end
     it "redirects to a new donation" do
       action!
-      redirect_url.should == controller.url(:donations, :new)
+      expect(redirect_url).to eq(controller.url(:donations, :new))
     end
   end
 

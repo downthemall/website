@@ -20,7 +20,7 @@ describe KnowledgeBaseController do
     end
     it "assigns a new revision" do
       action!
-      assigns[:revision].should == revision
+      expect(assigns[:revision]).to eq(revision)
     end
   end
 
@@ -32,7 +32,7 @@ describe KnowledgeBaseController do
     end
     it "uses the latest revision available" do
       action!
-      assigns[:revision].should == 'latest'
+      expect(assigns[:revision]).to eq('latest')
     end
     it "authorizes action" do
       controller.should_receive(:authorize!).with('latest')
@@ -53,14 +53,14 @@ describe KnowledgeBaseController do
     end
     it "assigns the revision" do
       action!
-      assigns[:revision].should == revision
+      expect(assigns[:revision]).to eq(revision)
     end
     context "when revision is valid" do
       before { revision.stub(:save).and_return(true) }
       it "adds a notice and redirects to the revision" do
         action!
-        flash[:notice].should_not be_blank
-        redirect_url.should == controller.url(:knowledge_base, :show, id: revision)
+        expect(flash[:notice]).not_to be_blank
+        expect(redirect_url).to eq(controller.url(:knowledge_base, :show, id: revision))
       end
       it "sends a mail to notify admins" do
         AdminMailer.should_receive(:to_moderate!).with(revision)
@@ -71,7 +71,7 @@ describe KnowledgeBaseController do
       before { revision.stub(:save).and_return(false) }
       it "renders the form again" do
         action!
-        rendered_view.should == 'knowledge_base/new'
+        expect(rendered_view).to eq('knowledge_base/new')
       end
     end
   end
@@ -90,14 +90,14 @@ describe KnowledgeBaseController do
     end
     it "assigns the new revision" do
       action!
-      assigns[:revision].should == new_revision
+      expect(assigns[:revision]).to eq(new_revision)
     end
     context "when new revision is valid" do
       before { new_revision.stub(:save).and_return(true) }
       it "adds a notice and redirects to the revision" do
         action!
-        flash[:notice].should_not be_blank
-        redirect_url.should == controller.url(:knowledge_base, :show, id: new_revision)
+        expect(flash[:notice]).not_to be_blank
+        expect(redirect_url).to eq(controller.url(:knowledge_base, :show, id: new_revision))
       end
       it "sends a mail to notify admins" do
         AdminMailer.should_receive(:to_moderate!).with(new_revision)
@@ -108,7 +108,7 @@ describe KnowledgeBaseController do
       before { new_revision.stub(:save).and_return(false) }
       it "renders the form again" do
         action!
-        rendered_view.should == 'knowledge_base/edit'
+        expect(rendered_view).to eq('knowledge_base/edit')
       end
     end
   end
@@ -126,8 +126,8 @@ describe KnowledgeBaseController do
     end
     it "redirects to index with notice" do
       action!
-      flash[:notice].should_not be_blank
-      redirect_url.should == controller.url(:knowledge_base, :index)
+      expect(flash[:notice]).not_to be_blank
+      expect(redirect_url).to eq(controller.url(:knowledge_base, :index))
     end
   end
 
@@ -144,8 +144,8 @@ describe KnowledgeBaseController do
     end
     it "redirects to index with notice" do
       action!
-      flash[:notice].should_not be_blank
-      redirect_url.should == controller.url(:knowledge_base, :show, id: revision)
+      expect(flash[:notice]).not_to be_blank
+      expect(redirect_url).to eq(controller.url(:knowledge_base, :show, id: revision))
     end
   end
 

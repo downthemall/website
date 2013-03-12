@@ -10,8 +10,8 @@ describe SessionsController do
       User.stub(:new).and_return('user')
       controller.stub(:current_user).and_return(nil)
       action!
-      assigns[:user].should == 'user'
-      rendered_view.should == 'sessions/sign_in'
+      expect(assigns[:user]).to eq('user')
+      expect(rendered_view).to eq('sessions/sign_in')
     end
   end
 
@@ -25,8 +25,8 @@ describe SessionsController do
         user = double('User', id: 'foo')
         controller.stub(:authenticate).with('email', 'password').and_return(user)
         action!
-        flash[:notice].should_not be_blank
-        redirect_url.should == controller.url(:index)
+        expect(flash[:notice]).not_to be_blank
+        expect(redirect_url).to eq(controller.url(:index))
       end
     end
 
@@ -36,8 +36,8 @@ describe SessionsController do
         user = double('User', id: 'foo')
         controller.stub(:authenticate!).with('email', 'password').and_return(false)
         action!
-        flash.now[:alert].should_not be_blank
-        rendered_view.should == 'sessions/sign_in'
+        expect(flash.now[:alert]).not_to be_blank
+        expect(rendered_view).to eq('sessions/sign_in')
       end
     end
   end
@@ -50,9 +50,9 @@ describe SessionsController do
       controller.stub(:current_user).and_return('user')
       session[:user_id] = 'foo'
       action!
-      session[:user_id].should be_blank
-      flash[:notice].should_not be_blank
-      redirect_url.should == controller.url(:index)
+      expect(session[:user_id]).to be_blank
+      expect(flash[:notice]).not_to be_blank
+      expect(redirect_url).to eq(controller.url(:index))
     end
   end
 

@@ -4,7 +4,7 @@ module SignInHelpers
     fill_in 'email', with: user.email
     fill_in 'password', with: user.password
     click_button "Sign in"
-    page.should have_text 'Signed in correctly!'
+    expect(page).to have_text 'Signed in correctly!'
   end
 end
 

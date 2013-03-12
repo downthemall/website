@@ -1,21 +1,14 @@
 require 'bundler'
 Bundler.setup # we have gems in repos
-
-require 'active_support/dependencies'
-root = File.expand_path('../../', __FILE__)
-$LOAD_PATH.unshift(root) unless $LOAD_PATH.include?(root)
-Dir[File.join("spec/support/unit/**/*.rb")].each {|f| require f}
-
 require 'vcr'
 require 'timecop'
 require 'pundit'
 require 'pundit/rspec'
+require 'active_support/dependencies'
 
-VCR.configure do |c|
-  c.cassette_library_dir = 'spec/cassettes'
-  c.hook_into :webmock
-  c.ignore_localhost = true
-end
+root = File.expand_path('../../', __FILE__)
+$LOAD_PATH.unshift(root) unless $LOAD_PATH.include?(root)
+Dir[File.join("spec/support/unit/**/*.rb")].each {|f| require f}
 
 autoload_paths = ActiveSupport::Dependencies.autoload_paths
 %w(app/policies app/services lib).each do |path|
