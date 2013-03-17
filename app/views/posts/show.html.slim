@@ -1,2 +1,5 @@
-.wrapper
-  = partial "posts/post", object: @post
+#posts.wrapper
+  .page-header
+    h1 Latest News
+  .right= partial "posts/post", object: @post
+  = partial "posts/menu"

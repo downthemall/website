@@ -5,9 +5,11 @@ class Revision < ActiveRecord::Base
   validates :article, :locale, :title, :content, :author, presence: true
 
   default_scope order('created_at DESC')
+
   scope :approved, ->{ where(approved: true) }
   scope :not_approved, -> { where("approved <> ?", true) }
   scope :with_locale, ->(locale) { where(locale: locale) }
+  scope :with_author, ->(author) { where(author_id: author) }
 
   STATUS_APPROVED = :approved
   STATUS_SKIPPED = :skipped

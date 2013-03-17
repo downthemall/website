@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class PostPresenter < Presenter
+class PostPresenter < BasicPresenter::Base
 
   def posted_at
     I18n.l(object.posted_at.to_date, format: :long)
@@ -15,17 +15,13 @@ class PostPresenter < Presenter
   end
 
   def content
-    markdown.render(object.content)
-  end
-
-  def markdown
-    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, space_after_headers: true)
+    MarkdownFormatter.format(object.content)
   end
 
   def actions
     if context.authorized?(self, :edit)
-      context.link_to("Edit", context.url(:posts, :edit, id: self)) << " • " <<
-      context.link_to("Delete", context.url(:posts, :destroy, id: self), data: { confirm: 'Are you sure?' })
+      context.link_to("Edit", context.url(:posts, :edit, id: self), class: "edit") <<
+      context.link_to("Delete", context.url(:posts, :destroy, id: self), class: "destroy", data: { confirm: 'Are you sure?' })
     end
   end
 

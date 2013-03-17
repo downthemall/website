@@ -1,95 +1,120 @@
-$header-height: 60px
-
-=fixed-height($height)
-  line-height: $header-height * $height
-  height: $header-height * $height
+$noise: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMMCQoLDRARDg8SCA1+nLwAAARlSURBVHheVZJHU+IKHMD/JKHoKdQAJ3o7UQygJ0I0wp6QLqdQAupJetgTCVVPICjgacUC8infzrw3b3Y/wq+AszcONcN9dfy8EtKQisQDqoqlVyQbgARLpciT6VxmLARF6XJXq+jNEHLa3cBTS52QTl8EadLwy+3ZaGayEqYfKWWgiUcrdEKCZibDpT/DZXbF8v4BkcXz0Mm9oPpAepUlmORtz83LfH2GZpKkGXDKPpUZTQ27KtyyJAecb9GI1WdpBAPT9Y9OhxJxtNFIrgrxwFD9nPugBsog2OY+g7SfOREUx9F9RR1XtnF1qZpPJ0B907uWGhhFj7rzDhCT0y98/tps85cTiN+9Hia4RZ5/jM+YY+v7JGOksaxOcwRBBzeKITX8oBJxZi23HMLFfZZpbjiQmhnnLuTmMLOrPotwOyar9aEtdBMGz0m8uW17567yq0DJrvmMcJgmslgwAP1t2UqbTdvOXYQmpP2c3MLWZ5V8Xgr39x2el86usuQTW/Jb5A7y2IPG0NAasioszdavtS76RUtuJkfx+pF+Oy4FcaCiVSX2fRnGid+hBn+EAqWsiKny/eJWbrmy5qJ2VzBlCNlyBinsRtIzxmu/YSP2JGuO6E3zvPH9y5p6BExWaHGlFC6PnC4GO2XHV3MbLkS33QMrb+1ufs6beQ1D/5UQnmfGp5iwMF7aEORC8fPC9a5qMuIPogu/i4dxXE4aQ1Olte603Ax+DhUJvikCY7taEq/WBEWc5r2s6M+6g1Yt1+9vwVqr2m4+NIq2m3r6tqRRQ31fTZy47jgwqBSv3eI9cSt4Tpg/3UK8U2xxjtXTql/WYxUbZ02qF+WI91kG8+cyW9jqm46QtNC+qS/phTulXJZdW9BcioRwvgyek4CTeT5O26uZQkd3NoJYoO/9DpfbSIs2JqWyld3hl9SU7EGEpiDprtluYCo5WTJ0nU6MFDOfrR1vwsjfpu0F1WgboXP1/W8G038M0ILyaZgNvEniY/Jy+Ul3kYDGuTshTWBoE3dP1WRyvLJKhsjBy1fzq/T5sKKFJFboaK57o+PKg8W8/vpcXT32duFvZREIQsJjHTnY0DaqqxaN91/huSrQSqegl+u8oQJ1/eLwpYKuvlS+9sjWt3TDBv+/0n0en7nCvyfr/jsZmGynTlz9SVSGqoGnVfCTX/6X0oePvATx+aHecNWRoRWXO+O+5Samfrua6k4BfIqtXSuL4J6KoIkiEP2QWveizHs3BzaKoItX9oX+6qOD3lKoeO1HupY5EQFco6zLx7XYcdEubXpzvX2s65idpagmeC+KxcgMmWhYlPfdnvIjDSfpqx1PC0jcNpJlm47SHe/d+RVhneD6qA8arQUousTwjE+kPspIdowhGQeikYhHWuEAoXXKmfZn3pwFG0Z2PWKwU2IeqcgkCX9ZbIhC9Gkh5gat+zFsSmVtoDSFRE/8VR0vQxZGfqYlpkQDvh2c3XXb8Oojnnf5mHton8cYKi2Yzv8B8GJ/GXzFAwwAAAAASUVORK5CYII="
 
 #site-header
-  background-color: $gray
-  padding: 15px 0
-  margin-bottom: 40px
-
-  li, a
-    display: inline-block
+  +background-image(url($noise), $light-background)
+  box-shadow: rgba(black, 0.1) 0 -3px 3px inset
+  padding-top: 10px
+  padding-bottom: 10px
+  line-height: 36px
+  position: relative
+  border-bottom: 1px solid #ccc
+  margin-bottom: 30px
+  text-shadow: white 0 1px 0
+  +clearfix
 
   a
-    color: darken(white, 10%)
+    color: $black
     text-decoration: none
 
-    &:hover
-      color: white
-
-  nav
-    +span-columns(6)
-
-  nav.right
-    text-align: right
-
-  h1
-    margin-bottom: 5px
-    font-size: 2em
-    font-weight: 800
-    text-transform: uppercase
-    +fixed-height(0.6)
-    background-color: darken($gray, 10%)
-    display: inline-block
-    padding: 0 15px
-
-  .sections
-    +fixed-height(0.4)
-
-    li
-      margin-right: 15px
-
-  .authentication
-    margin-bottom: 5px
-    text-align: right
-    font-size: 0.9em
-    +fixed-height(0.4)
-
-    li
-      margin-left: 15px
-
-    .switch-locale
-      position: relative
-
-      ul
-        display: none
-        top: $header-height * 0.4
-        width: 100px
-        position: absolute
-        right: 0
-        background-color: rgba(black, 0.9)
-        text-align: left
-        +box-shadow(rgba(black, 0.3) 0 2px 4px)
-        padding: 6px 0
-
-        li
-          display: block
-
-          a
-            display: block
-            padding: 3px
-
-            &:hover
-              background-color: black
-
-      &:hover ul
-        display: block
-
-  .main-links
-    text-align: right
-
-    li
-      margin-left: 10px
+  .wrapper
+    > h1
+      float: left
+      font-size: 1.6em
+      font-weight: 300
 
       a
-        @extend .button
-        background-color: darken($gray, 10%)
-        +fixed-height(0.6)
-        padding: 0 20px
+        color: $gray
 
-        &:hover
-          background-color: darken($gray, 20%)
+      &:before
+        content: ""
+        display: inline-block
+        vertical-align: middle
+        background: url('/assets/downthemall-logo-small.png') no-repeat
+        width: 36px
+        height: 36px
+        margin-right: 10px
 
+    +media($mobile)
+      > a
+        float: right
+        margin-left: 7px
+        font-size: 0.9em
+        font-weight: bold
+
+      > ul
+        display: none
+
+        &.visible
+          display: block
+
+      ul
+        background-color: white
+        position: absolute
+        left: 0
+        right: 0
+        top: 36px + 20px
+        line-height: 36px + 20px
+        border-top: 1px solid #ccc
+        text-transform: uppercase
+        font-weight: bold
+        box-shadow: rgba(black, 0.1) 0 3px 3px
+        z-index: 2
+
+        li a
+          display: block
+          border-bottom: 1px solid #ccc
+          color: $dark-gray
+          font-weight: 800
+          padding: 0 20px
+
+          &:hover
+            background: $light-background
+            color: $black
+
+    +media($tablet)
+
+      > .current-language
+        display: none
+
+      > .menu
+        display: none
+
+      #language
+        display: none
+
+      #menu
+        float: right
+
+        li
+          display: inline-block
+
+          a
+            display: inline-block
+            padding: 0 10px
+            text-align: center
+            line-height: 32px
+
+            &:hover
+              text-decoration: underline
+              color: $black
+
+          .download, .donate
+            width: 100px
+            font-weight: bold
+            color: white
+            text-transform: uppercase
+            text-shadow: rgba(black, 0.6) 0 -1px 0
+
+            &:hover
+              text-decoration: none
+              color: white
+
+          .download
+            margin: 0 10px
+            +button-color($blue)
+            border-bottom-width: 0px
+
+          .donate
+            +button-color($red)
+            border-bottom-width: 0px
 

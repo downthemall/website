@@ -1,13 +1,28 @@
-.hero
-  h3.title A better way to manage your downloads
-  h2.subtitle DownThemAll! is a free, multi award-winning Firefox extension that adds new advanced download capabilities to your browser.
+#homepage
+  .hero
+    .image= image_tag "/assets/downthemall-logo.png"
 
-  .call-to-action
-    = link_to "#", :class => "button" do
-      | Install DownThemAll!
-    .version Version 2.0.7, Multilanguage
+    .content
+      h3.title A better way to manage your downloads
+      h2.subtitle DownThemAll! is a free, multi award-winning Firefox extension that adds new advanced download capabilities to your browser.
 
-  .stats
-    p Totally free & open-source!
-    p #{AmoStats.stats.users} daily active users
-    p #{AmoStats.stats.downloads} downloads
+      .call-to-action
+        = link_to "#", :class => "button" do
+          | Install DownThemAll!
+        .version Version 2.0.7, Multilanguage
+
+  section.stats
+    ul
+      li Totally free & open-source!
+      li #{number_with_delimiter AmoStats.stats.users} daily active users
+      li #{number_with_delimiter AmoStats.stats.downloads} downloads
+
+  section.reviews
+    h6 Featured on
+    ul
+      li: a.wired href="#" data-quote="This is the extension power downloaders simply can’t live without. Once you’ve used DownThemAll!, the thought of clicking on each link to download a group of objects will seem like emptying a fish tank with a shot glass." Wired.com
+      li: a.download href="#" data-quote="Perfect for image hunters, this download manager finds everything downloadable on a page and lets you designate which files you’d like to download" CNET Download.com
+      li: a.tech-republic href="#" data-quote="DownThemAll is one of the best Firefox extensions that I’ve used. And judging from its placement on the list of Top 10 Firefox extensions, I’d say many others agree. DownThemAll is easy to install, use, and works as described." TechRepublic
+      li: a.mashable href="#" data-quote="Overall DownThemAll is best available download manager which is also free if you are a Firefox user." Mashable
+      li: a.lifehacker href="#" data-quote="If you often need closer control of multiple, large downloads, you need this. Once you’ve used dTa, you’ll never go back to Firefox’s default Downloads dialog." LifeHacker
+

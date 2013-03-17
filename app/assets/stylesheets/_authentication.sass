@@ -1,0 +1,35 @@
+#authentication
+  text-align: center
+
+  h1
+    font-weight: 300
+    color: $dark-gray
+    font-size: 1.8em
+    margin-bottom: 10px
+    padding-bottom: 10px
+    border-bottom: 1px solid #ddd
+
+  form
+    font-size: 1.2em
+    padding: 10px 0
+
+    label
+      font-weight: 300
+      color: $gray
+
+    #{$all-text-inputs}
+      padding: 8px
+      text-align: center
+
+  +media($tablet)
+    +shift(3)
+    +span-columns(6)
+    text-align: left
+
+    h1
+      font-size: 2.3em
+
+    form
+      #{$all-text-inputs}
+        text-align: left
+        font-size: 1.2em

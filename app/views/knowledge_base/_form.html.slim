@@ -1,15 +1,22 @@
 = form_for revision, url do |f|
   = f.error_messages
 
+  p.input
+    = f.label :locale
+    = t "language.#{I18n.locale}"
+
   - if edit_category
     p.input
       = f.label :category
       = f.select :category, collection: Category.all, fields: [:name, :code]
+
   p.input
     = f.label :title
     = f.text_field :title
+
   p.input
     = f.label :content
     = f.text_area :content, data: { behaviour: 'MarkdownEditor' }
+    span.hint Markdown syntax allowed. To add an image, just drag & drop it inside the textarea.
 
   = f.submit "Save"

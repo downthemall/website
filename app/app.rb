@@ -1,4 +1,3 @@
-require 'presenter'
 require 'auto_locale'
 require 'will_paginate/active_record'
 
@@ -21,7 +20,7 @@ class Downthemall < Padrino::Application
   enable :sessions
 
   module Helpers
-    include Presenter::Helpers
+    include BasicPresenter::Helpers
   end
 
   helpers do

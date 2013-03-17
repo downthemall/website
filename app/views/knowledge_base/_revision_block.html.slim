@@ -1,0 +1,10 @@
+.revision-block
+  h3= title
+  .content
+    - if revisions.any?
+      ul
+        - present_collection(revisions).each do |rev|
+          li= rev.link_to
+    - else
+      p No articles available!
+

@@ -1,32 +1,21 @@
 #site-header
   .wrapper
-    nav.left
-      h1= link_to "Downthemall", url(:index)
+    h1= link_to url(:index) do
+      | DownThemAll!
 
-      ul.sections
-        li= link_to "Features", url(:features)
-        li= link_to "Latest News", url(:posts, :index)
-        li= link_to "Knowledge Base", url(:knowledge_base, :index)
-        li= link_to "Get Involved", "#"
+    = link_to "Menu", "#", class: 'menu', data: { behaviour: 'DropdownMenu', menu_dom: '#menu' }
+    = link_to "#", class: 'current-language', data: { behaviour: 'DropdownMenu', menu_dom: '#language' } do
+      span= I18n.t "language.#{I18n.locale}"
+      span.icon-caret
 
-    nav.right
+    ul#menu.sections
+      li= link_to "Features", url(:features)
+      li= link_to "Latest News", url(:posts, :index)
+      li= link_to "Knowledge Base", url(:knowledge_base, :index)
+      li= link_to "Download", "#", class: "download"
+      li= link_to "Donate", url(:donations, :new), class: "donate"
 
-      ul.authentication
-        li.switch-locale
-          = link_to class: 'current-locale' do
-            ' English
-            span.icon-caret
-          ul
-            li= link_to "Italiano", switch_to_lang(:it)
-            li= link_to "Deutsch", switch_to_lang(:de)
-
-        - if current_user
-          li= link_to "Sign out", url(:sessions, :sign_out)
-        - else
-          li= link_to "Sign in", url(:sessions, :sign_in)
-          li= link_to "Sign up", url(:users, :sign_up)
-
-      ul.main-links
-        li= link_to "Download", "#"
-        li= link_to "Donate", url(:donations, :new), class: "donate"
+    ul#language.language
+      li= link_to "Italiano", switch_to_lang(:it)
+      li= link_to "Deutsch", switch_to_lang(:de)
 

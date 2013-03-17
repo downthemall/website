@@ -1,0 +1,192 @@
+#kb
+
+  .contribute
+    background-color: $notice-background
+    padding: 15px
+    margin-bottom: 15px
+
+    a
+      color: $red
+      font-weight: bold
+
+  .menu
+    margin-top: 40px
+    padding: 15px
+    background-color: $light-background
+    margin-bottom: 15px
+    box-shadow: rgba(black, 0.2) 0 2px 2px
+
+    > li
+      margin-bottom: 15px
+
+      &:last-child
+        margin-bottom: 0
+
+      .category
+        text-transform: uppercase
+        font-weight: 800
+        color: $dark-gray
+        margin-bottom: 5px
+        font-size: 0.9em
+
+      li
+
+        &:last-child
+          margin-bottom: 0
+
+        a
+          display: block
+          margin-bottom: 2px
+          color: $dark-gray
+          text-decoration: none
+
+          &:hover
+            color: $black
+            text-decoration: underline
+
+  .revision-block
+    background-color: $light-background
+    margin-bottom: 15px
+    padding: 15px
+    box-shadow: rgba(black, 0.2) 0 2px 2px
+
+    h3
+      font-size: 1.5em
+      font-weight: 300
+      margin-bottom: 20px
+      border-bottom: 1px solid $border-color
+
+    li
+      margin-bottom: 4px
+
+      a
+        text-decoration: none
+        color: $black
+
+        &:hover
+          text-decoration: underline
+
+  .revision
+    header
+      margin-bottom: 10px
+      padding-bottom: 10px
+      border-bottom: 1px solid $border-color
+
+      .infos
+        color: $gray
+        margin-bottom: 5px
+        font-size: 0.9em
+
+      .title a
+        color: $black
+        font-weight: 700
+        text-decoration: none
+        font-size: 1.7em
+        display: block
+
+    footer
+      padding-top: 20px
+      margin-top: 30px
+      border-top: 1px solid #ddd
+      color: $gray
+
+    .content
+      @extend .typeset
+
+      .contribute
+        margin-top: 20px
+
+      .note
+        padding: 15px
+        background-color: $warning-background
+        border: 1px solid darken($warning-background, 30%)
+        margin: 1.5em 0
+
+    .actions
+      margin-top: 15px
+      a
+        @extend .button
+        display: inline-block
+        width: auto
+        font-size: 0.9em
+        padding: 6px 10px
+        margin-right: 3px
+
+        &.edit
+          +button-color($blue)
+
+        &.translate
+          +button-color($red)
+
+        &.destroy
+          +button-color($red)
+
+        &.approve
+          +button-color($green)
+
+  .article-history
+    margin-top: 30px
+
+    h3
+      text-transform: uppercase
+      color: $gray
+      margin-bottom: 15px
+      margin-bottom: 10px
+      font-weight: 800
+
+    table
+      width: 100%
+
+      td, th
+        text-align: left
+        padding: 8px
+        border-bottom: 1px solid $border-color
+
+        a
+          color: $red
+          text-decoration: none
+
+      td
+        color: $gray
+        font-size: 0.9em
+
+  +media($tablet)
+    .left
+      +span-columns(3)
+      float: left
+
+      .menu
+        margin-top: 0
+
+    .right
+      +span-columns(9)
+      float: right
+      +omega
+
+      .revision-block
+        +span-columns(3 of 9)
+        +nth-omega(3n)
+
+      .revision
+        position: relative
+        box-shadow: rgba(black, 0.2) 0 1px 4px
+        padding: 25px
+        padding-right: 220px
+        border-bottom: 5px solid $blue
+
+        header .title a
+          font-size: 2em
+          font-weight: 300
+
+        .note
+          line-height: 1.3em
+          position: absolute
+          right: -15px
+          width: 200px
+          margin: 0
+          box-shadow: rgba(black, 0.1) 0 2px 2px
+
+      .article-history
+        box-shadow: rgba(black, 0.2) 0 1px 4px
+        padding: 25px
+        background-color: $light-background

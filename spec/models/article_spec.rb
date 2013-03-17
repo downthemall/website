@@ -6,6 +6,17 @@ describe Article do
     expect(Fabricate.build(:article, category: '')).to have_errors_on :category
   end
 
+  describe "#available_locales" do
+    it "returns all the locales for which is present an approved revision" do
+      article = Fabricate(:article)
+      Fabricate(:revision, approved: true, locale: :it, article: article)
+      Fabricate(:revision, approved: true, locale: :it, article: article)
+      Fabricate(:revision, approved: false, locale: :en, article: article)
+
+      expect(article.available_locales).to eq([ :it ])
+    end
+  end
+
   describe "#latest_revision and #public_revision" do
     it "returns the latest revision available for a locale" do
       a = Fabricate(:article)

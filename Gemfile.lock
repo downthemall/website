@@ -73,6 +73,8 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.3)
     arel (3.0.2)
+    basic_presenter (0.0.1)
+      activesupport
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
     capybara (2.0.2)
@@ -188,6 +190,7 @@ PLATFORMS
 DEPENDENCIES
   activemerchant (~> 1.31.1)
   activerecord (~> 3.2.12)
+  basic_presenter
   bcrypt-ruby
   capybara
   coffee-script (~> 2.2.0)

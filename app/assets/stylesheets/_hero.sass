@@ -1,28 +1,41 @@
 .hero
   @extend .wrapper
   text-align: center
-  margin: 40px auto
+
+  .image
+    display: inline-block
+    margin-bottom: 10px
+
+    +media($mobile)
+      img
+        max-height: 200px
 
   .title
-    text-transform: uppercase
-    font-size: 2.8em
-    font-weight: 700
-    padding-bottom: 10px
-    border-bottom: 1px solid $light-gray
-    margin-bottom: 30px
+    font-size: 1.8em
+    margin-bottom: 10px
+
+    +media($tablet)
+      font-size: 3.2em
 
   .subtitle
-    font-size: 1.7em
     color: $gray
 
+    +media($tablet)
+      padding: 0 40px
+      font-size: 1.6em
+
   .call-to-action
-    margin-top: 30px
+    margin-top: 20px
     font-size: 1.1em
 
     .button
-      font-size: 1.7em
       margin-bottom: 10px
+      font-size: 1.2em
+      display: block
+      width: 100%
+      +box-sizing(border-box)
 
-  .stats
-    margin-top: 20px
-
+      +media($tablet)
+        display: inline-block
+        width: auto
+        font-size: 1.3em

@@ -1,9 +1,11 @@
-.wrapper
-  - @posts.each do |post|
-    = partial "posts/post", object: post
+#posts.wrapper
 
-  = will_paginate(@posts)
+  .page-header
+    h1 Latest News
 
-  - if authorized? Post.new, :new
-    = link_to "Add Post", url(:posts, :new)
+  .right
+    - @posts.each do |post|
+      = partial "posts/post", object: post
+    = will_paginate(@posts)
 
+  = partial "posts/menu"

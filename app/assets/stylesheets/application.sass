@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,400italic,700)
+// @import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,400italic,700)
 
 @import lib/bourbon/bourbon
 @import lib/neat/neat
@@ -6,26 +6,51 @@
 @import colors
 @import button
 @import icons
+@import fonts
 @import typeset
 
-$max-width: em(1000)
+$max-width: em(1200)
+$mobile: new-breakpoint(max-width 499px 2)
+$tablet: new-breakpoint(min-width 500px 12)
 
 body
-  font-family: 'Titillium Web'
-  font-size: 15px
+  font-family: "Open Sans", 'Helvetica'
+  font-size: 13px
   line-height: 1.2
   color: $black
+  background-color: $white
 
 .wrapper
   +outer-container
   padding: 0 20px
 
-@import flash_messages
-@import hero
+  .page-header
+    padding-bottom: 20px
+    border-bottom: 1px solid $border-color
+    margin-bottom: 20px
+
+    +media($tablet)
+      margin-bottom: 40px
+
+    h1
+      font-size: 2em
+      font-weight: 300
+      color: $gray
+
+      +media($tablet)
+        font-size: 3.5em
+
+
 @import site_header
 @import site_footer
+@import hero
 @import homepage
-@import donations
-@import posts
+@import features
+@import authentication
 @import form
+@import posts
+@import kb
+@import donations
+
+// @import flash_messages
 

@@ -1,6 +1,7 @@
 # encoding: utf-8
+require 'nokogiri'
 
-class RevisionPresenter < Presenter
+class RevisionPresenter < BasicPresenter::Base
 
   def link_to
     context.link_to title, show_url
@@ -11,34 +12,54 @@ class RevisionPresenter < Presenter
   end
 
   def content
-    markdown.render(object.content)
+    MarkdownFormatter.format(object.content)
+  end
+
+  def last_edit
+    "Edited #{h.time_ago_in_words(created_at)} ago"
   end
 
   def author
     object.author.email
   end
 
+  def available_locales
+    locales = object.article.available_locales - [ object.locale ]
+    if locales.any?
+      locales.map! do |locale|
+        revision = article.public_revision(locale)
+        h.link_to I18n.t("language.#{locale}"), h.url(:knowledge_base, :show, id: revision)
+      end.join(", ").html_safe
+      "This article is available also in the following locales: #{locales}.".html_safe
+    else
+      ""
+    end
+  end
+
   def actions
     buf = ""
     current_user = context.current_user
     if context.authorized? self, :edit
-      buf << context.link_to("Edit", context.url(:knowledge_base, :edit, id: self))
+      buf << context.link_to("Edit", context.url(:knowledge_base, :edit, id: self), class: 'edit')
+    end
+    if context.authorized? self, :edit
+      buf << context.link_to("Translate", context.url(:knowledge_base, :edit, id: self), class: 'translate')
     end
     if context.authorized? self, :destroy
-      buf << context.link_to("Delete", context.url(:knowledge_base, :destroy, id: self), data: { confirm: 'Are you sure?' })
+      buf << context.link_to("Delete", context.url(:knowledge_base, :destroy, id: self), class: 'destroy', data: { confirm: 'Are you sure?' })
     end
-    if context.authorized? self, :approve
-      buf << context.link_to("Approve", context.url(:knowledge_base, :approve, id: self))
+    if context.authorized?(self, :approve) && !object.approved
+      buf << context.link_to("Approve", context.url(:knowledge_base, :approve, id: self), class: 'approve')
     end
     buf
   end
 
-  def markdown
-    Redcarpet::Markdown.new(Redcarpet::Render::HTML, space_after_headers: true, fenced_code_blocks: true, tables: true)
-  end
-
   def revision_line
-    [ link_to, status ].join(" - ")
+    h.content_tag(:tr) do
+      h.content_tag(:th, link_to) <<
+      h.content_tag(:td, last_edit) <<
+      h.content_tag(:td, status)
+    end
   end
 
   def status

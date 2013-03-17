@@ -12,11 +12,23 @@ form
       display: block
       width: 100%
       padding: 4px
-      font-family: 'Titillium Web'
+      font-family: 'Open Sans'
       font-size: 15px
       border: 1px solid #ccc
       box-shadow: rgba(black, 0.2) 0px 1px 2px inset
-      border-radius: 2px
+      color: $black
+
+      &:focus
+        outline: none
+        border-color: #aaa
+
+    .hint
+      display: block
+      color: $gray
+      padding: 15px
+      background-color: $warning-background
+      border: 1px solid darken($warning-background, 30%)
+      margin-top: 10px
 
     .markdown-editor
       width: auto
@@ -27,3 +39,13 @@ form
 
     textarea
       height: 300px
+
+  input[type='submit']
+    @extend .button
+    font-size: 0.9em
+    width: 100%
+    display: block
+
+  +media($tablet)
+    label
+      font-size: 1.1em

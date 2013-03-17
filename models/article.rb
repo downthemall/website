@@ -5,6 +5,10 @@ class Article < ActiveRecord::Base
   scope :with_public_revisions, ->(locale) { joins(:revisions).merge(Revision.approved).merge(Revision.with_locale(locale)).uniq }
   scope :in_category, ->(cat) { where(category: cat.code) }
 
+  def available_locales
+    revisions.merge(Revision.approved).reorder('').uniq.pluck(:locale).sort.map(&:to_sym)
+  end
+
   def latest_revision(locale)
     revisions.with_locale(locale).first
   end
