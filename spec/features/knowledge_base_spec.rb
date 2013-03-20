@@ -9,10 +9,9 @@ feature 'Knowledge Base' do
 
   scenario 'Adding a new article' do
     Fabricate(:admin, email: 'admin@email.com')
-
     sign_in_as(Fabricate(:user))
-    visit '/en/knowledge-base'
-    click_link 'Add new Article'
+
+    visit '/en/knowledge-base/new'
 
     fill_in 'revision_title', with: 'Title'
     fill_in 'revision_content', with: 'Content'

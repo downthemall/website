@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'Donations' do
   scenario 'Make donation' do
     visit '/en/donate'
-    click_button "Send my donation via PayPal"
+    click_button "Donate with PayPal"
 
     donation = Donation.first
     expect(donation.amount).to eq(10)
