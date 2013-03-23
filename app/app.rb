@@ -1,5 +1,6 @@
 require 'auto_locale'
 require 'will_paginate/active_record'
+require "padrino/pundit"
 
 class Downthemall < Padrino::Application
   use ActiveRecord::ConnectionAdapters::ConnectionManagement
@@ -8,10 +9,11 @@ class Downthemall < Padrino::Application
   register Padrino::Rendering
   register Padrino::Mailer
   register Padrino::Helpers
-  register Padrino::AutoLocale
   register WillPaginate::Sinatra
-  register StraightAuth
   register Padrino::Sprockets
+  register StraightAuth
+  register AutoLocale
+  register Padrino::Pundit
 
   sprockets minify: (Padrino.env == :production)
 
@@ -25,7 +27,12 @@ class Downthemall < Padrino::Application
 
   helpers do
     include Helpers
-    include Pundit
+
+    def authorized?(record, action)
+      Pundit.policy!(current_user, record).send("#{action}?")
+    end
+
+    alias_method :authorize!, :authorize
   end
 
   configure :development, :test do

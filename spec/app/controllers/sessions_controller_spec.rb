@@ -2,57 +2,45 @@ require 'spec_helper'
 
 describe SessionsController do
 
-  describe 'GET /sign_in' do
-    let(:action!) { get :sign_in }
-    it_requires 'non-logged users'
-
-    it "renders assigning a new User" do
-      User.stub(:new).and_return('user')
-      controller.stub(:current_user).and_return(nil)
-      action!
-      expect(assigns[:user]).to eq('user')
-      expect(rendered_view).to eq('sessions/sign_in')
-    end
-  end
-
   describe 'POST /sign_in' do
-    let(:action!) { post :sign_in, email: 'email', password: 'password' }
+    let(:action!) { post :sign_in, assertion: 'foobar' }
     it_requires 'non-logged users'
+
+    before do
+      SignIn.stub(:find_or_create_user)
+      request.stub(:host_with_port).and_return('host')
+    end
 
     context "if authentication passes" do
-      it "redirects with notice" do
+      it "authenticates and adds notice" do
         controller.stub(:current_user).and_return(nil)
         user = double('User', id: 'foo')
-        controller.stub(:authenticate).with('email', 'password').and_return(user)
+        SignIn.stub(:find_or_create_user).with('foobar', 'host').and_return(user)
+        controller.should_receive(:authenticate!).with(user)
         action!
         expect(flash[:notice]).not_to be_blank
-        expect(redirect_url).to eq(controller.url(:index))
       end
     end
 
     context "else" do
-      it "renders the sign in form again" do
+      it "adds an alert" do
         controller.stub(:current_user).and_return(nil)
         user = double('User', id: 'foo')
-        controller.stub(:authenticate!).with('email', 'password').and_return(false)
         action!
-        expect(flash.now[:alert]).not_to be_blank
-        expect(rendered_view).to eq('sessions/sign_in')
+        expect(flash[:alert]).not_to be_blank
       end
     end
   end
 
   describe 'GET /sign_out' do
-    let(:action!) { get :sign_out }
+    let(:action!) { post :sign_out }
     it_requires 'logged users'
 
-    it "renders the sign in form again" do
+    it "notifies the user" do
       controller.stub(:current_user).and_return('user')
-      session[:user_id] = 'foo'
+      controller.should_receive(:authenticate!).with(nil)
       action!
-      expect(session[:user_id]).to be_blank
       expect(flash[:notice]).not_to be_blank
-      expect(redirect_url).to eq(controller.url(:index))
     end
   end
 

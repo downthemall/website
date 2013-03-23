@@ -3,38 +3,38 @@
     section
       h6.title Got lost?
       ul
-        li== link_to "Homepage", url(:index)
-        li== link_to "Getting Started", "#"
-        li== link_to "Knowledge Base", "#"
-        li== link_to "Latest News", "#"
-        li== link_to "Get Involved", "#"
+        li= link_to "Homepage", url(:index)
+        li= link_to "Getting Started", "#"
+        li= link_to "Knowledge Base", "#"
+        li= link_to "Latest News", "#"
+        li= link_to "Get Involved", "#"
     section
       h6.title Share the love!
       ul
-        li.firefox== link_to "Review us on Mozilla Add-ons", "https://addons.mozilla.org/addon/downthemall/reviews/add"
-        li.twitter== link_to "Follow us on Twitter", "#"
-        li.facebook== link_to "Like us on Facebook", "#"
-        li.github== link_to "Fork us on Github", "#"
-        li.paypal== link_to "Donate with Paypal", "#"
+        li.firefox= link_to "Review us on Mozilla Add-ons", "https://addons.mozilla.org/addon/downthemall/reviews/add"
+        li.twitter= link_to "Follow us on Twitter", "#"
+        li.facebook= link_to "Like us on Facebook", "#"
+        li.github= link_to "Fork us on Github", "#"
+        li.paypal= link_to "Donate with Paypal", "#"
     section
       h6.title Authentication
-      ul
+      ul data-current-user-email=(current_user.email if current_user)
         - if current_user
-          li= link_to "Sign out", url(:sessions, :sign_out)
+          li= link_to "Sign out", "#sign-out"
         - else
-          li= link_to "Register", url(:users, :sign_up)
-          li= link_to "Sign in", url(:sessions, :sign_in)
+          li= link_to "Sign in", "#sign-in"
 
     footer
       .inner
         p
           ' The source code of this website is available
-          == link_to "on Github", "https://github.com/downthemall/website"
+          = link_to "on Github", "https://github.com/downthemall/website"
         p
           ' Copyright © #{Time.now.year}
-          == link_to "Nils Maier", "https://tn123.org/"
+          = link_to "Nils Maier", "https://tn123.org/"
           ' ,
           =' link_to "Federico Parodi", "#"
           ' and
-          == link_to "Stefano Verna", "#"
+          = link_to "Stefano Verna", "#"
+
 

@@ -3,7 +3,6 @@ Bundler.setup # we have gems in repos
 require 'vcr'
 require 'timecop'
 require 'pundit'
-require 'pundit/rspec'
 require 'active_support/dependencies'
 
 root = File.expand_path('../../', __FILE__)

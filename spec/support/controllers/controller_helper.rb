@@ -68,6 +68,10 @@ module ControllerHelper
     controller.perform_request(&handler)
   end
 
+  def request
+    controller.request
+  end
+
   def session
     controller.session
   end

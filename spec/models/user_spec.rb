@@ -9,8 +9,4 @@ describe User do
     expect(Fabricate.build(:user, email: 'foobar@email.it')).to have_errors_on :email
   end
 
-  it "requires a min-6-chars-long password" do
-    expect(Fabricate.build(:user, password: 'foo')).to have_errors_on :password
-  end
-
 end

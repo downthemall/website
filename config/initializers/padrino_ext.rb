@@ -36,15 +36,6 @@ module Padrino
         else kind.to_s
         end
       end
-
-      alias_method :old_asset_timestamp, :asset_timestamp
-      def asset_timestamp(file_path, absolute=false)
-        if file_path.to_s =~ /.js$/
-          ""
-        else
-          old_asset_timestamp(file_path, absolute)
-        end
-      end
     end
   end
 end

@@ -1,9 +1,6 @@
 module SignInHelpers
   def sign_in_as(user)
-    visit '/en/sign_in'
-    fill_in 'email', with: user.email
-    fill_in 'password', with: user.password
-    click_button "Sign in"
+    visit "/en/force_sign_in?user_id=#{user.id}"
     expect(page).to have_text 'Signed in correctly!'
   end
 end
