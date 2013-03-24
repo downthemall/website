@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
 
   scope :admins, where(admin: true)
 
-  def find_by_email(email)
-    where(email: email).first
+  def find_or_create_by_email(email)
+    where(email: email).first_or_create
   end
 
   def admin?

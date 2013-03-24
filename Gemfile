@@ -17,9 +17,9 @@ gem 'activemerchant', '~> 1.31.1'
 gem 'redcarpet', '~> 2.2.2'
 gem 'will_paginate', '~> 3.0'
 gem 'pundit', github: 'stefanoverna/pundit', branch:'padrino-adapter'
-gem 'straight_auth', github: 'stefanoverna/straight_auth', branch: 'master'
 gem 'paperclip', '~> 3.0'
 gem 'basic_presenter'
+gem 'sanitize'
 
 group :development do
   gem 'letter_opener'

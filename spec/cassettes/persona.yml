@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://verifier.login.persona.org/verify
+    body:
+      encoding: US-ASCII
+      string: assertion=XXX&audience=downthemall.com
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Strict-Transport-Security:
+      - max-age=2419200
+      Date:
+      - Sun, 24 Mar 2013 11:26:54 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '133'
+    body:
+      encoding: US-ASCII
+      string: ! '{"status":"okay","email":"stefano.verna@gmail.com","audience":"downthemall.com","expires":1364124512605,"issuer":"login.persona.org"}'
+    http_version: 
+  recorded_at: Sun, 24 Mar 2013 11:26:54 GMT
+recorded_with: VCR 2.4.0

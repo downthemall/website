@@ -18,6 +18,7 @@
         li.paypal= link_to "Donate with Paypal", "#"
     section
       h6.title Authentication
+      = request.host_with_port
       ul data-current-user-email=(current_user.email if current_user)
         - if current_user
           li= link_to "Sign out", "#sign-out"

@@ -18,16 +18,17 @@ $ ->
   navigator.id.watch
     loggedInUser: $("[data-current-user-email]").data("current-user-email"),
     onlogin: (assertion) ->
-      $.ajax
-        type: 'POST'
-        url: '/en/sign_in'
-        data: { assertion: assertion }
-      .always ->
-        window.location.reload()
+      console.log assertion
+      # $.ajax
+      #   type: 'POST'
+      #   url: '/en/sign_in'
+      #   data: { assertion: assertion }
+      # .always ->
+      #   window.location.reload()
 
     onlogout: ->
-      $.ajax
-        type: 'POST',
-        url: '/en/sign_out'
-      .always ->
-        window.location.reload()
+      # $.ajax
+      #   type: 'POST',
+      #   url: '/en/sign_out'
+      # .always ->
+      #   window.location.reload()

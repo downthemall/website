@@ -11,7 +11,7 @@ class Downthemall < Padrino::Application
   register Padrino::Helpers
   register WillPaginate::Sinatra
   register Padrino::Sprockets
-  register StraightAuth
+  register SessionAuthentication
   register AutoLocale
   register Padrino::Pundit
 
@@ -64,12 +64,12 @@ class Downthemall < Padrino::Application
     set :paypal_url, "https://www.paypal.com/cgi-bin/webscr"
   end
 
-  error StraightAuth::AuthenticatedUserRequired do
+  error SessionAuthentication::AuthenticatedUserRequired do
     flash[:alert] = I18n.t('authentication.must_be_signed_in')
     redirect url(:index)
   end
 
-  error StraightAuth::UnauthenticatedUserRequired do
+  error SessionAuthentication::UnauthenticatedUserRequired do
     flash[:alert] = I18n.t('authentication.already_signed_in')
     redirect url(:index)
   end

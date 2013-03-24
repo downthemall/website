@@ -3,7 +3,6 @@ require 'active_record'
 require 'ostruct'
 
 # ActiveRecord gems
-require 'straight_auth'
 require 'paperclip'
 
 # Stubbing padrino

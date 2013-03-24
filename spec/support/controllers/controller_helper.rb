@@ -53,7 +53,7 @@ class MockController
   end
 
   include Downthemall::Helpers
-  include StraightAuth::Helpers
+  include SessionAuthentication::Helpers
 end
 
 module ControllerHelper
