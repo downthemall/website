@@ -1,5 +1,3 @@
-- %w(notice alert).map(&:to_sym).each do |type|
-  - if flash[type]
-    div class=type
-      .wrapper
-        p= flash[type]
+.flash-messages
+  - flash.each do |type, text|
+    div data-behaviour="Alert" data-title=type.capitalize = text

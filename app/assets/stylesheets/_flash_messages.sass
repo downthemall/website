@@ -1,11 +1,80 @@
-body
-  > .notice, > .alert
-    background-color: green
-    padding: 10px 0
+.flash-messages
+  display: none
 
-    .wrapper p
-      font-size: 15px
-      color: white
+.meows
+  position: fixed
+  top: 0
+  right: 0
+  z-index: 2000
 
-  > .alert
-    background-color: red
+.meow
+  position: relative
+  margin: 12px 12px 0 0
+
+  .inner
+    display: block
+    width: 280px
+    min-height: 48px
+    padding: 9px 15px
+    font-size: 13px
+    line-height: 24px
+    color: #ffffff
+    text-shadow: 0 1px 0 black
+    background: rgba(20, 20, 20, 0.8)
+    border-radius: 6px
+    zoom: 1
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25)
+
+    &:hover
+      background: rgba(20, 20, 20, 0.9)
+      .close
+        position: absolute
+        top: -6px
+        right: -6px
+        display: block
+        width: 18px
+        height: 18px
+        font-size: 15px
+        font-weight: bold
+        line-height: 14px
+        color: #fff
+        text-align: center
+        text-decoration: none
+        text-shadow: 0 1px 0 black
+        background: rgba(25, 25, 25, 0.8)
+        border: 2px solid rgba(255, 255, 255, 0.8)
+        border-radius: 100%
+        opacity: 0.8
+        zoom: 1
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.25)
+
+        &:hover
+          background: rgba(25, 25, 25, 0.9)
+          border: 2px solid rgba(255, 255, 255, 0.9)
+
+    .icon
+      float: left
+      height: 48px
+      min-width: 48px
+      margin-right: 9px
+      img
+        width: 48px
+        height: 48px
+    h1
+      margin: 0
+      font-size: 13px
+      font-weight: bold
+      text-transform: uppercase
+      color: #ffffff
+      text-shadow: 0 1px 0 black
+
+    .close
+      display: none
+
+    &:after
+      display: block
+      height: 0
+      clear: both
+      line-height: 0
+      content: "\0200"
+      visibility: hidden

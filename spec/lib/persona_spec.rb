@@ -19,7 +19,6 @@ describe Persona do
       end
     end
     example "acceptance test" do
-      puts Time.zone.inspect
       Timecop.freeze(Time.new(2013, 3, 24)) do
         VCR.use_cassette 'persona' do
           expect(subject.verify_assertion!('XXX').email).to eq 'stefano.verna@gmail.com'
