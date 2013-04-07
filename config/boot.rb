@@ -7,11 +7,10 @@ require 'rubygems' unless defined?(Gem)
 require 'bundler/setup'
 Bundler.require(:default, PADRINO_ENV)
 
-
-Padrino.set_load_paths Padrino.root("app/services")
-Padrino.set_load_paths Padrino.root("app/helpers")
-Padrino.set_load_paths Padrino.root("app/presenters")
-Padrino.set_load_paths Padrino.root("app/policies")
+Padrino.require_dependencies(Padrino.root('app/services/*.rb'))
+Padrino.require_dependencies(Padrino.root('app/helpers/*.rb'))
+Padrino.require_dependencies(Padrino.root('app/presenters/*.rb'))
+Padrino.require_dependencies(Padrino.root('app/policies/*.rb'))
 
 Slim::Engine.set_default_options disable_escape: true
 
