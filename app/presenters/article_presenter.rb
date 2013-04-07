@@ -1,9 +1,9 @@
 # encoding: utf-8
 
-class ArticlePresenter < BasicPresenter::Base
+class ArticlePresenter < Showcase::Presenter
 
   def link_to
-    context.link_to title, context.url(:knowledge_base, :show, id: public_revision)
+    h.link_to title, h.url(:knowledge_base, :show, id: public_revision)
   end
 
   def title
@@ -15,3 +15,4 @@ class ArticlePresenter < BasicPresenter::Base
   end
 
 end
+

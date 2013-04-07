@@ -42,3 +42,4 @@ describe Article do
   end
 
 end
+

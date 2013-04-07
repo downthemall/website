@@ -29,3 +29,4 @@ module SessionAuthentication
     end
   end
 end
+

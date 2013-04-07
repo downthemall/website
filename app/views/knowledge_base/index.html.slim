@@ -1,6 +1,6 @@
 #kb.wrapper
   .page-header
-    h1 Knowledge Base
+    h1= I18n.t('knowledge_base.title')
 
   .left= partial "knowledge_base/menu"
 
@@ -12,3 +12,4 @@
 
     - if authorized?(Revision.new, :approve)
       = partial "knowledge_base/revision_block", locals: { title: "Pending revisions", revisions: Revision.pending }
+

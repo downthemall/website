@@ -27,3 +27,4 @@ describe "System policies", type: :policy do
   end
 
 end
+

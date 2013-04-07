@@ -17,6 +17,8 @@ Slim::Engine.set_default_options disable_escape: true
 
 require_relative "./initializers/padrino_ext"
 require_relative "./initializers/time_zone"
+require_relative "./initializers/locales"
 
 Padrino::Logger::Config[:development][:stream] = :to_file
 Padrino.load!
+

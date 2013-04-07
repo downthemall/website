@@ -13,3 +13,4 @@ class AdminMailer
     end
   end
 end
+

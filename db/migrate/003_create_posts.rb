@@ -13,3 +13,4 @@ class CreatePosts < ActiveRecord::Migration
     drop_table :posts
   end
 end
+

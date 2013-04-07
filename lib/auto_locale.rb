@@ -37,7 +37,7 @@ module AutoLocale
     def parse_route(path, options, verb)
       result = super
       path = result.first
-      path = "/(:lang)#{path}" unless path.empty?
+      path = "/(:locale)#{path}" unless path.empty?
       result[0] = path
       result
     end
@@ -49,9 +49,10 @@ module AutoLocale
     #
     def url(*args)
       params = args.extract_options!
-      params[:lang] = I18n.locale
+      params[:locale] ||= I18n.locale
       args << params
       super(*args)
     end
   end
 end
+

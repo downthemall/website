@@ -3,3 +3,4 @@ RSpec.configure do |config|
     Mail::TestMailer.deliveries.clear
   end
 end
+

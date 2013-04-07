@@ -18,3 +18,4 @@ describe Donation do
     expect(Fabricate.build(:donation, status: Donation::STATUS_PENDING)).not_to have_errors_on :status
   end
 end
+

@@ -40,6 +40,22 @@ describe KnowledgeBaseController do
     end
   end
 
+  describe 'GET /translate' do
+    let(:action!) { get :translate, id: 'foo' }
+    before do
+      revision.stub(:latest_revision).and_return('latest')
+      Revision.stub(:find).with('foo').and_return(revision)
+    end
+    it "uses the latest revision available" do
+      action!
+      expect(assigns[:revision]).to eq('latest')
+    end
+    it "authorizes action" do
+      controller.should_receive(:authorize!).with('latest')
+      action!
+    end
+  end
+
   describe 'POST /create' do
     let(:action!) { post :create, revision: 'params' }
     before do
@@ -78,7 +94,7 @@ describe KnowledgeBaseController do
 
   describe 'POST /update' do
     let(:action!) { post :update, id: 'foo', revision: 'params' }
-    let(:new_revision) { stub('Revision') }
+    let(:new_revision) { stub('Revision', locale: :en) }
     before do
       Revision.stub(:find).with('foo').and_return(revision)
       revision.stub(:build_updated).with(user, 'params').and_return(new_revision)
@@ -97,7 +113,7 @@ describe KnowledgeBaseController do
       it "adds a notice and redirects to the revision" do
         action!
         expect(flash[:notice]).not_to be_blank
-        expect(redirect_url).to eq(controller.url(:knowledge_base, :show, id: new_revision))
+        expect(redirect_url).to eq(controller.url(:knowledge_base, :show, id: new_revision, locale: :en))
       end
       it "sends a mail to notify admins" do
         AdminMailer.should_receive(:to_moderate!).with(new_revision)

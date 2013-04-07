@@ -12,3 +12,4 @@ class DonationAmount < Struct.new(:icon, :amount, :description)
   end
 
 end
+

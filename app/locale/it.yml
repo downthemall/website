@@ -12,3 +12,10 @@ it:
       alert: 'Username o password non validi. Perfavore, riprova!'
     sign_out:
       notice: 'Logout effettuato correttamente!'
+  menu:
+    features: Funzionalità
+    blog: Latest News
+    knowledge_base: Knowledge Base
+    download: Download
+    donate: Donate
+

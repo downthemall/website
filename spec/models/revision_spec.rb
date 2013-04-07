@@ -63,14 +63,47 @@ describe Revision do
   end
 
   describe ".build_updated" do
-    it "builds a new revision from an existing one" do
-      rev = Fabricate(:revision, locale: "en")
-      user = Fabricate(:user)
-      revision = rev.build_updated(user, title: 'Title')
-      expect(revision.locale).to eq(:en)
-      expect(revision.author).to eq(user)
-      expect(revision.title).to eq('Title')
-      expect(revision.article).to eq(rev.article)
+    let(:revision) { Fabricate(:revision, locale: "en") }
+    let(:author) { revision.author }
+    let(:user) { Fabricate(:user) }
+
+    context "when the author changes" do
+      it "duplicates the revision" do
+        new_revision = revision.build_updated(user, title: 'Title')
+        expect(new_revision).to_not eq revision
+        expect(new_revision.locale).to eq(:en)
+        expect(new_revision.title).to eq('Title')
+        expect(new_revision.article).to eq(revision.article)
+      end
+    end
+
+    context "when the locale changes" do
+      it "duplicates the revision" do
+        new_revision = revision.build_updated(author, title: 'Titolo', locale: "it")
+        expect(new_revision).to_not eq revision
+        expect(new_revision.locale).to eq(:it)
+        expect(new_revision.title).to eq('Titolo')
+        expect(new_revision.article).to eq(revision.article)
+      end
+    end
+
+    context "when the revision is already approved" do
+      it "updates the revision" do
+        revision.approve!
+        new_revision = revision.build_updated(author, title: 'Title')
+        expect(new_revision).to_not eq revision
+        expect(new_revision.locale).to eq(:en)
+        expect(new_revision.title).to eq('Title')
+        expect(new_revision.article).to eq(revision.article)
+      end
+    end
+
+    context "else" do
+      it "updates the revision" do
+        new_revision = revision.build_updated(author, title: 'Title')
+        expect(new_revision).to eq revision
+        expect(new_revision.title).to eq('Title')
+      end
     end
   end
 
@@ -91,3 +124,4 @@ describe Revision do
   end
 
 end
+

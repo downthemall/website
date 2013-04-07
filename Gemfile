@@ -18,7 +18,7 @@ gem 'redcarpet', '~> 2.2.2'
 gem 'will_paginate', '~> 3.0'
 gem 'pundit', github: 'stefanoverna/pundit', branch:'padrino-adapter'
 gem 'paperclip', '~> 3.0'
-gem 'basic_presenter'
+gem 'showcase'
 gem 'sanitize'
 
 group :development do

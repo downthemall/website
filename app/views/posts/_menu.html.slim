@@ -1,18 +1,18 @@
 .left
 
   - if authorized? Post.new, :new
-    .actions= link_to "Create a new post", url(:posts, :new), class: "button"
+    .actions= link_to I18n.t('blog.create_post'), url(:posts, :new), class: "button"
 
   .follow
-    = link_to "Follow our news feed", url(:posts, :index, format: :rss), class: "button"
+    = link_to I18n.t('blog.follow_rss'), url(:posts, :index, format: :rss), class: "button"
 
   .archive
-    h6 Archive by Year
+    h6= I18n.t('blog.archive_per_year')
     ul 
-      - Post.reorder('year DESC').select("date_trunc('year', posted_at) as year, count(*) as count").group("date_trunc('year', posted_at)").each do |foo|
+      - Post.count_per_year.each do |year|
         li
           = link_to "#" do
-            =' foo.year.to_date.year
-            span.count (#{foo.count})
+            =' year.year.to_date.year
+            span.count (#{year.count})
 
 

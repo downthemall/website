@@ -6,3 +6,4 @@ module SignInHelpers
 end
 
 RSpec.configuration.include SignInHelpers
+

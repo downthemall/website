@@ -21,3 +21,4 @@ RSpec::Matchers.define :permit do |user, record, *actions|
     "Expected #{policy.to_s} to forbid#{to_sentence(actions)} on #{record} but it didn't."
   end
 end
+

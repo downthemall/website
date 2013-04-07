@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class DonationPresenter < BasicPresenter::Base
+class DonationPresenter < Showcase::Presenter
 
   def formatted_amount
     currency_symbols = { 'EUR' => '€', 'USD' => '$' }
@@ -35,3 +35,4 @@ class DonationPresenter < BasicPresenter::Base
   end
 
 end
+

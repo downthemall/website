@@ -16,3 +16,4 @@ class CreateDonations < ActiveRecord::Migration
     drop_table :donations
   end
 end
+

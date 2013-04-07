@@ -11,3 +11,4 @@ class AddAdminToUsers < ActiveRecord::Migration
     end
   end
 end
+

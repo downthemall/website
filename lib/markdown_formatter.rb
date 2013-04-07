@@ -64,3 +64,4 @@ module MarkdownFormatter
     )
   end
 end
+

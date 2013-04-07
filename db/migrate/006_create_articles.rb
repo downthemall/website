@@ -22,3 +22,4 @@ class CreateArticles < ActiveRecord::Migration
     drop_table :revisions
   end
 end
+

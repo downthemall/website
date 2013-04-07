@@ -50,13 +50,13 @@ class Revision < ActiveRecord::Base
   end
 
   def build_updated(user, params)
-    if author == user && !approved
+    if author == user && self.locale == params.fetch(:locale, self.locale).to_sym && !approved
       self.title = params[:title]
       self.content = params[:content]
       self
     else
       Revision.new(
-        locale: self.locale,
+        locale: params[:locale] || self.locale,
         author: user,
         title: params[:title],
         content: params[:content],
@@ -92,3 +92,4 @@ class Revision < ActiveRecord::Base
   end
 
 end
+

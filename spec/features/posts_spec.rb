@@ -39,3 +39,4 @@ feature 'Posts' do
   end
 
 end
+

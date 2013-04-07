@@ -10,3 +10,4 @@ class ImageAsset < ActiveRecord::Base
   content_type: { content_type: [ "image/jpg", "image/png", "image/gif" ] },
   size: { in: 0..1048576 }
 end
+

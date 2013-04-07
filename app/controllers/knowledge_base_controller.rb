@@ -32,6 +32,12 @@ class KnowledgeBaseController < Controller
     render 'knowledge_base/edit'
   end
 
+  get :translate, map: '/knowledge-base/:id/translate' do
+    @revision = Revision.find(params[:id]).latest_revision
+    authorize! @revision
+    render 'knowledge_base/translate'
+  end
+
   post :update, map: '/knowledge-base/:id' do
     @old_revision = Revision.find(params[:id])
     authorize! @old_revision
@@ -39,7 +45,7 @@ class KnowledgeBaseController < Controller
     if @revision.save
       AdminMailer.to_moderate!(@revision) # if @revision != @old_revision
       flash[:notice] = I18n.t('knowledge_base.updated')
-      redirect url(:knowledge_base, :show, id: @revision)
+      redirect url(:knowledge_base, :show, id: @revision, locale: @revision.locale)
     else
       render 'knowledge_base/edit'
     end

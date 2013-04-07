@@ -10,3 +10,4 @@ class CreateImageAssets < ActiveRecord::Migration
     drop_table :image_assets
   end
 end
+

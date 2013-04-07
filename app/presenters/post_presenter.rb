@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class PostPresenter < BasicPresenter::Base
+class PostPresenter < Showcase::Presenter
 
   def posted_at
     I18n.l(object.posted_at.to_date, format: :long)
@@ -11,7 +11,7 @@ class PostPresenter < BasicPresenter::Base
   end
 
   def title_link
-    context.link_to title, context.url(:posts, :show, id: self)
+    h.link_to title, h.url(:posts, :show, id: self)
   end
 
   def content
@@ -19,10 +19,11 @@ class PostPresenter < BasicPresenter::Base
   end
 
   def actions
-    if context.authorized?(self, :edit)
-      context.link_to("Edit", context.url(:posts, :edit, id: self), class: "edit") <<
-      context.link_to("Delete", context.url(:posts, :destroy, id: self), class: "destroy", data: { confirm: 'Are you sure?' })
+    if h.authorized?(self, :edit)
+      h.link_to(I18n.t('post.actions.edit'), h.url(:posts, :edit, id: self), class: "edit") <<
+      h.link_to(I18n.t('post.actions.delete'), h.url(:posts, :destroy, id: self), class: "destroy", data: { confirm: 'Are you sure?' })
     end
   end
 
 end
+

@@ -33,8 +33,6 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.3)
     arel (3.0.2)
-    basic_presenter (0.0.1)
-      activesupport
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
     capybara (2.0.2)
@@ -145,6 +143,8 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
+    showcase (0.1.0)
+      activesupport
     sinatra (1.4.2)
       rack (~> 1.5, >= 1.5.2)
       rack-protection (~> 1.4)
@@ -182,7 +182,6 @@ PLATFORMS
 DEPENDENCIES
   activemerchant (~> 1.31.1)
   activerecord (~> 3.2.12)
-  basic_presenter
   bcrypt-ruby
   capybara
   coffee-script (~> 2.2.0)
@@ -202,6 +201,7 @@ DEPENDENCIES
   rspec
   sanitize
   sass (~> 3.2.7)
+  showcase
   slim (~> 1.3.6)
   sprockets (~> 2.9.0)
   timecop

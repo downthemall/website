@@ -30,3 +30,4 @@ Fabricator(:revision, class_name: Revision) do
   author { Fabricate.build(:user) }
   article
 end
+

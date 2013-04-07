@@ -13,3 +13,4 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
+

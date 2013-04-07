@@ -13,3 +13,4 @@ autoload_paths = ActiveSupport::Dependencies.autoload_paths
 %w(app/policies app/services lib).each do |path|
   autoload_paths.push(path) unless autoload_paths.include?(path)
 end
+

@@ -12,3 +12,4 @@ feature 'Donations' do
     expect(page).to have_button "Proceed"
   end
 end
+

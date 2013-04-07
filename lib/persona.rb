@@ -53,3 +53,4 @@ class Persona
     OpenStruct.new JSON.parse(response.body)
   end
 end
+

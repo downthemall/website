@@ -11,3 +11,4 @@ posts.each do |post|
     author: admin
   )
 end
+

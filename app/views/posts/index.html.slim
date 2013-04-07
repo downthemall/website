@@ -1,7 +1,6 @@
 #posts.wrapper
 
-  .page-header
-    h1 Latest News
+  .page-header: h1= I18n.t('blog.title')
 
   .right
     - @posts.each do |post|
@@ -9,3 +8,4 @@
     = will_paginate(@posts)
 
   = partial "posts/menu"
+

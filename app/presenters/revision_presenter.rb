@@ -1,14 +1,14 @@
 # encoding: utf-8
 require 'nokogiri'
 
-class RevisionPresenter < BasicPresenter::Base
+class RevisionPresenter < Showcase::Presenter
 
   def link_to
-    context.link_to title, show_url
+    h.link_to title, show_url
   end
 
   def show_url
-    context.url(:knowledge_base, :show, id: self)
+    h.url(:knowledge_base, :show, id: self, locale: self.locale)
   end
 
   def content
@@ -16,7 +16,7 @@ class RevisionPresenter < BasicPresenter::Base
   end
 
   def last_edit
-    "Edited #{h.time_ago_in_words(created_at)} ago"
+    I18n.t('revision.last_edit', time: h.time_ago_in_words(created_at))
   end
 
   def author
@@ -26,11 +26,11 @@ class RevisionPresenter < BasicPresenter::Base
   def available_locales
     locales = object.article.available_locales - [ object.locale ]
     if locales.any?
-      locales.map! do |locale|
+      locales = locales.map do |locale|
         revision = article.public_revision(locale)
         h.link_to I18n.t("language.#{locale}"), h.url(:knowledge_base, :show, id: revision)
       end.join(", ").html_safe
-      "This article is available also in the following locales: #{locales}.".html_safe
+      I18n.t('revision.available_languages', locales: locales)
     else
       ""
     end
@@ -38,18 +38,18 @@ class RevisionPresenter < BasicPresenter::Base
 
   def actions
     buf = ""
-    current_user = context.current_user
-    if context.authorized? self, :edit
-      buf << context.link_to("Edit", context.url(:knowledge_base, :edit, id: self), class: 'edit')
+    current_user = h.current_user
+    if h.authorized? self, :edit
+      buf << h.link_to(I18n.t('revision.actions.edit'), h.url(:knowledge_base, :edit, id: self), class: 'edit')
     end
-    if context.authorized? self, :edit
-      buf << context.link_to("Translate", context.url(:knowledge_base, :edit, id: self), class: 'translate')
+    if h.authorized? self, :edit
+      buf << h.link_to(I18n.t('revision.actions.translate'), h.url(:knowledge_base, :translate, id: self), class: 'translate')
     end
-    if context.authorized? self, :destroy
-      buf << context.link_to("Delete", context.url(:knowledge_base, :destroy, id: self), class: 'destroy', data: { confirm: 'Are you sure?' })
+    if h.authorized? self, :destroy
+      buf << h.link_to(I18n.t('revision.actions.delete'), h.url(:knowledge_base, :destroy, id: self), class: 'destroy', data: { confirm: 'Are you sure?' })
     end
-    if context.authorized?(self, :approve) && !object.approved
-      buf << context.link_to("Approve", context.url(:knowledge_base, :approve, id: self), class: 'approve')
+    if h.authorized?(self, :approve) && !object.approved
+      buf << h.link_to(I18n.t('revision.actions.approve'), h.url(:knowledge_base, :approve, id: self), class: 'approve')
     end
     buf
   end
@@ -65,14 +65,15 @@ class RevisionPresenter < BasicPresenter::Base
   def status
     case object.status
     when Revision::STATUS_PENDING
-      "Pending"
+      I18n.t('revision.status.pending')
     when Revision::STATUS_PUBLIC
-      "Public"
+      I18n.t('revision.status.public')
     when Revision::STATUS_APPROVED
-      "Approved"
+      I18n.t('revision.status.approved')
     when Revision::STATUS_SKIPPED
-      "Skipped"
+      I18n.t('revision.status.skipped')
     end
   end
 
 end
+

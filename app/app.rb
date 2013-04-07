@@ -22,7 +22,7 @@ class Downthemall < Padrino::Application
   enable :sessions
 
   module Helpers
-    include BasicPresenter::Helpers
+    include Showcase::Helpers
   end
 
   helpers do
@@ -81,3 +81,4 @@ class Downthemall < Padrino::Application
 
   set :show_exceptions, false
 end
+

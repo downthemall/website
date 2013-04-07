@@ -19,3 +19,4 @@ class UploadedFile
     tempfile.path
   end
 end
+

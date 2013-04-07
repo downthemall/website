@@ -35,3 +35,4 @@ class PaypalNotification
     @notification ||= ActiveMerchant::Billing::Integrations::Paypal::Notification.new(request_body)
   end
 end
+

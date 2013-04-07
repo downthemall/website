@@ -3,3 +3,4 @@ class PostPolicy < ApplicationPolicy
     is_admin?
   end
 end
+

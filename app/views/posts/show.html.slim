@@ -1,5 +1,5 @@
 #posts.wrapper
-  .page-header
-    h1 Latest News
+  .page-header: h1= I18n.t('blog.title')
   .right= partial "posts/post", object: @post
   = partial "posts/menu"
+

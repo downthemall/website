@@ -9,11 +9,11 @@
       span.icon-caret
 
     ul#menu.sections
-      li= link_to "Features", url(:features)
-      li= link_to "Latest News", url(:posts, :index)
-      li= link_to "Knowledge Base", url(:knowledge_base, :index)
-      li= link_to "Download", "#", class: "download"
-      li= link_to "Donate", url(:donations, :new), class: "donate"
+      li= link_to I18n.t('menu.features'), url(:features)
+      li= link_to I18n.t('menu.blog'), url(:posts, :index)
+      li= link_to I18n.t('menu.knowledge_base'), url(:knowledge_base, :index)
+      li= link_to I18n.t('menu.download'), "#", class: "download"
+      li= link_to I18n.t('menu.donate'), url(:donations, :new), class: "donate"
 
     ul#language.language
       li= link_to "Italiano", switch_to_lang(:it)

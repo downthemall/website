@@ -11,3 +11,4 @@ shared_examples_for 'logged users' do
     action!
   end
 end
+

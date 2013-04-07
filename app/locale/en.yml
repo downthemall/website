@@ -1,3 +1,4 @@
+---
 en:
   language:
     ar: Arabic
@@ -109,30 +110,79 @@ en:
     te: Telugu
     th: Thai
     bo: Tibetan
-
   knowledge_base:
-    approved: 'Version approved successfully'
-    destroyed: 'Version destroyed successfully'
-    created: 'Version created successfully'
-    updated: 'Version updated successfully'
-
+    approved: Version approved successfully
+    destroyed: Version destroyed successfully
+    created: Version created successfully
+    updated: Version updated successfully
+    article:
+      history: Article edit history
+    revision:
+      history_title: Title
+      history_date: Date
+      history_status: Status
+    title: Knowledge Base
+    translate_article:
+      title: Translate Knowledge Base Article
+    create_article:
+      title: Add a new Knowledge Base Post
+    edit_article:
+      title: Edit Knowledge Base Article
+  activerecord:
+    attributes:
+      revision:
+        locale: Language
   categories:
-    getting-started: 'Getting Started'
-    tutorials: 'Tutorials'
-    contribute: 'Contribute'
-    release-notes: 'Release Notes'
+    getting-started: Getting Started
+    tutorials: Tutorials
+    contribute: Contribute
+    release-notes: Release Notes
   donations:
-    completed: 'Donation completed correctly!'
-    canceled: 'Donation aborted'
+    completed: Donation completed correctly!
+    canceled: Donation aborted
   authorization:
-    forbidden: 'Access forbidden!'
+    forbidden: Access forbidden!
   authentication:
-    already_signed_in: 'You are already signed in!'
-    must_be_signed_in: 'You must be signed in!'
+    already_signed_in: You are already signed in!
+    must_be_signed_in: You must be signed in!
     sign_up:
-      notice: 'Signed up correctly!'
+      notice: Signed up correctly!
     sign_in:
-      notice: 'Signed in correctly!'
-      alert: 'Invalid username or password'
+      notice: Signed in correctly!
+      alert: Invalid username or password
     sign_out:
-      notice: 'Signed out correctly!'
+      notice: Signed out correctly!
+  post:
+    actions:
+      edit: Edit
+      delete: Delete
+  revision:
+    actions:
+      edit: Edit
+      translate: Translate
+      delete: Delete
+      approve: Approve
+    status:
+      pending: Pending
+      public: Public
+      approved: Approved
+      skipped: Skipped
+    last_edit: Edited %{time} ago
+    available_languages: 'This article is available also in the following locales:
+      %{locales}.'
+  blog:
+    archive_per_year: Archive by Year
+    follow_rss: Follow our news feed
+    create_post: Create a new post
+    edit_post:
+      title: Edit Post
+    rss:
+      title: DownThemAll! Latest News
+    title: Latest News
+  menu:
+    features: Features
+    blog: Latest News
+    knowledge_base: Knowledge Base
+    download: Download
+    donate: Donate
+

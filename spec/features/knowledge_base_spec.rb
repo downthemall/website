@@ -30,6 +30,30 @@ feature 'Knowledge Base' do
     expect(mail.to).to include 'admin@email.com'
   end
 
+  scenario 'Translate an article' do
+    Fabricate(:admin, email: 'admin@email.com')
+
+    revision = Fabricate(:revision, locale: :en, title: 'Article', approved: true)
+    sign_in_as(Fabricate(:user))
+
+    visit "/en/knowledge-base/#{revision.to_param}"
+    click_link "Translate"
+
+    select 'Italian', from: 'Language'
+    fill_in 'revision_title', with: 'Titolo'
+    fill_in 'revision_content', with: 'Contenuto'
+    click_button 'Save'
+
+    expect(page).to have_content I18n.t('knowledge_base.updated')
+
+    revision = revision.article.latest_revision(:it)
+    expect(revision.locale).to eq(:it)
+    expect(revision.title).to eq('Titolo')
+
+    mail = Mail::TestMailer.deliveries.pop
+    expect(mail.to).to include 'admin@email.com'
+  end
+
   scenario 'Moderation' do
     sign_in_as(Fabricate(:admin))
 

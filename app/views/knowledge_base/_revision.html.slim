@@ -11,12 +11,13 @@
       .actions= revision.actions
 
   .article-history
-    h3 Article edit history
+    h3= I18n.t('knowledge_base.article.history')
     table
       thead
-        th Title
-        th Date
-        th Status
+        th= I18n.t('knowledge_base.revision.history_title')
+        th= I18n.t('knowledge_base.revision.history_date')
+        th= I18n.t('knowledge_base.revision.history_status')
       tbody
-        - revision.article.revisions.each do |revision|
+        - revision.article.revisions.with_locale(I18n.locale).each do |revision|
           = present(revision).revision_line
+

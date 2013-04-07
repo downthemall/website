@@ -33,3 +33,4 @@ class Category
   end
 
 end
+
