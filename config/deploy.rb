@@ -10,6 +10,7 @@ set :branch, 'padrino'
 set :shared_paths, ['config/db_credentials.rb', 'log', 'public/system']
 set :user, 'website'
 set :rvm_path, '/usr/local/rvm/scripts/rvm'
+set :bundle_prefix, lambda { %{PADRINO_ENV="#{rails_env}" #{bundle_bin} exec} }
 
 task :environment do
   invoke :'rvm:use[ruby-1.9.3-p385@default]'
@@ -36,7 +37,7 @@ task :deploy => :environment do
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
-    invoke :'rails:assets_precompile'
+    # invoke :'rails:assets_precompile'
 
     to :launch do
       queue 'touch tmp/restart.txt'
