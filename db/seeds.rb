@@ -1,4 +1,4 @@
-admin = User.new(email: 'stefano.verna@gmail.com', password: 'changeme')
+admin = User.new(email: 'stefano.verna@gmail.com')
 admin.admin = true
 admin.save!
 
