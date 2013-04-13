@@ -40,22 +40,6 @@ describe KnowledgeBaseController do
     end
   end
 
-  describe 'GET /translate' do
-    let(:action!) { get :translate, id: 'foo' }
-    before do
-      revision.stub(:latest_revision).and_return('latest')
-      Revision.stub(:find).with('foo').and_return(revision)
-    end
-    it "uses the latest revision available" do
-      action!
-      expect(assigns[:revision]).to eq('latest')
-    end
-    it "authorizes action" do
-      controller.should_receive(:authorize!).with('latest')
-      action!
-    end
-  end
-
   describe 'POST /create' do
     let(:action!) { post :create, revision: 'params' }
     before do
