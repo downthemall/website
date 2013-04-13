@@ -22,7 +22,6 @@ class Downthemall < Padrino::Application
   sprockets minify: (Padrino.env == :production)
   set :locales, [:en, :it, :de]
   set :amo_extension_id, 'downthemall'
-  set :cache, Padrino::Cache::Store::Memory.new(50)
 
   module Helpers
     include Showcase::Helpers
