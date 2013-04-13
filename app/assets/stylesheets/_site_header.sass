@@ -74,13 +74,45 @@ $noise: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAI
     +media($tablet)
 
       > .current-language
-        display: none
+        float: right
+        position: relative
+        margin-right: 10px
+        background-color: rgba(black, 0.05)
+        border-radius: 2px
+        padding: 0 5px 0 10px
+
+        li
+          display: inline-block
 
       > .menu
         display: none
 
       #language
         display: none
+        position: absolute
+        top: 100%
+        left: 0
+        background-color: white
+        box-shadow: rgba(black, 0.1) 0 3px 3px
+        border-radius: 2px
+        padding: 5px
+
+        li
+          display: block
+          width: 100px
+
+          a
+            display: block
+            line-height: 20px
+            padding: 5px
+
+            &:hover
+              background-color: $blue
+              color: white
+              text-shadow: rgba(black, 0.6) 0 -1px 0
+
+        &.visible
+          display: block
 
       #menu
         float: right

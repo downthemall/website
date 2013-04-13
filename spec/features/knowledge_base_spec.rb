@@ -39,7 +39,7 @@ feature 'Knowledge Base' do
     visit "/en/knowledge-base/#{revision.to_param}"
     click_link "Translate"
 
-    select 'Italian', from: 'Language'
+    select 'Italiano', from: 'Language'
     fill_in 'revision_title', with: 'Titolo'
     fill_in 'revision_content', with: 'Contenuto'
     click_button 'Save'

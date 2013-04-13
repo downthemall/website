@@ -6,7 +6,7 @@
     - if edit_locale
       = f.select :locale, collection: Locale.all, fields: [:name, :code]
     - else
-      = t "language.#{I18n.locale}"
+      = Locale.current.name
 
   - if edit_category
     p.input

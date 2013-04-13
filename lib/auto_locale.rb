@@ -5,8 +5,8 @@ module AutoLocale
     #
     def switch_to_lang(lang)
       return unless settings.locales.include?(lang)
-      if request.path_info[/\/#{I18n.locale}\//]
-        request.path_info.sub(/\/#{I18n.locale}\//, "/#{lang}/")
+      if request.path_info[/\/#{I18n.locale}(\/|$)/]
+        request.path_info.sub(/\/#{I18n.locale}/, "/#{lang}")
       else
         request.path_info.sub(/\/$/, "/#{lang}")
       end
@@ -37,7 +37,7 @@ module AutoLocale
     def parse_route(path, options, verb)
       result = super
       path = result.first
-      path = "/(:locale)#{path}" unless path.empty?
+      path = "/(:locale)#{path}"
       result[0] = path
       result
     end

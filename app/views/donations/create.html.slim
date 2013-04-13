@@ -12,6 +12,6 @@
   = hidden_field_tag :return, value: uri(url(:donations, :complete, id: @donation.id))
   = hidden_field_tag :cancel_return, value: uri(url(:donations, :cancel, id: @donation.id))
   = hidden_field_tag :bn, value: "PP-BuyNowBF"
-  = hidden_field_tag :lc, value: PaypalLocale.country_code_for_locale(I18n.locale)
+  = hidden_field_tag :lc, value: Locale.current.paypal_code
   = submit_tag "Proceed"
 

@@ -4,9 +4,6 @@
       | DownThemAll!
 
     = link_to "Menu", "#", class: 'menu', data: { behaviour: 'DropdownMenu', menu_dom: '#menu' }
-    = link_to "#", class: 'current-language', data: { behaviour: 'DropdownMenu', menu_dom: '#language' } do
-      span= I18n.t "language.#{I18n.locale}"
-      span.icon-caret
 
     ul#menu.sections
       li= link_to I18n.t('menu.features'), url(:features)
@@ -15,7 +12,13 @@
       li= link_to I18n.t('menu.download'), "#", class: "download"
       li= link_to I18n.t('menu.donate'), url(:donations, :new), class: "donate"
 
-    ul#language.language
-      li= link_to "Italiano", switch_to_lang(:it)
-      li= link_to "Deutsch", switch_to_lang(:de)
+    .current-language
+      = link_to "#", data: { behaviour: 'DropdownMenu', menu_dom: '#language' } do
+        span= Locale.current.name
+        span.icon-caret
+
+      ul#language.language
+        - Locale.all.each do |locale|
+          - unless locale.current?
+            li= link_to locale.name, switch_to_lang(locale.code)
 

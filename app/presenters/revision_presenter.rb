@@ -28,7 +28,7 @@ class RevisionPresenter < Showcase::Presenter
     if locales.any?
       locales = locales.map do |locale|
         revision = article.public_revision(locale)
-        h.link_to I18n.t("language.#{locale}"), h.url(:knowledge_base, :show, id: revision)
+        h.link_to Locale.new(locale).name, h.url(:knowledge_base, :show, id: revision)
       end.join(", ").html_safe
       I18n.t('revision.available_languages', locales: locales)
     else

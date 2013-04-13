@@ -1,4 +1,5 @@
 it:
+  language: Italiano
   donations:
     completed: 'Donazione effettuata correttamente!'
     canceled: 'Donazione annullata'
@@ -18,4 +19,6 @@ it:
     knowledge_base: Knowledge Base
     download: Download
     donate: Donate
+  homepage:
+    title: Il miglior modo per gestire i tuoi download
 
