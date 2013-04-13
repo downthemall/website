@@ -14,8 +14,8 @@
   section.stats
     ul
       li Totally free & open-source!
-      li #{number_with_delimiter AmoStats.stats.users} daily active users
-      li #{number_with_delimiter AmoStats.stats.downloads} downloads
+      li #{number_with_delimiter @avg_daily_users} daily active users
+      li data-daily-downloads=@avg_daily_downloads #{number_with_delimiter @total_downloads} downloads
 
   section.reviews
     h6 Featured on

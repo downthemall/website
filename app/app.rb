@@ -6,6 +6,7 @@ class Downthemall < Padrino::Application
   use ActiveRecord::ConnectionAdapters::ConnectionManagement
   use Rack::Protection
 
+  register Padrino::Cache
   register Padrino::Rendering
   register Padrino::Mailer
   register Padrino::Helpers
@@ -15,11 +16,13 @@ class Downthemall < Padrino::Application
   register AutoLocale
   register Padrino::Pundit
 
-  sprockets minify: (Padrino.env == :production)
-
-  set :locales, [:en, :it, :de]
-
   enable :sessions
+  enable :caching
+
+  sprockets minify: (Padrino.env == :production)
+  set :locales, [:en, :it, :de]
+  set :amo_extension_id, 'downthemall'
+  set :cache, Padrino::Cache::Store::Memory.new(50)
 
   module Helpers
     include Showcase::Helpers

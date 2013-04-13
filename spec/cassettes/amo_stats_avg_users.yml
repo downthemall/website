@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://addons.mozilla.org/en-US/firefox/addon/downthemall/statistics/usage-day-20130314-20130412.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Vary:
+      - X-Mobile, User-Agent
+      X-Backend-Server:
+      - web26.addons.phx1.mozilla.com
+      Cache-Control:
+      - max-age=604800
+      Content-Type:
+      - text/json
+      Strict-Transport-Security:
+      - max-age=2592000
+      Date:
+      - Sat, 13 Apr 2013 13:33:55 GMT
+      Transfer-Encoding:
+      - chunked
+      Access-Control-Allow-Origin:
+      - '*'
+      Via:
+      - Moz-pp-zlb10
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - DENY
+      Access-Control-Allow-Methods:
+      - GET
+    body:
+      encoding: UTF-8
+      string: '[{"date": "2013-04-12", "count": 1909080, "end": "2013-04-12"}, {"date":
+        "2013-04-11", "count": 1969554, "end": "2013-04-11"}, {"date": "2013-04-10",
+        "count": 1999807, "end": "2013-04-10"}, {"date": "2013-04-09", "count": 2014056,
+        "end": "2013-04-09"}, {"date": "2013-04-08", "count": 2020582, "end": "2013-04-08"},
+        {"date": "2013-04-07", "count": 1720111, "end": "2013-04-07"}, {"date": "2013-04-06",
+        "count": 1680819, "end": "2013-04-06"}, {"date": "2013-04-05", "count": 1912419,
+        "end": "2013-04-05"}, {"date": "2013-04-04", "count": 1967579, "end": "2013-04-04"},
+        {"date": "2013-04-03", "count": 2002082, "end": "2013-04-03"}, {"date": "2013-04-02",
+        "count": 1998853, "end": "2013-04-02"}, {"date": "2013-04-01", "count": 1863959,
+        "end": "2013-04-01"}, {"date": "2013-03-31", "count": 1574021, "end": "2013-03-31"},
+        {"date": "2013-03-30", "count": 1604213, "end": "2013-03-30"}, {"date": "2013-03-29",
+        "count": 1745060, "end": "2013-03-29"}, {"date": "2013-03-28", "count": 1892331,
+        "end": "2013-03-28"}, {"date": "2013-03-27", "count": 1888380, "end": "2013-03-27"},
+        {"date": "2013-03-26", "count": 1980198, "end": "2013-03-26"}, {"date": "2013-03-25",
+        "count": 1989261, "end": "2013-03-25"}, {"date": "2013-03-24", "count": 1700965,
+        "end": "2013-03-24"}, {"date": "2013-03-23", "count": 1666554, "end": "2013-03-23"},
+        {"date": "2013-03-22", "count": 1919205, "end": "2013-03-22"}, {"date": "2013-03-21",
+        "count": 1986280, "end": "2013-03-21"}, {"date": "2013-03-20", "count": 2004936,
+        "end": "2013-03-20"}, {"date": "2013-03-19", "count": 2015699, "end": "2013-03-19"},
+        {"date": "2013-03-18", "count": 2017278, "end": "2013-03-18"}, {"date": "2013-03-17",
+        "count": 1716823, "end": "2013-03-17"}, {"date": "2013-03-16", "count": 1681201,
+        "end": "2013-03-16"}, {"date": "2013-03-15", "count": 1933394, "end": "2013-03-15"},
+        {"date": "2013-03-14", "count": 2005124, "end": "2013-03-14"}]'
+    http_version: 
+  recorded_at: Sat, 13 Apr 2013 13:33:55 GMT
+recorded_with: VCR 2.4.0

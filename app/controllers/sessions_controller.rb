@@ -20,11 +20,12 @@ class SessionsController < Controller
     JSON.dump(success: true)
   end
 
-  get :force_sign_in, map: '/force_sign_in' do
-    user = User.find(params[:user_id])
-    authenticate!(user)
-    flash[:notice] = I18n.t('authentication.sign_in.notice')
-    redirect url(:index)
+  if Padrino.env == :test
+    get :force_sign_in, map: '/force_sign_in' do
+      user = User.find(params[:user_id])
+      authenticate!(user)
+      I18n.t('authentication.sign_in.notice')
+    end
   end
 
 end

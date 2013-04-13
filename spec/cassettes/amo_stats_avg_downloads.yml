@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://addons.mozilla.org/en-US/firefox/addon/downthemall/statistics/overview-day-20130314-20130412.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Vary:
+      - X-Mobile, User-Agent
+      X-Backend-Server:
+      - web10.addons.phx1.mozilla.com
+      Cache-Control:
+      - max-age=604800
+      Content-Type:
+      - text/json
+      Strict-Transport-Security:
+      - max-age=2592000
+      Date:
+      - Sat, 13 Apr 2013 13:33:56 GMT
+      Transfer-Encoding:
+      - chunked
+      Access-Control-Allow-Origin:
+      - '*'
+      Via:
+      - Moz-pp-zlb10
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - DENY
+      Access-Control-Allow-Methods:
+      - GET
+    body:
+      encoding: UTF-8
+      string: '[{"date": "2013-04-12", "data": {"downloads": 16843, "updates": 1909080}},
+        {"date": "2013-04-11", "data": {"downloads": 16445, "updates": 1969554}},
+        {"date": "2013-04-10", "data": {"downloads": 16607, "updates": 1999807}},
+        {"date": "2013-04-09", "data": {"downloads": 16343, "updates": 2014056}},
+        {"date": "2013-04-08", "data": {"downloads": 16296, "updates": 2020582}},
+        {"date": "2013-04-07", "data": {"downloads": 16320, "updates": 1720111}},
+        {"date": "2013-04-06", "data": {"downloads": 16797, "updates": 1680819}},
+        {"date": "2013-04-05", "data": {"downloads": 17365, "updates": 1912419}},
+        {"date": "2013-04-04", "data": {"downloads": 17232, "updates": 1967579}},
+        {"date": "2013-04-03", "data": {"downloads": 17420, "updates": 2002082}},
+        {"date": "2013-04-02", "data": {"downloads": 16790, "updates": 1998853}},
+        {"date": "2013-04-01", "data": {"downloads": 16168, "updates": 1863959}},
+        {"date": "2013-03-31", "data": {"downloads": 15672, "updates": 1574021}},
+        {"date": "2013-03-30", "data": {"downloads": 15444, "updates": 1604213}},
+        {"date": "2013-03-29", "data": {"downloads": 16937, "updates": 1745060}},
+        {"date": "2013-03-28", "data": {"downloads": 16441, "updates": 1892331}},
+        {"date": "2013-03-27", "data": {"downloads": 15931, "updates": 1888380}},
+        {"date": "2013-03-26", "data": {"downloads": 16953, "updates": 1980198}},
+        {"date": "2013-03-25", "data": {"downloads": 16649, "updates": 1989261}},
+        {"date": "2013-03-24", "data": {"downloads": 16557, "updates": 1700965}},
+        {"date": "2013-03-23", "data": {"downloads": 16950, "updates": 1666554}},
+        {"date": "2013-03-22", "data": {"downloads": 16389, "updates": 1919205}},
+        {"date": "2013-03-21", "data": {"downloads": 16805, "updates": 1986280}},
+        {"date": "2013-03-20", "data": {"downloads": 16936, "updates": 2004936}},
+        {"date": "2013-03-19", "data": {"downloads": 17048, "updates": 2015699}},
+        {"date": "2013-03-18", "data": {"downloads": 16872, "updates": 2017278}},
+        {"date": "2013-03-17", "data": {"downloads": 16745, "updates": 1716823}},
+        {"date": "2013-03-16", "data": {"downloads": 17044, "updates": 1681201}},
+        {"date": "2013-03-15", "data": {"downloads": 16820, "updates": 1933394}},
+        {"date": "2013-03-14", "data": {"downloads": 17169, "updates": 2005124}}]'
+    http_version: 
+  recorded_at: Sat, 13 Apr 2013 13:33:56 GMT
+recorded_with: VCR 2.4.0
