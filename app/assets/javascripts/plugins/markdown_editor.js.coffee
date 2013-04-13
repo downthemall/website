@@ -69,7 +69,8 @@ class @MarkdownEditor extends Plugin
 
   updateHeight: ->
     unless @fullscreen
-      editorHeight = @$markdownEditor.parent().height()
+      editorHeight = @$markdownEditor.parent().outerHeight()
+      editorHeight = 170 if editorHeight < 170
       @$preview.height(editorHeight)
       @editor.reflow()
 
