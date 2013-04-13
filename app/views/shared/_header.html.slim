@@ -9,7 +9,8 @@
       li= link_to I18n.t('menu.features'), url(:features)
       li= link_to I18n.t('menu.blog'), url(:posts, :index)
       li= link_to I18n.t('menu.knowledge_base'), url(:knowledge_base, :index)
-      li= link_to I18n.t('menu.download'), "#", class: "download"
+      - if can_install?
+        li= link_to I18n.t('menu.download'), "#", class: "download"
       li= link_to I18n.t('menu.donate'), url(:donations, :new), class: "donate"
 
     .current-language

@@ -30,10 +30,13 @@ class Downthemall < Padrino::Application
   helpers do
     include Helpers
 
+    def can_install?
+      InstallPolicy.new(request.user_agent).can_install?
+    end
+
     def authorized?(record, action)
       Pundit.policy!(current_user, record).send("#{action}?")
     end
-
     alias_method :authorize!, :authorize
   end
 
