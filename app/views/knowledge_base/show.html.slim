@@ -2,15 +2,7 @@
   .page-header
     h1= I18n.t('knowledge_base.title')
 
-  .contribute 
-    - if authorized?(Revision.new, :new)
-      ' This Knowledge Base is community-driven! Do you want to contribute? 
-      = link_to "Create a new Article!", url(:knowledge_base, :new)
-    - else
-      ' This Knowledge Base is community-driven! Do you want to contribute? 
-      =' link_to "Sign in", url(:sessions, :sign_in)
-      | and start writing!
-
+  = partial "knowledge_base/contribute"
   .right= partial "knowledge_base/revision", object: @revision
   .left= partial "knowledge_base/menu"
 
