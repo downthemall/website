@@ -1,5 +1,6 @@
 Downthemall.controllers do
   get :index do
+    @installable = SystemSupport.new(request.user_agent).is_supported?
     stats = AmoStats.new(Downthemall.settings.amo_extension_id)
     @total_downloads = cache("dta_total_downloads", expires_in: 6400) { stats.total_downloads }
     @avg_daily_users = cache("dta_avg_daily_users", expires_in: 6400) { stats.avg_daily_users }

@@ -156,6 +156,7 @@ GEM
     tzinfo (0.3.37)
     url_mount (0.2.1)
       rack
+    useragent (0.5.0)
     vcr (2.4.0)
     webmock (1.9.3)
       addressable (>= 2.2.7)
@@ -193,6 +194,7 @@ DEPENDENCIES
   slim (~> 1.3.6)
   sprockets (~> 2.9.0)
   timecop
+  useragent
   vcr
   webmock (~> 1.9.3)
   will_paginate (~> 3.0)

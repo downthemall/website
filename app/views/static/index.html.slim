@@ -6,10 +6,14 @@
       h3.title= I18n.t('homepage.title')
       h2.subtitle DownThemAll! is a free, multi award-winning Firefox extension that adds new advanced download capabilities to your browser.
 
-      .call-to-action
-        = link_to "#", :class => "button" do
-          | Install DownThemAll!
-        .version Version 2.0.7, Multilanguage
+      - if @installable
+        .call-to-action
+          = link_to "#", :class => "button" do
+            | Install DownThemAll!
+          .version 
+            span Version 2.0.7,  
+            span Multi-language,  
+            span Windows/Mac/Linux compatible
 
   section.stats
     ul

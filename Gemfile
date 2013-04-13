@@ -20,6 +20,7 @@ gem 'pundit', github: 'stefanoverna/pundit', branch:'padrino-adapter'
 gem 'paperclip', '~> 3.0'
 gem 'showcase'
 gem 'sanitize'
+gem 'useragent'
 
 group :development do
   gem 'letter_opener'
