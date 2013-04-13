@@ -77,6 +77,14 @@
         margin-bottom: 5px
         font-size: 0.9em
 
+        a
+          color: $gray
+          font-weight: bold
+          text-decoration: none
+
+          &:hover
+            text-decoration: underline
+
       .title a
         color: $black
         font-weight: 700
@@ -114,9 +122,6 @@
 
         &.edit
           +button-color($blue)
-
-        &.translate
-          +button-color($red)
 
         &.destroy
           +button-color($red)
@@ -190,3 +195,4 @@
         box-shadow: rgba(black, 0.2) 0 1px 4px
         padding: 25px
         background-color: $light-background
+

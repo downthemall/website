@@ -42,9 +42,6 @@ class RevisionPresenter < Showcase::Presenter
     if h.authorized? self, :edit
       buf << h.link_to(I18n.t('revision.actions.edit'), h.url(:knowledge_base, :edit, id: self), class: 'edit')
     end
-    if h.authorized? self, :edit
-      buf << h.link_to(I18n.t('revision.actions.translate'), h.url(:knowledge_base, :translate, id: self), class: 'translate')
-    end
     if h.authorized? self, :destroy
       buf << h.link_to(I18n.t('revision.actions.delete'), h.url(:knowledge_base, :destroy, id: self), class: 'destroy', data: { confirm: 'Are you sure?' })
     end

@@ -3,10 +3,7 @@
 
   p.input
     = f.label :locale, caption: Revision.human_attribute_name(:locale)
-    - if edit_locale
-      = f.select :locale, collection: Locale.all, fields: [:name, :code]
-    - else
-      = Locale.current.name
+    = f.select :locale, collection: Locale.all, fields: [:name, :code]
 
   - if edit_category
     p.input

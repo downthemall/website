@@ -32,12 +32,6 @@ class KnowledgeBaseController < Controller
     render 'knowledge_base/edit'
   end
 
-  get :translate, map: '/knowledge-base/:id/translate' do
-    @revision = Revision.find(params[:id]).latest_revision
-    authorize! @revision
-    render 'knowledge_base/translate'
-  end
-
   post :update, map: '/knowledge-base/:id' do
     @old_revision = Revision.find(params[:id])
     authorize! @old_revision

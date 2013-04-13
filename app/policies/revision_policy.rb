@@ -1,6 +1,6 @@
 class RevisionPolicy < ApplicationPolicy
 
-  multiple_actions :new, :create, :edit, :translate, :update do
+  multiple_actions :new, :create, :edit, :update do
     is_signed_in?
   end
 

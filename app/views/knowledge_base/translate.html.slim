@@ -1,4 +1,0 @@
-.wrapper
-  .page-header: h1=I18n.t('knowledge_base.translate_article.title') 
-  = partial "knowledge_base/form", locals: { revision: @revision, url: url(:knowledge_base, :update, id: @revision), edit_category: false, edit_locale: true }
-

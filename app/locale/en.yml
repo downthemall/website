@@ -13,8 +13,6 @@ en:
       history_date: Date
       history_status: Status
     title: Knowledge Base
-    translate_article:
-      title: Translate Knowledge Base Article
     create_article:
       title: Add a new Knowledge Base Post
     edit_article:
@@ -49,8 +47,7 @@ en:
       delete: Delete
   revision:
     actions:
-      edit: Edit
-      translate: Translate
+      edit: Edit/Translate
       delete: Delete
       approve: Approve
     status:

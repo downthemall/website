@@ -37,7 +37,7 @@ feature 'Knowledge Base' do
     sign_in_as(Fabricate(:user))
 
     visit "/en/knowledge-base/#{revision.to_param}"
-    click_link "Translate"
+    click_link "Edit/Translate"
 
     select 'Italiano', from: 'Language'
     fill_in 'revision_title', with: 'Titolo'
@@ -80,7 +80,7 @@ feature 'Knowledge Base' do
     a = Fabricate(:revision, approved: true, locale: :it, created_at: 4.days.ago)
 
     visit "/it/knowledge-base/#{a.id}"
-    click_link "Edit"
+    click_link "Edit/Translate"
 
     fill_in 'revision_title', with: 'Titolo'
     fill_in 'revision_content', with: 'Contenuto'
