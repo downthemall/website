@@ -15,7 +15,7 @@ class PostPresenter < Showcase::Presenter
   end
 
   def content
-    MarkdownFormatter.format(object.content)
+    MarkdownFormatter.format(object.content).html_safe
   end
 
   def actions

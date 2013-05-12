@@ -16,10 +16,8 @@ class SessionsController < ApplicationController
     if current_user.present?
       authenticate!(nil)
       flash[:notice] = I18n.t('authentication.sign_out.notice')
-      render json: { success: true }
-    else
-      render json: { success: false }
     end
+    render json: { success: true }
   end
 
   if Rails.env.test?
