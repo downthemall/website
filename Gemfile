@@ -26,6 +26,7 @@ gem 'slim-rails'
 gem 'strong_parameters'
 gem 'thin'
 gem 'useragent'
+
 group :assets do
   gem 'coffee-rails'
   gem 'sass-rails'
@@ -47,6 +48,7 @@ end
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'localeapp'
 end
 
 group :test do
@@ -60,7 +62,6 @@ group :test do
   gem 'vcr'
   gem 'webmock', '~> 1.9.3', require: false
   gem 'i18n-spec'
-  gem 'localeapp'
 end
 
 group :staging, :production do
