@@ -33,6 +33,11 @@ it:
     canceled: Donazione annullata
     completed: Donazione effettuata correttamente!
   homepage:
+    daily_users: ! '%{users} utenti giornalieri'
+    downloads: ! '%{downloads} downloads'
+    featured_on: Parlano di noi
+    free_opensource: Completamente gratuito ed open-source!
+    subtitle: DownThemAll! è una estensione per Firefox gratuita e pluri-premiata che aggiunge nuove capacità di download avanzate al tuo browser.
     title: Il miglior modo per gestire i tuoi download
   knowledge_base:
     approved: Versione approvata con successo
