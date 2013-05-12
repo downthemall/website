@@ -8,7 +8,9 @@ $ ->
     new window[$(@).data('behaviour')](@)
 
   $("[href=#sign-in]").click ->
-    navigator.id.request(siteName: 'DownThemAll!')
+    navigator.id.request
+      siteName: 'DownThemAll!'
+      siteLogo: if location.protocol == 'https:' then '/assets/persona.png' else false
     false
 
   $("[href=#sign-out]").click ->
@@ -25,15 +27,18 @@ $ ->
         data: { assertion: assertion }
       .done (data) ->
         if data.success
-          window.location.reload()
+          alert('Sign in!') if data.changed
         else
           alert('Login failure')
-      .fail (xhr, status, err) -> navigator.id.logout()
+      .fail (xhr, status, err) ->
+        navigator.id.logout()
 
     onlogout: ->
       $.ajax
         type: 'POST',
         url: '/en/sign_out'
-      .done (data) -> window.location.reload()
-      .fail (xhr, status, err) -> alert("Logout failure: #{err}")
+      .done (data) ->
+        alert('Sign out!') if data.changed
+      .fail (xhr, status, err) ->
+        alert("Logout failure: #{err}")
 

@@ -19,7 +19,7 @@ class Downthemall < Padrino::Application
   enable :sessions
   enable :caching
 
-  sprockets minify: (Padrino.env == :production)
+  sprockets minify: false#(Padrino.env == :production)
   set :locales, [:en, :it, :de]
   set :amo_extension_id, 'downthemall'
 
