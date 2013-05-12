@@ -1,18 +1,15 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  validates :email, presence: true
+  validates :email, email: true, uniqueness: true
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :twitter_username
+  scope :admins, where(admin: true)
 
-  has_many :comments, :inverse_of => :user
-
-  def is_admin?
-    admin == true
+  def find_or_create_by_email(email)
+    where(email: email).first_or_create!
   end
 
-  def full_name
-    full_name = [first_name, last_name].join(" ")
-    full_name.present? ? full_name : "Anonymous"
+  def admin?
+    !! self.admin
   end
-
 end
+

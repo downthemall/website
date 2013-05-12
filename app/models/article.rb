@@ -1,44 +1,24 @@
 class Article < ActiveRecord::Base
-  has_ancestry :cache_depth => true
-  has_many :translations, :class_name => "ArticleTranslation", :dependent => :destroy, :inverse_of => :article
-  has_many :images, :class_name => "ArticleImage", :dependent => :destroy, :inverse_of => :article
-  has_many :comments, :dependent => :destroy, :inverse_of => :article
+  validates :category, presence: true
+  has_many :revisions, dependent: :destroy
 
-  scope :sticky, where(:sticky => true)
-  scope :popular, order(:views_count => :desc)
-  scope :top_five, limit(5)
+  scope :with_public_revisions, ->(locale) { joins(:revisions).merge(Revision.approved).merge(Revision.with_locale(locale)).uniq }
+  scope :in_category, ->(cat) { where(category: cat.code) }
 
-  validate :at_least_en_translation
-
-  accepts_nested_attributes_for :translations, :allow_destroy => true, :reject_if => lambda { |p| p[:content].blank? && p[:title].blank? && p[:excerpt].blank? }
-
-  def title
-    translation_for(I18n.locale).title
+  def available_locales
+    revisions.merge(Revision.approved).reorder('').uniq.pluck(:locale).sort.map(&:to_sym)
   end
 
-  def build_translations
-    ArticleTranslation.enabled_locales.each do |locale|
-      if translation_for(locale, :include_new_records => true).nil?
-        translations.build(:locale => locale.to_s)
-      end
-    end
+  def latest_revision(locale)
+    revisions.with_locale(locale).first
   end
 
-  def translation_for(locale, *args)
-    options = args.extract_options!
-    if options[:include_new_records]
-      translations.detect { |translation| translation.locale.to_s == locale.to_s }
-    else
-      translations.with_locale(locale).first
-    end
+  def public_revision(locale)
+    revisions.approved.with_locale(locale).first
   end
 
-  private
-
-  def at_least_en_translation
-    if translation_for(:en, :include_new_records => true).nil?
-      errors.add :base, I18n.t("activerecord.errors.models.article.no_en_translation")
-    end
+  def pending_revisions(locale)
+    revisions.with_locale(locale).pending
   end
-
 end
+

@@ -1,0 +1,24 @@
+= button-color($color)
+  background-color: $color
+  border-bottom: 5px solid saturate(darken($color, 10%), 10%)
+
+  &:hover
+    background-color: lighten($color, 5%)
+
+  &:active
+    background-color: saturate(darken($color, 10%), 10%)
+
+.button
+  border-width: 0
+  color: white
+  padding: 12px 20px
+  text-decoration: none
+  text-transform: uppercase
+  font-weight: bold
+  text-shadow: rgba(black, 0.6) 0 -1px 0
+  +button-color($red)
+  display: inline-block
+
+  &:active
+    position: relative
+    top: 2px

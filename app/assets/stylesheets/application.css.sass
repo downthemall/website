@@ -1,27 +1,54 @@
-@import "compass"
-@import "switch"
-@import "formalize"
-@import "tipsy"
-@import "flags"
-@import "chosen"
-@import "growl"
-@import "css3buttons/without-reset"
-@import "common/mixins"
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,700,800,300,600)
 
-+global-reset
+@import bourbon
+@import neat
+@import reset
+@import colors
+@import button
+@import icons
+@import typeset
+
+$max-width: em(1200)
+$mobile: new-breakpoint(max-width 499px 2)
+$tablet: new-breakpoint(min-width 500px 12)
 
 body
-  font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif
-  +text-shadow(rgba(white, 0.8) 0px 1px 0px)
-  background: #fffff7 image-url("noise_background.png")
-  font-size: 14px
-  line-height: 16px
-  +medium-black
-  text-rendering: optimizeLegibility
+  font-family: "Open Sans", 'Helvetica'
+  font-size: 13px
+  line-height: 1.2
+  color: $black
+  background-color: $white
 
-@import "common/navigation"
-@import "common/notes"
-@import "layout_application/index"
-@import "layout_editing/index"
-@import "layout_twoside_editing/index"
+.wrapper
+  +outer-container
+  padding: 0 20px
+
+  .page-header
+    padding-bottom: 20px
+    border-bottom: 1px solid $border-color
+    margin-bottom: 20px
+
+    +media($tablet)
+      margin-bottom: 40px
+
+    h1
+      font-size: 2em
+      font-weight: 300
+      color: $gray
+
+      +media($tablet)
+        font-size: 3.5em
+
+
+@import site_header
+@import site_footer
+@import hero
+@import homepage
+@import features
+@import authentication
+@import form
+@import posts
+@import kb
+@import donations
+@import flash_messages
 

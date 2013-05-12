@@ -1,0 +1,66 @@
+#homepage
+  @extend .wrapper
+
+  .version
+    font-size: 0.9em
+    color: $gray
+
+  > section, .hero
+    margin-bottom: 50px
+    padding-bottom: 50px
+    border-bottom: 1px solid $border-color
+
+  .stats
+
+    li
+      text-align: center
+      font-size: 1.3em
+      line-height: 2em
+      color: $gray
+
+  .reviews
+    text-align: center
+
+    h6
+      font-size: 1.3em
+      text-transform: uppercase
+      font-weight: 800
+      line-height: 30px
+      margin-bottom: 30px
+
+    li
+      margin-bottom: 15px
+
+      a
+        display: block
+
+      +media($tablet)
+        display: inline-block
+
+        a
+          display: inline-block
+          width: 170px
+          margin: 0 5px
+
+    @each $reviewer in download, lifehacker, mashable, tech-republic, wired
+      .#{$reviewer}
+        background: url('/assets/reviews/#{$reviewer}.png') no-repeat center center
+        height: 42px
+        text-indent: -1000em
+        opacity: 0.7
+
+        &:hover
+          opacity: 1
+
+  +media($tablet)
+    .hero
+      margin-top: 20px
+
+      .button
+        padding: 15px 30px
+
+    .stats
+      +clearfix
+      li
+        +span-columns(4)
+        font-size: 1.5em

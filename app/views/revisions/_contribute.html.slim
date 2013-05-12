@@ -1,0 +1,10 @@
+.contribute 
+  - if authorized?(Revision.new, :new)
+    ' This Knowledge Base is community-driven! Do you want to contribute? 
+    = link_to "Create a new Article!", new_revision_url
+  - else
+    ' This Knowledge Base is community-driven! Do you want to contribute? 
+    =' link_to "Sign in", "#sign-in"
+    | and start writing!
+
+

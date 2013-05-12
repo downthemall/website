@@ -1,18 +1,27 @@
 Downthemall::Application.routes.draw do
-  devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup' }
-  resources :articles do
-    resources :article_translations, :path => :translations, :only => :show do
-      resources :versions
+  scope ':locale' do
+    resources :posts, path: :news
+    resources :revisions, path: :"knowledge-base" do
+      member do
+        get :approve
+      end
     end
-    resources :article_images, :path => :images, :except => [:index ,:show]
-    resources :comments
-  end
-  resources :donations, :except => [:index, :destroy] do
-    member do
-      get :cancel, :success
-      post :notify
+    resource :image_assets, only: [:create]
+    resources :donations, only: [:create] do
+      member do
+        post :complete
+        get :cancel
+      end
     end
+    post 'sign_in' => 'sessions#create'
+    post 'sign_out' => 'sessions#destroy'
+    get 'force_sign_in' => 'sessions#force_sign_in' if Rails.env.test?
+    post 'paypal_notify' => 'donations#paypal_notify'
+    get 'donate' => 'donations#new', as: :donate
+    get 'features' => 'static#features', as: :features
+    root to: 'static#homepage'
   end
-  resources :posts, path: "blog"
-  root :to => "home#index"
+
+  root to: 'static#homepage'
 end
+

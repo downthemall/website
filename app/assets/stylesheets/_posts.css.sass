@@ -1,0 +1,110 @@
+#posts
+
+  .archive
+    padding: 15px
+    background-color: $light-background
+    box-shadow: rgba(black, 0.2) 0 2px 2px
+
+    h6
+      text-transform: uppercase
+      font-weight: 800
+      color: $gray
+      margin-bottom: 10px
+
+    li
+      margin: 5px
+
+      a
+        display: block
+        font-weight: bold
+        color: $dark-gray
+        font-weight: 300
+        font-size: 1.6em
+        text-decoration: none
+
+        &:hover
+          color: $black
+
+        .count
+          font-size: 0.7em
+          color: $light-gray
+
+  .follow
+    margin-top: 30px
+    margin-bottom: 15px
+
+    a
+      +button-color($orange)
+      display: block
+
+  .actions
+    margin-bottom: 15px
+
+    .button
+      display: block
+
+  .post
+    margin-bottom: 40px
+
+    header
+      margin-bottom: 15px
+      position: relative
+      border-bottom: 1px solid $border-color
+      padding-bottom: 5px
+
+      h3 a
+        color: $black
+        font-weight: 700
+        text-decoration: none
+        font-size: 1.4em
+        display: block
+
+      .posted_at
+        color: $gray
+        margin-bottom: 5px
+        font-size: 0.9em
+
+    .content
+      @extend .typeset
+
+    .actions
+      margin-top: 20px
+
+      a
+        @extend .button
+        display: inline-block
+        width: auto
+        font-size: 0.9em
+        padding: 6px 10px
+        margin-right: 3px
+
+        &.edit
+          +button-color($blue)
+
+  .pagination
+    text-align: center
+
+    a
+      color: $black
+
+  +media($tablet)
+    .left
+      +span-columns(3)
+
+      .follow
+        margin-top: 0
+
+    .right
+      +span-columns(9)
+
+      .post
+        box-shadow: rgba(black, 0.2) 0 1px 4px
+        padding: 25px
+        padding-right: 150px
+        background-color: $white
+        border-bottom: 5px solid $blue
+
+        header h3 a
+          font-size: 2em
+          font-weight: 300
+

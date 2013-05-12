@@ -1,0 +1,61 @@
+#site-footer
+  background-color: $dark-background
+  padding-top: 30px
+  padding-bottom: 30px
+  color: darken($dark-white, 20%)
+  margin-top: 30px
+  border-top: 5px solid $black
+
+  a
+    text-decoration: none
+    color: darken($dark-white, 20%)
+
+    &:hover
+      color: $dark-white
+
+  section
+    margin-bottom: 20px
+    text-align: center
+
+    +media($tablet)
+      +span-columns(4)
+      text-align: left
+
+      &:nth-child(3)
+        +omega
+
+    h6
+      font-size: 1.1em
+      text-transform: uppercase
+      font-weight: 800
+      margin-bottom: 10px
+      color: $dark-white
+
+    li
+      margin-bottom: 6px
+
+      @each $logo in firefox, twitter, facebook, github, paypal
+        &.#{$logo}
+          background: url("/assets/social/#{$logo}.png") no-repeat left center
+          padding-left: 22px
+
+  footer
+    font-size: 0.9em
+    text-align: center
+
+    a
+      color: $white
+
+    +media($tablet)
+      clear: left
+
+    p
+      margin-bottom: 5px
+
+      +media($tablet)
+        clear: left
+        display: inline-block
+
+        &:first-child:after
+          content: "\2014"
+          padding: 0 5px

@@ -1,64 +1,69 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'rails', '3.1.0'
-gem 'jquery-rails'
-gem 'slim'
-gem 'css3buttons', git: 'git://github.com/WikiPaddle/css3buttons_rails_helpers.git'
-gem 'hashie'
-gem 'twitter'
-gem 'feed-normalizer'
-gem 'html_truncator'
-gem 'nokogiri'
-gem 'devise'
-gem 'kaminari'
-gem 'ancestry'
-gem 'carrierwave'
-gem 'simple_form'
-gem 'friendly_id'
-gem 'paper_trail'
-gem 'mini_magick'
-gem 'mysql2'
-gem 'hoptoad_notifier'
-gem 'therubyracer'
-gem 'inherited_resources'
-gem 'responders'
-gem 'dalli'
-gem 'RedCloth'
-gem 'remotipart'
-gem 'cancan'
-gem 'acts_as_textcaptcha', git: 'git://github.com/stefanoverna/acts_as_textcaptcha.git'
-gem 'money'
+
+gem 'active_link_to'
 gem 'activemerchant'
-
+gem 'airbrake'
+gem 'bourbon'
+gem 'coveralls', require: false
+gem 'flutie'
+gem 'jquery-rails'
+gem 'kaminari'
+gem 'neat'
+gem 'paperclip'
+gem 'pg'
+gem 'pundit'
+gem 'rack-timeout'
+gem 'rails', '>= 3.2.11'
+gem 'rails-i18n'
+gem 'recipient_interceptor'
+gem 'redcarpet'
+gem 'sanitize'
+gem 'showcase'
+gem 'simple_form'
+gem 'simple_form'
+gem 'slim-rails'
+gem 'strong_parameters'
+gem 'thin'
+gem 'useragent'
 group :assets do
-  gem 'sass-rails', '~> 3.1.0'
-  gem 'compass', git: 'https://github.com/chriseppstein/compass.git'
-  gem 'coffee-rails', '~> 3.1.0'
+  gem 'coffee-rails'
+  gem 'sass-rails'
   gem 'uglifier'
 end
 
 group :development do
-  gem 'active_reload'
-  gem 'sqlite3'
-  gem 'rvm'
-  gem 'capistrano', git: 'git://github.com/capistrano/capistrano.git'
-  gem 'capistrano_colors'
+  gem 'foreman'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'letter_opener'
+  gem 'mina'
+end
+
+group :staging do
+  gem 'recipient_interceptor'
+end
+
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
 end
 
 group :test do
-  gem 'turn', require: false
-  gem 'steak'
-  gem 'capybara'
-  gem 'spork', '~> 0.9.0.rc'
-  gem 'steak'
-  gem 'factory_girl_rails', :require => false
-  gem 'launchy'
+  gem 'bourne', require: false
+  gem 'capybara-webkit', '>= 0.14.1'
   gem 'database_cleaner'
-  gem 'rspec-instafail'
-  gem 'rb-fsevent'
-  gem 'growl'
-  gem 'mocha'
-  gem 'rspec-rails-mocha', '~> 0.3.1', :require => false
+  gem 'launchy'
+  gem 'shoulda-matchers'
+  gem 'simplecov', require: false
+  gem 'timecop'
+  gem 'vcr'
+  gem 'webmock', '~> 1.9.3', require: false
+  gem 'i18n-spec'
+  gem 'localeapp'
 end
 
+group :staging, :production do
+  gem 'newrelic_rpm'
+end
 

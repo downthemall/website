@@ -1,59 +1,38 @@
 class DonationsController < ApplicationController
-  inherit_resources
-  actions :all, :except => [:index, :destroy]
-  custom_actions resource: [:success, :cancel]
-  before_filter :set_donation_amounts
+  respond_to :html
 
-  respond_to :js, only: [:create, :update]
+  def new
+    @donation = Donation.new(amount: 10)
+  end
 
   def create
-    @donation = Donation.new(params[:donation])
-    @donation.user = current_user
-    @donation.status = :started
-    @donation.payment_method = :paypal
+    @donation = Donation.new(donation_params)
+    @donation.status = Donation::STATUS_PENDING
     @donation.save
     respond_with @donation
   end
 
-  def cancel
+  def paypal_notify
+    PaypalNotification.new(request.body.read).process!
+    render text: "Processed."
+  end
+
+  def complete
     @donation = Donation.find(params[:id])
-    @donation.public = true
-    @donation.status = :canceled
-    @donation.save
-    redirect_to new_donation_path
+    flash.now[:notice] = I18n.t('donations.completed')
+    render 'donations/complete'
   end
 
-  def notify
-    notify = Paypal::Notification.new(request.raw_post)
-    donation = Donation.find(notify.item_id)
-
-    if notify.acknowledge
-      donation.update_attributes(
-        :amount => notify.amount,
-        :confirmation => notify.transaction_id,
-        :status => notify.status,
-        :test => notify.test?
-      )
-      begin
-        if notify.complete?
-          donation.status = notify.status
-        else
-          logger.error("Failed to verify Paypal's notification, please investigate")
-        end
-      rescue => e
-        donation.status = :error
-        raise
-      ensure
-        donation.save
-      end
-    end
-    render :nothing => true
+  def cancel
+    Donation.find(params[:id]).cancel!
+    flash[:alert] = I18n.t('donations.canceled')
+    redirect url(:donations, :new)
   end
 
-  private
+  protected
 
-  def set_donation_amounts
-    @donation_amounts = Donation.amounts
+  def donation_params
+    params.require(:donation).permit(:donor_name, :currency, :amount)
   end
-
 end
+

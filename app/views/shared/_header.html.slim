@@ -1,0 +1,25 @@
+#site-header
+  .wrapper
+    h1= link_to root_path do
+      | DownThemAll!
+
+    = link_to "Menu", "#", class: 'menu', data: { behaviour: 'DropdownMenu', menu_dom: '#menu' }
+
+    ul#menu.sections
+      li= active_link_to I18n.t('menu.features'), features_path
+      li= active_link_to I18n.t('menu.blog'), posts_path
+      li= active_link_to I18n.t('menu.knowledge_base'), revisions_path
+      - if can_install?
+        li= active_link_to I18n.t('menu.download'), "#", class: "download"
+      li= active_link_to I18n.t('menu.donate'), donate_path, class: "donate"
+
+    .current-language
+      = link_to "#", data: { behaviour: 'DropdownMenu', menu_dom: '#language' } do
+        span= Locale.current.name
+        span.icon-caret
+
+      ul#language.language
+        - Locale.all.each do |locale|
+          - unless locale.current?
+            li= link_to locale.name, switch_to_lang(locale.code)
+

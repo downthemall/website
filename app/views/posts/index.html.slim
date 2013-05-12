@@ -1,4 +1,10 @@
-- @posts.each do |p|
-  article
-    h2= p.title
-    == textile(p.content)
+#posts.wrapper
+
+  .page-header: h1= I18n.t('blog.title')
+
+  .right
+    = render present_collection(@posts)
+    = paginate(@posts)
+
+  = render "posts/menu"
+

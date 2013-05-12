@@ -1,6 +1,4 @@
-settings = YAML.load(ERB.new(File.read("#{Rails.root}/config/paypal.yml")).result)[Rails.env]
+PAYPAL_ACCOUNT = "vendo_1321197264_biz@gmail.com"
+PAYPAL_URL = "https://www.sandbox.paypal.com/cgi-bin/webscr"
+ActiveMerchant::Billing::Base.mode = Rails.env.to_sym
 
-PAYPAL_ACCOUNT = settings['account']
-ActiveMerchant::Billing::Base.mode = :test if settings['test']
-
-ActionView::Base.send(:include, ActiveMerchant::Billing::Integrations::ActionViewHelper)

@@ -1,49 +1,43 @@
-section.donation-intro
-  h1 Why should I give something?
-  p DownThemAll! is completely free to use, share and modify.
-  p If you find it useful as a home user or in your business, please consider contributing some money back to the project.
-  p Help us paying server bills and the developers who make it happen.
+#donations.wrapper
+  .page-header
+    h1 Support DownThemAll!
 
-section.donation
+  .note
+    h2 Why should I give something?
+    p 
+      | DownThemAll! is completely free to use, share and modify. If you find 
+        it useful as a home user or in your business, please consider contributing 
+        some money back to the project. Help us paying server bills and the 
+        developers who make it happen. Thank you for your generosity!
 
-  h2 Choose the amount you'd like to donate
+  = form_for @donation do |form|
 
-  p Use the slider to select the amount. Thank you so much for your generosity.
-
-  .slider-container
-    ul.gifts
-      - @donation_amounts.each do |amount|
-        li
-          span class=amount.icon
-    span.slider-outer
-      span.slider data-amounts=@donation_amounts.to_json
-    ul.amounts
-      - @donation_amounts.each do |amount|
-        li
-          span[data-amount=amount.amount]= "$#{amount.amount}"
-
-  = form_for @donation, remote: true do |form|
-    p.currency
-      ' I'd like to donate in
-      = select "donation", "currency", %w(USD EUR), {}, "data-behaviour" => "switch"
-
-    .letter
+    header
       ' My name is
       =' form.text_field :donor_name, :placeholder => "Anonymous"
-      ' and I'd like to contribute with
-      span.amount
-      = form.text_field :amount
-      ' ,
-      span.description
-      | !
+      ' and I'd like to contribute with:
 
-      span.action
-        = form.submit "Send my donation via PayPal ♥"
+    ul.gifts
+      - DonationAmount.all.each do |amount|
+        - id = "amount-#{amount.amount}"
+        li
+          =' form.radio_button :amount, amount.amount, checked: @donation.amount == amount.amount, id: id
+          a.gift href="#" data-behaviour='ToggleRadio' data-toggle-radio-dom="##{id}"
+            .icon class=amount.icon
+            span.title=' amount.description
+            span.amount 
+              span.currency data-behaviour="SwitchText" data-to-listen-dom="#currency" data-toggle-text=({"USD" => "$", "EUR" => "€"})
+              | #{amount.amount}
+
+    footer
+      .currency
+        ' I'd like to donate in
+        = form.select "currency", options: %w(USD EUR), id: "currency"
+
+      .action= form.submit "Donate with PayPal"
 
   ul.paypal-infos
     li Upon submission, you will be redirected to the PayPal website to login/register and confirm your donation;
     li PayPal takes a 3.4% commision on all donations;
     li If you prefer to send money in a currency not listed, alternative currency options are available once landed over the Paypal website;
-
-
 

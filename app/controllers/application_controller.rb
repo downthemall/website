@@ -1,25 +1,25 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  include Pundit
+  include SessionAuthentication
 
-  layout :layout_by_resource
-  before_filter :generate_session_token
+  alias_method :authorize!, :authorize
+  helper_method :current_user
 
-  def layout_by_resource
-    if devise_controller?
-      "editing"
+  before_filter :set_locale
+
+  protected
+
+  def set_locale
+    if params[:locale].nil?
+      I18n.locale = "en"
     else
-      "application"
+      I18n.locale = params[:locale]
     end
   end
 
-  def current_ability
-    @current_ability ||= Ability.new(current_user, session[:session_token])
+  def default_url_options(options={})
+      { :locale => I18n.locale }
   end
-
-  private
-
-  def generate_session_token
-    session[:session_token] ||= SecureRandom.base64(100)
-  end
-
 end
+

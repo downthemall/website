@@ -1,0 +1,75 @@
+it:
+  activerecord:
+    attributes:
+      revision:
+        locale: Lingua
+  authentication:
+    already_signed_in: Sei già loggato!
+    must_be_signed_in: Devi essere loggato!
+    sign_in:
+      alert: Username o password non validi. Perfavore, riprova!
+      notice: Login effettuato correttamente!
+    sign_out:
+      notice: Logout effettuato correttamente!
+    sign_up:
+      notice: Registrazione completata correttamente!
+  authorization:
+    forbidden: Accesso vietato!
+  blog:
+    archive_per_year: Archivio per Anno
+    create_post: Crea un nuovo post
+    edit_post:
+      title: Modifica Post
+    follow_rss: Segui il nostro feed
+    rss:
+      title: Ultime notizie su DownThemAll!
+    title: Ultime notizie
+  categories:
+    contribute: Contribuisci
+    getting-started: Come iniziare
+    release-notes: Note di rilascio
+    tutorials: Tutorials
+  donations:
+    canceled: Donazione annullata
+    completed: Donazione effettuata correttamente!
+  homepage:
+    title: Il miglior modo per gestire i tuoi download
+  knowledge_base:
+    approved: Versione approvata con successo
+    article:
+      history: Storico modifiche articolo
+    create_article:
+      title: Aggiungi un nuovo post alla Knowledge Base
+    created: Versione creata con successo
+    destroyed: Versione eliminata con successo
+    edit_article:
+      title: Modifica Articolo
+    revision:
+      history_date: Data
+      history_status: Stato
+      history_title: Titolo
+    title: Knowledge Base
+    updated: Articolo aggiornato correttamente!
+  language: Italiano
+  menu:
+    blog: Latest News
+    donate: Donate
+    download: Download
+    features: Funzionalità
+    knowledge_base: Knowledge Base
+  post:
+    actions:
+      delete: Elimina
+      edit: Modifica
+  revision:
+    actions:
+      approve: Approva
+      delete: Elimina
+      edit: Modifica/Traduci
+    available_languages: ! 'Questo articolo è disponibile anche nelle seguenti lingue: %{locales}.'
+    last_edit: Modificato %{time} fa
+    status:
+      approved: Approvato
+      pending: In attesa
+      public: Pubblico
+      skipped: Saltato

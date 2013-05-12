@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_notify-validate
+    body:
+      encoding: US-ASCII
+      string: mc_gross=5.00&protection_eligibility=Ineligible&payer_id=PR59WL3Q4ULBS&tax=0.00&payment_date=06%3A10%3A29+Mar+02%2C+2013+PST&payment_status=Completed&charset=windows-1252&first_name=Test&mc_fee=0.47&notify_version=3.7&custom=6&payer_status=verified&business=vendo_1321197264_biz%40gmail.com&quantity=1&verify_sign=AXgS86tGvSMIqfh4tfmZ2KzWdSE3AOynp.Mcdt378QYIMeQx5XBmbSwt&payer_email=compro_1321197217_per%40gmail.com&txn_id=53Y12314WR4111134&payment_type=instant&last_name=User&receiver_email=vendo_1321197264_biz%40gmail.com&payment_fee=0.47&receiver_id=T4MGUTJ7MRKES&txn_type=web_accept&item_name=Downthemall+Donation&mc_currency=USD&item_number=&residence_country=IT&test_ipn=1&handling_amount=0.00&transaction_subject=6&payment_gross=5.00&shipping=0.00&ipn_track_id=965dfd3ed4a4d
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Content-Length:
+      - '783'
+      User-Agent:
+      - Active Merchant -- http://activemerchant.org
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Mar 2013 14:14:13 GMT
+      Server:
+      - Apache
+      X-Frame-Options:
+      - SAMEORIGIN
+      Set-Cookie:
+      - Apache=10.72.109.11.1362233653740034; path=/; expires=Mon, 23-Feb-43 14:14:13
+        GMT
+      - c9MWDuvPtT9GIMyPc3jwol1VSlO=DMm1U7lxrnknsXHe93OjoSZ3uW1UDuy2vNmbPviYQI96TsZpyCepdVUpa6XFnS5Z_SMk3sXlNYBrqqSbiKl57MViak9QoAfSlxXArvoQdlojCZBMGQLoJ1UJrTcr5KYQ3-Ydm0%7c8gK2NxKrofS_zoHmLZHxOCjUhpnTdD1kEPDwMpadQ47Em_lFL0AbdiEaasI8D9xKbDMYdG%7cxxqHU-Vl1Poc1tNK2JcS3j06jNu2DbEmmaq3S5dTTwQMAuBjXZmIk1hyUjxIQtZMeKeynG%7c1362233654;
+        domain=.paypal.com; path=/; Secure; HttpOnly
+      - cookie_check=yes; expires=Tue, 28-Feb-2023 14:14:14 GMT; domain=.paypal.com;
+        path=/; Secure; HttpOnly
+      - navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+      - navlns=0.0; expires=Fri, 25-Feb-2033 14:14:14 GMT; domain=.paypal.com; path=/;
+        Secure; HttpOnly
+      X-Cnection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: US-ASCII
+      string: VERIFIED
+    http_version: 
+  recorded_at: Sat, 02 Mar 2013 14:14:12 GMT
+recorded_with: VCR 2.4.0

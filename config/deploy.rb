@@ -1,38 +1,46 @@
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-require "rvm/capistrano"
+require 'mina/bundler'
+require 'mina/rails'
+require 'mina/git'
+require 'mina/rvm'
 
-set :rvm_ruby_string, 'ruby-1.9.2-p290@website'
-set :rvm_bin_path, "/usr/local/rvm/bin"
+set :domain, 'ns313038.ovh.net'
+set :deploy_to, '/home/website/apps/website'
+set :repository, 'git://github.com/downthemall/website.git'
+set :branch, 'master'
+set :shared_paths, ['config/database.yml', 'log', 'public/system']
+set :user, 'website'
+set :rvm_path, '/usr/local/rvm/scripts/rvm'
 
-set :application, "DownThemAll! Website"
-set :repository,  "git://github.com/downthemall/website.git"
+task :environment do
+  invoke :'rvm:use[ruby-1.9.3-p385@default]'
+end
 
-set :scm, :git
+task :setup => :environment do
+  queue! %[mkdir -p "#{deploy_to}/shared/log"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/log"]
 
-server "ns313038.ovh.net", :app, :web, :db, :primary => true
+  queue! %[mkdir -p "#{deploy_to}/shared/public/system"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/public/system"]
 
-set :user, "website"
-set :deploy_to, "/home/website/apps/website"
-set :use_sudo, false
-set :rails_env, 'production'
-set :deploy_via, :remote_cache
-set :branch, "master"
+  queue! %[mkdir -p "#{deploy_to}/shared/config"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/config"]
 
-require "bundler/capistrano"
-require 'hoptoad_notifier/capistrano'
+  queue! %[touch "#{deploy_to}/shared/config/database.yml"]
+  queue  %[echo "-----> Be sure to edit 'shared/config/database.yml'."]
+end
 
-after "deploy", "deploy:cleanup"
+desc "Deploys the current version to the server."
+task :deploy => :environment do
+  deploy do
+    invoke :'git:clone'
+    invoke :'deploy:link_shared_paths'
+    invoke :'bundle:install'
+    invoke :'rails:db_migrate'
+    invoke :'rails:assets_precompile'
 
-namespace :db do
-  task :symlink, :except => { :no_release => true } do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-    run "ln -nfs #{shared_path}/config/paypal.yml #{release_path}/config/paypal.yml"
+    to :launch do
+      queue 'touch tmp/restart.txt'
+    end
   end
 end
 
-deploy.task :restart, :roles => :app do
-  run "touch #{current_path}/tmp/restart.txt"
-end
-
-after "deploy:finalize_update", "db:symlink"
-before "deploy:assets:precompile", "bundle:install"

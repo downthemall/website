@@ -1,0 +1,8 @@
+#kb.wrapper
+  .page-header
+    h1= I18n.t('knowledge_base.title')
+
+  = render "contribute"
+  .right= render present(@revision)
+  .left= render "menu"
+

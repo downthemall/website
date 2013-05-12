@@ -1,0 +1,18 @@
+._left
+
+  - if authorized? Post.new, :new
+    .actions= link_to I18n.t('blog.create_post'), new_post_path, class: "button"
+
+  .follow
+    = link_to I18n.t('blog.follow_rss'), posts_path(format: :rss), class: "button"
+
+  .archive
+    h6= I18n.t('blog.archive_per_year')
+    ul 
+      - Post.count_per_year.each do |year|
+        li
+          = link_to "#" do
+            =' year.year.to_date.year
+            span.count= "(#{year.count})"
+
+

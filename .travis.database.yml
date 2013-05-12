@@ -1,0 +1,10 @@
+test:
+  adapter: postgresql
+  database: downthemall_test
+  encoding: utf8
+  min_messages: warning
+  host: '127.0.0.1'
+  port: 5432
+  pool: 5
+  timeout: 5000
+

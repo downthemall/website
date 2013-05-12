@@ -1,20 +1,15 @@
-section.main-content
-  section.main-column
-    = main_form_for resource do |form|
-      = form_error_messages(form.object)
+= simple_form_for post do |f|
+  = f.error_notification
 
-      fieldset
-        legend Article properties
+  p.input
+    = f.label :title
+    = f.text_field :title
+  p.input
+    = f.label :content
+    = f.text_area :content, data: { behaviour: 'MarkdownEditor' }
+  p.input
+    = f.label :posted_at
+    = f.text_field :posted_at
 
-        = form.input :title
-        = form.input :content, :input_html => {:"data-behaviour" => "autoresize"}
-        = form.input :posted_at
-        = form.input :public
-
-      footer
-        = form.button :submit
-
-        - unless resource.new_record?
-          aside
-            = remove_danger_button_link_to "Delete this article", resource, :method => :delete, :confirm => "Are you sure?"
+  = f.submit "Save"
 

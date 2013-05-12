@@ -1,0 +1,23 @@
+= simple_form_for revision do |f|
+  = f.error_notification
+
+  p.input
+    = f.label :locale, caption: Revision.human_attribute_name(:locale)
+    = f.select :locale, options_from_collection_for_select(Locale.all, :code, :name)
+
+  - if edit_category
+    p.input
+      = f.label :category
+      = f.select :category, options_from_collection_for_select(Category.all, :code, :name)
+
+  p.input
+    = f.label :title
+    = f.text_field :title
+
+  p.input
+    = f.label :content
+    = f.text_area :content, data: { behaviour: 'MarkdownEditor' }
+    span.hint Markdown syntax allowed. To add an image, just drag & drop it inside the textarea.
+
+  = f.submit "Save"
+

@@ -1,0 +1,17 @@
+#kb.wrapper
+  .page-header
+    h1= I18n.t('knowledge_base.title')
+
+  = render "contribute"
+
+  .left= render "menu"
+
+  .right
+    = render "revision_block", title: "Latest articles", revisions: present_collection(Article.with_public_revisions(I18n.locale)).map(&:public_revision).sort_by(&:updated_at).reverse
+
+    - if authorized?(Revision.new, :create)
+      = render "revision_block", title: "Your contributions", revisions: Revision.with_author(current_user).limit(10)
+
+    - if authorized?(Revision.new, :approve)
+      = render "revision_block", title: "Pending revisions", revisions: Revision.pending
+

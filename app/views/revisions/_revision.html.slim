@@ -1,0 +1,21 @@
+#kb
+  .revision
+    header
+      h3.title= revision.link_to
+      .infos= revision.available_locales
+    .content= revision.content
+    footer
+      .last_edit= revision.last_edit
+      .actions= revision.actions
+
+  .article-history
+    h3= I18n.t('knowledge_base.article.history')
+    table
+      thead
+        th= I18n.t('knowledge_base.revision.history_title')
+        th= I18n.t('knowledge_base.revision.history_date')
+        th= I18n.t('knowledge_base.revision.history_status')
+      tbody
+        - revision.article.revisions.with_locale(I18n.locale).each do |revision|
+          = present(revision).revision_line
+

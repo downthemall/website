@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Downthemall::Application.config.secret_token = 'cb6230355eee637d4f21cb492c0eca3a945b4b283fabdb40791298dbbdc24942bd43647ca468c4cc238ddbf186d8b17a3c28aeb3b4648763af43b430860b12d0'
+Downthemall::Application.config.secret_token = 'c2d056d4c125b3f35ac76bf86400c20c052628d028101a24fafa6efe12c90b86a25d720061dfea9cb226d9c51371f2acaa7e682ac5b8ab9ec1486ca818f2047f'

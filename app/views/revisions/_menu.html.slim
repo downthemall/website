@@ -1,0 +1,9 @@
+ul.menu
+  - Category.all.each do |cat|
+    li
+      .category= cat.name
+      ul
+        - articles = present_collection(Article.with_public_revisions(I18n.locale).in_category(cat))
+        - articles.sort_by(&:title).each do |article|
+          li= article.link_to
+

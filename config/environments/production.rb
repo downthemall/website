@@ -1,16 +1,6 @@
+require Rails.root.join('config/initializers/smtp')
 Downthemall::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-
-  # Use memcached via dalli
-  config.cache_store = :dalli_store, '127.0.0.1', {
-    :namespace => 'dtasite',
-    :race_condition_ttl => 2.minutes
-  }
-  if defined?(PhusionPassenger)
-    PhusionPassenger.on_event(:starting_worker_process) do |forked|
-      Rails.cache.reset if forked
-    end
-  end
 
   # Code is not reloaded between requests
   config.cache_classes = true
@@ -26,12 +16,12 @@ Downthemall::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = true
+  config.assets.compile = false
 
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  # Defaults to Rails.root.join("public/assets")
+  # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
   # Specifies the header that your server uses for sending files
@@ -44,8 +34,11 @@ Downthemall::Application.configure do
   # See everything in the log (default is :info)
   # config.log_level = :debug
 
+  # Prepend all log lines with the following tags
+  # config.log_tags = [ :subdomain, :uuid ]
+
   # Use a different logger for distributed setups
-  # config.logger = SyslogLogger.new
+  # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
@@ -57,7 +50,9 @@ Downthemall::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.raise_delivery_errors = false  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = SMTP_SETTINGS
+
 
   # Enable threaded mode
   # config.threadsafe!
@@ -68,4 +63,10 @@ Downthemall::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  # Log the query plan for queries taking more than this (works
+  # with SQLite, MySQL, and PostgreSQL)
+  # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  config.action_mailer.default_url_options = { :host => 'downthemall.com' }
 end

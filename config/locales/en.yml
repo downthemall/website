@@ -1,44 +1,75 @@
 en:
-  meta:
-    language_name:
-      en: 'English'
-      de: 'German'
-      it: 'Italian'
-      fr: 'French'
-      es: 'Spanish'
-      nl: 'Dutch'
-      el: 'Greek'
-      pt: 'Portoguese'
-      ar: 'Arabic'
-      ru: 'Russian'
-      zh: 'Chinese'
-      ja: 'Japanese'
   activerecord:
-    errors:
-      models:
-        comment:
-          no_name_or_author_infos: "To comment you must provide your name and email, or be logged in."
-        article:
-          no_en_translation: "The article doesn't have an english translation. This is required."
-    models:
-      article: "Article"
     attributes:
-      article:
-        sticky: "Make this article sticky"
-        parent_id: "Parent article"
-  simple_form:
-    labels:
-      comment:
-        author_name: "Your name"
-        author_email: "Your email"
-        content: "Your comment"
-    placeholders:
-      user:
-        author_name: 'Your name'
-        author_email: 'your@email.com'
-        content: "Your comment"
-  helpers:
-    submit:
-      comment:
-        create: "Submit comment"
-        update: "Update comment"
+      revision:
+        locale: Language
+  authentication:
+    already_signed_in: You are already signed in!
+    must_be_signed_in: You must be signed in!
+    sign_in:
+      alert: Invalid username or password
+      notice: Signed in correctly!
+    sign_out:
+      notice: Signed out correctly!
+    sign_up:
+      notice: Signed up correctly!
+  authorization:
+    forbidden: Access forbidden!
+  blog:
+    archive_per_year: Archive by Year
+    create_post: Create a new post
+    edit_post:
+      title: Edit Post
+    follow_rss: Follow our news feed
+    rss:
+      title: DownThemAll! Latest News
+    title: Latest News
+  categories:
+    contribute: Contribute
+    getting-started: Getting Started
+    release-notes: Release Notes
+    tutorials: Tutorials
+  donations:
+    canceled: Donation aborted
+    completed: Donation completed correctly!
+  homepage:
+    title: A better way to manage your downloads
+  knowledge_base:
+    approved: Version approved successfully
+    article:
+      history: Article edit history
+    create_article:
+      title: Add a new Knowledge Base Post
+    created: Version created successfully
+    destroyed: Version destroyed successfully
+    edit_article:
+      title: Edit Knowledge Base Article
+    revision:
+      history_date: Date
+      history_status: Status
+      history_title: Title
+    title: Knowledge Base
+    updated: Version updated successfully
+  language: English
+  menu:
+    blog: Latest News
+    donate: Donate
+    download: Download
+    features: Features
+    knowledge_base: Knowledge Base
+  post:
+    actions:
+      delete: Delete
+      edit: Edit
+  revision:
+    actions:
+      approve: Approve
+      delete: Delete
+      edit: Edit/Translate
+    available_languages: ! 'This article is available also in the following languages: %{locales}.'
+    last_edit: Edited %{time} ago
+    status:
+      approved: Approved
+      pending: Pending
+      public: Public
+      skipped: Skipped

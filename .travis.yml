@@ -1,0 +1,15 @@
+language: ruby
+
+rvm:
+  - "1.9.3"
+
+env:
+  - "RAILS_ENV=test"
+
+before_script:
+  - "cp .travis.database.yml config/database.yml"
+  - "psql -c 'create database downthemall_test;' -U postgres"
+  - "VERBOSE=false bundle exec rake db:migrate"
+
+script: "bundle exec rake"
+

@@ -1,0 +1,132 @@
+#donations
+
+  .note
+    padding: 15px
+    background-color: $warning-background
+    border: 1px solid darken($warning-background, 30%)
+
+    h2
+      font-size: 1.5em
+      margin-bottom: 5px
+
+  .paypal-infos
+    color: $gray
+    text-align: left
+    margin: 50px
+
+    li
+      list-style-type: square
+
+  form
+    margin: 40px 0
+    text-align: center
+
+    +media($tablet)
+      box-shadow: rgba(black, 0.2) 0 1px 4px
+      padding: 50px 80px
+      background-color: $white
+      border-bottom: 5px solid $blue
+
+    header
+      font-size: 1.7em
+      line-height: 30px
+
+      +media($tablet)
+        font-size: 2em
+
+      input
+        border-width: 0
+        border-bottom: 1px solid $light-gray
+        font-family: 'Open Sans'
+        font-size: 24px
+        display: block
+        margin: 10px auto
+        text-align: center
+        width: 164px
+
+        +media($tablet)
+          display: inline-block
+          margin: 0
+
+        &:focus
+          outline: none
+          border-bottom-color: $gray
+
+    footer
+      +clearfix
+      line-height: 55px
+
+      .currency
+        font-size: 1.2em
+        color: $gray
+
+        +media($tablet)
+          float: left
+
+      .action
+
+        +media($tablet)
+          width: 40%
+          float: right
+
+        input[type="submit"]
+          padding: 15px 20px
+          font-size: 1.2em
+
+    .gifts
+      margin: 40px 0
+
+      li
+        width: 50%
+        display: inline-block
+        margin: 11px 0
+
+        +media($tablet)
+          width: 16%
+          margin: 0
+
+        a
+          text-decoration: none
+          color: $black
+          color: $light-gray
+
+          .icon
+            width: 90px
+            height: 70px
+            display: inline-block
+            opacity: 0.3
+
+            @each $icon in beer, book, burger, cinema, coffee, gift
+              &.#{$icon}
+                background: url('/assets/gifts/#{$icon}.png') no-repeat center center
+
+          .title
+            margin-bottom: 10px
+
+          .title, .amount
+            display: block
+
+          .amount
+            font-size: 2em
+            font-weight: 300
+
+            +media($tablet)
+              font-size: 3em
+
+            .currency
+              padding-right: 2px
+
+          &:hover
+            color: $gray
+
+            .icon
+              opacity: 0.5
+
+          &.selected
+            color: $black
+
+            .icon
+              opacity: 1
+
+        input
+          display: none

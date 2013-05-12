@@ -1,4 +1,4 @@
-h2 Create a new Post
-
-= render "form"
+.form-wrapper.wrapper
+  h1= I18n.t('blog.create_post.title')
+  = render "posts/form", post: @post
 
