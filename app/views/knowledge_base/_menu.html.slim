@@ -5,6 +5,5 @@ ul.menu
       ul
         - articles = present_collection(Article.with_public_revisions(I18n.locale).in_category(cat))
         - articles.sort_by(&:title).each do |article|
-          - article = present(article)
           li= article.link_to
 

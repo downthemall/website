@@ -6,12 +6,12 @@
     = link_to "Menu", "#", class: 'menu', data: { behaviour: 'DropdownMenu', menu_dom: '#menu' }
 
     ul#menu.sections
-      li= link_to I18n.t('menu.features'), url(:features)
-      li= link_to I18n.t('menu.blog'), url(:posts, :index)
-      li= link_to I18n.t('menu.knowledge_base'), url(:knowledge_base, :index)
+      li= active_link_to I18n.t('menu.features'), url(:features)
+      li= active_link_to I18n.t('menu.blog'), url(:posts, :index)
+      li= active_link_to I18n.t('menu.knowledge_base'), url(:knowledge_base, :index)
       - if can_install?
-        li= link_to I18n.t('menu.download'), "#", class: "download"
-      li= link_to I18n.t('menu.donate'), url(:donations, :new), class: "donate"
+        li= active_link_to I18n.t('menu.download'), "#", class: "download"
+      li= active_link_to I18n.t('menu.donate'), url(:donations, :new), class: "donate"
 
     .current-language
       = link_to "#", data: { behaviour: 'DropdownMenu', menu_dom: '#language' } do

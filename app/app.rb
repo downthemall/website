@@ -38,6 +38,11 @@ class Downthemall < Padrino::Application
       Pundit.policy!(current_user, record).send("#{action}?")
     end
     alias_method :authorize!, :authorize
+
+    def active_link_to(text, url, options = {})
+      active = url == request.path_info
+      link_to(text, url, options.reverse_merge(class: active ? 'active' : nil))
+    end
   end
 
   configure :development, :test do

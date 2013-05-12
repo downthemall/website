@@ -8,7 +8,7 @@ $ ->
     new window[$(@).data('behaviour')](@)
 
   $("[href=#sign-in]").click ->
-    navigator.id.request()
+    navigator.id.request(siteName: 'DownThemAll!')
     false
 
   $("[href=#sign-out]").click ->
@@ -16,18 +16,24 @@ $ ->
     false
 
   navigator.id.watch
-    loggedInUser: $("[data-current-user-email]").data("current-user-email"),
+    loggedInUser: $("[data-current-user-email]").data("current-user-email")
+
     onlogin: (assertion) ->
       $.ajax
         type: 'POST'
         url: '/en/sign_in'
         data: { assertion: assertion }
-      .always ->
-        window.location.reload()
+      .done (data) ->
+        if data.success
+          window.location.reload()
+        else
+          alert('Login failure')
+      .fail (xhr, status, err) -> navigator.id.logout()
 
     onlogout: ->
       $.ajax
         type: 'POST',
         url: '/en/sign_out'
-      .always ->
-        window.location.reload()
+      .done (data) -> window.location.reload()
+      .fail (xhr, status, err) -> alert("Logout failure: #{err}")
+

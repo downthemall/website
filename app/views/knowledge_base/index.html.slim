@@ -7,7 +7,7 @@
   .left= partial "knowledge_base/menu"
 
   .right
-    = partial "knowledge_base/revision_block", locals: { title: "Lastest articles", revisions: present_collection(Article.with_public_revisions(I18n.locale)).map(&:public_revision).sort_by(&:updated_at).reverse }
+    = partial "knowledge_base/revision_block", locals: { title: "Latest articles", revisions: present_collection(Article.with_public_revisions(I18n.locale)).map(&:public_revision).sort_by(&:updated_at).reverse }
 
     - if authorized?(Revision.new, :create)
       = partial "knowledge_base/revision_block", locals: { title: "Your contributions", revisions: Revision.with_author(current_user).limit(10) }

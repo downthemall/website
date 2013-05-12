@@ -20,6 +20,5 @@ class Article < ActiveRecord::Base
   def pending_revisions(locale)
     revisions.with_locale(locale).pending
   end
-
 end
 
