@@ -7,7 +7,7 @@ set :domain, 'ns313038.ovh.net'
 set :deploy_to, '/home/website/apps/website'
 set :repository, 'git://github.com/downthemall/website.git'
 set :branch, 'master'
-set :shared_paths, ['config/database.yml', 'log', 'public/system']
+set :shared_paths, ['config/database.yml', 'config/initializers/errbit.rb', 'log', 'public/system']
 set :user, 'website'
 set :rvm_path, '/usr/local/rvm/scripts/rvm'
 
@@ -27,6 +27,9 @@ task :setup => :environment do
 
   queue! %[touch "#{deploy_to}/shared/config/database.yml"]
   queue  %[echo "-----> Be sure to edit 'shared/config/database.yml'."]
+
+  queue! %[touch "#{deploy_to}/shared/config/initializers/errbit.rb"]
+  queue  %[echo "-----> Be sure to edit 'shared/config/initializers/errbit.rb'."]
 end
 
 desc "Deploys the current version to the server."

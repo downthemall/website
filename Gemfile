@@ -24,7 +24,7 @@ gem 'simple_form'
 gem 'simple_form'
 gem 'slim-rails'
 gem 'strong_parameters'
-gem 'thin'
+gem 'unicorn'
 gem 'useragent'
 
 group :assets do
