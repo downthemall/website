@@ -5,12 +5,11 @@ class RevisionPolicy < ApplicationPolicy
   end
 
   def destroy?
-    is_admin? || is_author? && !record.approved
+    is_admin? || (is_author? && !record.approved)
   end
 
   def approve?
     is_admin?
   end
-
 end
 
