@@ -2,79 +2,79 @@ de:
   activerecord:
     attributes:
       revision:
-        locale: 
+        locale: Sprache
   authentication:
-    already_signed_in: 
-    must_be_signed_in: 
+    already_signed_in: Sie sind bereits angemeldet!
+    must_be_signed_in: Sie müssen angemeldet sein!
     sign_in:
-      alert: 
-      notice: 
+      alert: Ungültiger Benutzername oder Passwort
+      notice: Erfolgreich angemeldet!
     sign_out:
-      notice: 
+      notice: Erfolgreich abgemeldet!
     sign_up:
-      notice: 
+      notice: Erfolgreich registriert!
   authorization:
-    forbidden: 
+    forbidden: Zugriff nicht erlaubt!
   blog:
-    archive_per_year: 
-    create_post: 
+    archive_per_year: Archiv nach Jahr
+    create_post: Neuen Beitrag erstellen
     edit_post:
-      title: 
-    follow_rss: 
+      title: Beitrag bearbeiten
+    follow_rss: Unseren News-Feed folgen
     rss:
-      title: 
-    title: 
+      title: DownThemAll! Neuigkeiten
+    title: Neuigkeiten
   categories:
-    contribute: 
-    getting-started: 
-    release-notes: 
-    tutorials: 
+    contribute: Beitragen
+    getting-started: Erste Schritte
+    release-notes: Versionshinweise
+    tutorials: Anleitungen
   donations:
-    canceled: 
-    completed: 
+    canceled: Spende abgebrochen
+    completed: Spende vollständig abgeschlossen!
   homepage:
-    daily_users: 
-    downloads: 
-    featured_on: 
-    free_opensource: 
-    subtitle: 
-    title: 
+    daily_users: ! '%{users} täglich aktive Benutzer'
+    downloads: ! '%{downloads} Downloads'
+    featured_on: Gesehen auf
+    free_opensource: Komplett kostenlos & Open Source!
+    subtitle: DownThemAll! ist eine freie, mehrfach ausgezeichnete Firefox Erweiterung, die erweiterte Downloadmöglichkeiten in Ihren Browser integriert.
+    title: Eine bessere Art Downloads zu verwalten
   knowledge_base:
-    approved: 
+    approved: Version erfolgreich genehmigt
     article:
-      history: 
+      history: Artikel Änderungshistorie
     create_article:
-      title: 
-    created: 
-    destroyed: 
+      title: Neuen Beitrag zur Knowledge Base hinzufügen
+    created: Version erfolgreich erstellt
+    destroyed: Version erfolgreich entfernt
     edit_article:
-      title: 
+      title: Knowledge Base Artikel bearbeiten
     revision:
-      history_date: 
-      history_status: 
-      history_title: 
-    title: 
-    updated: 
+      history_date: Datum
+      history_status: Status
+      history_title: Titel
+    title: Knowledge Base
+    updated: Version erfolgreich aktualisiert
   language: Deutsch
   menu:
-    blog: 
-    donate: 
-    download: 
-    features: 
-    knowledge_base: 
+    blog: Neuigkeiten
+    donate: Spenden
+    download: Herunterladen
+    features: Eigenschaften
+    knowledge_base: Knowledge Base
   post:
     actions:
-      delete: 
-      edit: 
+      delete: Löschen
+      edit: Bearbeiten
   revision:
     actions:
-      approve: 
-      delete: 
-      edit: 
-    available_languages: 
-    last_edit: 
+      approve: Genehmigen
+      delete: Löschen
+      edit: Bearbeiten/Übersetzen
+    available_languages: ! 'Dieser Artikel ist auch in folgenden Sprachen verfügbar: %{locales}.'
+    last_edit: ! '%{time} zuvor bearbeitet'
     status:
-      approved: 
-      pending: 
-      public: 
-      skipped: 
+      approved: Genehmigt
+      pending: Wartend
+      public: Öffentlich
+      skipped: Übersprungen
