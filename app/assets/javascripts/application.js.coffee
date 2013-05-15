@@ -1,4 +1,5 @@
-#= require ./vendor/jquery
+#= require jquery
+#= require jquery_ujs
 #= require_tree ./vendor
 #= require plugin
 #= require_tree ./plugins
